@@ -111,8 +111,6 @@ See [data sources](docs/DATA_SOURCES.txt) and
 
 ## Citation and acknowledgments
 
-The accompanying repository is available on
-[GitHub](https://github.com/Miro382/Selective-Detection-of-Synthetic-Images-Using-Transformation-Response-Profiles).
 Citation metadata is supplied in [CITATION.cff](CITATION.cff); manuscript
 publication details will be added after publication.
 Assistance with this distribution is recorded in
