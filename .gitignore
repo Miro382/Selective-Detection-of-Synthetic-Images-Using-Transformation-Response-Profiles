@@ -1,0 +1,53 @@
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.mplconfig/
+.cache/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+local_config.json
+
+# Obtain images and pretrained weights separately. Keep them outside this repo.
+datasets/
+data_private/
+checkpoints/
+hf_cache/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.pkl
+*.pickle
+*.joblib
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.bmp
+*.tif
+*.tiff
+*.heic
+
+# New local experiments and generated output
+work/
+outputs/
+runs/
+*.log
+*.zip
+*.tar
+*.gz.tmp

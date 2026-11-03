@@ -1,0 +1,335 @@
+{
+  "cohort": "DeepShield",
+  "role": "in-domain held-out",
+  "primary_cohort": false,
+  "sample_status": "retrospective reuse of the original EfficientNet evaluation images",
+  "images": 10000,
+  "groups": 10000,
+  "methods": {
+    "confidence": {
+      "aurc": 0.01997898576749465,
+      "risk_at_coverage": {
+        "0.8": {
+          "accepted": 8000,
+          "errors": 313,
+          "risk": 0.039125
+        },
+        "0.9": {
+          "accepted": 9000,
+          "errors": 554,
+          "risk": 0.06155555555555556
+        },
+        "0.95": {
+          "accepted": 9500,
+          "errors": 745,
+          "risk": 0.07842105263157895
+        },
+        "original": {
+          "accepted": 9807,
+          "errors": 877,
+          "risk": 0.08942592026103803
+        }
+      }
+    },
+    "tta_mean": {
+      "aurc": 0.021377885792997632,
+      "risk_at_coverage": {
+        "0.8": {
+          "accepted": 8000,
+          "errors": 325,
+          "risk": 0.040625
+        },
+        "0.9": {
+          "accepted": 9000,
+          "errors": 592,
+          "risk": 0.06577777777777778
+        },
+        "0.95": {
+          "accepted": 9500,
+          "errors": 771,
+          "risk": 0.08115789473684211
+        },
+        "original": {
+          "accepted": 9807,
+          "errors": 893,
+          "risk": 0.09105740797389619
+        }
+      }
+    },
+    "lr_full": {
+      "aurc": 0.01944516730157344,
+      "risk_at_coverage": {
+        "0.8": {
+          "accepted": 8000,
+          "errors": 301,
+          "risk": 0.037625
+        },
+        "0.9": {
+          "accepted": 9000,
+          "errors": 548,
+          "risk": 0.06088888888888889
+        },
+        "0.95": {
+          "accepted": 9500,
+          "errors": 736,
+          "risk": 0.07747368421052632
+        },
+        "original": {
+          "accepted": 9807,
+          "errors": 873,
+          "risk": 0.0890180483328235
+        }
+      }
+    },
+    "lr_confidence": {
+      "aurc": 0.01997898576749465,
+      "risk_at_coverage": {
+        "0.8": {
+          "accepted": 8000,
+          "errors": 313,
+          "risk": 0.039125
+        },
+        "0.9": {
+          "accepted": 9000,
+          "errors": 554,
+          "risk": 0.06155555555555556
+        },
+        "0.95": {
+          "accepted": 9500,
+          "errors": 745,
+          "risk": 0.07842105263157895
+        },
+        "original": {
+          "accepted": 9807,
+          "errors": 877,
+          "risk": 0.08942592026103803
+        }
+      }
+    },
+    "lr_jpeg_only": {
+      "aurc": 0.019415834347668016,
+      "risk_at_coverage": {
+        "0.8": {
+          "accepted": 8000,
+          "errors": 303,
+          "risk": 0.037875
+        },
+        "0.9": {
+          "accepted": 9000,
+          "errors": 552,
+          "risk": 0.06133333333333333
+        },
+        "0.95": {
+          "accepted": 9500,
+          "errors": 739,
+          "risk": 0.07778947368421052
+        },
+        "original": {
+          "accepted": 9807,
+          "errors": 871,
+          "risk": 0.08881411236871622
+        }
+      }
+    },
+    "lr_resize_only": {
+      "aurc": 0.020018923492439177,
+      "risk_at_coverage": {
+        "0.8": {
+          "accepted": 8000,
+          "errors": 312,
+          "risk": 0.039
+        },
+        "0.9": {
+          "accepted": 9000,
+          "errors": 573,
+          "risk": 0.06366666666666666
+        },
+        "0.95": {
+          "accepted": 9500,
+          "errors": 756,
+          "risk": 0.07957894736842105
+        },
+        "original": {
+          "accepted": 9807,
+          "errors": 882,
+          "risk": 0.08993576017130621
+        }
+      }
+    }
+  },
+  "contrasts": {
+    "lr_full_minus_confidence": {
+      "aurc": {
+        "estimate": -0.0005338184659212097,
+        "lower_95": -0.0009143904010182829,
+        "upper_95": -0.00011612729492033209,
+        "valid_repetitions": 5000
+      },
+      "risk_0.8": {
+        "estimate": -0.0015000000000000013,
+        "lower_95": -0.003499999999999996,
+        "upper_95": 0.0004999999999999935,
+        "valid_repetitions": 5000
+      },
+      "risk_0.9": {
+        "estimate": -0.0006666666666666696,
+        "lower_95": -0.0026666666666666644,
+        "upper_95": 0.0013333333333333253,
+        "valid_repetitions": 5000
+      },
+      "risk_0.95": {
+        "estimate": -0.0009473684210526273,
+        "lower_95": -0.003263157894736843,
+        "upper_95": 0.000842105263157894,
+        "valid_repetitions": 5000
+      },
+      "risk_original": {
+        "estimate": -0.0004078719282145371,
+        "lower_95": -0.002243295605179968,
+        "upper_95": 0.0010196798205363566,
+        "valid_repetitions": 5000
+      }
+    },
+    "lr_full_minus_lr_confidence": {
+      "aurc": {
+        "estimate": -0.0005338184659212097,
+        "lower_95": -0.0009143904010182829,
+        "upper_95": -0.00011612729492033209,
+        "valid_repetitions": 5000
+      },
+      "risk_0.8": {
+        "estimate": -0.0015000000000000013,
+        "lower_95": -0.003499999999999996,
+        "upper_95": 0.0004999999999999935,
+        "valid_repetitions": 5000
+      },
+      "risk_0.9": {
+        "estimate": -0.0006666666666666696,
+        "lower_95": -0.0026666666666666644,
+        "upper_95": 0.0013333333333333253,
+        "valid_repetitions": 5000
+      },
+      "risk_0.95": {
+        "estimate": -0.0009473684210526273,
+        "lower_95": -0.003263157894736843,
+        "upper_95": 0.000842105263157894,
+        "valid_repetitions": 5000
+      },
+      "risk_original": {
+        "estimate": -0.0004078719282145371,
+        "lower_95": -0.002243295605179968,
+        "upper_95": 0.0010196798205363566,
+        "valid_repetitions": 5000
+      }
+    }
+  },
+  "coverage_fractions": {
+    "0.8": [
+      4,
+      5
+    ],
+    "0.9": [
+      9,
+      10
+    ],
+    "0.95": [
+      19,
+      20
+    ],
+    "original": [
+      9807,
+      10000
+    ]
+  },
+  "frozen_working_point": {
+    "threshold": 0.03467626730024773,
+    "accepted": 3850,
+    "errors": 17,
+    "risk": 0.004415584415584416,
+    "coverage": 0.385,
+    "assessment_passed": true,
+    "deployment_threshold": 0.03467626730024773,
+    "deployment_accepted": 3850,
+    "matched_references": {
+      "confidence": {
+        "accepted": 3850,
+        "errors": 15,
+        "risk": 0.003896103896103896
+      },
+      "tta_mean": {
+        "accepted": 3850,
+        "errors": 18,
+        "risk": 0.004675324675324675
+      },
+      "lr_confidence": {
+        "accepted": 3850,
+        "errors": 15,
+        "risk": 0.003896103896103896
+      },
+      "lr_jpeg_only": {
+        "accepted": 3850,
+        "errors": 14,
+        "risk": 0.0036363636363636364
+      },
+      "lr_resize_only": {
+        "accepted": 3850,
+        "errors": 16,
+        "risk": 0.004155844155844156
+      }
+    }
+  },
+  "detector": {
+    "adapted": {
+      "accuracy": 0.9031,
+      "balanced_accuracy": 0.9031,
+      "errors": 969,
+      "class_metrics": {
+        "0": {
+          "count": 5000,
+          "accuracy": 0.9002
+        },
+        "1": {
+          "count": 5000,
+          "accuracy": 0.906
+        }
+      },
+      "auroc": 0.96758488,
+      "average_precision": 0.9700290112716121
+    },
+    "initial": {
+      "accuracy": 0.5136000000000001,
+      "balanced_accuracy": 0.5136000000000001,
+      "errors": 4864,
+      "class_metrics": {
+        "0": {
+          "count": 5000,
+          "accuracy": 0.994
+        },
+        "1": {
+          "count": 5000,
+          "accuracy": 0.03320000000000001
+        }
+      },
+      "auroc": 0.70961624,
+      "average_precision": 0.6968927498233912
+    },
+    "adapted_minus_initial_accuracy": {
+      "estimate": 0.3895,
+      "lower_95": 0.3781,
+      "upper_95": 0.4008
+    },
+    "comparison_scope": "Same images and newly fixed detector-specific preprocessing for both checkpoints; not a reproduction of the old public-checkpoint stress-test aggregates."
+  },
+  "bootstrap": {
+    "repetitions": 5000,
+    "seed": 20261030,
+    "unit": "whole connected provenance groups",
+    "pairing": "identical group multiplicities for all scores and both detector checkpoints",
+    "interval": "pointwise percentile 95%, no familywise correction",
+    "scope": "conditional on fitted models and stored responses; no retraining uncertainty",
+    "seed_scope": "RNG restarted per cohort and detector",
+    "aurc": "whole exact-score tie blocks",
+    "fixed_coverage": "exact rational floor(numerator*N_b/denominator)",
+    "tie_namespace": "article-detector-tie-v1/"
+  }
+}

@@ -1,0 +1,47 @@
+\begin{table*}[t]
+\caption{Unconditional detector outcomes on the same evaluation inputs. Both classes contain 5,000 images on DS and 2,000 on OF. Here FP and FN include all predictions, before abstention; Acc.$_0$ and Acc.$_1$ are true-class accuracies.}
+\label{tab:class_unconditional}
+\centering\small
+\begin{tabular}{llrrrr}
+\toprule
+Detector & Cohort & FP & FN & Acc.$_0$ (\%) & Acc.$_1$ (\%) \\
+\midrule
+EfficientNet & DS & 70 & 108 & 98.60 & 97.84 \\
+EfficientNet & OF & 111 & 789 & 94.45 & 60.55 \\
+CLIP & DS & 228 & 738 & 95.44 & 85.24 \\
+CLIP & OF & 58 & 659 & 97.10 & 67.05 \\
+ResNet-50 & DS & 499 & 470 & 90.02 & 90.60 \\
+ResNet-50 & OF & 175 & 823 & 91.25 & 58.85 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\caption{Class-conditional outcomes at each full selector's archived frozen threshold. Confidence is ranked to the same total accepted count $k$, rather than assigned its own threshold. $k_0,k_1$ are accepted true-class counts, $C_0,C_1$ their class coverages, and $R$ the overall accepted risk. FP and FN have the definitions in main-article Table~\ref{main-tab:class_conditional}.}
+\label{tab:class_frozen}
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lllrrrrrrr}
+\toprule
+Detector & Cohort & Score & $k_0$ & $k_1$ & $C_0$ (\%) & $C_1$ (\%) & FP & FN & $R$ (\%) \\
+\midrule
+EfficientNet & DS & Confidence & 4,912 & 4,895 & 98.24 & 97.90 & 29 & 68 & 0.989 \\
+EfficientNet & DS & Full profile & 4,916 & 4,891 & 98.32 & 97.82 & 36 & 30 & 0.673 \\
+\addlinespace[2pt]
+EfficientNet & OF & Confidence & 1,854 & 1,785 & 92.70 & 89.25 & 49 & 697 & 20.500 \\
+EfficientNet & OF & Full profile & 1,864 & 1,775 & 93.20 & 88.75 & 58 & 617 & 18.549 \\
+\addlinespace[2pt]
+CLIP & DS & Confidence & 3,354 & 1,887 & 67.08 & 37.74 & 11 & 59 & 1.336 \\
+CLIP & DS & Full profile & 3,256 & 1,985 & 65.12 & 39.70 & 10 & 46 & 1.068 \\
+\addlinespace[2pt]
+CLIP & OF & Confidence & 1,445 & 812 & 72.25 & 40.60 & 3 & 147 & 6.646 \\
+CLIP & OF & Full profile & 1,415 & 842 & 70.75 & 42.10 & 3 & 142 & 6.424 \\
+\addlinespace[2pt]
+ResNet-50 & DS & Confidence & 1,339 & 2,511 & 26.78 & 50.22 & 11 & 4 & 0.390 \\
+ResNet-50 & DS & Full profile & 1,227 & 2,623 & 24.54 & 52.46 & 15 & 2 & 0.442 \\
+\addlinespace[2pt]
+ResNet-50 & OF & Confidence & 508 & 390 & 25.40 & 19.50 & 1 & 146 & 16.370 \\
+ResNet-50 & OF & Full profile & 488 & 410 & 24.40 & 20.50 & 1 & 134 & 15.033 \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,255 @@
+{
+  "version": "manuscript-retrospective-ci-v1",
+  "created_utc": "2026-10-30T01:14:45.368896+00:00",
+  "protocol_sha256": "77de14c81b56546b8d98cc894ecb5ae4a3dc3a550c7f1aac92f3a763290c5d4d",
+  "implementation_amendment_sha256": "248a8d637587a4ba897b047ec68c8b57fbc703691b842d70f4229f73da0e5e48",
+  "repetitions": 5000,
+  "seed": 20261030,
+  "direction": "profile minus baseline",
+  "retrospective": true,
+  "comparisons": {
+    "efficientnet_DeepShield": {
+      "n": 10000,
+      "groups": 10000,
+      "detector_errors": 178,
+      "methods": {
+        "frozen_v4": {
+          "aurc": 0.00039998843353799277,
+          "accepted": 9807,
+          "errors": 66,
+          "risk": 0.00672988681553992
+        },
+        "mlp_bahat_logits_s17": {
+          "aurc": 0.0005166684366208835,
+          "accepted": 9807,
+          "errors": 81,
+          "risk": 0.008259406546344448
+        },
+        "mlp_bahat_logits_s29": {
+          "aurc": 0.0005149044608014312,
+          "accepted": 9807,
+          "errors": 80,
+          "risk": 0.008157438564290813
+        },
+        "mlp_bahat_logits_s43": {
+          "aurc": 0.0005124035610248366,
+          "accepted": 9807,
+          "errors": 81,
+          "risk": 0.008259406546344448
+        }
+      },
+      "differences": {
+        "mlp_bahat_logits_s17": {
+          "metric": "risk",
+          "estimate": -0.0015295197308045272,
+          "interval": {
+            "lower_95": -0.0027531355154481497,
+            "upper_95": -0.00030590394616090543,
+            "valid_repetitions": 5000
+          },
+          "estimate_pp": -0.15295197308045272,
+          "interval_pp": {
+            "lower_95": -0.27531355154481496,
+            "upper_95": -0.030590394616090543,
+            "valid_repetitions": 5000
+          },
+          "observed_error_difference": -15,
+          "normalized_error_equivalent_interval": {
+            "lower_95": -27.000000000000004,
+            "upper_95": -2.9999999999999996,
+            "valid_repetitions": 5000
+          },
+          "relative_error_reduction": 0.18518518518518523
+        },
+        "mlp_bahat_logits_s29": {
+          "metric": "risk",
+          "estimate": -0.0014275517487508929,
+          "interval": {
+            "lower_95": -0.0027531355154481497,
+            "upper_95": -0.0002039359641072703,
+            "valid_repetitions": 5000
+          },
+          "estimate_pp": -0.1427551748750893,
+          "interval_pp": {
+            "lower_95": -0.27531355154481496,
+            "upper_95": -0.02039359641072703,
+            "valid_repetitions": 5000
+          },
+          "observed_error_difference": -14,
+          "normalized_error_equivalent_interval": {
+            "lower_95": -27.000000000000004,
+            "upper_95": -1.9999999999999998,
+            "valid_repetitions": 5000
+          },
+          "relative_error_reduction": 0.17500000000000004
+        },
+        "mlp_bahat_logits_s43": {
+          "metric": "risk",
+          "estimate": -0.0015295197308045272,
+          "interval": {
+            "lower_95": -0.0027531355154481497,
+            "upper_95": -0.00030590394616090543,
+            "valid_repetitions": 5000
+          },
+          "estimate_pp": -0.15295197308045272,
+          "interval_pp": {
+            "lower_95": -0.27531355154481496,
+            "upper_95": -0.030590394616090543,
+            "valid_repetitions": 5000
+          },
+          "observed_error_difference": -15,
+          "normalized_error_equivalent_interval": {
+            "lower_95": -27.000000000000004,
+            "upper_95": -2.9999999999999996,
+            "valid_repetitions": 5000
+          },
+          "relative_error_reduction": 0.18518518518518523
+        }
+      },
+      "resample_n_range": [
+        10000,
+        10000
+      ]
+    },
+    "efficientnet_OpenFake": {
+      "n": 4000,
+      "groups": 213,
+      "detector_errors": 900,
+      "methods": {
+        "frozen_v4": {
+          "aurc": 0.1558585735368511,
+          "accepted": 3639,
+          "errors": 675,
+          "risk": 0.18549051937345423
+        },
+        "mlp_bahat_logits_s17": {
+          "aurc": 0.1547597082476865,
+          "accepted": 3639,
+          "errors": 710,
+          "risk": 0.19510854630392965
+        },
+        "mlp_bahat_logits_s29": {
+          "aurc": 0.1604609029432476,
+          "accepted": 3639,
+          "errors": 712,
+          "risk": 0.19565814784281396
+        },
+        "mlp_bahat_logits_s43": {
+          "aurc": 0.14889793357220824,
+          "accepted": 3639,
+          "errors": 712,
+          "risk": 0.19565814784281396
+        }
+      },
+      "differences": {
+        "mlp_bahat_logits_s17": {
+          "metric": "risk",
+          "estimate": -0.00961802693047542,
+          "interval": {
+            "lower_95": -0.013395798423083034,
+            "upper_95": -0.00507027986716021,
+            "valid_repetitions": 5000
+          },
+          "estimate_pp": -0.9618026930475421,
+          "interval_pp": {
+            "lower_95": -1.3395798423083036,
+            "upper_95": -0.507027986716021,
+            "valid_repetitions": 5000
+          },
+          "observed_error_difference": -35,
+          "normalized_error_equivalent_interval": {
+            "lower_95": -48.74731046159916,
+            "upper_95": -18.450748436596005,
+            "valid_repetitions": 5000
+          },
+          "relative_error_reduction": 0.04929577464788737
+        },
+        "mlp_bahat_logits_s29": {
+          "metric": "risk",
+          "estimate": -0.01016762846935973,
+          "interval": {
+            "lower_95": -0.014265834054026559,
+            "upper_95": -0.005852544422633597,
+            "valid_repetitions": 5000
+          },
+          "estimate_pp": -1.0167628469359729,
+          "interval_pp": {
+            "lower_95": -1.426583405402656,
+            "upper_95": -0.5852544422633597,
+            "valid_repetitions": 5000
+          },
+          "observed_error_difference": -37,
+          "normalized_error_equivalent_interval": {
+            "lower_95": -51.91337012260265,
+            "upper_95": -21.29740915396366,
+            "valid_repetitions": 5000
+          },
+          "relative_error_reduction": 0.051966292134831504
+        },
+        "mlp_bahat_logits_s43": {
+          "metric": "risk",
+          "estimate": -0.01016762846935973,
+          "interval": {
+            "lower_95": -0.013877186923108393,
+            "upper_95": -0.006043786582844255,
+            "valid_repetitions": 5000
+          },
+          "estimate_pp": -1.0167628469359729,
+          "interval_pp": {
+            "lower_95": -1.3877186923108393,
+            "upper_95": -0.6043786582844255,
+            "valid_repetitions": 5000
+          },
+          "observed_error_difference": -37,
+          "normalized_error_equivalent_interval": {
+            "lower_95": -50.49908321319145,
+            "upper_95": -21.993339374970244,
+            "valid_repetitions": 5000
+          },
+          "relative_error_reduction": 0.051966292134831504
+        }
+      },
+      "resample_n_range": [
+        3486,
+        4438
+      ]
+    },
+    "clip_OpenFake": {
+      "n": 4000,
+      "groups": 84,
+      "detector_errors": 2370,
+      "methods": {
+        "lr_full": {
+          "aurc": 0.5963705514922268
+        },
+        "lr_confidence": {
+          "aurc": 0.5398096441105853
+        }
+      },
+      "differences": {
+        "lr_confidence": {
+          "metric": "aurc",
+          "estimate": 0.056560907381641545,
+          "interval": {
+            "lower_95": 0.03783352637354894,
+            "upper_95": 0.07489374218629956,
+            "valid_repetitions": 5000
+          }
+        }
+      },
+      "resample_n_range": [
+        3310,
+        4840
+      ]
+    }
+  },
+  "validation": {
+    "archived_source_hashes_verified": true,
+    "source_hashes_unchanged_after_computation": true,
+    "fixed_detector_errors_verified": true,
+    "original_point_estimates_reproduced": true,
+    "original_implementations_cross_checked": true,
+    "numerical_tolerance_aurc": 1e-14
+  },
+  "elapsed_seconds": 6.9445369000022765
+}

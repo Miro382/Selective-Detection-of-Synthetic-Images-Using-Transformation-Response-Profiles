@@ -1,0 +1,213 @@
+{
+  "version": "class-conditional-inputs-v1",
+  "retrospective": true,
+  "new_independent_test": false,
+  "label_convention": "0 real, 1 synthetic; predictions retained from original frozen detector.",
+  "anonymization": "Image and group identifiers are namespace-prefixed SHA-256 digests; tie_key is the exact original namespace-prefixed digest, preserving original tie order. No image pixels, original paths, original IDs, or model weights are distributed.",
+  "entries": [
+    {
+      "detector": "efficientnet",
+      "cohort": "DeepShield",
+      "file": "efficientnet_DeepShield.csv.gz",
+      "sha256": "b863b3e6930b7df8abbedd49cd5b8eaee5abd86d836046e7a20582f19c1877f5",
+      "images": 10000,
+      "groups": 10000,
+      "frozen_threshold": 0.08632226578702012,
+      "tie_namespace": "comparison-tie-v1/",
+      "original_k": 9807,
+      "expected": {
+        "unconditional_errors": 178,
+        "original_matched": {
+          "full": {
+            "accepted": 9807,
+            "errors": 66
+          },
+          "confidence": {
+            "accepted": 9807,
+            "errors": 97
+          }
+        },
+        "frozen_threshold": {
+          "full": {
+            "accepted": 9807,
+            "errors": 66
+          },
+          "confidence": {
+            "accepted": 9807,
+            "errors": 97
+          }
+        }
+      }
+    },
+    {
+      "detector": "efficientnet",
+      "cohort": "OpenFake",
+      "file": "efficientnet_OpenFake.csv.gz",
+      "sha256": "16a284e81f5ffc1cd47c77a466f0982acfcf43ff1cbeb789b1c01ef7fd8b871d",
+      "images": 4000,
+      "groups": 213,
+      "frozen_threshold": 0.08632226578702012,
+      "tie_namespace": "comparison-tie-v1/",
+      "original_k": 3639,
+      "expected": {
+        "unconditional_errors": 900,
+        "original_matched": {
+          "full": {
+            "accepted": 3639,
+            "errors": 675
+          },
+          "confidence": {
+            "accepted": 3639,
+            "errors": 746
+          }
+        },
+        "frozen_threshold": {
+          "full": {
+            "accepted": 3639,
+            "errors": 675
+          },
+          "confidence": {
+            "accepted": 3639,
+            "errors": 746
+          }
+        }
+      }
+    },
+    {
+      "detector": "clip",
+      "cohort": "DeepShield",
+      "file": "clip_DeepShield.csv.gz",
+      "sha256": "901ad07f927e2c382968b371999738cae02fcdb84ae37a3d97a9397b5bfb586a",
+      "images": 10000,
+      "groups": 10000,
+      "frozen_threshold": 0.040171224108963344,
+      "tie_namespace": "article-detector-tie-v1/",
+      "original_k": 9807,
+      "expected": {
+        "unconditional_errors": 966,
+        "original_matched": {
+          "full": {
+            "accepted": 9807,
+            "errors": 845
+          },
+          "confidence": {
+            "accepted": 9807,
+            "errors": 875
+          }
+        },
+        "frozen_threshold": {
+          "full": {
+            "accepted": 5241,
+            "errors": 56
+          },
+          "confidence": {
+            "accepted": 5241,
+            "errors": 70
+          }
+        }
+      }
+    },
+    {
+      "detector": "clip",
+      "cohort": "OpenFake",
+      "file": "clip_OpenFake.csv.gz",
+      "sha256": "35886085a1c19d5ae36f2facd2936ea126b90dae21064471e1985dceb4fb8bc4",
+      "images": 4000,
+      "groups": 213,
+      "frozen_threshold": 0.040171224108963344,
+      "tie_namespace": "article-detector-tie-v1/",
+      "original_k": 3639,
+      "expected": {
+        "unconditional_errors": 717,
+        "original_matched": {
+          "full": {
+            "accepted": 3639,
+            "errors": 536
+          },
+          "confidence": {
+            "accepted": 3639,
+            "errors": 548
+          }
+        },
+        "frozen_threshold": {
+          "full": {
+            "accepted": 2257,
+            "errors": 145
+          },
+          "confidence": {
+            "accepted": 2257,
+            "errors": 150
+          }
+        }
+      }
+    },
+    {
+      "detector": "resnet50",
+      "cohort": "DeepShield",
+      "file": "resnet50_DeepShield.csv.gz",
+      "sha256": "56d3297861a64fe9c46d51d52ec27ff807fc4ee5b56a31d0784b8ce835662cf2",
+      "images": 10000,
+      "groups": 10000,
+      "frozen_threshold": 0.03467626730024773,
+      "tie_namespace": "article-detector-tie-v1/",
+      "original_k": 9807,
+      "expected": {
+        "unconditional_errors": 969,
+        "original_matched": {
+          "full": {
+            "accepted": 9807,
+            "errors": 873
+          },
+          "confidence": {
+            "accepted": 9807,
+            "errors": 877
+          }
+        },
+        "frozen_threshold": {
+          "full": {
+            "accepted": 3850,
+            "errors": 17
+          },
+          "confidence": {
+            "accepted": 3850,
+            "errors": 15
+          }
+        }
+      }
+    },
+    {
+      "detector": "resnet50",
+      "cohort": "OpenFake",
+      "file": "resnet50_OpenFake.csv.gz",
+      "sha256": "061e01d4f15b451c91d57c98e3d6754e06da769018e0094b21cc6117628c22ce",
+      "images": 4000,
+      "groups": 213,
+      "frozen_threshold": 0.03467626730024773,
+      "tie_namespace": "article-detector-tie-v1/",
+      "original_k": 3639,
+      "expected": {
+        "unconditional_errors": 998,
+        "original_matched": {
+          "full": {
+            "accepted": 3639,
+            "errors": 818
+          },
+          "confidence": {
+            "accepted": 3639,
+            "errors": 837
+          }
+        },
+        "frozen_threshold": {
+          "full": {
+            "accepted": 898,
+            "errors": 135
+          },
+          "confidence": {
+            "accepted": 898,
+            "errors": 147
+          }
+        }
+      }
+    }
+  ]
+}

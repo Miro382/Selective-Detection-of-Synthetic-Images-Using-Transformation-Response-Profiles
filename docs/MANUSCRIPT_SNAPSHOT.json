@@ -1,0 +1,13 @@
+{
+  "title": "Selective Detection of Synthetic Images Using Transformation Response Profiles",
+  "snapshot_date": "2026-11-03",
+  "status": "unpublished manuscript; no public repository identifier assigned",
+  "files_sha256": {
+    "access.tex": "4121433f79ad2c0f22bc5ad0c95277b6b75270047f5be0d1392697bd3cb98ca7",
+    "access.pdf": "547361ddbfede917384f508e6f6f8eb9ddcc2478da486681f89aa43b0e296fc6",
+    "supplementary.tex": "72efbcc4b931d76be1fa8edbbb267fe3235b54a3c45f74eeb9d808d767f45570",
+    "supplementary.pdf": "c4d0fb0bbb649b67951bc83cb497d5279c66743d200236b3018f8b95006f767a",
+    "references.bib": "c9340077a5aa39ee169250b78ddc3b4ff9d65e3d82469631f8f17352bfd40b85"
+  },
+  "note": "The manuscript is identified by these fingerprints and is not redistributed in this package. Later editorial changes need not alter numerical experiment outputs."
+}

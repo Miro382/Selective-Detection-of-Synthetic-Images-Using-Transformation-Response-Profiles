@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\caption{Retrospective paired intervals at the original matched coverage. Differences are full profile minus Bahat-style adaptation. The original sample uses the displayed $k$; each bootstrap replicate uses $\lfloor (k/N)N^{(b)}\rfloor$ for both methods. Intervals are pointwise 95\% from 5,000 whole-group replicates (seed 20261030). Risk differences are percentage points; negative values favor the full selector.}
+\label{tab:matchedci}
+\centering\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Cohort & $k$ & Seed & Errors: full / reference & $\Delta$ risk & 95\% interval \\
+\midrule
+DS (in-domain held-out) & 9,807 & 17 & 66 / 81 & $-0.15295$ & $[-0.27531,-0.03059]$ \\
+ & 9,807 & 29 & 66 / 80 & $-0.14276$ & $[-0.27531,-0.02039]$ \\
+ & 9,807 & 43 & 66 / 81 & $-0.15295$ & $[-0.27531,-0.03059]$ \\
+OF (cross-dataset) & 3,639 & 17 & 675 / 710 & $-0.96180$ & $[-1.33958,-0.50703]$ \\
+ & 3,639 & 29 & 675 / 712 & $-1.01676$ & $[-1.42658,-0.58525]$ \\
+ & 3,639 & 43 & 675 / 712 & $-1.01676$ & $[-1.38772,-0.60438]$ \\
+\bottomrule
+\end{tabular}
+\end{table*}

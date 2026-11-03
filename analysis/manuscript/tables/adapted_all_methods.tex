@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\caption{All six selection methods after detector adaptation. Each cell gives unscaled AURC / accepted errors at matched $k$: 3,639 for OpenFake (OF), 9,807 for DeepShield (DS). The JPEG-only and resize-only representations are ablations. Point estimates against these ablations and TTA are descriptive; the paired intervals in the main article compare the full profile with confidence and learned confidence.}
+\label{tab:adapted_all_methods}
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+ & \multicolumn{2}{c}{CLIP} & \multicolumn{2}{c}{ResNet-50} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Selector & OF & DS & OF & DS \\
+\midrule
+Confidence & 0.072769 / 548 & 0.022486 / 875 & 0.186839 / 837 & 0.019979 / 877 \\
+TTA mean & 0.076964 / 569 & 0.024082 / 899 & 0.193315 / 860 & 0.021378 / 893 \\
+Full profile & 0.071005 / 536 & 0.019565 / 845 & 0.178671 / 818 & 0.019445 / 873 \\
+Learned confidence & 0.072769 / 548 & 0.022486 / 875 & 0.186839 / 837 & 0.019979 / 877 \\
+JPEG-only & 0.070345 / 540 & 0.022039 / 865 & 0.178428 / 813 & 0.019416 / 871 \\
+Resize-only & 0.072607 / 540 & 0.019952 / 849 & 0.186902 / 847 & 0.020019 / 882 \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,82 @@
+DATA SOURCES AND ACCESS
+
+This repository distributes numerical experimental outputs, source code,
+configuration, and provenance fingerprints. It does not distribute dataset
+images, thumbnails, source-image filenames, prompts, identity annotations,
+downloaded dataset archives, or pretrained detector weights.
+
+Stored scores support analysis of the recorded predictions. They do not replace
+the original images for training, detector inference, or a new content-overlap
+audit. Opaque sample and group identifiers preserve pairing and resampling
+structure; they are not an image-retrieval manifest. A source hash identifies
+an archived artifact and does not establish public availability of that artifact.
+
+MAIN COHORTS
+
+DeepShield, version 1.0, Truebees Srl (2025)
+Provider: https://zenodo.org/records/15648378
+DOI: https://doi.org/10.5281/zenodo.15648378
+The provider describes the dataset as CC BY 4.0. The experiments used PreSocial
+images. DeepShield contributed to detector adaptation and selector fitting,
+so its principal evaluation cohort is an in-domain held-out test.
+The independent ablation uses newly selected images from the same source.
+
+OpenFake, Complex Data Lab
+Provider: https://huggingface.co/datasets/ComplexDataLab/OpenFake
+Archived experiment revision: 3247b942f18d39d1fd476b1077852af033d35d8c
+Paper: https://arxiv.org/abs/2509.09495
+The current provider card labels the dataset CC BY-NC 4.0. The experimental
+revision is recorded separately because the dataset can change. OpenFake is
+the principal cross-dataset test relative to the documented fitting sources.
+Later reference and adapted-detector analyses reuse the original test cohort;
+they are not additional independently sampled replications. The independent
+ablation uses its separately audited 6,000-image OpenFake cohort.
+
+ADDITIONAL TRAINING AND HISTORICAL EVALUATION SOURCES
+
+CelebA, Chinese University of Hong Kong
+Provider: https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
+The provider limits access to non-commercial research and prohibits further
+publication or distribution of dataset portions. Original In-The-Wild images
+and identity annotations must be obtained from the provider. The detector
+training configuration uses identity-aware selection; those images and
+annotations are not included here.
+
+Community Forensics evaluation set, Owens Lab
+Provider: https://huggingface.co/datasets/OwensLab/CommunityForensics-Eval
+Archived experiment revision: 7d4a74a88d2cac93b513c0853bf92c260eaceea0
+Paper: https://arxiv.org/abs/2411.04125
+The current provider card labels the evaluation set CC BY-NC-SA 4.0 and
+describes non-commercial research and educational use. Its real-image sources
+have their own provenance. It appears in the historical evaluations and
+fixed-checkpoint stress tests, rather than the principal OpenFake comparison.
+
+Synthbuster, Quentin Bammey
+Provider: https://zenodo.org/records/10066460
+Paper: https://doi.org/10.1109/OJSP.2023.3337714
+The provider distributes synthetic images from nine generators and describes
+their relationship to RAISE-1k source images. Obtain the images and their
+applicable terms directly from the provider. No Synthbuster images or prompts
+are included in this repository.
+
+RAISE, University of Trento
+Provider: https://loki.disi.unitn.it/RAISE/
+The provider supplies the real images used with Synthbuster in historical
+evaluations and requests citation of the RAISE study. Obtain the dataset
+separately; no RAW files, JPEG derivatives, or source metadata are bundled.
+
+Earlier local detector training
+The local development archive includes an AI-vs-human-generated collection
+obtained through Kaggle and earlier checkpoints whose complete training-source
+provenance is not recoverable from this release. Historical aggregates are
+retained with that limitation. The repository does not claim complete source
+independence for those earlier checkpoints or distribute that collection.
+
+ACCESS AND REDISTRIBUTION
+
+Provider pages were checked on 3 November 2026. The license labels above report
+what those pages state; they do not grant rights to underlying third-party
+photographs or to later dataset versions. Consult the provider's current terms
+before obtaining or using any dataset. Numerical verification does not download
+images. A complete training rerun requires
+separately obtained data and the corresponding experiment inputs.

@@ -1,0 +1,10 @@
+{
+  "spec": {
+    "id": "tta_mean",
+    "kind": "baseline"
+  },
+  "protocol_sha256": "c42d9a3457aff3b7ba70ad11ef9f6d67e92602e292e339e87eccfeaa46a40eab",
+  "selection_aurc": 0.0010831644983292001,
+  "threshold": 0.13555534120382898,
+  "threshold_status": "development_only_not_certified"
+}

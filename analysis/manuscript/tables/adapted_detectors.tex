@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\caption{Detector adaptation on the V4 training manifest: unconditional test accuracy and area under the receiver operating characteristic curve (AUROC) before and after adaptation. Each checkpoint pair uses identical test images and the same detector-specific preprocessing. OF: 4,000 cross-dataset images; DS: 10,000 in-domain held-out images. The selected checkpoint is epoch 10 for both detectors.}
+\label{tab:adapted_detectors}
+\centering\small
+\begin{tabular}{llrrrr}
+\toprule
+ & & \multicolumn{2}{c}{Accuracy (\%)} & \multicolumn{2}{c}{AUROC} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+Detector & Cohort & Initial & Adapted & Initial & Adapted \\
+\midrule
+CLIP & OF & 49.93 & 82.08 & 0.581440 & 0.932651 \\
+CLIP & DS & 58.65 & 90.34 & 0.755493 & 0.971955 \\
+ResNet-50 & OF & 49.05 & 75.05 & 0.386770 & 0.807439 \\
+ResNet-50 & DS & 51.36 & 90.31 & 0.709616 & 0.967585 \\
+\bottomrule
+\end{tabular}
+\end{table*}

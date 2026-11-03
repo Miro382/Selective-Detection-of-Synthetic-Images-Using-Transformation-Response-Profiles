@@ -1,0 +1,14 @@
+\begin{table*}[t]
+\caption{Retrospective deletion sensitivity for the independent OpenFake ablation. AURC and accepted-error pairs are full / resize-only; risk differences are resize-only minus full, in percentage points. Each retained sample is reranked and both methods accept $\lfloor(3639/4000)N\rfloor$ cases. These are descriptive results, without new intervals or a revised replacement decision.}
+\label{tab:cluster_sensitivity}
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrcrr}
+\toprule
+Sample & Images & Groups & Accepted & AURC: full / resize & Errors: full / resize & $\Delta$ risk \\
+\midrule
+Complete OF sample & 6,000 & 43 & 5,458 & 0.151762 / 0.142305 & 994 / 986 & -0.1466 \\
+Largest group omitted & 2,588 & 42 & 2,354 & 0.160656 / 0.151048 & 436 / 438 & +0.0850 \\
+\bottomrule
+\end{tabular}
+\end{table*}

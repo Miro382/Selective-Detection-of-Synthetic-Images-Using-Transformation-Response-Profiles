@@ -1,0 +1,497 @@
+{
+  "schema": "historical-selector-transfer-v1",
+  "scope": "Historical development diagnostics, separate from the later frozen-selector confirmation cohorts. No new training, inference, or bootstrap.",
+  "new_training": false,
+  "new_inference": false,
+  "new_bootstrap": false,
+  "cohorts": {
+    "CF": {
+      "run": "external_communityforensics_v4_20261016",
+      "n": 4000,
+      "groups": 226,
+      "profiles": 12000,
+      "conditions": {
+        "clean": {
+          "aurc": {
+            "selector_v4": 0.05853741102125716,
+            "confidence": 0.05520838803767575,
+            "tta_mean": 0.06471723045391514,
+            "max_shift": 0.08965497011404343
+          },
+          "detector_accuracy": 0.83975,
+          "paired_delta_aurc": {
+            "estimate": 0.0033290229835814117,
+            "ci_95": [
+              -0.0036993912488449067,
+              0.010912245390111833
+            ],
+            "valid_replicates": 2000,
+            "invalid_replicates": 0
+          },
+          "full": {
+            "total": 4000,
+            "accepted": 3324,
+            "review": 676,
+            "coverage": 0.831,
+            "errors": 374,
+            "risk": 0.1125150421179302,
+            "threshold": 0.08632226578702012
+          },
+          "matched_confidence": {
+            "total": 4000,
+            "accepted": 3324,
+            "review": 676,
+            "coverage": 0.831,
+            "errors": 363,
+            "risk": 0.1092057761732852,
+            "threshold": null,
+            "selection": "descriptive_rank",
+            "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+          }
+        },
+        "jpeg_q40": {
+          "aurc": {
+            "selector_v4": 0.12196761491492505,
+            "confidence": 0.1224547032708947,
+            "tta_mean": 0.1172133827751771,
+            "max_shift": 0.14381574468230202
+          },
+          "detector_accuracy": 0.74725,
+          "paired_delta_aurc": {
+            "estimate": -0.0004870883559696393,
+            "ci_95": [
+              -0.015259538441085232,
+              0.01269586184735375
+            ],
+            "valid_replicates": 2000,
+            "invalid_replicates": 0
+          },
+          "full": {
+            "total": 4000,
+            "accepted": 3097,
+            "review": 903,
+            "coverage": 0.77425,
+            "errors": 607,
+            "risk": 0.1959961252825315,
+            "threshold": 0.08632226578702012
+          },
+          "matched_confidence": {
+            "total": 4000,
+            "accepted": 3097,
+            "review": 903,
+            "coverage": 0.77425,
+            "errors": 610,
+            "risk": 0.19696480464966096,
+            "threshold": null,
+            "selection": "descriptive_rank",
+            "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+          }
+        },
+        "resize_0p5": {
+          "aurc": {
+            "selector_v4": 0.09193391937081946,
+            "confidence": 0.07382924085231697,
+            "tta_mean": 0.07738581266002742,
+            "max_shift": 0.10601504913229906
+          },
+          "detector_accuracy": 0.81025,
+          "paired_delta_aurc": {
+            "estimate": 0.01810467851850249,
+            "ci_95": [
+              0.01143345361847164,
+              0.02581376915118832
+            ],
+            "valid_replicates": 2000,
+            "invalid_replicates": 0
+          },
+          "full": {
+            "total": 4000,
+            "accepted": 3415,
+            "review": 585,
+            "coverage": 0.85375,
+            "errors": 608,
+            "risk": 0.1780380673499268,
+            "threshold": 0.08632226578702012
+          },
+          "matched_confidence": {
+            "total": 4000,
+            "accepted": 3415,
+            "review": 585,
+            "coverage": 0.85375,
+            "errors": 497,
+            "risk": 0.14553440702781845,
+            "threshold": null,
+            "selection": "descriptive_rank",
+            "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+          }
+        }
+      },
+      "protocol_summary": {
+        "temperature": 2.5451689020139714,
+        "detector_threshold": 0.5,
+        "research_threshold": 0.08632226578702012,
+        "deployment_threshold": 0.08632226578702012,
+        "confidence_threshold": 0.07953369430249872,
+        "target_risk": 0.02,
+        "bootstrap_replicates": 2000,
+        "seed": 20261016,
+        "expected_conditions": [
+          "clean",
+          "jpeg_q40",
+          "resize_0p5"
+        ],
+        "scope": "Nový externý zdroj vybraný po zmrazení V4. COCO/LAION časti CommunityForensics-Eval; zistené prekryvy so známymi historickými súbormi sa vylúčili bez modelových skóre. Nezaručuje neexistenciu neznámych prienikov s predtrénovaním ani univerzálnu nezávislosť generátorov. FFHQ a RAISE sa nepoužívajú. Bootstrap zachováva výberové Parquet bloky (shard, row_group); ide o aproximačný blokový interval, nie presný dizajnový interval celej populácie benchmarku. Hodnotí komponenty, nie účinnosť celej multimodálnej aplikácie.",
+        "primary_condition": "clean",
+        "primary_statistic": "delta_aurc_selector_v4_minus_confidence",
+        "aurc_integration": "pravý krok po celých blokoch rovnakého skóre"
+      }
+    },
+    "OF_A": {
+      "run": "external_openfake_v5",
+      "n": 4000,
+      "groups": 85,
+      "profiles": 12000,
+      "conditions": {
+        "clean": {
+          "aurc": {
+            "selector_v4": 0.16408402155123977,
+            "selector_v5": 0.20329912251499316,
+            "confidence": 0.20329912251499316,
+            "profile_candidate": 0.20255785158056208
+          },
+          "detector_accuracy": 0.7765,
+          "paired_delta_aurc": {
+            "estimate": -0.039215100963753385,
+            "ci_95": [
+              -0.045838538791332206,
+              -0.031553293177064526
+            ],
+            "valid_replicates": 2000,
+            "invalid_replicates": 0,
+            "exact_score_identity": false
+          },
+          "full": {
+            "total": 4000,
+            "accepted": 3649,
+            "review": 351,
+            "coverage": 0.91225,
+            "errors": 682,
+            "risk": 0.18690052069060017,
+            "threshold": 0.08632226578702012
+          },
+          "matched_confidence": {
+            "total": 4000,
+            "accepted": 3649,
+            "review": 351,
+            "coverage": 0.91225,
+            "errors": 748,
+            "risk": 0.20498766785420663,
+            "threshold": null,
+            "selection": "descriptive_rank",
+            "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+          }
+        },
+        "jpeg_q40": {
+          "aurc": {
+            "selector_v4": 0.18347238739144947,
+            "selector_v5": 0.20926383123994038,
+            "confidence": 0.20926383123994038,
+            "profile_candidate": 0.20885845972724837
+          },
+          "detector_accuracy": 0.7615,
+          "paired_delta_aurc": {
+            "estimate": -0.025791443848490914,
+            "ci_95": [
+              -0.02996507041416531,
+              -0.021194813162521062
+            ],
+            "valid_replicates": 2000,
+            "invalid_replicates": 0,
+            "exact_score_identity": false
+          },
+          "full": {
+            "total": 4000,
+            "accepted": 3681,
+            "review": 319,
+            "coverage": 0.92025,
+            "errors": 792,
+            "risk": 0.21515892420537897,
+            "threshold": 0.08632226578702012
+          },
+          "matched_confidence": {
+            "total": 4000,
+            "accepted": 3681,
+            "review": 319,
+            "coverage": 0.92025,
+            "errors": 831,
+            "risk": 0.22575387123064386,
+            "threshold": null,
+            "selection": "descriptive_rank",
+            "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+          }
+        },
+        "resize_0p5": {
+          "aurc": {
+            "selector_v4": 0.11763720556071416,
+            "selector_v5": 0.13514696041822738,
+            "confidence": 0.13514696041822738,
+            "profile_candidate": 0.1345983907273604
+          },
+          "detector_accuracy": 0.80325,
+          "paired_delta_aurc": {
+            "estimate": -0.017509754857513216,
+            "ci_95": [
+              -0.02148117117802847,
+              -0.013199255023469665
+            ],
+            "valid_replicates": 2000,
+            "invalid_replicates": 0,
+            "exact_score_identity": false
+          },
+          "full": {
+            "total": 4000,
+            "accepted": 3695,
+            "review": 305,
+            "coverage": 0.92375,
+            "errors": 624,
+            "risk": 0.1688768606224628,
+            "threshold": 0.08632226578702012
+          },
+          "matched_confidence": {
+            "total": 4000,
+            "accepted": 3695,
+            "review": 305,
+            "coverage": 0.92375,
+            "errors": 655,
+            "risk": 0.17726657645466848,
+            "threshold": null,
+            "selection": "descriptive_rank",
+            "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+          }
+        }
+      },
+      "protocol_summary": {
+        "temperature": 2.5451689020139714,
+        "detector_threshold": 0.5,
+        "thresholds": {
+          "selector_v4": {
+            "research": 0.08632226578702012,
+            "deployment": 0.08632226578702012
+          },
+          "selector_v5": {
+            "research": -1.0,
+            "deployment": -1.0
+          },
+          "confidence": {
+            "research": -1.0
+          }
+        },
+        "expected_conditions": [
+          "clean",
+          "jpeg_q40",
+          "resize_0p5"
+        ],
+        "selected_v5_id": "confidence",
+        "profile_candidate_id": "symmetric_profile_b0p5_l210",
+        "target_risk": 0.02,
+        "bootstrap_replicates": 2000,
+        "bootstrap_units": [
+          "group",
+          "original_id"
+        ],
+        "seed": 20261017,
+        "scope": "Nový externý výber OpenFake core/test po zmrazení V5: iba reálne DOCCI a päť vopred určených obrazových generátorov. Pomer tried 1:1 a zdrojové kvóty nevyjadrujú bežnú prevádzkovú početnosť. Štítky sú prevzaté od autorov zbierky. Známe obsahové a promptové zhody s vývojovými dátami boli vylúčené; úplný pôvod predtrénovania a skryté vzťahy nemožno zaručiť. Hodnotí detektor a selektory, nie účinnosť celej multimodálnej aplikácie.",
+        "primary_condition": "clean",
+        "primary_statistic": "delta_aurc_selector_v5_minus_confidence",
+        "aurc_integration": "pravý krok po celých blokoch rovnakého skóre",
+        "profile_candidate_role": "secondary_exploratory_prefrozen_not_deployed_v5"
+      }
+    }
+  },
+  "v5": {
+    "chosen_id": "confidence",
+    "training_rows": 59600,
+    "training_groups": 7450,
+    "training_sampling_clusters": 5123,
+    "training_error_groups": 1113,
+    "selection_rows": 4947,
+    "selection_origins": 1649,
+    "selection_blocks": 82,
+    "grid": [
+      {
+        "id": "confidence",
+        "family": "confidence",
+        "bound": 0.0,
+        "l2": null
+      },
+      {
+        "id": "confidence_class_b1_l21",
+        "family": "confidence_class",
+        "bound": 1.0,
+        "l2": 1.0
+      },
+      {
+        "id": "confidence_class_b2_l210",
+        "family": "confidence_class",
+        "bound": 2.0,
+        "l2": 10.0
+      },
+      {
+        "id": "symmetric_profile_b0p5_l21",
+        "family": "symmetric_profile",
+        "bound": 0.5,
+        "l2": 1.0
+      },
+      {
+        "id": "symmetric_profile_b0p5_l210",
+        "family": "symmetric_profile",
+        "bound": 0.5,
+        "l2": 10.0
+      },
+      {
+        "id": "symmetric_profile_b1_l21",
+        "family": "symmetric_profile",
+        "bound": 1.0,
+        "l2": 1.0
+      },
+      {
+        "id": "symmetric_profile_b1_l210",
+        "family": "symmetric_profile",
+        "bound": 1.0,
+        "l2": 10.0
+      },
+      {
+        "id": "symmetric_profile_b2_l21",
+        "family": "symmetric_profile",
+        "bound": 2.0,
+        "l2": 1.0
+      },
+      {
+        "id": "symmetric_profile_b2_l210",
+        "family": "symmetric_profile",
+        "bound": 2.0,
+        "l2": 10.0
+      },
+      {
+        "id": "class_profile_b0p5_l21",
+        "family": "class_profile",
+        "bound": 0.5,
+        "l2": 1.0
+      },
+      {
+        "id": "class_profile_b0p5_l210",
+        "family": "class_profile",
+        "bound": 0.5,
+        "l2": 10.0
+      },
+      {
+        "id": "class_profile_b1_l21",
+        "family": "class_profile",
+        "bound": 1.0,
+        "l2": 1.0
+      },
+      {
+        "id": "class_profile_b1_l210",
+        "family": "class_profile",
+        "bound": 1.0,
+        "l2": 10.0
+      },
+      {
+        "id": "class_profile_b2_l21",
+        "family": "class_profile",
+        "bound": 2.0,
+        "l2": 1.0
+      },
+      {
+        "id": "class_profile_b2_l210",
+        "family": "class_profile",
+        "bound": 2.0,
+        "l2": 10.0
+      }
+    ],
+    "defaults": {
+      "seed": 20261016,
+      "max_source_folds": 5,
+      "bootstrap_repetitions": 5000,
+      "selection_familywise_alpha": 0.05,
+      "maximum_source_aurc_regret": 0.005,
+      "maximum_condition_aurc_regret": 0.002,
+      "minimum_bootstrap_clusters": 30,
+      "target_risk": 0.02,
+      "selection_risk": 0.01,
+      "delta": 0.05,
+      "min_coverage": 0.1,
+      "minimum_accepted": 30,
+      "selection_criterion": "minimum_class_balanced_source_macro_oof_aurc_then_candidate_id_with_prespecified_gates",
+      "weighting": "half_real_half_fake_then_equal_source_domains_then_equal_origin_groups_then_variants"
+    },
+    "best_profile_id": "symmetric_profile_b0p5_l210",
+    "confidence_oof_source_macro_aurc": 0.04600974534847341,
+    "best_profile_oof_source_macro_aurc": 0.04740843223783662,
+    "development_comparison": {
+      "confidence": {
+        "source_macro_aurc": 0.09226334491489485,
+        "worst_source_aurc": 0.32323319234428466,
+        "group_weighted_aurc": 0.09647343649736889
+      },
+      "selector_v4": {
+        "source_macro_aurc": 0.10528558352422111,
+        "worst_source_aurc": 0.2716231542700227,
+        "group_weighted_aurc": 0.10556618210255748
+      },
+      "selector_v5": {
+        "source_macro_aurc": 0.09226334491489485,
+        "worst_source_aurc": 0.32323319234428466,
+        "group_weighted_aurc": 0.09647343649736889
+      }
+    },
+    "threshold_selection": {
+      "target_risk": 0.01,
+      "min_coverage": 0.1,
+      "total_weight": 82.0,
+      "criterion": "empirical_weighted_risk_not_certified",
+      "accept_rule": "score <= tau",
+      "feasible": false,
+      "tau": -1.0,
+      "coverage": 0.0,
+      "risk": null,
+      "accepted_weight": 0.0,
+      "error_weight": 0.0,
+      "accepted_positive_weight_rows": 0
+    },
+    "calibration": {
+      "status": "failed_certification",
+      "total": 300,
+      "accepted": 0,
+      "review": 300,
+      "coverage": 0.0,
+      "errors": 0,
+      "risk": null,
+      "risk_upper_bound": 1.0,
+      "target_risk": 0.02,
+      "confidence": 0.95,
+      "minimum_accepted": 30,
+      "research_threshold": -1.0,
+      "accept_threshold": -1.0,
+      "evaluated_utc": "2026-10-16T17:42:19.363603+00:00",
+      "calibration_digest": "463ad66b89c42cf403d9d465fa0770bdf889166982354ac21f3d41eb64a26eb4",
+      "calibration_unit": "one_origin_per_heldout_parquet_block",
+      "sampling_assumption": "Podmienené binomické overenie predpokladá nezávislé, rovnako rozdelené pozorovania z cieľovej zmesi náhodných reprezentantov vynechaných blokov. Jeden originál a jeden vopred určený variant pripadá na blok. Nejde o garanciu pre ľubovoľný internetový obrázok, inú zmes zdrojov ani ďalší posun distribúcie.",
+      "scope": "Jedno zmrazené pravidlo, jeden obrázok a jedna podmienka z každého vynechaného Parquet bloku. Clopperova–Pearsonova hranica platí pod uvedeným predpokladom nezávislých reprezentantov cieľovej zmesi; nejde o záruku pri ľubovoľnom posune distribúcie."
+    }
+  },
+  "source_sha256": {
+    "archive\\selective_experiments\\external_communityforensics_v4_20261016\\reports\\results.json": "17df1833ea1c2c2e60805f4c215aca5cc0e751d496256117bcd5167a497e416d",
+    "archive\\selective_experiments\\external_communityforensics_v4_20261016\\complete.json": "e39625640733301cd6411e8b577e29f91041b5de081817a82c7a3c6a8fb389e3",
+    "archive\\selective_experiments\\external_communityforensics_v4_20261016\\protocol.json": "a0d73cf5c00dab485b9b1513f5b66ec827752d27e6e992a4f2feafae544185ba",
+    "archive\\selective_experiments\\external_openfake_v5\\reports\\results.json": "9c5a7157b2c70f9733810a4f450c333cae5934a2349bb5168c446e9385750807",
+    "archive\\selective_experiments\\external_openfake_v5\\complete.json": "cfb7fd313f6eb95dd6e5d48413c35c2339b5bd3e261661c26023db6ceb4d1cd8",
+    "archive\\selective_experiments\\external_openfake_v5\\protocol.json": "6ad7bf0c9b768ed7aff850299d45c42bc6c92b10dd33dfde597c717e29dfdcad",
+    "archive\\selective_experiments\\experiment_v5\\selector_training_v5\\development_results.json": "62707ef5585c18e0513b0ddcf201125887b2794c6a9b4f1ee78f0d80208fcef2",
+    "archive\\selective_experiments\\experiment_v5\\selector_training_v5\\protocol.json": "460cb319762e40f78b90bf6d171d8fa8957c5787c2c597420ee15f693b358a3c",
+    "archive\\selective_experiments\\experiment_v5\\selector_training_v5\\frozen_selection.json": "430c16cc9e5cd25d4b798e2bf11ea7b87eb246b2cf36668f3300e5dc7f1df547",
+    "archive\\selective_experiments\\experiment_v5\\selector_training_v5\\calibration_result.json": "9b9be1ff6e42bf07b4c7493d0b366573742c0adc7ac3edd41e35a768b7880a77",
+    "archive\\selective_experiments\\experiment_v5\\selector_training_v5\\selector.json": "c2b11c487ef89175c0d1a728f51600ecdecab4f48d6a06f549c89bc98aa8b3ec",
+    "archive\\selective_experiments\\experiment_v5\\selector_training_v5\\code\\selector_v5_model.py": "cb2b3c4ddb4ca7d63346c1fbfcb3b57ec57b5c4b6a9d1d08dbbca9be2c66a109"
+  }
+}

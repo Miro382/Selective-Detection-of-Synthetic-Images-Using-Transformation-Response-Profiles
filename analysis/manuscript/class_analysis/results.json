@@ -1,0 +1,1457 @@
+{
+  "version": "class-conditional-results-v1",
+  "scope": "Descriptive retrospective class-conditional analysis on reused cohorts; no new intervals or model selection.",
+  "definitions": {
+    "coverage_by_true_class": "accepted count of true class c / all inputs of true class c",
+    "accepted_class_risk": "errors among accepted inputs of true class c / accepted count of true class c",
+    "FP": "accepted real image classified as synthetic",
+    "FN": "accepted synthetic image classified as real",
+    "original_matched": "fixed global count 9807/10000 DS or 3639/4000 OF for both methods",
+    "frozen_threshold": "full profile uses its archived threshold; confidence is ranked to exactly the same count",
+    "class_thresholds": "None: no per-class threshold, label-dependent acceptance, or refitting is introduced."
+  },
+  "cohorts": [
+    {
+      "detector": "efficientnet",
+      "cohort": "DeepShield",
+      "groups": 10000,
+      "frozen_threshold": 0.08632226578702012,
+      "unconditional": {
+        "total": 10000,
+        "accepted": 10000,
+        "rejected": 0,
+        "coverage": 1.0,
+        "errors": 178,
+        "risk": 0.0178,
+        "accepted_fp": 70,
+        "accepted_fn": 108,
+        "accepted_tn": 4930,
+        "accepted_tp": 4892,
+        "classes": {
+          "real": {
+            "total": 5000,
+            "accepted": 5000,
+            "rejected": 0,
+            "coverage": 1.0,
+            "errors": 70,
+            "accepted_risk": 0.014
+          },
+          "synthetic": {
+            "total": 5000,
+            "accepted": 5000,
+            "rejected": 0,
+            "coverage": 1.0,
+            "errors": 108,
+            "accepted_risk": 0.0216
+          }
+        }
+      },
+      "policies": {
+        "original_matched": {
+          "full": {
+            "total": 10000,
+            "accepted": 9807,
+            "rejected": 193,
+            "coverage": 0.9807,
+            "errors": 66,
+            "risk": 0.00672988681553992,
+            "accepted_fp": 36,
+            "accepted_fn": 30,
+            "accepted_tn": 4880,
+            "accepted_tp": 4861,
+            "classes": {
+              "real": {
+                "total": 5000,
+                "accepted": 4916,
+                "rejected": 84,
+                "coverage": 0.9832,
+                "errors": 36,
+                "accepted_risk": 0.007323026851098454
+              },
+              "synthetic": {
+                "total": 5000,
+                "accepted": 4891,
+                "rejected": 109,
+                "coverage": 0.9782,
+                "errors": 30,
+                "accepted_risk": 0.006133714986710284
+              }
+            }
+          },
+          "confidence": {
+            "total": 10000,
+            "accepted": 9807,
+            "rejected": 193,
+            "coverage": 0.9807,
+            "errors": 97,
+            "risk": 0.00989089425920261,
+            "accepted_fp": 29,
+            "accepted_fn": 68,
+            "accepted_tn": 4883,
+            "accepted_tp": 4827,
+            "classes": {
+              "real": {
+                "total": 5000,
+                "accepted": 4912,
+                "rejected": 88,
+                "coverage": 0.9824,
+                "errors": 29,
+                "accepted_risk": 0.005903908794788274
+              },
+              "synthetic": {
+                "total": 5000,
+                "accepted": 4895,
+                "rejected": 105,
+                "coverage": 0.979,
+                "errors": 68,
+                "accepted_risk": 0.013891726251276814
+              }
+            }
+          },
+          "full_minus_confidence": {
+            "accepted_fp": 7,
+            "accepted_fn": -38,
+            "accepted_errors": -31,
+            "real_coverage_pp": 0.07999999999999119,
+            "synthetic_coverage_pp": -0.08000000000000229
+          }
+        },
+        "frozen_threshold": {
+          "full": {
+            "total": 10000,
+            "accepted": 9807,
+            "rejected": 193,
+            "coverage": 0.9807,
+            "errors": 66,
+            "risk": 0.00672988681553992,
+            "accepted_fp": 36,
+            "accepted_fn": 30,
+            "accepted_tn": 4880,
+            "accepted_tp": 4861,
+            "classes": {
+              "real": {
+                "total": 5000,
+                "accepted": 4916,
+                "rejected": 84,
+                "coverage": 0.9832,
+                "errors": 36,
+                "accepted_risk": 0.007323026851098454
+              },
+              "synthetic": {
+                "total": 5000,
+                "accepted": 4891,
+                "rejected": 109,
+                "coverage": 0.9782,
+                "errors": 30,
+                "accepted_risk": 0.006133714986710284
+              }
+            }
+          },
+          "confidence": {
+            "total": 10000,
+            "accepted": 9807,
+            "rejected": 193,
+            "coverage": 0.9807,
+            "errors": 97,
+            "risk": 0.00989089425920261,
+            "accepted_fp": 29,
+            "accepted_fn": 68,
+            "accepted_tn": 4883,
+            "accepted_tp": 4827,
+            "classes": {
+              "real": {
+                "total": 5000,
+                "accepted": 4912,
+                "rejected": 88,
+                "coverage": 0.9824,
+                "errors": 29,
+                "accepted_risk": 0.005903908794788274
+              },
+              "synthetic": {
+                "total": 5000,
+                "accepted": 4895,
+                "rejected": 105,
+                "coverage": 0.979,
+                "errors": 68,
+                "accepted_risk": 0.013891726251276814
+              }
+            }
+          },
+          "full_minus_confidence": {
+            "accepted_fp": 7,
+            "accepted_fn": -38,
+            "accepted_errors": -31,
+            "real_coverage_pp": 0.07999999999999119,
+            "synthetic_coverage_pp": -0.08000000000000229
+          }
+        }
+      }
+    },
+    {
+      "detector": "efficientnet",
+      "cohort": "OpenFake",
+      "groups": 213,
+      "frozen_threshold": 0.08632226578702012,
+      "unconditional": {
+        "total": 4000,
+        "accepted": 4000,
+        "rejected": 0,
+        "coverage": 1.0,
+        "errors": 900,
+        "risk": 0.225,
+        "accepted_fp": 111,
+        "accepted_fn": 789,
+        "accepted_tn": 1889,
+        "accepted_tp": 1211,
+        "classes": {
+          "real": {
+            "total": 2000,
+            "accepted": 2000,
+            "rejected": 0,
+            "coverage": 1.0,
+            "errors": 111,
+            "accepted_risk": 0.0555
+          },
+          "synthetic": {
+            "total": 2000,
+            "accepted": 2000,
+            "rejected": 0,
+            "coverage": 1.0,
+            "errors": 789,
+            "accepted_risk": 0.3945
+          }
+        }
+      },
+      "policies": {
+        "original_matched": {
+          "full": {
+            "total": 4000,
+            "accepted": 3639,
+            "rejected": 361,
+            "coverage": 0.90975,
+            "errors": 675,
+            "risk": 0.18549051937345423,
+            "accepted_fp": 58,
+            "accepted_fn": 617,
+            "accepted_tn": 1806,
+            "accepted_tp": 1158,
+            "classes": {
+              "real": {
+                "total": 2000,
+                "accepted": 1864,
+                "rejected": 136,
+                "coverage": 0.932,
+                "errors": 58,
+                "accepted_risk": 0.03111587982832618
+              },
+              "synthetic": {
+                "total": 2000,
+                "accepted": 1775,
+                "rejected": 225,
+                "coverage": 0.8875,
+                "errors": 617,
+                "accepted_risk": 0.3476056338028169
+              }
+            }
+          },
+          "confidence": {
+            "total": 4000,
+            "accepted": 3639,
+            "rejected": 361,
+            "coverage": 0.90975,
+            "errors": 746,
+            "risk": 0.20500137400384721,
+            "accepted_fp": 49,
+            "accepted_fn": 697,
+            "accepted_tn": 1805,
+            "accepted_tp": 1088,
+            "classes": {
+              "real": {
+                "total": 2000,
+                "accepted": 1854,
+                "rejected": 146,
+                "coverage": 0.927,
+                "errors": 49,
+                "accepted_risk": 0.026429341963322545
+              },
+              "synthetic": {
+                "total": 2000,
+                "accepted": 1785,
+                "rejected": 215,
+                "coverage": 0.8925,
+                "errors": 697,
+                "accepted_risk": 0.3904761904761905
+              }
+            }
+          },
+          "full_minus_confidence": {
+            "accepted_fp": 9,
+            "accepted_fn": -80,
+            "accepted_errors": -71,
+            "real_coverage_pp": 0.5000000000000004,
+            "synthetic_coverage_pp": -0.5000000000000004
+          }
+        },
+        "frozen_threshold": {
+          "full": {
+            "total": 4000,
+            "accepted": 3639,
+            "rejected": 361,
+            "coverage": 0.90975,
+            "errors": 675,
+            "risk": 0.18549051937345423,
+            "accepted_fp": 58,
+            "accepted_fn": 617,
+            "accepted_tn": 1806,
+            "accepted_tp": 1158,
+            "classes": {
+              "real": {
+                "total": 2000,
+                "accepted": 1864,
+                "rejected": 136,
+                "coverage": 0.932,
+                "errors": 58,
+                "accepted_risk": 0.03111587982832618
+              },
+              "synthetic": {
+                "total": 2000,
+                "accepted": 1775,
+                "rejected": 225,
+                "coverage": 0.8875,
+                "errors": 617,
+                "accepted_risk": 0.3476056338028169
+              }
+            }
+          },
+          "confidence": {
+            "total": 4000,
+            "accepted": 3639,
+            "rejected": 361,
+            "coverage": 0.90975,
+            "errors": 746,
+            "risk": 0.20500137400384721,
+            "accepted_fp": 49,
+            "accepted_fn": 697,
+            "accepted_tn": 1805,
+            "accepted_tp": 1088,
+            "classes": {
+              "real": {
+                "total": 2000,
+                "accepted": 1854,
+                "rejected": 146,
+                "coverage": 0.927,
+                "errors": 49,
+                "accepted_risk": 0.026429341963322545
+              },
+              "synthetic": {
+                "total": 2000,
+                "accepted": 1785,
+                "rejected": 215,
+                "coverage": 0.8925,
+                "errors": 697,
+                "accepted_risk": 0.3904761904761905
+              }
+            }
+          },
+          "full_minus_confidence": {
+            "accepted_fp": 9,
+            "accepted_fn": -80,
+            "accepted_errors": -71,
+            "real_coverage_pp": 0.5000000000000004,
+            "synthetic_coverage_pp": -0.5000000000000004
+          }
+        }
+      }
+    },
+    {
+      "detector": "clip",
+      "cohort": "DeepShield",
+      "groups": 10000,
+      "frozen_threshold": 0.040171224108963344,
+      "unconditional": {
+        "total": 10000,
+        "accepted": 10000,
+        "rejected": 0,
+        "coverage": 1.0,
+        "errors": 966,
+        "risk": 0.0966,
+        "accepted_fp": 228,
+        "accepted_fn": 738,
+        "accepted_tn": 4772,
+        "accepted_tp": 4262,
+        "classes": {
+          "real": {
+            "total": 5000,
+            "accepted": 5000,
+            "rejected": 0,
+            "coverage": 1.0,
+            "errors": 228,
+            "accepted_risk": 0.0456
+          },
+          "synthetic": {
+            "total": 5000,
+            "accepted": 5000,
+            "rejected": 0,
+            "coverage": 1.0,
+            "errors": 738,
+            "accepted_risk": 0.1476
+          }
+        }
+      },
+      "policies": {
+        "original_matched": {
+          "full": {
+            "total": 10000,
+            "accepted": 9807,
+            "rejected": 193,
+            "coverage": 0.9807,
+            "errors": 845,
+            "risk": 0.0861629448353217,
+            "accepted_fp": 218,
+            "accepted_fn": 627,
+            "accepted_tn": 4748,
+            "accepted_tp": 4214,
+            "classes": {
+              "real": {
+                "total": 5000,
+                "accepted": 4966,
+                "rejected": 34,
+                "coverage": 0.9932,
+                "errors": 218,
+                "accepted_risk": 0.04389850986709625
+              },
+              "synthetic": {
+                "total": 5000,
+                "accepted": 4841,
+                "rejected": 159,
+                "coverage": 0.9682,
+                "errors": 627,
+                "accepted_risk": 0.12951869448461062
+              }
+            }
+          },
+          "confidence": {
+            "total": 10000,
+            "accepted": 9807,
+            "rejected": 193,
+            "coverage": 0.9807,
+            "errors": 875,
+            "risk": 0.08922198429693076,
+            "accepted_fp": 204,
+            "accepted_fn": 671,
+            "accepted_tn": 4743,
+            "accepted_tp": 4189,
+            "classes": {
+              "real": {
+                "total": 5000,
+                "accepted": 4947,
+                "rejected": 53,
+                "coverage": 0.9894,
+                "errors": 204,
+                "accepted_risk": 0.041237113402061855
+              },
+              "synthetic": {
+                "total": 5000,
+                "accepted": 4860,
+                "rejected": 140,
+                "coverage": 0.972,
+                "errors": 671,
+                "accepted_risk": 0.13806584362139918
+              }
+            }
+          },
+          "full_minus_confidence": {
+            "accepted_fp": 14,
+            "accepted_fn": -44,
+            "accepted_errors": -30,
+            "real_coverage_pp": 0.38000000000000256,
+            "synthetic_coverage_pp": -0.38000000000000256
+          }
+        },
+        "frozen_threshold": {
+          "full": {
+            "total": 10000,
+            "accepted": 5241,
+            "rejected": 4759,
+            "coverage": 0.5241,
+            "errors": 56,
+            "risk": 0.010684983781721046,
+            "accepted_fp": 10,
+            "accepted_fn": 46,
+            "accepted_tn": 3246,
+            "accepted_tp": 1939,
+            "classes": {
+              "real": {
+                "total": 5000,
+                "accepted": 3256,
+                "rejected": 1744,
+                "coverage": 0.6512,
+                "errors": 10,
+                "accepted_risk": 0.003071253071253071
+              },
+              "synthetic": {
+                "total": 5000,
+                "accepted": 1985,
+                "rejected": 3015,
+                "coverage": 0.397,
+                "errors": 46,
+                "accepted_risk": 0.023173803526448364
+              }
+            }
+          },
+          "confidence": {
+            "total": 10000,
+            "accepted": 5241,
+            "rejected": 4759,
+            "coverage": 0.5241,
+            "errors": 70,
+            "risk": 0.013356229727151307,
+            "accepted_fp": 11,
+            "accepted_fn": 59,
+            "accepted_tn": 3343,
+            "accepted_tp": 1828,
+            "classes": {
+              "real": {
+                "total": 5000,
+                "accepted": 3354,
+                "rejected": 1646,
+                "coverage": 0.6708,
+                "errors": 11,
+                "accepted_risk": 0.003279666070363745
+              },
+              "synthetic": {
+                "total": 5000,
+                "accepted": 1887,
+                "rejected": 3113,
+                "coverage": 0.3774,
+                "errors": 59,
+                "accepted_risk": 0.03126656067832538
+              }
+            }
+          },
+          "full_minus_confidence": {
+            "accepted_fp": -1,
+            "accepted_fn": -13,
+            "accepted_errors": -14,
+            "real_coverage_pp": -1.959999999999995,
+            "synthetic_coverage_pp": 1.9600000000000006
+          }
+        }
+      }
+    },
+    {
+      "detector": "clip",
+      "cohort": "OpenFake",
+      "groups": 213,
+      "frozen_threshold": 0.040171224108963344,
+      "unconditional": {
+        "total": 4000,
+        "accepted": 4000,
+        "rejected": 0,
+        "coverage": 1.0,
+        "errors": 717,
+        "risk": 0.17925,
+        "accepted_fp": 58,
+        "accepted_fn": 659,
+        "accepted_tn": 1942,
+        "accepted_tp": 1341,
+        "classes": {
+          "real": {
+            "total": 2000,
+            "accepted": 2000,
+            "rejected": 0,
+            "coverage": 1.0,
+            "errors": 58,
+            "accepted_risk": 0.029
+          },
+          "synthetic": {
+            "total": 2000,
+            "accepted": 2000,
+            "rejected": 0,
+            "coverage": 1.0,
+            "errors": 659,
+            "accepted_risk": 0.3295
+          }
+        }
+      },
+      "policies": {
+        "original_matched": {
+          "full": {
+            "total": 4000,
+            "accepted": 3639,
+            "rejected": 361,
+            "coverage": 0.90975,
+            "errors": 536,
+            "risk": 0.14729321242099477,
+            "accepted_fp": 41,
+            "accepted_fn": 495,
+            "accepted_tn": 1868,
+            "accepted_tp": 1235,
+            "classes": {
+              "real": {
+                "total": 2000,
+                "accepted": 1909,
+                "rejected": 91,
+                "coverage": 0.9545,
+                "errors": 41,
+                "accepted_risk": 0.021477213200628602
+              },
+              "synthetic": {
+                "total": 2000,
+                "accepted": 1730,
+                "rejected": 270,
+                "coverage": 0.865,
+                "errors": 495,
+                "accepted_risk": 0.2861271676300578
+              }
+            }
+          },
+          "confidence": {
+            "total": 4000,
+            "accepted": 3639,
+            "rejected": 361,
+            "coverage": 0.90975,
+            "errors": 548,
+            "risk": 0.15059082165430063,
+            "accepted_fp": 39,
+            "accepted_fn": 509,
+            "accepted_tn": 1898,
+            "accepted_tp": 1193,
+            "classes": {
+              "real": {
+                "total": 2000,
+                "accepted": 1937,
+                "rejected": 63,
+                "coverage": 0.9685,
+                "errors": 39,
+                "accepted_risk": 0.020134228187919462
+              },
+              "synthetic": {
+                "total": 2000,
+                "accepted": 1702,
+                "rejected": 298,
+                "coverage": 0.851,
+                "errors": 509,
+                "accepted_risk": 0.2990599294947121
+              }
+            }
+          },
+          "full_minus_confidence": {
+            "accepted_fp": 2,
+            "accepted_fn": -14,
+            "accepted_errors": -12,
+            "real_coverage_pp": -1.4000000000000012,
+            "synthetic_coverage_pp": 1.4000000000000012
+          }
+        },
+        "frozen_threshold": {
+          "full": {
+            "total": 4000,
+            "accepted": 2257,
+            "rejected": 1743,
+            "coverage": 0.56425,
+            "errors": 145,
+            "risk": 0.06424457244129375,
+            "accepted_fp": 3,
+            "accepted_fn": 142,
+            "accepted_tn": 1412,
+            "accepted_tp": 700,
+            "classes": {
+              "real": {
+                "total": 2000,
+                "accepted": 1415,
+                "rejected": 585,
+                "coverage": 0.7075,
+                "errors": 3,
+                "accepted_risk": 0.0021201413427561835
+              },
+              "synthetic": {
+                "total": 2000,
+                "accepted": 842,
+                "rejected": 1158,
+                "coverage": 0.421,
+                "errors": 142,
+                "accepted_risk": 0.16864608076009502
+              }
+            }
+          },
+          "confidence": {
+            "total": 4000,
+            "accepted": 2257,
+            "rejected": 1743,
+            "coverage": 0.56425,
+            "errors": 150,
+            "risk": 0.0664599025254763,
+            "accepted_fp": 3,
+            "accepted_fn": 147,
+            "accepted_tn": 1442,
+            "accepted_tp": 665,
+            "classes": {
+              "real": {
+                "total": 2000,
+                "accepted": 1445,
+                "rejected": 555,
+                "coverage": 0.7225,
+                "errors": 3,
+                "accepted_risk": 0.0020761245674740486
+              },
+              "synthetic": {
+                "total": 2000,
+                "accepted": 812,
+                "rejected": 1188,
+                "coverage": 0.406,
+                "errors": 147,
+                "accepted_risk": 0.1810344827586207
+              }
+            }
+          },
+          "full_minus_confidence": {
+            "accepted_fp": 0,
+            "accepted_fn": -5,
+            "accepted_errors": -5,
+            "real_coverage_pp": -1.5000000000000013,
+            "synthetic_coverage_pp": 1.4999999999999958
+          }
+        }
+      }
+    },
+    {
+      "detector": "resnet50",
+      "cohort": "DeepShield",
+      "groups": 10000,
+      "frozen_threshold": 0.03467626730024773,
+      "unconditional": {
+        "total": 10000,
+        "accepted": 10000,
+        "rejected": 0,
+        "coverage": 1.0,
+        "errors": 969,
+        "risk": 0.0969,
+        "accepted_fp": 499,
+        "accepted_fn": 470,
+        "accepted_tn": 4501,
+        "accepted_tp": 4530,
+        "classes": {
+          "real": {
+            "total": 5000,
+            "accepted": 5000,
+            "rejected": 0,
+            "coverage": 1.0,
+            "errors": 499,
+            "accepted_risk": 0.0998
+          },
+          "synthetic": {
+            "total": 5000,
+            "accepted": 5000,
+            "rejected": 0,
+            "coverage": 1.0,
+            "errors": 470,
+            "accepted_risk": 0.094
+          }
+        }
+      },
+      "policies": {
+        "original_matched": {
+          "full": {
+            "total": 10000,
+            "accepted": 9807,
+            "rejected": 193,
+            "coverage": 0.9807,
+            "errors": 873,
+            "risk": 0.0890180483328235,
+            "accepted_fp": 493,
+            "accepted_fn": 380,
+            "accepted_tn": 4422,
+            "accepted_tp": 4512,
+            "classes": {
+              "real": {
+                "total": 5000,
+                "accepted": 4915,
+                "rejected": 85,
+                "coverage": 0.983,
+                "errors": 493,
+                "accepted_risk": 0.10030518819938962
+              },
+              "synthetic": {
+                "total": 5000,
+                "accepted": 4892,
+                "rejected": 108,
+                "coverage": 0.9784,
+                "errors": 380,
+                "accepted_risk": 0.0776778413736713
+              }
+            }
+          },
+          "confidence": {
+            "total": 10000,
+            "accepted": 9807,
+            "rejected": 193,
+            "coverage": 0.9807,
+            "errors": 877,
+            "risk": 0.08942592026103803,
+            "accepted_fp": 454,
+            "accepted_fn": 423,
+            "accepted_tn": 4448,
+            "accepted_tp": 4482,
+            "classes": {
+              "real": {
+                "total": 5000,
+                "accepted": 4902,
+                "rejected": 98,
+                "coverage": 0.9804,
+                "errors": 454,
+                "accepted_risk": 0.09261525907792738
+              },
+              "synthetic": {
+                "total": 5000,
+                "accepted": 4905,
+                "rejected": 95,
+                "coverage": 0.981,
+                "errors": 423,
+                "accepted_risk": 0.08623853211009175
+              }
+            }
+          },
+          "full_minus_confidence": {
+            "accepted_fp": 39,
+            "accepted_fn": -43,
+            "accepted_errors": -4,
+            "real_coverage_pp": 0.25999999999999357,
+            "synthetic_coverage_pp": -0.25999999999999357
+          }
+        },
+        "frozen_threshold": {
+          "full": {
+            "total": 10000,
+            "accepted": 3850,
+            "rejected": 6150,
+            "coverage": 0.385,
+            "errors": 17,
+            "risk": 0.004415584415584416,
+            "accepted_fp": 15,
+            "accepted_fn": 2,
+            "accepted_tn": 1212,
+            "accepted_tp": 2621,
+            "classes": {
+              "real": {
+                "total": 5000,
+                "accepted": 1227,
+                "rejected": 3773,
+                "coverage": 0.2454,
+                "errors": 15,
+                "accepted_risk": 0.012224938875305624
+              },
+              "synthetic": {
+                "total": 5000,
+                "accepted": 2623,
+                "rejected": 2377,
+                "coverage": 0.5246,
+                "errors": 2,
+                "accepted_risk": 0.0007624857033930614
+              }
+            }
+          },
+          "confidence": {
+            "total": 10000,
+            "accepted": 3850,
+            "rejected": 6150,
+            "coverage": 0.385,
+            "errors": 15,
+            "risk": 0.003896103896103896,
+            "accepted_fp": 11,
+            "accepted_fn": 4,
+            "accepted_tn": 1328,
+            "accepted_tp": 2507,
+            "classes": {
+              "real": {
+                "total": 5000,
+                "accepted": 1339,
+                "rejected": 3661,
+                "coverage": 0.2678,
+                "errors": 11,
+                "accepted_risk": 0.008215085884988798
+              },
+              "synthetic": {
+                "total": 5000,
+                "accepted": 2511,
+                "rejected": 2489,
+                "coverage": 0.5022,
+                "errors": 4,
+                "accepted_risk": 0.0015929908403026682
+              }
+            }
+          },
+          "full_minus_confidence": {
+            "accepted_fp": 4,
+            "accepted_fn": -2,
+            "accepted_errors": 2,
+            "real_coverage_pp": -2.2399999999999975,
+            "synthetic_coverage_pp": 2.2399999999999975
+          }
+        }
+      }
+    },
+    {
+      "detector": "resnet50",
+      "cohort": "OpenFake",
+      "groups": 213,
+      "frozen_threshold": 0.03467626730024773,
+      "unconditional": {
+        "total": 4000,
+        "accepted": 4000,
+        "rejected": 0,
+        "coverage": 1.0,
+        "errors": 998,
+        "risk": 0.2495,
+        "accepted_fp": 175,
+        "accepted_fn": 823,
+        "accepted_tn": 1825,
+        "accepted_tp": 1177,
+        "classes": {
+          "real": {
+            "total": 2000,
+            "accepted": 2000,
+            "rejected": 0,
+            "coverage": 1.0,
+            "errors": 175,
+            "accepted_risk": 0.0875
+          },
+          "synthetic": {
+            "total": 2000,
+            "accepted": 2000,
+            "rejected": 0,
+            "coverage": 1.0,
+            "errors": 823,
+            "accepted_risk": 0.4115
+          }
+        }
+      },
+      "policies": {
+        "original_matched": {
+          "full": {
+            "total": 4000,
+            "accepted": 3639,
+            "rejected": 361,
+            "coverage": 0.90975,
+            "errors": 818,
+            "risk": 0.22478702940368234,
+            "accepted_fp": 131,
+            "accepted_fn": 687,
+            "accepted_tn": 1712,
+            "accepted_tp": 1109,
+            "classes": {
+              "real": {
+                "total": 2000,
+                "accepted": 1843,
+                "rejected": 157,
+                "coverage": 0.9215,
+                "errors": 131,
+                "accepted_risk": 0.07107976125881714
+              },
+              "synthetic": {
+                "total": 2000,
+                "accepted": 1796,
+                "rejected": 204,
+                "coverage": 0.898,
+                "errors": 687,
+                "accepted_risk": 0.3825167037861915
+              }
+            }
+          },
+          "confidence": {
+            "total": 4000,
+            "accepted": 3639,
+            "rejected": 361,
+            "coverage": 0.90975,
+            "errors": 837,
+            "risk": 0.23000824402308326,
+            "accepted_fp": 115,
+            "accepted_fn": 722,
+            "accepted_tn": 1731,
+            "accepted_tp": 1071,
+            "classes": {
+              "real": {
+                "total": 2000,
+                "accepted": 1846,
+                "rejected": 154,
+                "coverage": 0.923,
+                "errors": 115,
+                "accepted_risk": 0.06229685807150596
+              },
+              "synthetic": {
+                "total": 2000,
+                "accepted": 1793,
+                "rejected": 207,
+                "coverage": 0.8965,
+                "errors": 722,
+                "accepted_risk": 0.4026770775237033
+              }
+            }
+          },
+          "full_minus_confidence": {
+            "accepted_fp": 16,
+            "accepted_fn": -35,
+            "accepted_errors": -19,
+            "real_coverage_pp": -0.15000000000000568,
+            "synthetic_coverage_pp": 0.15000000000000568
+          }
+        },
+        "frozen_threshold": {
+          "full": {
+            "total": 4000,
+            "accepted": 898,
+            "rejected": 3102,
+            "coverage": 0.2245,
+            "errors": 135,
+            "risk": 0.15033407572383073,
+            "accepted_fp": 1,
+            "accepted_fn": 134,
+            "accepted_tn": 487,
+            "accepted_tp": 276,
+            "classes": {
+              "real": {
+                "total": 2000,
+                "accepted": 488,
+                "rejected": 1512,
+                "coverage": 0.244,
+                "errors": 1,
+                "accepted_risk": 0.0020491803278688526
+              },
+              "synthetic": {
+                "total": 2000,
+                "accepted": 410,
+                "rejected": 1590,
+                "coverage": 0.205,
+                "errors": 134,
+                "accepted_risk": 0.32682926829268294
+              }
+            }
+          },
+          "confidence": {
+            "total": 4000,
+            "accepted": 898,
+            "rejected": 3102,
+            "coverage": 0.2245,
+            "errors": 147,
+            "risk": 0.16369710467706014,
+            "accepted_fp": 1,
+            "accepted_fn": 146,
+            "accepted_tn": 507,
+            "accepted_tp": 244,
+            "classes": {
+              "real": {
+                "total": 2000,
+                "accepted": 508,
+                "rejected": 1492,
+                "coverage": 0.254,
+                "errors": 1,
+                "accepted_risk": 0.001968503937007874
+              },
+              "synthetic": {
+                "total": 2000,
+                "accepted": 390,
+                "rejected": 1610,
+                "coverage": 0.195,
+                "errors": 146,
+                "accepted_risk": 0.37435897435897436
+              }
+            }
+          },
+          "full_minus_confidence": {
+            "accepted_fp": 0,
+            "accepted_fn": -12,
+            "accepted_errors": -12,
+            "real_coverage_pp": -1.0000000000000009,
+            "synthetic_coverage_pp": 0.9999999999999981
+          }
+        }
+      }
+    }
+  ],
+  "aggregate_reproduction_checks": [
+    [
+      "efficientnet",
+      "DeepShield",
+      "original_matched",
+      "full",
+      "accepted",
+      9807
+    ],
+    [
+      "efficientnet",
+      "DeepShield",
+      "original_matched",
+      "full",
+      "errors",
+      66
+    ],
+    [
+      "efficientnet",
+      "DeepShield",
+      "original_matched",
+      "confidence",
+      "accepted",
+      9807
+    ],
+    [
+      "efficientnet",
+      "DeepShield",
+      "original_matched",
+      "confidence",
+      "errors",
+      97
+    ],
+    [
+      "efficientnet",
+      "DeepShield",
+      "frozen_threshold",
+      "full",
+      "accepted",
+      9807
+    ],
+    [
+      "efficientnet",
+      "DeepShield",
+      "frozen_threshold",
+      "full",
+      "errors",
+      66
+    ],
+    [
+      "efficientnet",
+      "DeepShield",
+      "frozen_threshold",
+      "confidence",
+      "accepted",
+      9807
+    ],
+    [
+      "efficientnet",
+      "DeepShield",
+      "frozen_threshold",
+      "confidence",
+      "errors",
+      97
+    ],
+    [
+      "efficientnet",
+      "OpenFake",
+      "original_matched",
+      "full",
+      "accepted",
+      3639
+    ],
+    [
+      "efficientnet",
+      "OpenFake",
+      "original_matched",
+      "full",
+      "errors",
+      675
+    ],
+    [
+      "efficientnet",
+      "OpenFake",
+      "original_matched",
+      "confidence",
+      "accepted",
+      3639
+    ],
+    [
+      "efficientnet",
+      "OpenFake",
+      "original_matched",
+      "confidence",
+      "errors",
+      746
+    ],
+    [
+      "efficientnet",
+      "OpenFake",
+      "frozen_threshold",
+      "full",
+      "accepted",
+      3639
+    ],
+    [
+      "efficientnet",
+      "OpenFake",
+      "frozen_threshold",
+      "full",
+      "errors",
+      675
+    ],
+    [
+      "efficientnet",
+      "OpenFake",
+      "frozen_threshold",
+      "confidence",
+      "accepted",
+      3639
+    ],
+    [
+      "efficientnet",
+      "OpenFake",
+      "frozen_threshold",
+      "confidence",
+      "errors",
+      746
+    ],
+    [
+      "clip",
+      "DeepShield",
+      "original_matched",
+      "full",
+      "accepted",
+      9807
+    ],
+    [
+      "clip",
+      "DeepShield",
+      "original_matched",
+      "full",
+      "errors",
+      845
+    ],
+    [
+      "clip",
+      "DeepShield",
+      "original_matched",
+      "confidence",
+      "accepted",
+      9807
+    ],
+    [
+      "clip",
+      "DeepShield",
+      "original_matched",
+      "confidence",
+      "errors",
+      875
+    ],
+    [
+      "clip",
+      "DeepShield",
+      "frozen_threshold",
+      "full",
+      "accepted",
+      5241
+    ],
+    [
+      "clip",
+      "DeepShield",
+      "frozen_threshold",
+      "full",
+      "errors",
+      56
+    ],
+    [
+      "clip",
+      "DeepShield",
+      "frozen_threshold",
+      "confidence",
+      "accepted",
+      5241
+    ],
+    [
+      "clip",
+      "DeepShield",
+      "frozen_threshold",
+      "confidence",
+      "errors",
+      70
+    ],
+    [
+      "clip",
+      "OpenFake",
+      "original_matched",
+      "full",
+      "accepted",
+      3639
+    ],
+    [
+      "clip",
+      "OpenFake",
+      "original_matched",
+      "full",
+      "errors",
+      536
+    ],
+    [
+      "clip",
+      "OpenFake",
+      "original_matched",
+      "confidence",
+      "accepted",
+      3639
+    ],
+    [
+      "clip",
+      "OpenFake",
+      "original_matched",
+      "confidence",
+      "errors",
+      548
+    ],
+    [
+      "clip",
+      "OpenFake",
+      "frozen_threshold",
+      "full",
+      "accepted",
+      2257
+    ],
+    [
+      "clip",
+      "OpenFake",
+      "frozen_threshold",
+      "full",
+      "errors",
+      145
+    ],
+    [
+      "clip",
+      "OpenFake",
+      "frozen_threshold",
+      "confidence",
+      "accepted",
+      2257
+    ],
+    [
+      "clip",
+      "OpenFake",
+      "frozen_threshold",
+      "confidence",
+      "errors",
+      150
+    ],
+    [
+      "resnet50",
+      "DeepShield",
+      "original_matched",
+      "full",
+      "accepted",
+      9807
+    ],
+    [
+      "resnet50",
+      "DeepShield",
+      "original_matched",
+      "full",
+      "errors",
+      873
+    ],
+    [
+      "resnet50",
+      "DeepShield",
+      "original_matched",
+      "confidence",
+      "accepted",
+      9807
+    ],
+    [
+      "resnet50",
+      "DeepShield",
+      "original_matched",
+      "confidence",
+      "errors",
+      877
+    ],
+    [
+      "resnet50",
+      "DeepShield",
+      "frozen_threshold",
+      "full",
+      "accepted",
+      3850
+    ],
+    [
+      "resnet50",
+      "DeepShield",
+      "frozen_threshold",
+      "full",
+      "errors",
+      17
+    ],
+    [
+      "resnet50",
+      "DeepShield",
+      "frozen_threshold",
+      "confidence",
+      "accepted",
+      3850
+    ],
+    [
+      "resnet50",
+      "DeepShield",
+      "frozen_threshold",
+      "confidence",
+      "errors",
+      15
+    ],
+    [
+      "resnet50",
+      "OpenFake",
+      "original_matched",
+      "full",
+      "accepted",
+      3639
+    ],
+    [
+      "resnet50",
+      "OpenFake",
+      "original_matched",
+      "full",
+      "errors",
+      818
+    ],
+    [
+      "resnet50",
+      "OpenFake",
+      "original_matched",
+      "confidence",
+      "accepted",
+      3639
+    ],
+    [
+      "resnet50",
+      "OpenFake",
+      "original_matched",
+      "confidence",
+      "errors",
+      837
+    ],
+    [
+      "resnet50",
+      "OpenFake",
+      "frozen_threshold",
+      "full",
+      "accepted",
+      898
+    ],
+    [
+      "resnet50",
+      "OpenFake",
+      "frozen_threshold",
+      "full",
+      "errors",
+      135
+    ],
+    [
+      "resnet50",
+      "OpenFake",
+      "frozen_threshold",
+      "confidence",
+      "accepted",
+      898
+    ],
+    [
+      "resnet50",
+      "OpenFake",
+      "frozen_threshold",
+      "confidence",
+      "errors",
+      147
+    ]
+  ]
+}

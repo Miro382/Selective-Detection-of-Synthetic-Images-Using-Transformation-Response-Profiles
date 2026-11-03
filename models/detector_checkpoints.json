@@ -1,0 +1,120 @@
+[
+  {
+    "detector": "efficientnet_v2_m",
+    "archive": "detector_experiments/detector_v4/training_main",
+    "checkpoint": "best_model.pt",
+    "checkpoint_sha256": "351a6c3347a7acc27f58b6e213128ca65e421dbc227800fe13bbe7ef4a2dfdbd",
+    "best_epoch": 10,
+    "weights_included": false,
+    "input_size": 512,
+    "class_to_index": {
+      "real": 0,
+      "fake": 1
+    },
+    "output": "two native logits",
+    "selector": "models/efficientnet/full_selector.json",
+    "configuration": "configs/efficientnet/config.json"
+  },
+  {
+    "detector": "clip",
+    "archive": "article_detector_adaptation/runs/matched_v4_20261030/clip/detector",
+    "checkpoint": "best.pt",
+    "checkpoint_sha256": "8e4b81af8b966c7b5532a0a389a6afb29ee8e4db147853dab976f8d48104888a",
+    "best_epoch": 10,
+    "weights_included": false,
+    "metadata": {
+      "name": "clip",
+      "detector": "clip",
+      "class_to_index": {
+        "real": 0,
+        "fake": 1
+      },
+      "output": "raw_logit_fake",
+      "decision": "fake iff raw_logit >= 0",
+      "preprocessing": {
+        "image_size": 224,
+        "resize_shorter": 256,
+        "rgb": true,
+        "resize_interpolation": "BICUBIC",
+        "mean": [
+          0.48145466,
+          0.4578275,
+          0.40821073
+        ],
+        "std": [
+          0.26862954,
+          0.26130258,
+          0.27577711
+        ]
+      },
+      "precision_at_training": "float32",
+      "precision_at_evaluation": "float32",
+      "tf32": false,
+      "trainable_policy": "linear_head_only; CLIP encoder frozen",
+      "asset_manifest_sha256": "564d2dfcf5d05cc317ccb34862775ec4ae57a3ae020abb0d621a9d2476ec257b",
+      "assets": {
+        "clip_model.py": "c071d011e92226f1ca0a6f7c5098d8d7d08eadc7d6db125a81b52fc234b1ec59",
+        "clip_models.py": "57ce5898bf0bc7ff52b5922a0aefae8bc34a9237e4d59e4a1615ff5d8c6ff7a6",
+        "clip_loader.py": "c3f1c09abe0a0d9c429e0d47f2b8d4a4ec09dbd11eec3d7dd9846babd717e43b",
+        "validate.py": "9ab4021cc6f85002a8b8cd0fc28baa9b4861b59bffcfbd98e10d02b08c42b2d6",
+        "LICENSE": "923dbc0fe040cc826122491e98b20d6f401e510d50c8b666de908e59ebf2f2b2",
+        "fc_weights.pth": "477100745713bcc957beb2b40859536859b6483fd6301b3b9293151b194c7847",
+        "ViT-L-14.pt": "b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836"
+      }
+    },
+    "selector": "models/clip/selectors.json",
+    "configuration": "configs/clip/detector_contract.json",
+    "source_receipt_sha256": "698002db0936f72ced19f34fee56827c31f6e136a6900a8064663348bed892d9"
+  },
+  {
+    "detector": "resnet50",
+    "archive": "article_detector_adaptation/runs/matched_v4_20261030/resnet50/detector",
+    "checkpoint": "best.pt",
+    "checkpoint_sha256": "24fcbd98355c3133ca17e92964ac39071712e94a28837a6679f88a2d64a68c88",
+    "best_epoch": 10,
+    "weights_included": false,
+    "metadata": {
+      "name": "resnet50",
+      "detector": "resnet50",
+      "class_to_index": {
+        "real": 0,
+        "fake": 1
+      },
+      "output": "raw_logit_fake",
+      "decision": "fake iff raw_logit >= 0",
+      "preprocessing": {
+        "image_size": 224,
+        "resize_shorter": 256,
+        "rgb": true,
+        "resize_interpolation": "BICUBIC",
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      },
+      "precision_at_training": "float32",
+      "precision_at_evaluation": "float32",
+      "tf32": false,
+      "trainable_policy": "head warm-up, then all parameters; BatchNorm running statistics frozen",
+      "asset_manifest_sha256": "453a655f9e097c0c08aace58667f30f67925c8922493f481233d201d82d6ed3a",
+      "assets": {
+        "resnet.py": "987a2ea7f70f80bd60fbf46d5e610fb89df91cbaa35fc887e65243e205eb8e58",
+        "datasets.py": "689e113556829c2fc72e249f1ca36d8e65661e13fadf57da462c1c49e2cf8e32",
+        "eval.py": "f71436d78631e074cfaf33b6ae86514144fd8894a3335ee8e60091a87b2c554b",
+        "validate.py": "dca8aa2aed02d6630ba4d58feab69e2f80e4f76e803d5365bf35b2b9ca776be3",
+        "LICENSE.txt": "6079b20c4344bc679958d3709a8e2c09bafc5acb897531257288f4f6dcfb7471",
+        "download_weights.sh": "3d9bdbb89c64e6ee1789b4bbd93bc4919bc099eaf9eef74dbf9de27b13f18f3c",
+        "blur_jpg_prob0.5.pth": "3533f3e58a3b82215f21197f2faf4e99b911ec42a4a6e2d7823e04d5f3fd245a"
+      }
+    },
+    "selector": "models/resnet50/selectors.json",
+    "configuration": "configs/resnet50/detector_contract.json",
+    "source_receipt_sha256": "0973493dbf0985130636da7d7c66ed715408f737cecdf882e1651070c5bba6a5"
+  }
+]

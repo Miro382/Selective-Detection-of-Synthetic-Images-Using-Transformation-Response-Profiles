@@ -1,0 +1,2 @@
+# Lightweight analysis environment; Python 3.11 or newer.
+numpy==2.3.5

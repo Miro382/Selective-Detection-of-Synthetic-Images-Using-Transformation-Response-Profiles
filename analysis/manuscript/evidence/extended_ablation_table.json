@@ -1,0 +1,3335 @@
+{
+  "version": "article-extended-ablation-evidence-v1",
+  "created_utc": "2026-10-29T03:06:46.316107+00:00",
+  "scope": "Retrospektívne porovnanie na už vyhodnotených dátach; nie nová nezávislá certifikácia.",
+  "source_inventory": {
+    "protocol.json": {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\protocol.json",
+      "sha256": "c42d9a3457aff3b7ba70ad11ef9f6d67e92602e292e339e87eccfeaa46a40eab"
+    },
+    "reports/full/results.json": {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "sha256": "e1da35dac98c0d9d101624394f922c87049cbc10c15700c2ccd66cbc6b9bc3cb"
+    },
+    "code/features.py": {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\code\\features.py",
+      "sha256": "8691260a0da45a986831fa975f8a6fbae2ba1168de81f3215606a3e6e31baf11"
+    },
+    "code/models.py": {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\code\\models.py",
+      "sha256": "8bfb84a2564fd38f42fd7a12a677567c60080b17a3b460e39cd0b6495cd74cb3"
+    },
+    "code/extract.py": {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\code\\extract.py",
+      "sha256": "8efddb66aecfdeb1bbc50d26dfa96ca430ea69774e4b2bba9b54f44b579e4fc7"
+    },
+    "code/metrics.py": {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\code\\metrics.py",
+      "sha256": "727056c2f72581beb5b257573a38a40b82ae765495dfa4eff73190a647665ef8"
+    },
+    "frozen_selector.json": {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\frozen_selector.json",
+      "sha256": "c563c4ccbf6c668d7f6914ee6325518d6f9164725f4bcdd7eaacdc9fb4a50a4a"
+    }
+  },
+  "statistics": {
+    "bootstrap": 1000,
+    "seed": 31019,
+    "coverage": [
+      0.8,
+      0.9,
+      0.95
+    ],
+    "primary": "AURC by cohort, paired connected-group bootstrap",
+    "ties": "AURC whole score blocks; fixed coverage SHA256(sample_id) without labels",
+    "multiple_comparisons": "exploratory, pointwise unadjusted intervals; no confirmatory p-values"
+  },
+  "new_inference": false,
+  "new_training": false,
+  "new_bootstrap": false,
+  "cohorts": {
+    "DeepShield": {
+      "n": 10000,
+      "groups": 10000,
+      "detector_errors": 178,
+      "detector_accuracy": 0.9822
+    },
+    "OpenFake": {
+      "n": 4000,
+      "groups": 213,
+      "detector_errors": 900,
+      "detector_accuracy": 0.775
+    }
+  },
+  "all_methods": [
+    {
+      "method": "frozen_v4",
+      "spec": {
+        "id": "frozen_v4",
+        "kind": "frozen",
+        "features": "full"
+      },
+      "dimension": 9,
+      "development_selection_aurc": 0.0010448695994117034,
+      "threshold": 0.08632226578702012,
+      "threshold_status": "original_frozen_rule",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\frozen_v4.json",
+        "sha256": "ceed98e59ce872ef98efdd54749d85bfaf04e0c56dfd5884d40d13a3f5f96098",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\frozen_v4.receipt.json",
+        "receipt_sha256": "1940e7e951f31f176adc9fb2c7aa28d77ee584570a41e58f0828918b921ff409"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.00039998843353799277,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 66,
+            "risk": 0.00672988681553992,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 5,
+              "risk": 0.0005555555555555556,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 18,
+              "risk": 0.001894736842105263,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.15585857353685112,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 675,
+            "risk": 0.18549051937345423,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 546,
+              "risk": 0.170625,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 661,
+              "risk": 0.1836111111111111,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 747,
+              "risk": 0.19657894736842105,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "confidence",
+      "spec": {
+        "id": "confidence",
+        "kind": "baseline"
+      },
+      "dimension": null,
+      "development_selection_aurc": 0.0010757509548587041,
+      "threshold": 0.07953369430249872,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\confidence.json",
+        "sha256": "b297a380a0da74c992d98d577b407604857ceeeeb567df6ac1909265c241670c",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\confidence.receipt.json",
+        "receipt_sha256": "0cbd33a7fe19633596bbb6e98b5e16cdd79408c234553c69b50c481672fda357"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.0006600074683957854,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 97,
+            "risk": 0.00989089425920261,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 2,
+              "risk": 0.00025,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 15,
+              "risk": 0.0016666666666666668,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 43,
+              "risk": 0.004526315789473684,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.19562346042975787,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 746,
+            "risk": 0.20500137400384721,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 612,
+              "risk": 0.19125,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 728,
+              "risk": 0.20222222222222222,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 809,
+              "risk": 0.21289473684210528,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "tta_mean",
+      "spec": {
+        "id": "tta_mean",
+        "kind": "baseline"
+      },
+      "dimension": null,
+      "development_selection_aurc": 0.0010831644983292001,
+      "threshold": 0.13555534120382898,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\tta_mean.json",
+        "sha256": "43400e7558e5fe5e2706715987ed5575c322a2297f00f5d56b1609e530f77095",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\tta_mean.receipt.json",
+        "receipt_sha256": "e3a3586902df2ad6bb6ba07407d9b7ca4869f3c0cc2ac9c92b4b0e96994bdc1b"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.0005641602189006478,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 86,
+            "risk": 0.008769246456612624,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 1,
+              "risk": 0.000125,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 8,
+              "risk": 0.0008888888888888889,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 32,
+              "risk": 0.003368421052631579,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.1731376836155796,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 696,
+            "risk": 0.1912613355317395,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 586,
+              "risk": 0.183125,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 686,
+              "risk": 0.19055555555555556,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 778,
+              "risk": 0.20473684210526316,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "lr_confidence",
+      "spec": {
+        "id": "lr_confidence",
+        "kind": "lr",
+        "features": "confidence",
+        "C": 0.1
+      },
+      "dimension": 1,
+      "development_selection_aurc": 0.0010757509548587041,
+      "threshold": 0.11712214185925444,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_confidence.json",
+        "sha256": "32bfeea5744fb91a7cd0cddd3640a9bc73d8e7c57412902dab2a3aea8cb5fe91",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_confidence.receipt.json",
+        "receipt_sha256": "c1091508345c381605cf1928519fe02d3beee05d00f776410f16514225683f1c"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.0006600074683957854,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 97,
+            "risk": 0.00989089425920261,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 2,
+              "risk": 0.00025,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 15,
+              "risk": 0.0016666666666666668,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 43,
+              "risk": 0.004526315789473684,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.19562346042975787,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 746,
+            "risk": 0.20500137400384721,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 612,
+              "risk": 0.19125,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 728,
+              "risk": 0.20222222222222222,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 809,
+              "risk": 0.21289473684210528,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "lr_full",
+      "spec": {
+        "id": "lr_full",
+        "kind": "lr",
+        "features": "full",
+        "C": 0.1
+      },
+      "dimension": 9,
+      "development_selection_aurc": 0.0010448695994117034,
+      "threshold": 0.08632226579981044,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_full.json",
+        "sha256": "9a4b0c80899b3e4c7fe7d7d387870578f61aa14766633448a6168a5ee1ea082b",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_full.receipt.json",
+        "receipt_sha256": "93182832be862ab7329a4cdee9f536d5e58538dd642fc4c3b259fe4de7226a21"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.00039998843353799277,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 66,
+            "risk": 0.00672988681553992,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 5,
+              "risk": 0.0005555555555555556,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 18,
+              "risk": 0.001894736842105263,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.15585857353685112,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 675,
+            "risk": 0.18549051937345423,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 546,
+              "risk": 0.170625,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 661,
+              "risk": 0.1836111111111111,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 747,
+              "risk": 0.19657894736842105,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "lr_no_summaries",
+      "spec": {
+        "id": "lr_no_summaries",
+        "kind": "lr",
+        "features": "no_summaries",
+        "C": 0.1
+      },
+      "dimension": 6,
+      "development_selection_aurc": 0.001044730677153732,
+      "threshold": 0.0985833341110087,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_no_summaries.json",
+        "sha256": "94b2098fb5ddb85d104a2c7279b1af99cf30b4bc64181d43a4f769bca2612804",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_no_summaries.receipt.json",
+        "receipt_sha256": "b2fcd089da23cb5e2c3b8dd1de3bb723c1fb059e6946752c54703527b3557ee7"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.00039040938800728573,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 68,
+            "risk": 0.006933822779647191,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 7,
+              "risk": 0.0007777777777777777,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 15,
+              "risk": 0.0015789473684210526,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.142905802070313,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 687,
+            "risk": 0.18878812860676009,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 529,
+              "risk": 0.1653125,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 672,
+              "risk": 0.18666666666666668,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 746,
+              "risk": 0.19631578947368422,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "lr_no_orientation",
+      "spec": {
+        "id": "lr_no_orientation",
+        "kind": "lr",
+        "features": "no_orientation",
+        "C": 0.1
+      },
+      "dimension": 9,
+      "development_selection_aurc": 0.001185205838276878,
+      "threshold": 0.08526418898498901,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_no_orientation.json",
+        "sha256": "dd7539434f3c7267c7c1ed83fca2c8b01c0a741518771e171c00aba5ef7d1072",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_no_orientation.receipt.json",
+        "receipt_sha256": "caa4299e73158198cafd5c44b1b411a122cd106eaf6f81b2518fd19768262e61"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.000628041411091653,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 84,
+            "risk": 0.008565310492505354,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 1,
+              "risk": 0.000125,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 9,
+              "risk": 0.001,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 43,
+              "risk": 0.004526315789473684,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.17490903156949728,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 698,
+            "risk": 0.1918109370706238,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 592,
+              "risk": 0.185,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 686,
+              "risk": 0.19055555555555556,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 753,
+              "risk": 0.19815789473684212,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "lr_no_confidence",
+      "spec": {
+        "id": "lr_no_confidence",
+        "kind": "lr",
+        "features": "no_confidence",
+        "C": 0.1
+      },
+      "dimension": 8,
+      "development_selection_aurc": 0.002715450819047885,
+      "threshold": 0.01783285262454039,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_no_confidence.json",
+        "sha256": "587a878ca9cd7c88680c352435b51c27c5559374668712da3c440a4174fdf42d",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_no_confidence.receipt.json",
+        "receipt_sha256": "dc49804cab73e19e0046a7ddd38bb17ab55036926043ab552c40897280a99b83"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.0025306871500839936,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 86,
+            "risk": 0.008769246456612624,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 44,
+              "risk": 0.0055,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 53,
+              "risk": 0.005888888888888889,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 63,
+              "risk": 0.006631578947368421,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.12020409225245238,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 667,
+            "risk": 0.183292113217917,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 484,
+              "risk": 0.15125,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 648,
+              "risk": 0.18,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 740,
+              "risk": 0.19473684210526315,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "lr_summaries_only",
+      "spec": {
+        "id": "lr_summaries_only",
+        "kind": "lr",
+        "features": "summaries_only",
+        "C": 0.1
+      },
+      "dimension": 4,
+      "development_selection_aurc": 0.0011320765851032225,
+      "threshold": 0.11727643163498122,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_summaries_only.json",
+        "sha256": "8f0335607f4a7bab0f777e1eb44ac23432049b4873b18fa76aef6f1098f13c5a",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_summaries_only.receipt.json",
+        "receipt_sha256": "c724c3d4deba9e343b6149d17d4cbd6e284a6381008b5ebdca8567fb41070f23"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.0005953903008900456,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 86,
+            "risk": 0.008769246456612624,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 2,
+              "risk": 0.00025,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 11,
+              "risk": 0.0012222222222222222,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 37,
+              "risk": 0.0038947368421052633,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.19267113717211673,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 693,
+            "risk": 0.190436933223413,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 588,
+              "risk": 0.18375,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 687,
+              "risk": 0.19083333333333333,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 775,
+              "risk": 0.20394736842105263,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "lr_jpeg_only",
+      "spec": {
+        "id": "lr_jpeg_only",
+        "kind": "lr",
+        "features": "jpeg_only",
+        "C": 0.1
+      },
+      "dimension": 7,
+      "development_selection_aurc": 0.0013078795013790048,
+      "threshold": 0.0985323330518086,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_jpeg_only.json",
+        "sha256": "7b7df3539028c09493e1e79f8ff4d425bfac13433e9feb41ef99e96b7159db9e",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_jpeg_only.receipt.json",
+        "receipt_sha256": "971693f34d7eba389bf10dc574ab0855c1ae7102fbdcd2da56459c11d97ebe00"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.0007556167089276996,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 101,
+            "risk": 0.01029876618741715,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 1,
+              "risk": 0.000125,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 19,
+              "risk": 0.002111111111111111,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 51,
+              "risk": 0.005368421052631579,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.19692991670176374,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 745,
+            "risk": 0.20472657323440505,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 607,
+              "risk": 0.1896875,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 731,
+              "risk": 0.20305555555555554,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 802,
+              "risk": 0.21105263157894738,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "lr_resize_only",
+      "spec": {
+        "id": "lr_resize_only",
+        "kind": "lr",
+        "features": "resize_only",
+        "C": 0.1
+      },
+      "dimension": 6,
+      "development_selection_aurc": 0.0008848430389620145,
+      "threshold": 0.11134034409528731,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_resize_only.json",
+        "sha256": "da57322fd1fcf4c5604a37d9215266f873c4e95985a2ac7626fbaa9d0ba87182",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_resize_only.receipt.json",
+        "receipt_sha256": "dc5d41ba80a67281519dee1abe87a9bfdca16184119479f70be0a68a644bd73d"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.0003737679826806536,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 65,
+            "risk": 0.006627918833486285,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 5,
+              "risk": 0.0005555555555555556,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 18,
+              "risk": 0.001894736842105263,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.14598696694402347,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 673,
+            "risk": 0.18494091783456992,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 534,
+              "risk": 0.166875,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 659,
+              "risk": 0.18305555555555555,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 748,
+              "risk": 0.1968421052631579,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "lr_without_jpeg_q90",
+      "spec": {
+        "id": "lr_without_jpeg_q90",
+        "kind": "lr",
+        "features": "without_jpeg_q90",
+        "C": 0.1
+      },
+      "dimension": 8,
+      "development_selection_aurc": 0.00098511399076365,
+      "threshold": 0.09374163484550507,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_without_jpeg_q90.json",
+        "sha256": "afa383544b879aaa56c66b3945109e002377e8eb58ef314f87f4d15136a3ed9d",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_without_jpeg_q90.receipt.json",
+        "receipt_sha256": "e1fbcba3a16987aec0d4415f394278a36e2e24a8ef70e8dbf721694876883f57"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.00039242393629796286,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 66,
+            "risk": 0.00672988681553992,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 5,
+              "risk": 0.0005555555555555556,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 18,
+              "risk": 0.001894736842105263,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.15696285832411794,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 676,
+            "risk": 0.1857653201428964,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 548,
+              "risk": 0.17125,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 665,
+              "risk": 0.18472222222222223,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 745,
+              "risk": 0.19605263157894737,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "lr_without_jpeg_q75",
+      "spec": {
+        "id": "lr_without_jpeg_q75",
+        "kind": "lr",
+        "features": "without_jpeg_q75",
+        "C": 0.1
+      },
+      "dimension": 8,
+      "development_selection_aurc": 0.0010400277193854481,
+      "threshold": 0.09325004386085417,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_without_jpeg_q75.json",
+        "sha256": "d3af450a7bb92d79ac7bbb0862743f90a3a5fc3628ca7c5a7236529f23a19858",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_without_jpeg_q75.receipt.json",
+        "receipt_sha256": "5c04e147b285cbee16487946209c3338c849771bfd9b35ba1652e711de136c7a"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.0003929258716995516,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 66,
+            "risk": 0.00672988681553992,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 5,
+              "risk": 0.0005555555555555556,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 17,
+              "risk": 0.0017894736842105263,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.1597302143833098,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 684,
+            "risk": 0.18796372629843364,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 554,
+              "risk": 0.173125,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 670,
+              "risk": 0.18611111111111112,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 753,
+              "risk": 0.19815789473684212,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "lr_without_jpeg_q60",
+      "spec": {
+        "id": "lr_without_jpeg_q60",
+        "kind": "lr",
+        "features": "without_jpeg_q60",
+        "C": 0.1
+      },
+      "dimension": 8,
+      "development_selection_aurc": 0.0009017250189259874,
+      "threshold": 0.10183643534463721,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_without_jpeg_q60.json",
+        "sha256": "16589b422500ebd96acbb37e5fb39b6fe115f014f283bd8481eca83ce63a2337",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_without_jpeg_q60.receipt.json",
+        "receipt_sha256": "a53d7467cbd8986ca6c813365f5d1f700c34a568a16a7c84276e2c306f0e2f3a"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.00038407082491636116,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 66,
+            "risk": 0.00672988681553992,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 5,
+              "risk": 0.0005555555555555556,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 17,
+              "risk": 0.0017894736842105263,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.1482454387851322,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 672,
+            "risk": 0.18466611706512778,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 525,
+              "risk": 0.1640625,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 657,
+              "risk": 0.1825,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 744,
+              "risk": 0.1957894736842105,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "lr_without_resize_0p75",
+      "spec": {
+        "id": "lr_without_resize_0p75",
+        "kind": "lr",
+        "features": "without_resize_0p75",
+        "C": 0.1
+      },
+      "dimension": 8,
+      "development_selection_aurc": 0.0010500571972376863,
+      "threshold": 0.09088523054389402,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_without_resize_0p75.json",
+        "sha256": "8014afab3fc76f75ad5d0a8b9576720a858ae1d59e0350739fe5838d13c0e9d5",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_without_resize_0p75.receipt.json",
+        "receipt_sha256": "af2c7928a9d2a6103696b3b3c7c9af1c42238a46cd012caadf513e3d0aa43e1f"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.00041492344949619866,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 68,
+            "risk": 0.006933822779647191,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 7,
+              "risk": 0.0007777777777777777,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 21,
+              "risk": 0.0022105263157894735,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.1532056852069017,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 675,
+            "risk": 0.18549051937345423,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 546,
+              "risk": 0.170625,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 661,
+              "risk": 0.1836111111111111,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 745,
+              "risk": 0.19605263157894737,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "lr_without_resize_0p5",
+      "spec": {
+        "id": "lr_without_resize_0p5",
+        "kind": "lr",
+        "features": "without_resize_0p5",
+        "C": 0.1
+      },
+      "dimension": 8,
+      "development_selection_aurc": 0.001267568042333507,
+      "threshold": 0.09056305840203781,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_without_resize_0p5.json",
+        "sha256": "48a8315ffea1f0a7e023f8a5f40d8bf772eef68f783942bbb0f49fea7f0c3bb1",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_without_resize_0p5.receipt.json",
+        "receipt_sha256": "b2c402246d86feb7a26817325f17734d1c086dc442cbdee839ea7fce3c9ba388"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.0005281004888250415,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 84,
+            "risk": 0.008565310492505354,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 8,
+              "risk": 0.0008888888888888889,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 33,
+              "risk": 0.003473684210526316,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.19690037652365389,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 740,
+            "risk": 0.2033525693871943,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 602,
+              "risk": 0.188125,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 725,
+              "risk": 0.2013888888888889,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 797,
+              "risk": 0.20973684210526317,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "lr_balanced_no_summaries",
+      "spec": {
+        "id": "lr_balanced_no_summaries",
+        "kind": "lr",
+        "features": "no_summaries",
+        "C": 0.1,
+        "balance_classes": true
+      },
+      "dimension": 6,
+      "development_selection_aurc": 0.0009346416209837915,
+      "threshold": 0.9544116008662359,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_balanced_no_summaries.json",
+        "sha256": "494eb769fe35866acceaf617f3cfb6bc22a56d5e9a909f5a78254634dce6de40",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\lr_balanced_no_summaries.receipt.json",
+        "receipt_sha256": "8aacd9f9906de5b8ed3740d2a3f7037d85e99097f7d5e0c2f61264ddcdb3e1af"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.00037276837191211915,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 62,
+            "risk": 0.00632201488732538,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 5,
+              "risk": 0.0005555555555555556,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 14,
+              "risk": 0.0014736842105263158,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.13861818113852278,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 675,
+            "risk": 0.18549051937345423,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 518,
+              "risk": 0.161875,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 661,
+              "risk": 0.1836111111111111,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 741,
+              "risk": 0.195,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "mlp_margins_s17",
+      "spec": {
+        "id": "mlp_margins_s17",
+        "kind": "mlp",
+        "features": "no_summaries",
+        "seed": 17
+      },
+      "dimension": 6,
+      "development_selection_aurc": 0.0007330783241824222,
+      "threshold": 0.9551018476486206,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_margins_s17.json",
+        "sha256": "e6abf9ec556af702f35a9f61a1e614d0aad7cb427f88b2241fce89b130164cc7",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_margins_s17.receipt.json",
+        "receipt_sha256": "df4127d062c73497041dde641535d26b61c31aef1f700056b64c2ed145be04a6"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.00038769902404005356,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 73,
+            "risk": 0.007443662689915366,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 5,
+              "risk": 0.0005555555555555556,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 12,
+              "risk": 0.0012631578947368421,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.10763014063734626,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 692,
+            "risk": 0.19016213245397087,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 524,
+              "risk": 0.16375,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 680,
+              "risk": 0.18888888888888888,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 749,
+              "risk": 0.19710526315789473,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "mlp_margins_s29",
+      "spec": {
+        "id": "mlp_margins_s29",
+        "kind": "mlp",
+        "features": "no_summaries",
+        "seed": 29
+      },
+      "dimension": 6,
+      "development_selection_aurc": 0.000697914447136784,
+      "threshold": 0.9360415935516357,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_margins_s29.json",
+        "sha256": "720f3f55d25b3340b56bf73ec371273ffcbf114168a24971b48a3693c1d59d54",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_margins_s29.receipt.json",
+        "receipt_sha256": "e656e40ac159d71a38b9b75fa7b69119160d9e1efba0bf10ec1a8c6cc27ea061"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.0004001334641677258,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 76,
+            "risk": 0.007749566636076272,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 5,
+              "risk": 0.0005555555555555556,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 12,
+              "risk": 0.0012631578947368421,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.10370380520613348,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 680,
+            "risk": 0.18686452322066502,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 517,
+              "risk": 0.1615625,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 664,
+              "risk": 0.18444444444444444,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 752,
+              "risk": 0.19789473684210526,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "mlp_margins_s43",
+      "spec": {
+        "id": "mlp_margins_s43",
+        "kind": "mlp",
+        "features": "no_summaries",
+        "seed": 43
+      },
+      "dimension": 6,
+      "development_selection_aurc": 0.000760945031544593,
+      "threshold": 0.9184665679931641,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_margins_s43.json",
+        "sha256": "092d51845b611f02d8009febde173557044b5f3db3fb8ae690fcb222de31122f",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_margins_s43.receipt.json",
+        "receipt_sha256": "94fb89e61cc843baae8e55f4393665fda045eb074d95efb3729e465aa8bd13aa"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.00040146878328354554,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 73,
+            "risk": 0.007443662689915366,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 5,
+              "risk": 0.0005555555555555556,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 14,
+              "risk": 0.0014736842105263158,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.10877362537929128,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 686,
+            "risk": 0.18851332783731795,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 519,
+              "risk": 0.1621875,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 674,
+              "risk": 0.18722222222222223,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 746,
+              "risk": 0.19631578947368422,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "mlp_ours_logits_s17",
+      "spec": {
+        "id": "mlp_ours_logits_s17",
+        "kind": "mlp",
+        "features": "ours_logits",
+        "seed": 17
+      },
+      "dimension": 12,
+      "development_selection_aurc": 0.0008651049589507869,
+      "threshold": 0.9774576425552368,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_ours_logits_s17.json",
+        "sha256": "c3e92796bba7898431f6cfe4212f79f5cd47ed69a54ca847358e5ab87992d062",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_ours_logits_s17.receipt.json",
+        "receipt_sha256": "8557fcb563f86281aaf81656fb04e734fc9018d1da636c20e95f632ad988ee24"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.00039338524336033167,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 69,
+            "risk": 0.007035790761700826,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 5,
+              "risk": 0.0005555555555555556,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 14,
+              "risk": 0.0014736842105263158,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.13609872318943655,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 687,
+            "risk": 0.18878812860676009,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 531,
+              "risk": 0.1659375,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 670,
+              "risk": 0.18611111111111112,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 751,
+              "risk": 0.1976315789473684,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "mlp_ours_logits_s29",
+      "spec": {
+        "id": "mlp_ours_logits_s29",
+        "kind": "mlp",
+        "features": "ours_logits",
+        "seed": 29
+      },
+      "dimension": 12,
+      "development_selection_aurc": 0.0009042294359041109,
+      "threshold": 0.9659234881401062,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_ours_logits_s29.json",
+        "sha256": "3c88de25697b78ad331712a5ce809bd421e42e84cbf437f4627933c3a9a62c57",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_ours_logits_s29.receipt.json",
+        "receipt_sha256": "7db7813f3efb66d52201d0d35ba1a75911424147b1a64a2bdb6d16d58c8ddc50"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.00039747963977862483,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 70,
+            "risk": 0.007137758743754461,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 5,
+              "risk": 0.0005555555555555556,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 15,
+              "risk": 0.0015789473684210526,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.14777298734205782,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 695,
+            "risk": 0.19098653476229732,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 539,
+              "risk": 0.1684375,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 678,
+              "risk": 0.18833333333333332,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 753,
+              "risk": 0.19815789473684212,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "mlp_ours_logits_s43",
+      "spec": {
+        "id": "mlp_ours_logits_s43",
+        "kind": "mlp",
+        "features": "ours_logits",
+        "seed": 43
+      },
+      "dimension": 12,
+      "development_selection_aurc": 0.0009302204785789868,
+      "threshold": 0.9483464360237122,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_ours_logits_s43.json",
+        "sha256": "a671ef1f85a96683c123ae5d106a802213167e4863bff65d9f0ef01749e56660",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_ours_logits_s43.receipt.json",
+        "receipt_sha256": "b143750a25324bab24bb4e0966a5b1235da52cf3452c7691ff43149a3a64a1db"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.00043137309660354003,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 75,
+            "risk": 0.007647598654022637,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 6,
+              "risk": 0.0006666666666666666,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 17,
+              "risk": 0.0017894736842105263,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.1179866335006867,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 686,
+            "risk": 0.18851332783731795,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 527,
+              "risk": 0.1646875,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 674,
+              "risk": 0.18722222222222223,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 746,
+              "risk": 0.19631578947368422,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "mlp_bahat_logits_s17",
+      "spec": {
+        "id": "mlp_bahat_logits_s17",
+        "kind": "mlp",
+        "features": "bahat_logits",
+        "seed": 17
+      },
+      "dimension": 12,
+      "development_selection_aurc": 0.0006201376390358972,
+      "threshold": 0.98853999376297,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_bahat_logits_s17.json",
+        "sha256": "43b298d0d313523a00c5c2b9375af88d1100063d27e2783ff0755ddc9eb8af04",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_bahat_logits_s17.receipt.json",
+        "receipt_sha256": "fde5b8c9921f5685691b43b0fd8e8f58cd277fe785138d181fba2684f1089dc5"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.0005166684366208836,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 81,
+            "risk": 0.008259406546344448,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 1,
+              "risk": 0.000125,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 7,
+              "risk": 0.0007777777777777777,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 29,
+              "risk": 0.0030526315789473684,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.1547597082476865,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 710,
+            "risk": 0.19510854630392965,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 552,
+              "risk": 0.1725,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 690,
+              "risk": 0.19166666666666668,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 795,
+              "risk": 0.20921052631578949,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "mlp_bahat_logits_s29",
+      "spec": {
+        "id": "mlp_bahat_logits_s29",
+        "kind": "mlp",
+        "features": "bahat_logits",
+        "seed": 29
+      },
+      "dimension": 12,
+      "development_selection_aurc": 0.0006679812150981706,
+      "threshold": 0.9984512329101562,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_bahat_logits_s29.json",
+        "sha256": "8767e510784e8e79d02fc05a32280312cc836977b5ffb9ff421754d870ed4e05",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_bahat_logits_s29.receipt.json",
+        "receipt_sha256": "9cbb0603cb1f8ad68d4c7fb91203b1ef886cbaa7f5df0fd9347dabb80f0550be"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.0005149044608014312,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 80,
+            "risk": 0.008157438564290813,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 0,
+              "risk": 0.0,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 6,
+              "risk": 0.0006666666666666666,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 31,
+              "risk": 0.003263157894736842,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.1604609029432476,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 712,
+            "risk": 0.19565814784281396,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 568,
+              "risk": 0.1775,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 697,
+              "risk": 0.19361111111111112,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 792,
+              "risk": 0.20842105263157895,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "mlp_bahat_logits_s43",
+      "spec": {
+        "id": "mlp_bahat_logits_s43",
+        "kind": "mlp",
+        "features": "bahat_logits",
+        "seed": 43
+      },
+      "dimension": 12,
+      "development_selection_aurc": 0.0006286138783155443,
+      "threshold": 0.9891101717948914,
+      "threshold_status": "development_only_not_certified",
+      "model_source": {
+        "path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_bahat_logits_s43.json",
+        "sha256": "082d623ce7bc169ae3f967cac2cdab44417ddadd5ef7ddfc791cd8b4fc21c31a",
+        "receipt_path": "archive\\selective_experiments\\selector_comparison_bahat\\models\\mlp_bahat_logits_s43.receipt.json",
+        "receipt_sha256": "d14e4e61e29c3526b2ec28f3d513a961a678bb7bab05d95abd841f705ac1cc0d"
+      },
+      "cohorts": {
+        "DeepShield": {
+          "aurc": 0.0005124035610248366,
+          "matched_frozen_coverage": {
+            "accepted": 9807,
+            "errors": 81,
+            "risk": 0.008259406546344448,
+            "coverage": 0.9807
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 8000,
+              "errors": 1,
+              "risk": 0.000125,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 9000,
+              "errors": 5,
+              "risk": 0.0005555555555555556,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 9500,
+              "errors": 28,
+              "risk": 0.0029473684210526317,
+              "coverage": 0.95
+            }
+          }
+        },
+        "OpenFake": {
+          "aurc": 0.14889793357220826,
+          "matched_frozen_coverage": {
+            "accepted": 3639,
+            "errors": 712,
+            "risk": 0.19565814784281396,
+            "coverage": 0.90975
+          },
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "errors": 552,
+              "risk": 0.1725,
+              "coverage": 0.8
+            },
+            "0.9": {
+              "accepted": 3600,
+              "errors": 694,
+              "risk": 0.19277777777777777,
+              "coverage": 0.9
+            },
+            "0.95": {
+              "accepted": 3800,
+              "errors": 790,
+              "risk": 0.20789473684210527,
+              "coverage": 0.95
+            }
+          }
+        }
+      }
+    }
+  ],
+  "all_stored_paired_aurc_contrasts": [
+    {
+      "cohort": "DeepShield",
+      "id": "frozen_v4__minus__confidence",
+      "left_method": "frozen_v4",
+      "right_method": "confidence",
+      "estimate_left_minus_right": -0.0002600190348577926,
+      "ci95": {
+        "lower_95": -0.00034240954545255726,
+        "upper_95": -0.0001784992961906495,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/frozen_v4__minus__confidence"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "frozen_v4__minus__tta_mean",
+      "left_method": "frozen_v4",
+      "right_method": "tta_mean",
+      "estimate_left_minus_right": -0.00016417178536265502,
+      "ci95": {
+        "lower_95": -0.0002225913840478721,
+        "upper_95": -0.00011055365934575848,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/frozen_v4__minus__tta_mean"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "lr_full__minus__lr_confidence",
+      "left_method": "lr_full",
+      "right_method": "lr_confidence",
+      "estimate_left_minus_right": -0.0002600190348577926,
+      "ci95": {
+        "lower_95": -0.00034240954545255726,
+        "upper_95": -0.0001784992961906495,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/lr_full__minus__lr_confidence"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "lr_full__minus__lr_no_summaries",
+      "left_method": "lr_full",
+      "right_method": "lr_no_summaries",
+      "estimate_left_minus_right": 9.579045530707037e-06,
+      "ci95": {
+        "lower_95": -2.7214555107443523e-05,
+        "upper_95": 4.013421636797839e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/lr_full__minus__lr_no_summaries"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "lr_full__minus__lr_no_orientation",
+      "left_method": "lr_full",
+      "right_method": "lr_no_orientation",
+      "estimate_left_minus_right": -0.00022805297755366022,
+      "ci95": {
+        "lower_95": -0.00029745296609591293,
+        "upper_95": -0.00016565193393873703,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/lr_full__minus__lr_no_orientation"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "lr_full__minus__lr_no_confidence",
+      "left_method": "lr_full",
+      "right_method": "lr_no_confidence",
+      "estimate_left_minus_right": -0.002130698716546001,
+      "ci95": {
+        "lower_95": -0.002805314636662116,
+        "upper_95": -0.001524474034673235,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/lr_full__minus__lr_no_confidence"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "lr_full__minus__lr_summaries_only",
+      "left_method": "lr_full",
+      "right_method": "lr_summaries_only",
+      "estimate_left_minus_right": -0.00019540186735205286,
+      "ci95": {
+        "lower_95": -0.00026267866898779644,
+        "upper_95": -0.00014039126011081967,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/lr_full__minus__lr_summaries_only"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "lr_full__minus__lr_jpeg_only",
+      "left_method": "lr_full",
+      "right_method": "lr_jpeg_only",
+      "estimate_left_minus_right": -0.00035562827538970684,
+      "ci95": {
+        "lower_95": -0.0004588395193291585,
+        "upper_95": -0.0002611717438343459,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/lr_full__minus__lr_jpeg_only"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "lr_full__minus__lr_resize_only",
+      "left_method": "lr_full",
+      "right_method": "lr_resize_only",
+      "estimate_left_minus_right": 2.6220450857339177e-05,
+      "ci95": {
+        "lower_95": 4.083107490792324e-06,
+        "upper_95": 5.58319351330736e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/lr_full__minus__lr_resize_only"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "lr_full__minus__lr_without_jpeg_q90",
+      "left_method": "lr_full",
+      "right_method": "lr_without_jpeg_q90",
+      "estimate_left_minus_right": 7.56449724002991e-06,
+      "ci95": {
+        "lower_95": -8.384557098263862e-07,
+        "upper_95": 1.833074795556588e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/lr_full__minus__lr_without_jpeg_q90"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "lr_full__minus__lr_without_jpeg_q75",
+      "left_method": "lr_full",
+      "right_method": "lr_without_jpeg_q75",
+      "estimate_left_minus_right": 7.062561838441176e-06,
+      "ci95": {
+        "lower_95": -4.179789607603736e-07,
+        "upper_95": 1.4432241723026137e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/lr_full__minus__lr_without_jpeg_q75"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "lr_full__minus__lr_without_jpeg_q60",
+      "left_method": "lr_full",
+      "right_method": "lr_without_jpeg_q60",
+      "estimate_left_minus_right": 1.5917608621631612e-05,
+      "ci95": {
+        "lower_95": 7.003331029451735e-07,
+        "upper_95": 3.201220965851843e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/lr_full__minus__lr_without_jpeg_q60"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "lr_full__minus__lr_without_resize_0p75",
+      "left_method": "lr_full",
+      "right_method": "lr_without_resize_0p75",
+      "estimate_left_minus_right": -1.4935015958205886e-05,
+      "ci95": {
+        "lower_95": -2.4950751817832023e-05,
+        "upper_95": -6.365769585199747e-06,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/lr_full__minus__lr_without_resize_0p75"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "lr_full__minus__lr_without_resize_0p5",
+      "left_method": "lr_full",
+      "right_method": "lr_without_resize_0p5",
+      "estimate_left_minus_right": -0.00012811205528704875,
+      "ci95": {
+        "lower_95": -0.00017739366292412215,
+        "upper_95": -8.407958375702835e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/lr_full__minus__lr_without_resize_0p5"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "lr_balanced_no_summaries__minus__lr_no_summaries",
+      "left_method": "lr_balanced_no_summaries",
+      "right_method": "lr_no_summaries",
+      "estimate_left_minus_right": -1.7641016095166584e-05,
+      "ci95": {
+        "lower_95": -4.276370842091784e-05,
+        "upper_95": 3.859930051480713e-06,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/lr_balanced_no_summaries__minus__lr_no_summaries"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "mlp_margins_s17__minus__lr_balanced_no_summaries",
+      "left_method": "mlp_margins_s17",
+      "right_method": "lr_balanced_no_summaries",
+      "estimate_left_minus_right": 1.4930652127934411e-05,
+      "ci95": {
+        "lower_95": -5.448084129583555e-06,
+        "upper_95": 3.423693123813207e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/mlp_margins_s17__minus__lr_balanced_no_summaries"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "mlp_margins_s29__minus__lr_balanced_no_summaries",
+      "left_method": "mlp_margins_s29",
+      "right_method": "lr_balanced_no_summaries",
+      "estimate_left_minus_right": 2.7365092255606644e-05,
+      "ci95": {
+        "lower_95": -1.6300947470892965e-06,
+        "upper_95": 5.385103098487588e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/mlp_margins_s29__minus__lr_balanced_no_summaries"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "mlp_margins_s43__minus__lr_balanced_no_summaries",
+      "left_method": "mlp_margins_s43",
+      "right_method": "lr_balanced_no_summaries",
+      "estimate_left_minus_right": 2.870041137142639e-05,
+      "ci95": {
+        "lower_95": 7.55338880253162e-06,
+        "upper_95": 4.923430471051186e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/mlp_margins_s43__minus__lr_balanced_no_summaries"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "frozen_v4__minus__mlp_margins_s17",
+      "left_method": "frozen_v4",
+      "right_method": "mlp_margins_s17",
+      "estimate_left_minus_right": 1.228940949793921e-05,
+      "ci95": {
+        "lower_95": -1.2547719177492483e-05,
+        "upper_95": 4.362759626438301e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/frozen_v4__minus__mlp_margins_s17"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "frozen_v4__minus__mlp_margins_s29",
+      "left_method": "frozen_v4",
+      "right_method": "mlp_margins_s29",
+      "estimate_left_minus_right": -1.4503062973302266e-07,
+      "ci95": {
+        "lower_95": -2.8651162401796886e-05,
+        "upper_95": 3.339377947348328e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/frozen_v4__minus__mlp_margins_s29"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "frozen_v4__minus__mlp_margins_s43",
+      "left_method": "frozen_v4",
+      "right_method": "mlp_margins_s43",
+      "estimate_left_minus_right": -1.4803497455527699e-06,
+      "ci95": {
+        "lower_95": -2.2573468061497864e-05,
+        "upper_95": 2.088995687052711e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/frozen_v4__minus__mlp_margins_s43"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "mlp_ours_logits_s17__minus__mlp_bahat_logits_s17",
+      "left_method": "mlp_ours_logits_s17",
+      "right_method": "mlp_bahat_logits_s17",
+      "estimate_left_minus_right": -0.00012328319326055195,
+      "ci95": {
+        "lower_95": -0.00017849528348918732,
+        "upper_95": -6.91398664386226e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/mlp_ours_logits_s17__minus__mlp_bahat_logits_s17"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "frozen_v4__minus__mlp_bahat_logits_s17",
+      "left_method": "frozen_v4",
+      "right_method": "mlp_bahat_logits_s17",
+      "estimate_left_minus_right": -0.00011668000308289085,
+      "ci95": {
+        "lower_95": -0.00017936964653046696,
+        "upper_95": -5.727923436859155e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/frozen_v4__minus__mlp_bahat_logits_s17"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "mlp_ours_logits_s17__minus__mlp_margins_s17",
+      "left_method": "mlp_ours_logits_s17",
+      "right_method": "mlp_margins_s17",
+      "estimate_left_minus_right": 5.686219320278111e-06,
+      "ci95": {
+        "lower_95": -1.496079125172047e-05,
+        "upper_95": 2.651531806924681e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/mlp_ours_logits_s17__minus__mlp_margins_s17"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "mlp_ours_logits_s29__minus__mlp_bahat_logits_s29",
+      "left_method": "mlp_ours_logits_s29",
+      "right_method": "mlp_bahat_logits_s29",
+      "estimate_left_minus_right": -0.00011742482102280641,
+      "ci95": {
+        "lower_95": -0.00017865765616244733,
+        "upper_95": -5.643190874977227e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/mlp_ours_logits_s29__minus__mlp_bahat_logits_s29"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "frozen_v4__minus__mlp_bahat_logits_s29",
+      "left_method": "frozen_v4",
+      "right_method": "mlp_bahat_logits_s29",
+      "estimate_left_minus_right": -0.00011491602726343848,
+      "ci95": {
+        "lower_95": -0.0001805728459973687,
+        "upper_95": -5.375751634882596e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/frozen_v4__minus__mlp_bahat_logits_s29"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "mlp_ours_logits_s29__minus__mlp_margins_s29",
+      "left_method": "mlp_ours_logits_s29",
+      "right_method": "mlp_margins_s29",
+      "estimate_left_minus_right": -2.6538243891009597e-06,
+      "ci95": {
+        "lower_95": -2.4350135463363134e-05,
+        "upper_95": 2.0143900077514928e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/mlp_ours_logits_s29__minus__mlp_margins_s29"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "mlp_ours_logits_s43__minus__mlp_bahat_logits_s43",
+      "left_method": "mlp_ours_logits_s43",
+      "right_method": "mlp_bahat_logits_s43",
+      "estimate_left_minus_right": -8.103046442129661e-05,
+      "ci95": {
+        "lower_95": -0.00014075577366878721,
+        "upper_95": -2.1579846581097035e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/mlp_ours_logits_s43__minus__mlp_bahat_logits_s43"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "frozen_v4__minus__mlp_bahat_logits_s43",
+      "left_method": "frozen_v4",
+      "right_method": "mlp_bahat_logits_s43",
+      "estimate_left_minus_right": -0.00011241512748684388,
+      "ci95": {
+        "lower_95": -0.00017364747098841325,
+        "upper_95": -4.760596789128657e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/frozen_v4__minus__mlp_bahat_logits_s43"
+    },
+    {
+      "cohort": "DeepShield",
+      "id": "mlp_ours_logits_s43__minus__mlp_margins_s43",
+      "left_method": "mlp_ours_logits_s43",
+      "right_method": "mlp_margins_s43",
+      "estimate_left_minus_right": 2.9904313319994492e-05,
+      "ci95": {
+        "lower_95": 1.5441263996514654e-06,
+        "upper_95": 6.21700621013166e-05,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/DeepShield/contrasts/mlp_ours_logits_s43__minus__mlp_margins_s43"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "frozen_v4__minus__confidence",
+      "left_method": "frozen_v4",
+      "right_method": "confidence",
+      "estimate_left_minus_right": -0.03976488689290675,
+      "ci95": {
+        "lower_95": -0.045008000617568156,
+        "upper_95": -0.033906296637315356,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/frozen_v4__minus__confidence"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "frozen_v4__minus__tta_mean",
+      "left_method": "frozen_v4",
+      "right_method": "tta_mean",
+      "estimate_left_minus_right": -0.017279110078728482,
+      "ci95": {
+        "lower_95": -0.02082809510882877,
+        "upper_95": -0.013746310835574451,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/frozen_v4__minus__tta_mean"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "lr_full__minus__lr_confidence",
+      "left_method": "lr_full",
+      "right_method": "lr_confidence",
+      "estimate_left_minus_right": -0.03976488689290675,
+      "ci95": {
+        "lower_95": -0.045008000617568156,
+        "upper_95": -0.033906296637315356,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/lr_full__minus__lr_confidence"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "lr_full__minus__lr_no_summaries",
+      "left_method": "lr_full",
+      "right_method": "lr_no_summaries",
+      "estimate_left_minus_right": 0.012952771466538116,
+      "ci95": {
+        "lower_95": 0.010619100743509687,
+        "upper_95": 0.015107276641648982,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/lr_full__minus__lr_no_summaries"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "lr_full__minus__lr_no_orientation",
+      "left_method": "lr_full",
+      "right_method": "lr_no_orientation",
+      "estimate_left_minus_right": -0.019050458032646156,
+      "ci95": {
+        "lower_95": -0.022506305413305786,
+        "upper_95": -0.015273268686601829,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/lr_full__minus__lr_no_orientation"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "lr_full__minus__lr_no_confidence",
+      "left_method": "lr_full",
+      "right_method": "lr_no_confidence",
+      "estimate_left_minus_right": 0.03565448128439874,
+      "ci95": {
+        "lower_95": 0.020136104907509764,
+        "upper_95": 0.05179399695678809,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/lr_full__minus__lr_no_confidence"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "lr_full__minus__lr_summaries_only",
+      "left_method": "lr_full",
+      "right_method": "lr_summaries_only",
+      "estimate_left_minus_right": -0.03681256363526561,
+      "ci95": {
+        "lower_95": -0.04192565033882046,
+        "upper_95": -0.03095528321395062,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/lr_full__minus__lr_summaries_only"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "lr_full__minus__lr_jpeg_only",
+      "left_method": "lr_full",
+      "right_method": "lr_jpeg_only",
+      "estimate_left_minus_right": -0.04107134316491262,
+      "ci95": {
+        "lower_95": -0.04613353484803268,
+        "upper_95": -0.035210794756919496,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/lr_full__minus__lr_jpeg_only"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "lr_full__minus__lr_resize_only",
+      "left_method": "lr_full",
+      "right_method": "lr_resize_only",
+      "estimate_left_minus_right": 0.009871606592827653,
+      "ci95": {
+        "lower_95": 0.007841012576067669,
+        "upper_95": 0.011889109024255523,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/lr_full__minus__lr_resize_only"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "lr_full__minus__lr_without_jpeg_q90",
+      "left_method": "lr_full",
+      "right_method": "lr_without_jpeg_q90",
+      "estimate_left_minus_right": -0.0011042847872668182,
+      "ci95": {
+        "lower_95": -0.001419018552875969,
+        "upper_95": -0.0007838980207795374,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/lr_full__minus__lr_without_jpeg_q90"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "lr_full__minus__lr_without_jpeg_q75",
+      "left_method": "lr_full",
+      "right_method": "lr_without_jpeg_q75",
+      "estimate_left_minus_right": -0.0038716408464586904,
+      "ci95": {
+        "lower_95": -0.004607472589671204,
+        "upper_95": -0.003184080153754753,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/lr_full__minus__lr_without_jpeg_q75"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "lr_full__minus__lr_without_jpeg_q60",
+      "left_method": "lr_full",
+      "right_method": "lr_without_jpeg_q60",
+      "estimate_left_minus_right": 0.007613134751718931,
+      "ci95": {
+        "lower_95": 0.006224660425832407,
+        "upper_95": 0.008975931898267519,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/lr_full__minus__lr_without_jpeg_q60"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "lr_full__minus__lr_without_resize_0p75",
+      "left_method": "lr_full",
+      "right_method": "lr_without_resize_0p75",
+      "estimate_left_minus_right": 0.002652888329949421,
+      "ci95": {
+        "lower_95": 0.002149809110372572,
+        "upper_95": 0.003140186851050526,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/lr_full__minus__lr_without_resize_0p75"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "lr_full__minus__lr_without_resize_0p5",
+      "left_method": "lr_full",
+      "right_method": "lr_without_resize_0p5",
+      "estimate_left_minus_right": -0.04104180298680277,
+      "ci95": {
+        "lower_95": -0.04612746097984941,
+        "upper_95": -0.035238927457089335,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/lr_full__minus__lr_without_resize_0p5"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "lr_balanced_no_summaries__minus__lr_no_summaries",
+      "left_method": "lr_balanced_no_summaries",
+      "right_method": "lr_no_summaries",
+      "estimate_left_minus_right": -0.00428762093179022,
+      "ci95": {
+        "lower_95": -0.005118105310663942,
+        "upper_95": -0.003461526611948036,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/lr_balanced_no_summaries__minus__lr_no_summaries"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "mlp_margins_s17__minus__lr_balanced_no_summaries",
+      "left_method": "mlp_margins_s17",
+      "right_method": "lr_balanced_no_summaries",
+      "estimate_left_minus_right": -0.030988040501176525,
+      "ci95": {
+        "lower_95": -0.040253685916776444,
+        "upper_95": -0.02217339505989859,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/mlp_margins_s17__minus__lr_balanced_no_summaries"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "mlp_margins_s29__minus__lr_balanced_no_summaries",
+      "left_method": "mlp_margins_s29",
+      "right_method": "lr_balanced_no_summaries",
+      "estimate_left_minus_right": -0.0349143759323893,
+      "ci95": {
+        "lower_95": -0.04239102250036758,
+        "upper_95": -0.027233989620423452,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/mlp_margins_s29__minus__lr_balanced_no_summaries"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "mlp_margins_s43__minus__lr_balanced_no_summaries",
+      "left_method": "mlp_margins_s43",
+      "right_method": "lr_balanced_no_summaries",
+      "estimate_left_minus_right": -0.029844555759231506,
+      "ci95": {
+        "lower_95": -0.038210246996346876,
+        "upper_95": -0.021319258820892143,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/mlp_margins_s43__minus__lr_balanced_no_summaries"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "frozen_v4__minus__mlp_margins_s17",
+      "left_method": "frozen_v4",
+      "right_method": "mlp_margins_s17",
+      "estimate_left_minus_right": 0.04822843289950486,
+      "ci95": {
+        "lower_95": 0.03745573391922454,
+        "upper_95": 0.059437667386163864,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/frozen_v4__minus__mlp_margins_s17"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "frozen_v4__minus__mlp_margins_s29",
+      "left_method": "frozen_v4",
+      "right_method": "mlp_margins_s29",
+      "estimate_left_minus_right": 0.05215476833071764,
+      "ci95": {
+        "lower_95": 0.041804543022889044,
+        "upper_95": 0.06178382068281368,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/frozen_v4__minus__mlp_margins_s29"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "frozen_v4__minus__mlp_margins_s43",
+      "left_method": "frozen_v4",
+      "right_method": "mlp_margins_s43",
+      "estimate_left_minus_right": 0.04708494815755984,
+      "ci95": {
+        "lower_95": 0.03618724457022591,
+        "upper_95": 0.057712952930091384,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/frozen_v4__minus__mlp_margins_s43"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "mlp_ours_logits_s17__minus__mlp_bahat_logits_s17",
+      "left_method": "mlp_ours_logits_s17",
+      "right_method": "mlp_bahat_logits_s17",
+      "estimate_left_minus_right": -0.01866098505824995,
+      "ci95": {
+        "lower_95": -0.023915400025330047,
+        "upper_95": -0.013059281546306027,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/mlp_ours_logits_s17__minus__mlp_bahat_logits_s17"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "frozen_v4__minus__mlp_bahat_logits_s17",
+      "left_method": "frozen_v4",
+      "right_method": "mlp_bahat_logits_s17",
+      "estimate_left_minus_right": 0.0010988652891646133,
+      "ci95": {
+        "lower_95": -0.0033525564326146082,
+        "upper_95": 0.005616336598119115,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/frozen_v4__minus__mlp_bahat_logits_s17"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "mlp_ours_logits_s17__minus__mlp_margins_s17",
+      "left_method": "mlp_ours_logits_s17",
+      "right_method": "mlp_margins_s17",
+      "estimate_left_minus_right": 0.028468582552090296,
+      "ci95": {
+        "lower_95": 0.019055136119129453,
+        "upper_95": 0.03807555208390745,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/mlp_ours_logits_s17__minus__mlp_margins_s17"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "mlp_ours_logits_s29__minus__mlp_bahat_logits_s29",
+      "left_method": "mlp_ours_logits_s29",
+      "right_method": "mlp_bahat_logits_s29",
+      "estimate_left_minus_right": -0.012687915601189786,
+      "ci95": {
+        "lower_95": -0.018073764571076466,
+        "upper_95": -0.00671051173982256,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/mlp_ours_logits_s29__minus__mlp_bahat_logits_s29"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "frozen_v4__minus__mlp_bahat_logits_s29",
+      "left_method": "frozen_v4",
+      "right_method": "mlp_bahat_logits_s29",
+      "estimate_left_minus_right": -0.004602329406396488,
+      "ci95": {
+        "lower_95": -0.008878078723394871,
+        "upper_95": -0.0003159706210685928,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/frozen_v4__minus__mlp_bahat_logits_s29"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "mlp_ours_logits_s29__minus__mlp_margins_s29",
+      "left_method": "mlp_ours_logits_s29",
+      "right_method": "mlp_margins_s29",
+      "estimate_left_minus_right": 0.04406918213592434,
+      "ci95": {
+        "lower_95": 0.034804917504842034,
+        "upper_95": 0.05326226859304453,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/mlp_ours_logits_s29__minus__mlp_margins_s29"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "mlp_ours_logits_s43__minus__mlp_bahat_logits_s43",
+      "left_method": "mlp_ours_logits_s43",
+      "right_method": "mlp_bahat_logits_s43",
+      "estimate_left_minus_right": -0.03091130007152157,
+      "ci95": {
+        "lower_95": -0.03713383262553392,
+        "upper_95": -0.024212248261422147,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/mlp_ours_logits_s43__minus__mlp_bahat_logits_s43"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "frozen_v4__minus__mlp_bahat_logits_s43",
+      "left_method": "frozen_v4",
+      "right_method": "mlp_bahat_logits_s43",
+      "estimate_left_minus_right": 0.006960639964642856,
+      "ci95": {
+        "lower_95": 0.002115902295765576,
+        "upper_95": 0.012031493232637615,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/frozen_v4__minus__mlp_bahat_logits_s43"
+    },
+    {
+      "cohort": "OpenFake",
+      "id": "mlp_ours_logits_s43__minus__mlp_margins_s43",
+      "left_method": "mlp_ours_logits_s43",
+      "right_method": "mlp_margins_s43",
+      "estimate_left_minus_right": 0.009213008121395416,
+      "ci95": {
+        "lower_95": 0.003549195537130262,
+        "upper_95": 0.015376434437565855,
+        "repetitions": 1000
+      },
+      "interpretation": "negative favors left; positive favors right",
+      "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "source_json_pointer": "/cohorts/OpenFake/contrasts/mlp_ours_logits_s43__minus__mlp_margins_s43"
+    }
+  ],
+  "mlp_seed_aggregates": {
+    "mlp_ours_logits": {
+      "dimension": 12,
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "summary_scope": "Mean/std across three training seeds; not a pooled ensemble, not a confidence interval.",
+      "cohorts": {
+        "DeepShield": {
+          "mean_aurc": 0.0004074126599141655,
+          "std_aurc": 2.08510890666813e-05,
+          "seeds": [
+            17,
+            29,
+            43
+          ],
+          "matched_k": 9807,
+          "matched_errors_by_seed": {
+            "17": 69,
+            "29": 70,
+            "43": 75
+          },
+          "matched_errors_range": [
+            69,
+            75
+          ],
+          "matched_errors_mean": 71.33333333333333,
+          "aurc_by_seed": {
+            "17": 0.00039338524336033167,
+            "29": 0.00039747963977862483,
+            "43": 0.00043137309660354003
+          }
+        },
+        "OpenFake": {
+          "mean_aurc": 0.13395278134406038,
+          "std_aurc": 0.015008681440874264,
+          "seeds": [
+            17,
+            29,
+            43
+          ],
+          "matched_k": 3639,
+          "matched_errors_by_seed": {
+            "17": 687,
+            "29": 695,
+            "43": 686
+          },
+          "matched_errors_range": [
+            686,
+            695
+          ],
+          "matched_errors_mean": 689.3333333333334,
+          "aurc_by_seed": {
+            "17": 0.13609872318943655,
+            "29": 0.14777298734205782,
+            "43": 0.1179866335006867
+          }
+        }
+      }
+    },
+    "mlp_bahat_logits": {
+      "dimension": 12,
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "summary_scope": "Mean/std across three training seeds; not a pooled ensemble, not a confidence interval.",
+      "cohorts": {
+        "DeepShield": {
+          "mean_aurc": 0.0005146588194823838,
+          "std_aurc": 2.1430225630302567e-06,
+          "seeds": [
+            17,
+            29,
+            43
+          ],
+          "matched_k": 9807,
+          "matched_errors_by_seed": {
+            "17": 81,
+            "29": 80,
+            "43": 81
+          },
+          "matched_errors_range": [
+            80,
+            81
+          ],
+          "matched_errors_mean": 80.66666666666667,
+          "aurc_by_seed": {
+            "17": 0.0005166684366208836,
+            "29": 0.0005149044608014312,
+            "43": 0.0005124035610248366
+          }
+        },
+        "OpenFake": {
+          "mean_aurc": 0.15470618158771413,
+          "std_aurc": 0.005781670519529312,
+          "seeds": [
+            17,
+            29,
+            43
+          ],
+          "matched_k": 3639,
+          "matched_errors_by_seed": {
+            "17": 710,
+            "29": 712,
+            "43": 712
+          },
+          "matched_errors_range": [
+            710,
+            712
+          ],
+          "matched_errors_mean": 711.3333333333334,
+          "aurc_by_seed": {
+            "17": 0.1547597082476865,
+            "29": 0.1604609029432476,
+            "43": 0.14889793357220826
+          }
+        }
+      }
+    },
+    "mlp_margins": {
+      "dimension": 6,
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "summary_scope": "Mean/std across three training seeds; not a pooled ensemble, not a confidence interval.",
+      "cohorts": {
+        "DeepShield": {
+          "mean_aurc": 0.00039643375716377495,
+          "std_aurc": 7.59390817315072e-06,
+          "seeds": [
+            17,
+            29,
+            43
+          ],
+          "matched_k": 9807,
+          "matched_errors_by_seed": {
+            "17": 73,
+            "29": 76,
+            "43": 73
+          },
+          "matched_errors_range": [
+            73,
+            76
+          ],
+          "matched_errors_mean": 74,
+          "aurc_by_seed": {
+            "17": 0.00038769902404005356,
+            "29": 0.0004001334641677258,
+            "43": 0.00040146878328354554
+          }
+        },
+        "OpenFake": {
+          "mean_aurc": 0.10670252374092366,
+          "std_aurc": 0.002659158509178409,
+          "seeds": [
+            17,
+            29,
+            43
+          ],
+          "matched_k": 3639,
+          "matched_errors_by_seed": {
+            "17": 692,
+            "29": 680,
+            "43": 686
+          },
+          "matched_errors_range": [
+            680,
+            692
+          ],
+          "matched_errors_mean": 686,
+          "aurc_by_seed": {
+            "17": 0.10763014063734626,
+            "29": 0.10370380520613348,
+            "43": 0.10877362537929128
+          }
+        }
+      }
+    }
+  },
+  "controlled_transform_family_comparison": {
+    "DeepShield": {
+      "ours_mean_aurc": 0.0004074126599141655,
+      "bahat_mean_aurc": 0.0005146588194823838,
+      "relative_aurc_reduction_percent": 20.838302096149988,
+      "paired_seed_contrasts": [
+        {
+          "cohort": "DeepShield",
+          "id": "mlp_ours_logits_s17__minus__mlp_bahat_logits_s17",
+          "left_method": "mlp_ours_logits_s17",
+          "right_method": "mlp_bahat_logits_s17",
+          "estimate_left_minus_right": -0.00012328319326055195,
+          "ci95": {
+            "lower_95": -0.00017849528348918732,
+            "upper_95": -6.91398664386226e-05,
+            "repetitions": 1000
+          },
+          "interpretation": "negative favors left; positive favors right",
+          "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+          "source_json_pointer": "/cohorts/DeepShield/contrasts/mlp_ours_logits_s17__minus__mlp_bahat_logits_s17"
+        },
+        {
+          "cohort": "DeepShield",
+          "id": "mlp_ours_logits_s29__minus__mlp_bahat_logits_s29",
+          "left_method": "mlp_ours_logits_s29",
+          "right_method": "mlp_bahat_logits_s29",
+          "estimate_left_minus_right": -0.00011742482102280641,
+          "ci95": {
+            "lower_95": -0.00017865765616244733,
+            "upper_95": -5.643190874977227e-05,
+            "repetitions": 1000
+          },
+          "interpretation": "negative favors left; positive favors right",
+          "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+          "source_json_pointer": "/cohorts/DeepShield/contrasts/mlp_ours_logits_s29__minus__mlp_bahat_logits_s29"
+        },
+        {
+          "cohort": "DeepShield",
+          "id": "mlp_ours_logits_s43__minus__mlp_bahat_logits_s43",
+          "left_method": "mlp_ours_logits_s43",
+          "right_method": "mlp_bahat_logits_s43",
+          "estimate_left_minus_right": -8.103046442129661e-05,
+          "ci95": {
+            "lower_95": -0.00014075577366878721,
+            "upper_95": -2.1579846581097035e-05,
+            "repetitions": 1000
+          },
+          "interpretation": "negative favors left; positive favors right",
+          "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+          "source_json_pointer": "/cohorts/DeepShield/contrasts/mlp_ours_logits_s43__minus__mlp_bahat_logits_s43"
+        }
+      ],
+      "inference_note": "Each seed has its own paired pointwise interval; no pooled confidence interval for the mean-over-seeds was computed."
+    },
+    "OpenFake": {
+      "ours_mean_aurc": 0.13395278134406038,
+      "bahat_mean_aurc": 0.15470618158771413,
+      "relative_aurc_reduction_percent": 13.414719457662486,
+      "paired_seed_contrasts": [
+        {
+          "cohort": "OpenFake",
+          "id": "mlp_ours_logits_s17__minus__mlp_bahat_logits_s17",
+          "left_method": "mlp_ours_logits_s17",
+          "right_method": "mlp_bahat_logits_s17",
+          "estimate_left_minus_right": -0.01866098505824995,
+          "ci95": {
+            "lower_95": -0.023915400025330047,
+            "upper_95": -0.013059281546306027,
+            "repetitions": 1000
+          },
+          "interpretation": "negative favors left; positive favors right",
+          "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+          "source_json_pointer": "/cohorts/OpenFake/contrasts/mlp_ours_logits_s17__minus__mlp_bahat_logits_s17"
+        },
+        {
+          "cohort": "OpenFake",
+          "id": "mlp_ours_logits_s29__minus__mlp_bahat_logits_s29",
+          "left_method": "mlp_ours_logits_s29",
+          "right_method": "mlp_bahat_logits_s29",
+          "estimate_left_minus_right": -0.012687915601189786,
+          "ci95": {
+            "lower_95": -0.018073764571076466,
+            "upper_95": -0.00671051173982256,
+            "repetitions": 1000
+          },
+          "interpretation": "negative favors left; positive favors right",
+          "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+          "source_json_pointer": "/cohorts/OpenFake/contrasts/mlp_ours_logits_s29__minus__mlp_bahat_logits_s29"
+        },
+        {
+          "cohort": "OpenFake",
+          "id": "mlp_ours_logits_s43__minus__mlp_bahat_logits_s43",
+          "left_method": "mlp_ours_logits_s43",
+          "right_method": "mlp_bahat_logits_s43",
+          "estimate_left_minus_right": -0.03091130007152157,
+          "ci95": {
+            "lower_95": -0.03713383262553392,
+            "upper_95": -0.024212248261422147,
+            "repetitions": 1000
+          },
+          "interpretation": "negative favors left; positive favors right",
+          "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+          "source_json_pointer": "/cohorts/OpenFake/contrasts/mlp_ours_logits_s43__minus__mlp_bahat_logits_s43"
+        }
+      ],
+      "inference_note": "Each seed has its own paired pointwise interval; no pooled confidence interval for the mean-over-seeds was computed."
+    }
+  },
+  "main_table_methods": [
+    "frozen_v4",
+    "lr_no_summaries",
+    "lr_no_orientation",
+    "lr_no_confidence",
+    "lr_summaries_only",
+    "lr_jpeg_only",
+    "lr_resize_only",
+    "lr_without_resize_0p5",
+    "lr_balanced_no_summaries",
+    "mlp_ours_logits",
+    "mlp_bahat_logits",
+    "mlp_margins"
+  ],
+  "interpretation": [
+    "The 26 methods share the same original deterministic detector decisions; 10000 DeepShield and 4000 OpenFake are reused, not new independent samples.",
+    "Matched k is the full frozen selector original fixed-threshold acceptance count: DeepShield 9807 and OpenFake 3639. Other models own development thresholds are not used to set this table coverage.",
+    "All learned variants were fitted on the archived training split. Except for original frozen_v4, their own thresholds are development_only_not_certified.",
+    "lr_full and frozen_v4 have equal stored AURC and matched-count point metrics on both cohorts, but model receipts and threshold provenance remain distinct. Contrasts are preserved under their actual original method IDs.",
+    "MLP margin variants substantially improve OpenFake whole-curve AURC over the frozen profile, with all three existing paired intervals favoring MLP. They retain more errors at original k=3639, showing an operating-point tradeoff.",
+    "No post-hoc winner is adopted from these data. The independent replacement decision concerns the separately frozen resize-only candidate and retains the full selector under its prespecified rule.",
+    "For MLP rows the main table reports mean AURC and error-count range across seeds 17,29,43. Individual seed values and every available original paired interval are retained here.",
+    "No unrecorded contrast or confidence interval was invented. Original intervals use 1000 repetitions/seed31019, not the later 5000-repetition MC/energy reanalysis."
+  ]
+}

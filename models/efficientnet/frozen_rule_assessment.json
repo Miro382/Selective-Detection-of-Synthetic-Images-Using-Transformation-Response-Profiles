@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "total": 2000,
+  "accepted": 1958,
+  "review": 42,
+  "coverage": 0.979,
+  "errors": 13,
+  "risk": 0.006639427987742594,
+  "risk_upper_bound": 0.010535283921290446,
+  "confidence": 0.95,
+  "target_risk": 0.02,
+  "minimum_accepted": 30,
+  "research_threshold": 0.08632226578702012,
+  "accept_threshold": 0.08632226578702012,
+  "calibration_partition_digest": "26e720bc9956122f6417e206ce7d5dc4a7eccdc43935a445f2b0add567814b4e",
+  "evaluated_utc": "2026-10-16T07:59:41.105163+00:00",
+  "scope": "Jedno vopred zmrazené pravidlo, nezávislí reprezentanti pri rovnakej cieľovej distribúcii. Bez záruky pri posune distribúcie."
+}

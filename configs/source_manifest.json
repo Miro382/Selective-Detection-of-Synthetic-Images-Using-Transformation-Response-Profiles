@@ -1,0 +1,949 @@
+{
+  "format": "article-code-release-v1",
+  "files": [
+    {
+      "kind": "research_source",
+      "source": "detector_experiments/detector_v4/training_main/snapshot/calibrate_detector_v4.py",
+      "source_sha256": "dfdc736ab94c81980cbbb30924e0da61cb272811f5e61af35a5589db9afea4f9",
+      "file": "src/research/calibrate_detector_v4.py",
+      "sha256": "ee0e5397321bae4906a6f0d5325cb6d52d28a862db3b6274fe05554038299b7d",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "detector_experiments/detector_v4/training_main/snapshot/detector_training_v4.py",
+      "source_sha256": "703f6ed48d6fa1e48e343c7724bcf60bc5f4df1c7f0e3a0f7127dd073a70d689",
+      "file": "src/research/detector_training_v4.py",
+      "sha256": "4ce13487aaf24df71ebc38a47104cd735d14da07435247a39ca142efc2ce3b1f",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "detector_experiments/detector_v4/training_main/snapshot/prepare_data_v4.py",
+      "source_sha256": "63eba7ed7cf3e469efc1894047494615136003152849ca64092a81b4cff7b53c",
+      "file": "src/research/prepare_data_v4.py",
+      "sha256": "18330d18f0f7656cfbbe07b652d95b340ba139cc26136308972a402f15b63183",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "detector_experiments/detector_v4/training_main/snapshot/sampler_v4.py",
+      "source_sha256": "38b1dcf012052afc84d186c4fb2a50d51d2b1341ba56cd56d2e8ce5e201328bc",
+      "file": "src/research/sampler_v4.py",
+      "sha256": "38b1dcf012052afc84d186c4fb2a50d51d2b1341ba56cd56d2e8ce5e201328bc",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "detector_experiments/detector_v4/training_main/snapshot/train_detector_v4.py",
+      "source_sha256": "46acbfacdcb02c5f47fe27343af16d27e735509dd3ed63077a0a4703b621b2d7",
+      "file": "src/research/train_detector_v4.py",
+      "sha256": "a55125baf67af978556937c841051a7068e6952b24a0119d01b1285505be5612",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "detector_experiments/detector_v4/training_main/snapshot/v4_data_sources.py",
+      "source_sha256": "4314acd3c59534eee1310857db7948b9b743148781a2b31fc4f4b55a1c5dee94",
+      "file": "src/research/v4_data_sources.py",
+      "sha256": "3b90aab5ebf8367247f359c6352def02e65b70fe4632a2600f6f151a4fab82d2",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "detector_experiments/detector_v4/training_main/snapshot/v4_deepshield_audit.py",
+      "source_sha256": "ce3fab68ab0531a9776779732170127efe061686304e7fb82da13e30260bab04",
+      "file": "src/research/v4_deepshield_audit.py",
+      "sha256": "ce3fab68ab0531a9776779732170127efe061686304e7fb82da13e30260bab04",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "detector_experiments/detector_v4/training_main/snapshot/v4_deepshield_remote_zip.py",
+      "source_sha256": "61cb23cd64f234929fb675ec4b1d77c9cb16fcbb04b781409d870c4d3097d9cb",
+      "file": "src/research/v4_deepshield_remote_zip.py",
+      "sha256": "61cb23cd64f234929fb675ec4b1d77c9cb16fcbb04b781409d870c4d3097d9cb",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/experiment_v4/selector_training_v4/code/selector_v4_features.py",
+      "source_sha256": "6676198ff868e88f96a1d0b165a041cad74a3d3ff06286ee072e7f6a0e75d22d",
+      "file": "src/research/selector_v4_features.py",
+      "sha256": "6676198ff868e88f96a1d0b165a041cad74a3d3ff06286ee072e7f6a0e75d22d",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/experiment_v4/selector_training_v4/code/selector_v4_math.py",
+      "source_sha256": "bdc64e27ff3c5da2a8bc6fc8587e07ebddd77b966a0e897ea954f21e62f40a7f",
+      "file": "src/research/selector_v4_math.py",
+      "sha256": "bdc64e27ff3c5da2a8bc6fc8587e07ebddd77b966a0e897ea954f21e62f40a7f",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/experiment_v4/selector_training_v4/code/selector_v4_report.py",
+      "source_sha256": "3524c983da83c571213d2890b1c5dc3bf63e687a6c863153e574757ba561adfa",
+      "file": "src/research/selector_v4_report.py",
+      "sha256": "3524c983da83c571213d2890b1c5dc3bf63e687a6c863153e574757ba561adfa",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/experiment_v4/selector_training_v4/code/train_selector_v4.py",
+      "source_sha256": "5abc5fbf18e1d3fc70eecf7262ef1d32829efa97870bc8023ab41debce9c1131",
+      "file": "src/research/train_selector_v4.py",
+      "sha256": "ab575283f8ef1dd7cda28f3b735e1518185116fd1f7f13c8f0b9a6c0db94be4f",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/detector_runtime/selector_profile_runtime_v4.py",
+      "source_sha256": "3e6b1ec51bc23ca5d9c57bbcff471a5aade778ae95d01f038f6e38c0ec3ed722",
+      "file": "src/research/selector_profile_runtime_v4.py",
+      "sha256": "3e6b1ec51bc23ca5d9c57bbcff471a5aade778ae95d01f038f6e38c0ec3ed722",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/detector_runtime/selector_augmentation_v4.py",
+      "source_sha256": "e3df616dbe0ad049fe16c79152d145b2b80ca00e84874f8de0cb12128869023a",
+      "file": "src/research/selector_augmentation_v4.py",
+      "sha256": "e3df616dbe0ad049fe16c79152d145b2b80ca00e84874f8de0cb12128869023a",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/detector_runtime/extract_selector_profiles_v4.py",
+      "source_sha256": "200a2ce477196b53956a59bf6c910cc5b2f77045ebec846af4b9bbdf5bfc6e40",
+      "file": "src/research/extract_selector_profiles_v4.py",
+      "sha256": "f468492a64952397bb35fa149553fb1c4ac8ef2b3e6cec8365ed386d3871bdae",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "download_training_data_v4.py",
+      "source_sha256": "4a03d29b8f2ba18026441ada3dc16bfbe138a9609a1df95d6951434baf842096",
+      "file": "src/research/download_training_data_v4.py",
+      "sha256": "7d9594884ce30210dce6a981c2c55d8a6671ecf9bea0044312b5346f9a3ee59d",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/code/__init__.py",
+      "source_sha256": "e9211a3cdfe67d4172dddfe6d38e7c8f04aa28685184f9abe0b01906b42c25be",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/code/__init__.py",
+      "sha256": "e9211a3cdfe67d4172dddfe6d38e7c8f04aa28685184f9abe0b01906b42c25be",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/code/cli.py",
+      "source_sha256": "5e27e0453658e6c8d9d5ae18cef9c3598054fa06f64ac19599d9eddfb02316a5",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/code/cli.py",
+      "sha256": "22e01b08fb093e2e79c3f4c336c70cf7facb30a994884cde4b24aaee7210cb75",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/code/common.py",
+      "source_sha256": "c03a9daefe222143cc9f90817e280a672bf7236bb271aa6d9fa004902390ddec",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/code/common.py",
+      "sha256": "f9e90a7a41d36b58589dcbda3773beb79c188e59d10ae5724346001c3e7bacab",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/code/data.py",
+      "source_sha256": "ee8251f1158f6f5c52942de0c7add2921358e9ad942ab3e9c7e2c014f95bd97d",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/code/data.py",
+      "sha256": "ee8251f1158f6f5c52942de0c7add2921358e9ad942ab3e9c7e2c014f95bd97d",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/code/extract.py",
+      "source_sha256": "8efddb66aecfdeb1bbc50d26dfa96ca430ea69774e4b2bba9b54f44b579e4fc7",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/code/extract.py",
+      "sha256": "8efddb66aecfdeb1bbc50d26dfa96ca430ea69774e4b2bba9b54f44b579e4fc7",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/code/features.py",
+      "source_sha256": "8691260a0da45a986831fa975f8a6fbae2ba1168de81f3215606a3e6e31baf11",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/code/features.py",
+      "sha256": "8691260a0da45a986831fa975f8a6fbae2ba1168de81f3215606a3e6e31baf11",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/code/metrics.py",
+      "source_sha256": "727056c2f72581beb5b257573a38a40b82ae765495dfa4eff73190a647665ef8",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/code/metrics.py",
+      "sha256": "727056c2f72581beb5b257573a38a40b82ae765495dfa4eff73190a647665ef8",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/code/models.py",
+      "source_sha256": "8bfb84a2564fd38f42fd7a12a677567c60080b17a3b460e39cd0b6495cd74cb3",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/code/models.py",
+      "sha256": "8bfb84a2564fd38f42fd7a12a677567c60080b17a3b460e39cd0b6495cd74cb3",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/code/report.py",
+      "source_sha256": "5110cb712b13c6e92efa4f4a4d4c3ba35bdac742d2e8bae8565c25beacf0dd5f",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/code/report.py",
+      "sha256": "5110cb712b13c6e92efa4f4a4d4c3ba35bdac742d2e8bae8565c25beacf0dd5f",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/detector_runtime/calibrate_detector_v4.py",
+      "source_sha256": "dfdc736ab94c81980cbbb30924e0da61cb272811f5e61af35a5589db9afea4f9",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/detector_runtime/calibrate_detector_v4.py",
+      "sha256": "ee0e5397321bae4906a6f0d5325cb6d52d28a862db3b6274fe05554038299b7d",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/detector_runtime/detector_training_v4.py",
+      "source_sha256": "703f6ed48d6fa1e48e343c7724bcf60bc5f4df1c7f0e3a0f7127dd073a70d689",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/detector_runtime/detector_training_v4.py",
+      "sha256": "4ce13487aaf24df71ebc38a47104cd735d14da07435247a39ca142efc2ce3b1f",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/detector_runtime/extract_selector_profiles_v4.py",
+      "source_sha256": "200a2ce477196b53956a59bf6c910cc5b2f77045ebec846af4b9bbdf5bfc6e40",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/detector_runtime/extract_selector_profiles_v4.py",
+      "sha256": "f468492a64952397bb35fa149553fb1c4ac8ef2b3e6cec8365ed386d3871bdae",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/detector_runtime/prepare_data_v4.py",
+      "source_sha256": "63eba7ed7cf3e469efc1894047494615136003152849ca64092a81b4cff7b53c",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/detector_runtime/prepare_data_v4.py",
+      "sha256": "18330d18f0f7656cfbbe07b652d95b340ba139cc26136308972a402f15b63183",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/detector_runtime/sampler_v4.py",
+      "source_sha256": "38b1dcf012052afc84d186c4fb2a50d51d2b1341ba56cd56d2e8ce5e201328bc",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/detector_runtime/sampler_v4.py",
+      "sha256": "38b1dcf012052afc84d186c4fb2a50d51d2b1341ba56cd56d2e8ce5e201328bc",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/detector_runtime/selector_augmentation_v4.py",
+      "source_sha256": "e3df616dbe0ad049fe16c79152d145b2b80ca00e84874f8de0cb12128869023a",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/detector_runtime/selector_augmentation_v4.py",
+      "sha256": "e3df616dbe0ad049fe16c79152d145b2b80ca00e84874f8de0cb12128869023a",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/detector_runtime/selector_profile_runtime_v4.py",
+      "source_sha256": "3e6b1ec51bc23ca5d9c57bbcff471a5aade778ae95d01f038f6e38c0ec3ed722",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/detector_runtime/selector_profile_runtime_v4.py",
+      "sha256": "3e6b1ec51bc23ca5d9c57bbcff471a5aade778ae95d01f038f6e38c0ec3ed722",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/detector_runtime/v4_data_sources.py",
+      "source_sha256": "4314acd3c59534eee1310857db7948b9b743148781a2b31fc4f4b55a1c5dee94",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/detector_runtime/v4_data_sources.py",
+      "sha256": "3b90aab5ebf8367247f359c6352def02e65b70fe4632a2600f6f151a4fab82d2",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/detector_runtime/v4_deepshield_audit.py",
+      "source_sha256": "ce3fab68ab0531a9776779732170127efe061686304e7fb82da13e30260bab04",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/detector_runtime/v4_deepshield_audit.py",
+      "sha256": "ce3fab68ab0531a9776779732170127efe061686304e7fb82da13e30260bab04",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "selective_experiments/selector_comparison_bahat/detector_runtime/v4_deepshield_remote_zip.py",
+      "source_sha256": "61cb23cd64f234929fb675ec4b1d77c9cb16fcbb04b781409d870c4d3097d9cb",
+      "file": "src/research/selective_experiments/selector_comparison_bahat/detector_runtime/v4_deepshield_remote_zip.py",
+      "sha256": "61cb23cd64f234929fb675ec4b1d77c9cb16fcbb04b781409d870c4d3097d9cb",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/snapshot/code/__init__.py",
+      "source_sha256": "8d0971a84116c33c8567aa0c74b02029a8fd9b2f9b622a13d8ce0369682d9385",
+      "file": "src/research/article_detector_adaptation/__init__.py",
+      "sha256": "8d0971a84116c33c8567aa0c74b02029a8fd9b2f9b622a13d8ce0369682d9385",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/snapshot/code/common.py",
+      "source_sha256": "898f81142c1a33f40530614c9032f607fbc7263f407b5bd6536586c10229aed4",
+      "file": "src/research/article_detector_adaptation/common.py",
+      "sha256": "898f81142c1a33f40530614c9032f607fbc7263f407b5bd6536586c10229aed4",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/snapshot/code/prepare.py",
+      "source_sha256": "069a2b4ec0a077fb3e0c0f2103aeb4ac44a1d49309ea89b929e93cc65a6dfa03",
+      "file": "src/research/article_detector_adaptation/prepare.py",
+      "sha256": "069a2b4ec0a077fb3e0c0f2103aeb4ac44a1d49309ea89b929e93cc65a6dfa03",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/snapshot/code/reporting.py",
+      "source_sha256": "3bb8c7cbd7d2131cd3a39fcf1656a23f48fbc98879f8502d98e01abcc3e35929",
+      "file": "src/research/article_detector_adaptation/reporting.py",
+      "sha256": "3bb8c7cbd7d2131cd3a39fcf1656a23f48fbc98879f8502d98e01abcc3e35929",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/snapshot/code/run_experiment.py",
+      "source_sha256": "987857b09a67372861605f6244e30f8fbe48c5b54290f9511e2724d1ab698941",
+      "file": "src/research/article_detector_adaptation/run_experiment.py",
+      "sha256": "00c4a6da2000bf650312af90b01a1ce16bcdaa16131635aed40b333fa89127b0",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/snapshot/code/selector.py",
+      "source_sha256": "0e853738fe9808d68d7921507f7b6e5bf511410b857b378a3301e53a57a77d48",
+      "file": "src/research/article_detector_adaptation/selector.py",
+      "sha256": "0e853738fe9808d68d7921507f7b6e5bf511410b857b378a3301e53a57a77d48",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/snapshot/code/training.py",
+      "source_sha256": "7c7ee114d80b6936ad9901229d505b1f8eb8be0cd0246ca89ac272f4a43e2e3c",
+      "file": "src/research/article_detector_adaptation/training.py",
+      "sha256": "7c7ee114d80b6936ad9901229d505b1f8eb8be0cd0246ca89ac272f4a43e2e3c",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/snapshot/helpers/evaluation.py",
+      "source_sha256": "3e939ff77551c7dcb3615203719bbeaffb6ab15220814f967d3627fa84ff89f2",
+      "file": "src/research/article_detector_adaptation/archived_helpers/evaluation.py",
+      "sha256": "3e939ff77551c7dcb3615203719bbeaffb6ab15220814f967d3627fa84ff89f2",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/snapshot/helpers/sampler_v4.py",
+      "source_sha256": "38b1dcf012052afc84d186c4fb2a50d51d2b1341ba56cd56d2e8ce5e201328bc",
+      "file": "src/research/article_detector_adaptation/archived_helpers/sampler_v4.py",
+      "sha256": "38b1dcf012052afc84d186c4fb2a50d51d2b1341ba56cd56d2e8ce5e201328bc",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/snapshot/helpers/selector_augmentation_v4.py",
+      "source_sha256": "e3df616dbe0ad049fe16c79152d145b2b80ca00e84874f8de0cb12128869023a",
+      "file": "src/research/article_detector_adaptation/archived_helpers/selector_augmentation_v4.py",
+      "sha256": "e3df616dbe0ad049fe16c79152d145b2b80ca00e84874f8de0cb12128869023a",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/snapshot/helpers/selector_v4_math.py",
+      "source_sha256": "bdc64e27ff3c5da2a8bc6fc8587e07ebddd77b966a0e897ea954f21e62f40a7f",
+      "file": "src/research/article_detector_adaptation/archived_helpers/selector_v4_math.py",
+      "sha256": "bdc64e27ff3c5da2a8bc6fc8587e07ebddd77b966a0e897ea954f21e62f40a7f",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_experiment/runs/development_20261027/snapshot/code/__init__.py",
+      "source_sha256": "02b2466cd21284024b74ddff95d235d765c3f00ca327df7e754dfd6b6c7e8d40",
+      "file": "src/research/article_detector_experiment/__init__.py",
+      "sha256": "02b2466cd21284024b74ddff95d235d765c3f00ca327df7e754dfd6b6c7e8d40",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_experiment/runs/development_20261027/snapshot/code/adapters.py",
+      "source_sha256": "9fd5bce6e094676f560182985aac96d0691b28f50fecc4f7b333ff488527f9eb",
+      "file": "src/research/article_detector_experiment/adapters.py",
+      "sha256": "9fd5bce6e094676f560182985aac96d0691b28f50fecc4f7b333ff488527f9eb",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_experiment/runs/development_20261027/snapshot/code/common.py",
+      "source_sha256": "fe5aa58e1555fc04ba984ce6e12325b84446bfaa612557d4447806e5a69369cc",
+      "file": "src/research/article_detector_experiment/common.py",
+      "sha256": "fe5aa58e1555fc04ba984ce6e12325b84446bfaa612557d4447806e5a69369cc",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_experiment/runs/development_20261027/snapshot/code/data.py",
+      "source_sha256": "6bd1aff1902778cb058d1752ebe3dc9084c4ee8f0dcda50f5c1b59df3b64f96e",
+      "file": "src/research/article_detector_experiment/data.py",
+      "sha256": "6bd1aff1902778cb058d1752ebe3dc9084c4ee8f0dcda50f5c1b59df3b64f96e",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_experiment/runs/development_20261027/snapshot/code/evaluation.py",
+      "source_sha256": "3e939ff77551c7dcb3615203719bbeaffb6ab15220814f967d3627fa84ff89f2",
+      "file": "src/research/article_detector_experiment/evaluation.py",
+      "sha256": "3e939ff77551c7dcb3615203719bbeaffb6ab15220814f967d3627fa84ff89f2",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_experiment/runs/development_20261027/snapshot/code/experiment_cli.py",
+      "source_sha256": "c5ed427fb5606a65e5bac8e8d5dc786cc988c3c39cda3cfffc7b3077a5cd6f25",
+      "file": "src/research/article_detector_experiment/experiment_cli.py",
+      "sha256": "00fdec70dd132a8db2402952403ee061a3f509cc162dee60117966f8832495b6",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_experiment/runs/development_20261027/snapshot/code/launcher.py",
+      "source_sha256": "d75c377360321bb5edbac5da779d82e99f678b893bd8f75992d8dc10506a39c1",
+      "file": "src/research/article_detector_experiment/launcher.py",
+      "sha256": "9c0c6c445327ca0e25b4e76f89f3cdaeb2e46bf6db44c33089a381765de05fcf",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_experiment/runs/development_20261027/snapshot/code/prepare_assets.py",
+      "source_sha256": "8c3761cdfb0c27a880f32032715db4fc96c20d779704446d8b1fb46467105aa2",
+      "file": "src/research/article_detector_experiment/prepare_assets.py",
+      "sha256": "a84ce1b465c152961eab4892c496d8bdb393d06e5cea975a3956981fd66e83ae",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_experiment/runs/development_20261027/snapshot/code/profiles.py",
+      "source_sha256": "d48948951dc73d141dfed3eeba27a91de03be7aad77ec1a08af805360298c494",
+      "file": "src/research/article_detector_experiment/profiles.py",
+      "sha256": "d48948951dc73d141dfed3eeba27a91de03be7aad77ec1a08af805360298c494",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_experiment/runs/development_20261027/snapshot/code/report.py",
+      "source_sha256": "87bce0046c8efa110b050de16609c09ab996c232e16d8fe399f9720ff9d8b203",
+      "file": "src/research/article_detector_experiment/report.py",
+      "sha256": "87bce0046c8efa110b050de16609c09ab996c232e16d8fe399f9720ff9d8b203",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_experiment/runs/development_20261027/snapshot/code/run_experiment.py",
+      "source_sha256": "08beb163e70340f87f43f417979862e2b42066ffe82067e7fec234001ac87562",
+      "file": "src/research/article_detector_experiment/run_experiment.py",
+      "sha256": "23dc500ea535665554860c03b7e17961512ee2d28fcfec77d34278c7993a925f",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_reference_experiment/runs/retrospective_20261028/snapshot/code/__init__.py",
+      "source_sha256": "e3d52247f3244c869d6812ea64842f56a0034b9b7a29f366c8f22537d6e02b4e",
+      "file": "src/research/article_reference_experiment/__init__.py",
+      "sha256": "e3d52247f3244c869d6812ea64842f56a0034b9b7a29f366c8f22537d6e02b4e",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_reference_experiment/runs/retrospective_20261028/snapshot/code/common.py",
+      "source_sha256": "3f8b98b830bddbb4c97303700324cad36db95759809290409ce7022353b94852",
+      "file": "src/research/article_reference_experiment/common.py",
+      "sha256": "3f8b98b830bddbb4c97303700324cad36db95759809290409ce7022353b94852",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_reference_experiment/runs/retrospective_20261028/snapshot/code/run_experiment.py",
+      "source_sha256": "7544f47438d82115c46fa4ffcf20a0ab90e2c188e88d9af71b634f8b911fc62f",
+      "file": "src/research/article_reference_experiment/run_experiment.py",
+      "sha256": "8480e9e45d8fe94236471a3750391ab647ce12dfa30d8f7c870424ee5759b3e0",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_reference_experiment/runs/retrospective_20261028/snapshot/code/runtime.py",
+      "source_sha256": "fb618b1313d6e919050b303b056fb9027b947e2167fdded2ed99e3b28eeb46a6",
+      "file": "src/research/article_reference_experiment/runtime.py",
+      "sha256": "fb618b1313d6e919050b303b056fb9027b947e2167fdded2ed99e3b28eeb46a6",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_reference_experiment/runs/retrospective_20261028/snapshot/code/scores.py",
+      "source_sha256": "36d73a344b6e17b881dcd5cf601b492bee50c7b8b8a34121595cd032f8ecbe22",
+      "file": "src/research/article_reference_experiment/scores.py",
+      "sha256": "36d73a344b6e17b881dcd5cf601b492bee50c7b8b8a34121595cd032f8ecbe22",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_reference_experiment/runs/retrospective_20261028/snapshot/code/source.py",
+      "source_sha256": "dfd88bd9690631979845fda3f8a34533a035fc43c53559ce372caa5e01cd045d",
+      "file": "src/research/article_reference_experiment/source.py",
+      "sha256": "cddffc1f7784bee1c19a3ea6236f95be27d33d13c0350f732e975892689fbad5",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_ablation_confirmation/runs/independent_20261029/code/content_audit.py",
+      "source_sha256": "76f6424d7efb79442fd977fd79bf7547ccce04021d34ce5e5b612736e25082d6",
+      "file": "src/research/article_ablation_confirmation/content_audit.py",
+      "sha256": "76f6424d7efb79442fd977fd79bf7547ccce04021d34ce5e5b612736e25082d6",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_ablation_confirmation/runs/independent_20261029/code/download_data.py",
+      "source_sha256": "4fcd6b88b566093966de18abfbc5733fb7a4a2c64597f202a96bb699113f3d6e",
+      "file": "src/research/article_ablation_confirmation/download_data.py",
+      "sha256": "029b2a39dae78b1ed586444aacf9ede794202c5f0c8804da679070b1118eeb39",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_ablation_confirmation/runs/independent_20261029/code/freeze_models.py",
+      "source_sha256": "8e00b7586711ed15de4fb0cb626cb4ffc89f9d8ff3e57d96facb4a580e169566",
+      "file": "src/research/article_ablation_confirmation/freeze_models.py",
+      "sha256": "843545ae607700a0476eecb994b97f00596f18022f05b86ce9e6418ab9380b0b",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_ablation_confirmation/runs/independent_20261029/code/freeze_protocol.py",
+      "source_sha256": "544b6cae07b093ca57c52d76691a84d4e8f2003e04b4cf5194272d2b33418745",
+      "file": "src/research/article_ablation_confirmation/freeze_protocol.py",
+      "sha256": "dae1fe04d7da93957a601094cc69e50d8d3c4ef16c0c46f9d0ef74c23dec8d7c",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_ablation_confirmation/runs/independent_20261029/code/inference_runtime.py",
+      "source_sha256": "0d18ab2baa82e6184f611f9dfcbea2fe43192eaeae125b8bf249499c63f2a553",
+      "file": "src/research/article_ablation_confirmation/inference_runtime.py",
+      "sha256": "0d18ab2baa82e6184f611f9dfcbea2fe43192eaeae125b8bf249499c63f2a553",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_ablation_confirmation/runs/independent_20261029/code/prepare_candidate_plan.py",
+      "source_sha256": "cc6c5152ff7fa76e650d65e9fdaf29e9a3769b6a303dccba26348dda5fdc86ac",
+      "file": "src/research/article_ablation_confirmation/prepare_candidate_plan.py",
+      "sha256": "45b50cfe8cb231b3f188ab87797ffb397edea0ebe1eeb6e812b8e4341b180aae",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_ablation_confirmation/runs/independent_20261029/code/report_results.py",
+      "source_sha256": "61bfbbb76c56d2033b6520fa604f2c7427473c55552607a8c4bbacc689734755",
+      "file": "src/research/article_ablation_confirmation/report_results.py",
+      "sha256": "0465523fd9133d7c00f29d5b2e69e4cc3d514fa63960f87187adfb66dc0711ef",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_ablation_confirmation/runs/independent_20261029/code/run_experiment.py",
+      "source_sha256": "9ee3485fec5f35b3895bcc0dd1e5725f757a6a34be966f6ce25999dc5d10da9f",
+      "file": "src/research/article_ablation_confirmation/run_experiment.py",
+      "sha256": "e371c7e88b4473599ea0b204cd737260dbf839f82953e3e10065fb5c6af982ed",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_ablation_confirmation/runs/independent_20261029/code/statistics.py",
+      "source_sha256": "b2327038f3e33befc9967eb6fac66bda0df436cd3064710e5b153fefceb0ea2f",
+      "file": "src/research/article_ablation_confirmation/statistics.py",
+      "sha256": "b2327038f3e33befc9967eb6fac66bda0df436cd3064710e5b153fefceb0ea2f",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_experiment/external_testing/data_support.py",
+      "source_sha256": "d4eaf332b613ba8e629c81d3c4c198b787c0dea03faef6155b3a53105f01b660",
+      "file": "src/research/article_detector_experiment/external_testing/data_support.py",
+      "sha256": "d4eaf332b613ba8e629c81d3c4c198b787c0dea03faef6155b3a53105f01b660",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_experiment/external_testing/freeze.py",
+      "source_sha256": "f54ca2d08e0b419b253f87adf256e74c18535fa8cf981dad72a7c29985b044c8",
+      "file": "src/research/article_detector_experiment/external_testing/freeze.py",
+      "sha256": "cc5251621a9c548e8c0329fa0365985f9ca896cab9048446898450c5913cd4f0",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_experiment/external_testing/prepare_data.py",
+      "source_sha256": "02fb0afaf932a6b5187061384366a02abf7c835eff0641ea0fb444d1a07908a3",
+      "file": "src/research/article_detector_experiment/external_testing/prepare_data.py",
+      "sha256": "183e2434fdfa6e680ce1f8bd4296e67c0044870e1df958c6f2f0a4cfe5cd8183",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "article_detector_experiment/external_testing/run_test.py",
+      "source_sha256": "dbac011b4de142a99880ed8dc7f111e47a844032da24cc3f42b2e14bffed8a6e",
+      "file": "src/research/article_detector_experiment/external_testing/run_test.py",
+      "sha256": "314cc98ba90ba6f2ef815eea831e2dfdbd1e102aaf5c3361dd0c8174c55843f4",
+      "changes": "current-interpreter dispatch, explicit research-entry guard and/or environment error wording; UTF-8/LF normalization"
+    },
+    {
+      "kind": "research_source",
+      "source": "selector_v5_data.py",
+      "source_sha256": "9c8be7f7d2610e5663c137107a591b8a77a9503467621bd1eaaaf0200ab470af",
+      "file": "src/research/selector_v5_data.py",
+      "sha256": "0f1f0dcf41a5a2917138331c481e23466b22186164d27c2943975a0a05cf5f80",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "external_v5_data.py",
+      "source_sha256": "a269d5159cd4067396fad7982a12e67993dc4450a93e085137ba2414e4049712",
+      "file": "src/research/external_v5_data.py",
+      "sha256": "6f183a279eee6082fa70a81bcd2c6f66fb01a6ddd38167445f3158007991d6a7",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "external_v4_data.py",
+      "source_sha256": "0645df64e65f7dddb786c9f9c48406b742026754648980861c8333c797abbb66",
+      "file": "src/research/external_v4_data.py",
+      "sha256": "d372d6ad0a6ed27190f8521e0a11e3e34da163f58bdc0c0aaf33d9d07e608a0d",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "research_source",
+      "source": "confirmation_v4_data.py",
+      "source_sha256": "930c8a64253ae4a005c5c3fb28467edfc2a2f6b8eff822a8c161bf9f9ea76264",
+      "file": "src/research/confirmation_v4_data.py",
+      "sha256": "930c8a64253ae4a005c5c3fb28467edfc2a2f6b8eff822a8c161bf9f9ea76264",
+      "changes": "UTF-8/LF normalization only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/experiment_v4/selector_training_v4/selector.json",
+      "source_sha256": "4d0469e6495433619066d52430f7d5b30cc89d3a76d557b64dfada187c2cee0d",
+      "file": "models/efficientnet/full_selector.json",
+      "sha256": "c563c4ccbf6c668d7f6914ee6325518d6f9164725f4bcdd7eaacdc9fb4a50a4a",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/experiment_v4/selector_training_v4/calibration_result.json",
+      "source_sha256": "a1c7d4f13e5fb772de66426408e25f635a1e96ff37e3e24b8c52f402a6167783",
+      "file": "models/efficientnet/frozen_rule_assessment.json",
+      "sha256": "d3a0114db25a91153e93132f10d190d014012d48f6b79f9ad2bd7547f7126dbc",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "detector_experiments/detector_v4/training_main/temperature.json",
+      "source_sha256": "a26e29987d849ac2bc8a1159bd70c8c127b413a4d3211a99cf8e24b7b13f8b32",
+      "file": "configs/efficientnet/temperature.json",
+      "sha256": "01ba889f2b904b9dbd81ee1050fb51f50773434db0620cd5e30494bd5151a33d",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "detector_experiments/detector_v4/training_main/config.json",
+      "source_sha256": "ab9cc13a548d1753b0d423e7095abd61cff7f7a714f5d9c137f146946e31a777",
+      "file": "configs/efficientnet/config.json",
+      "sha256": "b5be68dbb88ded9caea4a33c84f887fcfcb6b6b7cd80372ea5ca3ce0e76523d5",
+      "changes": "absolute path labels replaced; JSON formatting"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/confidence.json",
+      "source_sha256": "b297a380a0da74c992d98d577b407604857ceeeeb567df6ac1909265c241670c",
+      "file": "models/efficientnet_controls/confidence.json",
+      "sha256": "b297a380a0da74c992d98d577b407604857ceeeeb567df6ac1909265c241670c",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/frozen_v4.json",
+      "source_sha256": "ceed98e59ce872ef98efdd54749d85bfaf04e0c56dfd5884d40d13a3f5f96098",
+      "file": "models/efficientnet_controls/frozen_v4.json",
+      "sha256": "ceed98e59ce872ef98efdd54749d85bfaf04e0c56dfd5884d40d13a3f5f96098",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/lr_balanced_no_summaries.json",
+      "source_sha256": "494eb769fe35866acceaf617f3cfb6bc22a56d5e9a909f5a78254634dce6de40",
+      "file": "models/efficientnet_controls/lr_balanced_no_summaries.json",
+      "sha256": "494eb769fe35866acceaf617f3cfb6bc22a56d5e9a909f5a78254634dce6de40",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/lr_confidence.json",
+      "source_sha256": "32bfeea5744fb91a7cd0cddd3640a9bc73d8e7c57412902dab2a3aea8cb5fe91",
+      "file": "models/efficientnet_controls/lr_confidence.json",
+      "sha256": "32bfeea5744fb91a7cd0cddd3640a9bc73d8e7c57412902dab2a3aea8cb5fe91",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/lr_full.json",
+      "source_sha256": "9a4b0c80899b3e4c7fe7d7d387870578f61aa14766633448a6168a5ee1ea082b",
+      "file": "models/efficientnet_controls/lr_full.json",
+      "sha256": "9a4b0c80899b3e4c7fe7d7d387870578f61aa14766633448a6168a5ee1ea082b",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/lr_jpeg_only.json",
+      "source_sha256": "7b7df3539028c09493e1e79f8ff4d425bfac13433e9feb41ef99e96b7159db9e",
+      "file": "models/efficientnet_controls/lr_jpeg_only.json",
+      "sha256": "7b7df3539028c09493e1e79f8ff4d425bfac13433e9feb41ef99e96b7159db9e",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/lr_no_confidence.json",
+      "source_sha256": "587a878ca9cd7c88680c352435b51c27c5559374668712da3c440a4174fdf42d",
+      "file": "models/efficientnet_controls/lr_no_confidence.json",
+      "sha256": "587a878ca9cd7c88680c352435b51c27c5559374668712da3c440a4174fdf42d",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/lr_no_orientation.json",
+      "source_sha256": "dd7539434f3c7267c7c1ed83fca2c8b01c0a741518771e171c00aba5ef7d1072",
+      "file": "models/efficientnet_controls/lr_no_orientation.json",
+      "sha256": "dd7539434f3c7267c7c1ed83fca2c8b01c0a741518771e171c00aba5ef7d1072",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/lr_no_summaries.json",
+      "source_sha256": "94b2098fb5ddb85d104a2c7279b1af99cf30b4bc64181d43a4f769bca2612804",
+      "file": "models/efficientnet_controls/lr_no_summaries.json",
+      "sha256": "94b2098fb5ddb85d104a2c7279b1af99cf30b4bc64181d43a4f769bca2612804",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/lr_resize_only.json",
+      "source_sha256": "da57322fd1fcf4c5604a37d9215266f873c4e95985a2ac7626fbaa9d0ba87182",
+      "file": "models/efficientnet_controls/lr_resize_only.json",
+      "sha256": "da57322fd1fcf4c5604a37d9215266f873c4e95985a2ac7626fbaa9d0ba87182",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/lr_summaries_only.json",
+      "source_sha256": "8f0335607f4a7bab0f777e1eb44ac23432049b4873b18fa76aef6f1098f13c5a",
+      "file": "models/efficientnet_controls/lr_summaries_only.json",
+      "sha256": "8f0335607f4a7bab0f777e1eb44ac23432049b4873b18fa76aef6f1098f13c5a",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/lr_without_jpeg_q60.json",
+      "source_sha256": "16589b422500ebd96acbb37e5fb39b6fe115f014f283bd8481eca83ce63a2337",
+      "file": "models/efficientnet_controls/lr_without_jpeg_q60.json",
+      "sha256": "16589b422500ebd96acbb37e5fb39b6fe115f014f283bd8481eca83ce63a2337",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/lr_without_jpeg_q75.json",
+      "source_sha256": "d3af450a7bb92d79ac7bbb0862743f90a3a5fc3628ca7c5a7236529f23a19858",
+      "file": "models/efficientnet_controls/lr_without_jpeg_q75.json",
+      "sha256": "d3af450a7bb92d79ac7bbb0862743f90a3a5fc3628ca7c5a7236529f23a19858",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/lr_without_jpeg_q90.json",
+      "source_sha256": "afa383544b879aaa56c66b3945109e002377e8eb58ef314f87f4d15136a3ed9d",
+      "file": "models/efficientnet_controls/lr_without_jpeg_q90.json",
+      "sha256": "afa383544b879aaa56c66b3945109e002377e8eb58ef314f87f4d15136a3ed9d",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/lr_without_resize_0p5.json",
+      "source_sha256": "48a8315ffea1f0a7e023f8a5f40d8bf772eef68f783942bbb0f49fea7f0c3bb1",
+      "file": "models/efficientnet_controls/lr_without_resize_0p5.json",
+      "sha256": "48a8315ffea1f0a7e023f8a5f40d8bf772eef68f783942bbb0f49fea7f0c3bb1",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/lr_without_resize_0p75.json",
+      "source_sha256": "8014afab3fc76f75ad5d0a8b9576720a858ae1d59e0350739fe5838d13c0e9d5",
+      "file": "models/efficientnet_controls/lr_without_resize_0p75.json",
+      "sha256": "8014afab3fc76f75ad5d0a8b9576720a858ae1d59e0350739fe5838d13c0e9d5",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/mlp_bahat_logits_s17.json",
+      "source_sha256": "43b298d0d313523a00c5c2b9375af88d1100063d27e2783ff0755ddc9eb8af04",
+      "file": "models/efficientnet_controls/mlp_bahat_logits_s17.json",
+      "sha256": "43b298d0d313523a00c5c2b9375af88d1100063d27e2783ff0755ddc9eb8af04",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/mlp_bahat_logits_s29.json",
+      "source_sha256": "8767e510784e8e79d02fc05a32280312cc836977b5ffb9ff421754d870ed4e05",
+      "file": "models/efficientnet_controls/mlp_bahat_logits_s29.json",
+      "sha256": "8767e510784e8e79d02fc05a32280312cc836977b5ffb9ff421754d870ed4e05",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/mlp_bahat_logits_s43.json",
+      "source_sha256": "082d623ce7bc169ae3f967cac2cdab44417ddadd5ef7ddfc791cd8b4fc21c31a",
+      "file": "models/efficientnet_controls/mlp_bahat_logits_s43.json",
+      "sha256": "082d623ce7bc169ae3f967cac2cdab44417ddadd5ef7ddfc791cd8b4fc21c31a",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/mlp_margins_s17.json",
+      "source_sha256": "e6abf9ec556af702f35a9f61a1e614d0aad7cb427f88b2241fce89b130164cc7",
+      "file": "models/efficientnet_controls/mlp_margins_s17.json",
+      "sha256": "e6abf9ec556af702f35a9f61a1e614d0aad7cb427f88b2241fce89b130164cc7",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/mlp_margins_s29.json",
+      "source_sha256": "720f3f55d25b3340b56bf73ec371273ffcbf114168a24971b48a3693c1d59d54",
+      "file": "models/efficientnet_controls/mlp_margins_s29.json",
+      "sha256": "720f3f55d25b3340b56bf73ec371273ffcbf114168a24971b48a3693c1d59d54",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/mlp_margins_s43.json",
+      "source_sha256": "092d51845b611f02d8009febde173557044b5f3db3fb8ae690fcb222de31122f",
+      "file": "models/efficientnet_controls/mlp_margins_s43.json",
+      "sha256": "092d51845b611f02d8009febde173557044b5f3db3fb8ae690fcb222de31122f",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/mlp_ours_logits_s17.json",
+      "source_sha256": "c3e92796bba7898431f6cfe4212f79f5cd47ed69a54ca847358e5ab87992d062",
+      "file": "models/efficientnet_controls/mlp_ours_logits_s17.json",
+      "sha256": "c3e92796bba7898431f6cfe4212f79f5cd47ed69a54ca847358e5ab87992d062",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/mlp_ours_logits_s29.json",
+      "source_sha256": "3c88de25697b78ad331712a5ce809bd421e42e84cbf437f4627933c3a9a62c57",
+      "file": "models/efficientnet_controls/mlp_ours_logits_s29.json",
+      "sha256": "3c88de25697b78ad331712a5ce809bd421e42e84cbf437f4627933c3a9a62c57",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/mlp_ours_logits_s43.json",
+      "source_sha256": "a671ef1f85a96683c123ae5d106a802213167e4863bff65d9f0ef01749e56660",
+      "file": "models/efficientnet_controls/mlp_ours_logits_s43.json",
+      "sha256": "a671ef1f85a96683c123ae5d106a802213167e4863bff65d9f0ef01749e56660",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "selective_experiments/selector_comparison_bahat/models/tta_mean.json",
+      "source_sha256": "43400e7558e5fe5e2706715987ed5575c322a2297f00f5d56b1609e530f77095",
+      "file": "models/efficientnet_controls/tta_mean.json",
+      "sha256": "43400e7558e5fe5e2706715987ed5575c322a2297f00f5d56b1609e530f77095",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/clip/selector/frozen.json",
+      "source_sha256": "efb2ca622651b226c3532a4c6325ee87e7bcd6c301c5d721d4501f9e0537bec4",
+      "file": "models/clip/selectors.json",
+      "sha256": "efb2ca622651b226c3532a4c6325ee87e7bcd6c301c5d721d4501f9e0537bec4",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/clip/detector/contract.json",
+      "source_sha256": "789f98e69799df464d274e22b5d572e1d0c3a1893b37268539ab63bfdf94f3b7",
+      "file": "configs/clip/detector_contract.json",
+      "sha256": "789f98e69799df464d274e22b5d572e1d0c3a1893b37268539ab63bfdf94f3b7",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/clip/selector/assessment.json",
+      "source_sha256": "c3a449d0234d5f05cd872784d58d8b44b1c09da7ff36ecc80ab314a0a66f61e4",
+      "file": "models/clip/frozen_rule_assessment.json",
+      "sha256": "c3a449d0234d5f05cd872784d58d8b44b1c09da7ff36ecc80ab314a0a66f61e4",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/resnet50/selector/frozen.json",
+      "source_sha256": "88f4f397540a5db0da73352d7bb6191422a192e1249ef3648e55d6b4c562f64d",
+      "file": "models/resnet50/selectors.json",
+      "sha256": "88f4f397540a5db0da73352d7bb6191422a192e1249ef3648e55d6b4c562f64d",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/resnet50/detector/contract.json",
+      "source_sha256": "bfe4a259bdc658036844627ceb9dd3688406effa6facdc7224a17efdd793281f",
+      "file": "configs/resnet50/detector_contract.json",
+      "sha256": "bfe4a259bdc658036844627ceb9dd3688406effa6facdc7224a17efdd793281f",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "article_detector_adaptation/runs/matched_v4_20261030/resnet50/selector/assessment.json",
+      "source_sha256": "f8a4224578b469ce3ffaee085e6838dfa2ea49d5eeefbc52be161f47d77eb20c",
+      "file": "models/resnet50/frozen_rule_assessment.json",
+      "sha256": "f8a4224578b469ce3ffaee085e6838dfa2ea49d5eeefbc52be161f47d77eb20c",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "article_ablation_confirmation/frozen_models/resize_vs_full_20261028/models/lr_resize_only.json",
+      "source_sha256": "da57322fd1fcf4c5604a37d9215266f873c4e95985a2ac7626fbaa9d0ba87182",
+      "file": "models/efficientnet/resize_only_ablation.json",
+      "sha256": "da57322fd1fcf4c5604a37d9215266f873c4e95985a2ac7626fbaa9d0ba87182",
+      "changes": "JSON formatting only"
+    },
+    {
+      "kind": "model_or_configuration",
+      "source": "article_detector_adaptation/config.json",
+      "source_sha256": "876564baae071b89c763a3d10fc6d875412968fdbafa775bf86bd3729e5b178a",
+      "file": "configs/adaptation_recorded.json",
+      "sha256": "3440d6de4e93e8ffa262fd44140a3799cde2753556d5d5ffeaf570a2c89c15e0",
+      "changes": "interpreter location replaced by python; JSON formatting"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "source_run_name": "independent_20261029",
+  "source_files": {
+    "results.json": {
+      "sha256": "1aa3dbbeb47e6658e0d155bcbd8bc837f38084b227d96a33245fbb23360a357b",
+      "bytes": 6222
+    },
+    "run_protocol.json": {
+      "sha256": "667aff81b366ef574e76f889be9892570c63d72e4578c82d4e9ad20c8e16b1eb",
+      "bytes": 9170
+    },
+    "plan.jsonl": {
+      "sha256": "c75d0d077e07cca003ffce912197cbce2d59179ca3ea7ba17ddda422d129e85d",
+      "bytes": 8712590
+    },
+    "profiles.jsonl": {
+      "sha256": "ff93b8082632ac42b180c02224e0e6eb49b3e9bf44dfd1d146a6ba58379edb42",
+      "bytes": 17354292
+    },
+    "profiles.complete.json": {
+      "sha256": "60fe8ebea8fd47f0c13c8e8c70fd79f3aaeb5fe9bb480c1d30c60d9d62c47700",
+      "bytes": 331
+    },
+    "code/statistics.py": {
+      "sha256": "b2327038f3e33befc9967eb6fac66bda0df436cd3064710e5b153fefceb0ea2f",
+      "bytes": 12167
+    }
+  },
+  "scores_sha256": "94e55ead1669d17aad9add2bb602f3540cfd476134873e03c736b14301827cf0",
+  "baseline_sha256": "7375701475acb5d9c974db17638d2257354a4f00ddf1a161dbc43eb9c4d27fd7",
+  "stored_decision": "retain_full",
+  "stored_all_four_conditions_passed": false,
+  "extractor": "analyze.py --extract-from RUN",
+  "source_files_mutated": false,
+  "identifiers": "Original paths/identities removed; original tie hashes retained, groups namespace-hashed.",
+  "scope": "Existing predictions only. No retraining, image access, inference or new bootstrap draws."
+}

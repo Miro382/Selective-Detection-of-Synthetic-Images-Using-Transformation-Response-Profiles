@@ -1,0 +1,10 @@
+{
+  "spec": {
+    "id": "confidence",
+    "kind": "baseline"
+  },
+  "protocol_sha256": "c42d9a3457aff3b7ba70ad11ef9f6d67e92602e292e339e87eccfeaa46a40eab",
+  "selection_aurc": 0.0010757509548587041,
+  "threshold": 0.07953369430249872,
+  "threshold_status": "development_only_not_certified"
+}

@@ -1,0 +1,24 @@
+% Generated from evidence/history_selector.json; SHA256=6b23dcfe39d7d53e1e8989184b06749909a889beb3c03d7eabb8e59d1ddfc896
+\begin{table*}[t]
+\caption{Selector development stages. Counts refer to selector fitting, not detector training. An error target is an incorrectly classified input variant. The stages change data and assessment protocols and do not constitute a matched cross-version performance ranking.}
+\label{tab:selector_evolution}
+\centering
+\begingroup
+\fontsize{8}{9.6}\selectfont
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}p{0.30in}p{1.72in}p{1.27in}p{1.40in}p{1.90in}@{}}
+\toprule
+Stage & Representation and fit & Fitting sample & Model selection & Risk assessment \\
+\midrule
+V1 & 13 features; $C_{\rm reg}=1$. Raw probability responses and three image-quality features; clean inputs. Unweighted fit. & 4,000 origins / 4,000 SHA groups; 4,000 profiles; 96 error targets. & Fixed full family; no CV. & 4,000 calibration inputs; 101 Bonferroni thresholds; 5\% target. 110/4,000 accepted errors; $U=3.707\%$. \\
+\addlinespace[2pt]
+V2 & 13 features; $C_{\rm reg}=1$. Same representation; eight outer training variants per origin. Unweighted fit. & 4,000 origins / 4,000 SHA groups; 32,000 profiles; 1,243 error targets. & Same fixed family; no CV. & 4,000 calibration inputs; 101 Bonferroni thresholds; 2\% target. 33/3,195 accepted errors; $U=1.763\%$. \\
+\addlinespace[2pt]
+V3 & 9 class-oriented features; $C_{\rm reg}=0.01$. Clipped-probability logits; class/generator-balanced weights. & 1,950 origins / 195 source groups; 15,600 profiles; 885 error targets. & Five group folds; 27 candidates; mean-fold AURC. Threshold from OOF predictions. & One frozen rule; 195 representatives; 2\% target. 3/167 accepted errors; $U=4.577\%$. Failed; reject all. \\
+\addlinespace[2pt]
+V4 & 9 class-oriented features; $C_{\rm reg}=0.1$. Native calibrated margins; inverse-profile group weights. & 5,000 origins / groups; 40,000 profiles; 587 error targets. & Separate 2,000-input selection set; 9 candidates; selection AURC; no CV. & One frozen rule; 2,000 representatives; 2\% target. 13/1,958 accepted errors; $U=1.054\%$. Passed. \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{table*}

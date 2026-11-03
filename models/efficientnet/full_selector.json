@@ -1,0 +1,104 @@
+{
+  "version": "selective-selector-v4-artifact-1",
+  "model": {
+    "version": "selective-selector-v4-model-1",
+    "family": "symmetric_profile",
+    "feature_names": [
+      "negative_absolute_calibrated_margin",
+      "oriented_margin_delta_jpeg_q90",
+      "oriented_margin_delta_jpeg_q75",
+      "oriented_margin_delta_jpeg_q60",
+      "oriented_margin_delta_resize_0p75",
+      "oriented_margin_delta_resize_0p5",
+      "prediction_variance",
+      "max_abs_shift",
+      "flip_fraction"
+    ],
+    "C": 0.1,
+    "parameters": {
+      "schema": "selector-v3-numerics-v1",
+      "model_type": "weighted_logistic",
+      "C": 0.1,
+      "score_semantics": "error_score_not_calibration_guarantee",
+      "scaler": {
+        "mean": [
+          -6.985309549229745,
+          -0.16497797738413994,
+          -0.4553005460626262,
+          -0.8790842594311465,
+          8.72909466366104e-05,
+          0.06299478027104961,
+          0.0026792777436389376,
+          0.025318311463222644,
+          0.007809999999999916
+        ],
+        "scale": [
+          2.7922380596190997,
+          0.5173234544427895,
+          0.9016573378070836,
+          1.3104430103719316,
+          0.3738609886055292,
+          0.7996880729646593,
+          0.01762574295204072,
+          0.12237264325932079,
+          0.05722764978573763
+        ]
+      },
+      "coef": [
+        1.9112392201510244,
+        0.10738984059426196,
+        0.17062908646231928,
+        0.3442097299425941,
+        -0.06257895955872383,
+        -0.3245455726649916,
+        0.11007901118261236,
+        0.1831601982870299,
+        -0.03206310094168687
+      ],
+      "intercept": -6.015717031131378,
+      "convergence": {
+        "success": true,
+        "iterations": 28
+      }
+    }
+  },
+  "model_sha256": "351a6c3347a7acc27f58b6e213128ca65e421dbc227800fe13bbe7ef4a2dfdbd",
+  "model_fingerprint": "e705b5a09d360cc067470d5d70a17b7aa4fa76cde1d3a7520f898490d710417f",
+  "profile_config": {
+    "version": "degradation-profile-v1",
+    "jpeg_qualities": [
+      90,
+      75,
+      60
+    ],
+    "resize_scales": [
+      0.75,
+      0.5
+    ]
+  },
+  "detector_threshold": 0.5,
+  "temperature": 2.5451689020139714,
+  "research_threshold": 0.08632226578702012,
+  "accept_threshold": 0.08632226578702012,
+  "calibration_metadata": {
+    "status": "passed",
+    "total": 2000,
+    "accepted": 1958,
+    "review": 42,
+    "coverage": 0.979,
+    "errors": 13,
+    "risk": 0.006639427987742594,
+    "risk_upper_bound": 0.010535283921290446,
+    "confidence": 0.95,
+    "target_risk": 0.02,
+    "minimum_accepted": 30,
+    "research_threshold": 0.08632226578702012,
+    "accept_threshold": 0.08632226578702012,
+    "calibration_partition_digest": "26e720bc9956122f6417e206ce7d5dc4a7eccdc43935a445f2b0add567814b4e",
+    "evaluated_utc": "2026-10-16T07:59:41.105163+00:00",
+    "scope": "Jedno vopred zmrazené pravidlo, nezávislí reprezentanti pri rovnakej cieľovej distribúcii. Bez záruky pri posune distribúcie."
+  },
+  "training_protocol_sha256": "1b69fbce9b8754aae359eaeab61057d784470f959b92ab9f8fdd819fe3870613",
+  "score_semantics": "Skóre odhadu chyby; samo osebe nie kalibrovaná pravdepodobnosť.",
+  "scope": "Vývoj a jednorazové overenie pri vopred určenej zmesi zdrojov a degradácií. Žiadna záruka pri zmene distribúcie."
+}

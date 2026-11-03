@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\caption{Selected exploratory controls on the reused EfficientNet DS/OF evaluation cohorts. AURC is unscaled; errors use fixed counts $k_{\rm DS}=9{,}807$ and $k_{\rm OF}=3{,}639$. LR rows report individual fits. MLP rows report mean AURC and the range of accepted errors across all three seeds (17, 29, 43), not an ensemble or a confidence interval. The supplementary aggregate file retains all 26 methods, individual seed values, and every stored original paired AURC interval (1,000 replicates). The main model remains frozen throughout.}
+\label{tab:extendedablation}
+\centering\small
+\begin{tabular}{lrrrrr}
+\toprule
+Method & Features & DS AURC & DS errors & OF AURC & OF errors \\
+\midrule
+Full profile (frozen LR) & 9 & 0.000400 & 66 & 0.155859 & 675 \\
+LR without summaries & 6 & 0.000390 & 68 & 0.142906 & 687 \\
+LR without class orientation & 9 & 0.000628 & 84 & 0.174909 & 698 \\
+LR without original confidence & 8 & 0.002531 & 86 & 0.120204 & 667 \\
+LR confidence + summaries & 4 & 0.000595 & 86 & 0.192671 & 693 \\
+LR JPEG views only & 7 & 0.000756 & 101 & 0.196930 & 745 \\
+LR resize views only & 6 & 0.000374 & 65 & 0.145987 & 673 \\
+LR without half-size view & 8 & 0.000528 & 84 & 0.196900 & 740 \\
+Error-balanced LR, margins & 6 & 0.000373 & 62 & 0.138618 & 675 \\
+MLP, our-view logits & 12 & 0.000407 & 69--75 & 0.133953 & 686--695 \\
+MLP, Bahat-view logits & 12 & 0.000515 & 80--81 & 0.154706 & 710--712 \\
+MLP, oriented margins & 6 & 0.000396 & 73--76 & 0.106703 & 680--692 \\
+\bottomrule
+\end{tabular}
+\end{table*}

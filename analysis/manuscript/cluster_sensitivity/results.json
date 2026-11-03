@@ -1,0 +1,1130 @@
+{
+  "version": "posthoc-cluster-sensitivity-v1",
+  "source_scores_sha256": "94e55ead1669d17aad9add2bb602f3540cfd476134873e03c736b14301827cf0",
+  "scope": "Retrospective descriptive deletion sensitivity, not a new confirmatory test or replacement decision.",
+  "metric_definition": "Whole-tie-block AURC; retained sample re-ranked, k=floor(3639*N/4000); original hash tie ordering.",
+  "source_point_checks": 26,
+  "source_point_tolerance": 1e-15,
+  "original": {
+    "DeepShield": {
+      "images": 1500,
+      "groups": 1500,
+      "detector_errors": 34,
+      "full": {
+        "aurc": 0.000729861061157172,
+        "accepted": 1471,
+        "errors": 13,
+        "risk": 0.008837525492861998,
+        "coverage": 0.9806666666666667
+      },
+      "resize": {
+        "aurc": 0.0006290671906866922,
+        "accepted": 1471,
+        "errors": 12,
+        "risk": 0.008157715839564922,
+        "coverage": 0.9806666666666667
+      },
+      "delta_aurc": -0.00010079387047047983,
+      "delta_risk_pp": -0.06798096532970761,
+      "delta_errors": -1
+    },
+    "OpenFake": {
+      "images": 6000,
+      "groups": 43,
+      "detector_errors": 1349,
+      "full": {
+        "aurc": 0.15176238604741832,
+        "accepted": 5458,
+        "errors": 994,
+        "risk": 0.182117991938439,
+        "coverage": 0.9096666666666666
+      },
+      "resize": {
+        "aurc": 0.1423051846524955,
+        "accepted": 5458,
+        "errors": 986,
+        "risk": 0.18065225357273726,
+        "coverage": 0.9096666666666666
+      },
+      "delta_aurc": -0.009457201394922815,
+      "delta_risk_pp": -0.1465738365701741,
+      "delta_errors": -8
+    }
+  },
+  "leave_one_group_out": [
+    {
+      "images": 5922,
+      "groups": 42,
+      "detector_errors": 1329,
+      "full": {
+        "aurc": 0.15138545161385297,
+        "accepted": 5387,
+        "errors": 978,
+        "risk": 0.18154817152403935,
+        "coverage": 0.9096588990206012
+      },
+      "resize": {
+        "aurc": 0.14187255490033926,
+        "accepted": 5387,
+        "errors": 969,
+        "risk": 0.17987748282903285,
+        "coverage": 0.9096588990206012
+      },
+      "delta_aurc": -0.009512896713513713,
+      "delta_risk_pp": -0.16706886950065003,
+      "delta_errors": -9,
+      "omitted_group": "04f4cc703bc45b9c240deb5677de6d5fa6827052d19fb36668b2b28ae2f10e3f",
+      "omitted_images": 78
+    },
+    {
+      "images": 5778,
+      "groups": 42,
+      "detector_errors": 1281,
+      "full": {
+        "aurc": 0.15034414292047144,
+        "accepted": 5256,
+        "errors": 943,
+        "risk": 0.17941400304414004,
+        "coverage": 0.9096573208722741
+      },
+      "resize": {
+        "aurc": 0.14096514084287856,
+        "accepted": 5256,
+        "errors": 931,
+        "risk": 0.177130898021309,
+        "coverage": 0.9096573208722741
+      },
+      "delta_aurc": -0.009379002077592874,
+      "delta_risk_pp": -0.228310502283105,
+      "delta_errors": -12,
+      "omitted_group": "19a3464047073c51a4bb44a080e46442bd91be677582f44c94283e55ce7c3286",
+      "omitted_images": 222
+    },
+    {
+      "images": 5943,
+      "groups": 42,
+      "detector_errors": 1336,
+      "full": {
+        "aurc": 0.1512816103326405,
+        "accepted": 5406,
+        "errors": 985,
+        "risk": 0.18220495745468,
+        "coverage": 0.9096415951539626
+      },
+      "resize": {
+        "aurc": 0.14184402713778502,
+        "accepted": 5406,
+        "errors": 977,
+        "risk": 0.18072512023677395,
+        "coverage": 0.9096415951539626
+      },
+      "delta_aurc": -0.009437583194855492,
+      "delta_risk_pp": -0.14798372179060382,
+      "delta_errors": -8,
+      "omitted_group": "1a3ce192bdb9438a5d47f8235dfb06d6fe111b252ee266a19abef6d7e1e86f75",
+      "omitted_images": 57
+    },
+    {
+      "images": 5965,
+      "groups": 42,
+      "detector_errors": 1348,
+      "full": {
+        "aurc": 0.1527872883068423,
+        "accepted": 5426,
+        "errors": 994,
+        "risk": 0.18319203833394765,
+        "coverage": 0.909639564124057
+      },
+      "resize": {
+        "aurc": 0.14334454019854645,
+        "accepted": 5426,
+        "errors": 986,
+        "risk": 0.18171765573166238,
+        "coverage": 0.909639564124057
+      },
+      "delta_aurc": -0.009442748108295845,
+      "delta_risk_pp": -0.14743826022852735,
+      "delta_errors": -8,
+      "omitted_group": "2004380a2556d88621697593877d89a65e50d774e8cbd5d5db14747ef7015a08",
+      "omitted_images": 35
+    },
+    {
+      "images": 5940,
+      "groups": 42,
+      "detector_errors": 1329,
+      "full": {
+        "aurc": 0.14974423349615623,
+        "accepted": 5403,
+        "errors": 979,
+        "risk": 0.18119563205626504,
+        "coverage": 0.9095959595959596
+      },
+      "resize": {
+        "aurc": 0.1404988346519784,
+        "accepted": 5403,
+        "errors": 971,
+        "risk": 0.17971497316305757,
+        "coverage": 0.9095959595959596
+      },
+      "delta_aurc": -0.009245398844177827,
+      "delta_risk_pp": -0.1480658893207476,
+      "delta_errors": -8,
+      "omitted_group": "305b647f12cce863e4869a619729f9c94d59885648edc58637cb201711ef036a",
+      "omitted_images": 60
+    },
+    {
+      "images": 5950,
+      "groups": 42,
+      "detector_errors": 1344,
+      "full": {
+        "aurc": 0.1526831418427953,
+        "accepted": 5413,
+        "errors": 990,
+        "risk": 0.18289303528542397,
+        "coverage": 0.9097478991596639
+      },
+      "resize": {
+        "aurc": 0.14315825618158695,
+        "accepted": 5413,
+        "errors": 983,
+        "risk": 0.18159985220764827,
+        "coverage": 0.9097478991596639
+      },
+      "delta_aurc": -0.009524885661208349,
+      "delta_risk_pp": -0.12931830777757058,
+      "delta_errors": -7,
+      "omitted_group": "31ec006e616780119507b2b5b99d03facd3b7d4a92ab6253d76e76e0b2f0c8b1",
+      "omitted_images": 50
+    },
+    {
+      "images": 5919,
+      "groups": 42,
+      "detector_errors": 1326,
+      "full": {
+        "aurc": 0.14982990144514627,
+        "accepted": 5384,
+        "errors": 974,
+        "risk": 0.18090638930163447,
+        "coverage": 0.9096131103226897
+      },
+      "resize": {
+        "aurc": 0.1404528412432178,
+        "accepted": 5384,
+        "errors": 967,
+        "risk": 0.17960624071322437,
+        "coverage": 0.9096131103226897
+      },
+      "delta_aurc": -0.009377060201928467,
+      "delta_risk_pp": -0.13001485884100994,
+      "delta_errors": -7,
+      "omitted_group": "33d8be4efcc8311a44e619b56f3ab35746a2dc4245f8027fe95dfa8ba6de616c",
+      "omitted_images": 81
+    },
+    {
+      "images": 5973,
+      "groups": 42,
+      "detector_errors": 1347,
+      "full": {
+        "aurc": 0.15224227423926023,
+        "accepted": 5433,
+        "errors": 993,
+        "risk": 0.18277194919933737,
+        "coverage": 0.9095931692616775
+      },
+      "resize": {
+        "aurc": 0.1427764652362273,
+        "accepted": 5433,
+        "errors": 983,
+        "risk": 0.18093134548131787,
+        "coverage": 0.9095931692616775
+      },
+      "delta_aurc": -0.009465809003032927,
+      "delta_risk_pp": -0.18406037180195012,
+      "delta_errors": -10,
+      "omitted_group": "3c2178b10e5bd0f6bb7d3ecdb146a0733d3947b88035905fe560d3849d14aad0",
+      "omitted_images": 27
+    },
+    {
+      "images": 5959,
+      "groups": 42,
+      "detector_errors": 1345,
+      "full": {
+        "aurc": 0.1525002334786754,
+        "accepted": 5421,
+        "errors": 991,
+        "risk": 0.18280760007378713,
+        "coverage": 0.9097163953683504
+      },
+      "resize": {
+        "aurc": 0.14301417328093352,
+        "accepted": 5421,
+        "errors": 983,
+        "risk": 0.1813318575908504,
+        "coverage": 0.9097163953683504
+      },
+      "delta_aurc": -0.009486060197741869,
+      "delta_risk_pp": -0.14757424829367205,
+      "delta_errors": -8,
+      "omitted_group": "58163ab43c45ecd9461833c2436cc524b189bda06814e3cd85b24472a8ed7de0",
+      "omitted_images": 41
+    },
+    {
+      "images": 5887,
+      "groups": 42,
+      "detector_errors": 1320,
+      "full": {
+        "aurc": 0.15197478090569078,
+        "accepted": 5355,
+        "errors": 975,
+        "risk": 0.18207282913165265,
+        "coverage": 0.9096313912009513
+      },
+      "resize": {
+        "aurc": 0.1423728474110269,
+        "accepted": 5355,
+        "errors": 965,
+        "risk": 0.18020541549953314,
+        "coverage": 0.9096313912009513
+      },
+      "delta_aurc": -0.009601933494663872,
+      "delta_risk_pp": -0.18674136321195078,
+      "delta_errors": -10,
+      "omitted_group": "5ef8a1bb6efa3515b786d2d6ffe36737a855cc282fcb9ee13bedd6bea2cb5f34",
+      "omitted_images": 113
+    },
+    {
+      "images": 5944,
+      "groups": 42,
+      "detector_errors": 1343,
+      "full": {
+        "aurc": 0.15217926755250624,
+        "accepted": 5407,
+        "errors": 990,
+        "risk": 0.18309598668392824,
+        "coverage": 0.909656796769852
+      },
+      "resize": {
+        "aurc": 0.14270839298538873,
+        "accepted": 5407,
+        "errors": 982,
+        "risk": 0.18161642315516924,
+        "coverage": 0.909656796769852
+      },
+      "delta_aurc": -0.00947087456711751,
+      "delta_risk_pp": -0.1479563528758998,
+      "delta_errors": -8,
+      "omitted_group": "67812b3d97e0456de22051837884ece4bec39fec0b526e5e63ddc38375d6bca5",
+      "omitted_images": 56
+    },
+    {
+      "images": 5902,
+      "groups": 42,
+      "detector_errors": 1326,
+      "full": {
+        "aurc": 0.1516641877017553,
+        "accepted": 5369,
+        "errors": 978,
+        "risk": 0.18215682622462284,
+        "coverage": 0.9096916299559471
+      },
+      "resize": {
+        "aurc": 0.14220804077836824,
+        "accepted": 5369,
+        "errors": 970,
+        "risk": 0.18066679083628237,
+        "coverage": 0.9096916299559471
+      },
+      "delta_aurc": -0.00945614692338706,
+      "delta_risk_pp": -0.14900353883404716,
+      "delta_errors": -8,
+      "omitted_group": "697624c6263f1de32b69c2986f6f6a6b81da2419412f458b79c01624f917a9d9",
+      "omitted_images": 98
+    },
+    {
+      "images": 5971,
+      "groups": 42,
+      "detector_errors": 1345,
+      "full": {
+        "aurc": 0.1521230325764518,
+        "accepted": 5432,
+        "errors": 993,
+        "risk": 0.18280559646539027,
+        "coverage": 0.9097303634232122
+      },
+      "resize": {
+        "aurc": 0.14265277409204805,
+        "accepted": 5432,
+        "errors": 985,
+        "risk": 0.18133284241531664,
+        "coverage": 0.9097303634232122
+      },
+      "delta_aurc": -0.009470258484403749,
+      "delta_risk_pp": -0.14727540500736325,
+      "delta_errors": -8,
+      "omitted_group": "6a450a6b46fa7a80dea77a93966a1ce2d2fa812160fb2d619af599f22c0a3016",
+      "omitted_images": 29
+    },
+    {
+      "images": 5960,
+      "groups": 42,
+      "detector_errors": 1346,
+      "full": {
+        "aurc": 0.15275689690220107,
+        "accepted": 5422,
+        "errors": 993,
+        "risk": 0.183142751752121,
+        "coverage": 0.9097315436241611
+      },
+      "resize": {
+        "aurc": 0.14325191833818116,
+        "accepted": 5422,
+        "errors": 985,
+        "risk": 0.1816672814459609,
+        "coverage": 0.9097315436241611
+      },
+      "delta_aurc": -0.009504978564019911,
+      "delta_risk_pp": -0.14754703061601038,
+      "delta_errors": -8,
+      "omitted_group": "6df9fee532f8098a2d02a87c8df78ed02e3a636046bdf80149455b7b324d8532",
+      "omitted_images": 40
+    },
+    {
+      "images": 5966,
+      "groups": 42,
+      "detector_errors": 1336,
+      "full": {
+        "aurc": 0.1509540005378737,
+        "accepted": 5427,
+        "errors": 983,
+        "risk": 0.18113138013635527,
+        "coverage": 0.9096547100234663
+      },
+      "resize": {
+        "aurc": 0.1414860138034482,
+        "accepted": 5427,
+        "errors": 976,
+        "risk": 0.1798415330753639,
+        "coverage": 0.9096547100234663
+      },
+      "delta_aurc": -0.009467986734425504,
+      "delta_risk_pp": -0.12898470609913615,
+      "delta_errors": -7,
+      "omitted_group": "752094d2993a271c227834761a40ec57c8ddcb8b0e9930c9a2d6f084d4471aea",
+      "omitted_images": 34
+    },
+    {
+      "images": 5879,
+      "groups": 42,
+      "detector_errors": 1315,
+      "full": {
+        "aurc": 0.15212020046398964,
+        "accepted": 5348,
+        "errors": 968,
+        "risk": 0.18100224382946897,
+        "coverage": 0.9096785167545501
+      },
+      "resize": {
+        "aurc": 0.14276970607078796,
+        "accepted": 5348,
+        "errors": 960,
+        "risk": 0.17950635751682872,
+        "coverage": 0.9096785167545501
+      },
+      "delta_aurc": -0.00935049439320168,
+      "delta_risk_pp": -0.14958863126402488,
+      "delta_errors": -8,
+      "omitted_group": "78ea3d50f03ab8334f64d1225391d4c3190c0f43c36e5a9e69c44ebb5211ce1f",
+      "omitted_images": 121
+    },
+    {
+      "images": 5966,
+      "groups": 42,
+      "detector_errors": 1347,
+      "full": {
+        "aurc": 0.1524972177656423,
+        "accepted": 5427,
+        "errors": 993,
+        "risk": 0.18297401879491432,
+        "coverage": 0.9096547100234663
+      },
+      "resize": {
+        "aurc": 0.1430232035606585,
+        "accepted": 5427,
+        "errors": 986,
+        "risk": 0.18168417173392298,
+        "coverage": 0.9096547100234663
+      },
+      "delta_aurc": -0.009474014204983783,
+      "delta_risk_pp": -0.12898470609913337,
+      "delta_errors": -7,
+      "omitted_group": "78fcbdc0cea9b44df92a6c3028ab4f7e99bc7ed721c4537fe07ab869436920c9",
+      "omitted_images": 34
+    },
+    {
+      "images": 5883,
+      "groups": 42,
+      "detector_errors": 1305,
+      "full": {
+        "aurc": 0.14704845292266852,
+        "accepted": 5352,
+        "errors": 962,
+        "risk": 0.179745889387145,
+        "coverage": 0.9097399286078531
+      },
+      "resize": {
+        "aurc": 0.13790144169396784,
+        "accepted": 5352,
+        "errors": 951,
+        "risk": 0.17769058295964127,
+        "coverage": 0.9097399286078531
+      },
+      "delta_aurc": -0.00914701122870068,
+      "delta_risk_pp": -0.20553064275037336,
+      "delta_errors": -11,
+      "omitted_group": "7c093a49de3f9c12e12bba7314228ae793f3e351d1feb13f93ad02395fb6ed16",
+      "omitted_images": 117
+    },
+    {
+      "images": 5981,
+      "groups": 42,
+      "detector_errors": 1346,
+      "full": {
+        "aurc": 0.15238729927315195,
+        "accepted": 5441,
+        "errors": 993,
+        "risk": 0.18250321632052932,
+        "coverage": 0.9097140946330046
+      },
+      "resize": {
+        "aurc": 0.14291152390796175,
+        "accepted": 5441,
+        "errors": 985,
+        "risk": 0.18103289836427128,
+        "coverage": 0.9097140946330046
+      },
+      "delta_aurc": -0.009475775365190203,
+      "delta_risk_pp": -0.14703179562580437,
+      "delta_errors": -8,
+      "omitted_group": "7d5bbf4460b2dcbe7b7fbdb603018c1620dccb2d5953e93a2ceab514bcd5d89b",
+      "omitted_images": 19
+    },
+    {
+      "images": 5935,
+      "groups": 42,
+      "detector_errors": 1321,
+      "full": {
+        "aurc": 0.15019849657227635,
+        "accepted": 5399,
+        "errors": 970,
+        "risk": 0.17966290053713652,
+        "coverage": 0.9096882898062342
+      },
+      "resize": {
+        "aurc": 0.14085622027355696,
+        "accepted": 5399,
+        "errors": 962,
+        "risk": 0.17818114465641785,
+        "coverage": 0.9096882898062342
+      },
+      "delta_aurc": -0.009342276298719393,
+      "delta_risk_pp": -0.1481755880718666,
+      "delta_errors": -8,
+      "omitted_group": "7e035e98e537d618b4bc54bd5925fe40befab9109e252fa2e27687aa3883ff0b",
+      "omitted_images": 65
+    },
+    {
+      "images": 5967,
+      "groups": 42,
+      "detector_errors": 1344,
+      "full": {
+        "aurc": 0.15240802263178807,
+        "accepted": 5428,
+        "errors": 991,
+        "risk": 0.18257184966838613,
+        "coverage": 0.9096698508463215
+      },
+      "resize": {
+        "aurc": 0.14295343375433045,
+        "accepted": 5428,
+        "errors": 983,
+        "risk": 0.18109801031687547,
+        "coverage": 0.9096698508463215
+      },
+      "delta_aurc": -0.00945458887745762,
+      "delta_risk_pp": -0.14738393515106585,
+      "delta_errors": -8,
+      "omitted_group": "82012988b38a3023508cb0d3128902abcf502082b39d08317c079347e1c68ffa",
+      "omitted_images": 33
+    },
+    {
+      "images": 2588,
+      "groups": 42,
+      "detector_errors": 596,
+      "full": {
+        "aurc": 0.16065645502775755,
+        "accepted": 2354,
+        "errors": 436,
+        "risk": 0.18521665250637212,
+        "coverage": 0.9095826893353941
+      },
+      "resize": {
+        "aurc": 0.15104801345358587,
+        "accepted": 2354,
+        "errors": 438,
+        "risk": 0.1860662701784197,
+        "coverage": 0.9095826893353941
+      },
+      "delta_aurc": -0.009608441574171678,
+      "delta_risk_pp": 0.08496176720475812,
+      "delta_errors": 2,
+      "omitted_group": "8ac18712203fcd4339b66da0789693d06821fd286d0e10e431ce8b0259eb9933",
+      "omitted_images": 3412
+    },
+    {
+      "images": 5962,
+      "groups": 42,
+      "detector_errors": 1349,
+      "full": {
+        "aurc": 0.1532325494728171,
+        "accepted": 5423,
+        "errors": 994,
+        "risk": 0.18329338004794393,
+        "coverage": 0.9095940959409594
+      },
+      "resize": {
+        "aurc": 0.14370881552639758,
+        "accepted": 5423,
+        "errors": 986,
+        "risk": 0.18181818181818182,
+        "coverage": 0.9095940959409594
+      },
+      "delta_aurc": -0.009523733946419505,
+      "delta_risk_pp": -0.1475198229762109,
+      "delta_errors": -8,
+      "omitted_group": "8d8a1397f27cf4641f6040e81da6958c4f511256f8a7fe1752c0cac4c80d93ea",
+      "omitted_images": 38
+    },
+    {
+      "images": 5943,
+      "groups": 42,
+      "detector_errors": 1330,
+      "full": {
+        "aurc": 0.14931085059033394,
+        "accepted": 5406,
+        "errors": 977,
+        "risk": 0.18072512023677395,
+        "coverage": 0.9096415951539626
+      },
+      "resize": {
+        "aurc": 0.13985357264647486,
+        "accepted": 5406,
+        "errors": 969,
+        "risk": 0.1792452830188679,
+        "coverage": 0.9096415951539626
+      },
+      "delta_aurc": -0.009457277943859088,
+      "delta_risk_pp": -0.14798372179060382,
+      "delta_errors": -8,
+      "omitted_group": "8da17f3f28495d215235784d5b4b1d169f218b960be5d567ba968937b3ac6ad9",
+      "omitted_images": 57
+    },
+    {
+      "images": 5959,
+      "groups": 42,
+      "detector_errors": 1348,
+      "full": {
+        "aurc": 0.1529221900244979,
+        "accepted": 5421,
+        "errors": 994,
+        "risk": 0.1833610035048884,
+        "coverage": 0.9097163953683504
+      },
+      "resize": {
+        "aurc": 0.1434136845461154,
+        "accepted": 5421,
+        "errors": 986,
+        "risk": 0.18188526102195168,
+        "coverage": 0.9097163953683504
+      },
+      "delta_aurc": -0.0095085054783825,
+      "delta_risk_pp": -0.14757424829367205,
+      "delta_errors": -8,
+      "omitted_group": "930af66e06ced6378f105fe80d06f592bc3fe5e8881e396f92593579d7ce5a43",
+      "omitted_images": 41
+    },
+    {
+      "images": 5913,
+      "groups": 42,
+      "detector_errors": 1327,
+      "full": {
+        "aurc": 0.15162443684152546,
+        "accepted": 5379,
+        "errors": 980,
+        "risk": 0.18218999814091838,
+        "coverage": 0.9096905124302385
+      },
+      "resize": {
+        "aurc": 0.14233305532713353,
+        "accepted": 5379,
+        "errors": 971,
+        "risk": 0.18051682468860383,
+        "coverage": 0.9096905124302385
+      },
+      "delta_aurc": -0.009291381514391933,
+      "delta_risk_pp": -0.1673173452314547,
+      "delta_errors": -9,
+      "omitted_group": "9cc576a8c391ea58de0f019cb8fa0453968253e319e5d113b516497024f57ba5",
+      "omitted_images": 87
+    },
+    {
+      "images": 5924,
+      "groups": 42,
+      "detector_errors": 1328,
+      "full": {
+        "aurc": 0.1509195410167674,
+        "accepted": 5389,
+        "errors": 980,
+        "risk": 0.18185192057895713,
+        "coverage": 0.9096893990546928
+      },
+      "resize": {
+        "aurc": 0.1413520594146212,
+        "accepted": 5389,
+        "errors": 970,
+        "risk": 0.1799962887363147,
+        "coverage": 0.9096893990546928
+      },
+      "delta_aurc": -0.00956748160214621,
+      "delta_risk_pp": -0.18556318426424245,
+      "delta_errors": -10,
+      "omitted_group": "ab70d173fb6e5dcad686f52637b13e085048c9fd804fe0501a313d796200a086",
+      "omitted_images": 76
+    },
+    {
+      "images": 5938,
+      "groups": 42,
+      "detector_errors": 1330,
+      "full": {
+        "aurc": 0.15107754344409485,
+        "accepted": 5402,
+        "errors": 980,
+        "risk": 0.1814142910033321,
+        "coverage": 0.9097339171438195
+      },
+      "resize": {
+        "aurc": 0.14154879519463404,
+        "accepted": 5402,
+        "errors": 972,
+        "risk": 0.1799333580155498,
+        "coverage": 0.9097339171438195
+      },
+      "delta_aurc": -0.009528748249460817,
+      "delta_risk_pp": -0.14809329877822908,
+      "delta_errors": -8,
+      "omitted_group": "ac5f5d24224bace1fe3b0a0b8a71e32862f90dbceacc62cc98a93f0855abbb0d",
+      "omitted_images": 62
+    },
+    {
+      "images": 5974,
+      "groups": 42,
+      "detector_errors": 1348,
+      "full": {
+        "aurc": 0.1523920124480059,
+        "accepted": 5434,
+        "errors": 993,
+        "risk": 0.18273831431726167,
+        "coverage": 0.9096083026447941
+      },
+      "resize": {
+        "aurc": 0.14293366899696638,
+        "accepted": 5434,
+        "errors": 985,
+        "risk": 0.18126610231873388,
+        "coverage": 0.9096083026447941
+      },
+      "delta_aurc": -0.00945834345103952,
+      "delta_risk_pp": -0.14722119985277893,
+      "delta_errors": -8,
+      "omitted_group": "b2cb969ebc18099c430bd9c805e75ff6eed15ccdee1d2c331d4021c95e888c3f",
+      "omitted_images": 26
+    },
+    {
+      "images": 5941,
+      "groups": 42,
+      "detector_errors": 1342,
+      "full": {
+        "aurc": 0.15329932457772397,
+        "accepted": 5404,
+        "errors": 989,
+        "risk": 0.18301258327165063,
+        "coverage": 0.9096111765696011
+      },
+      "resize": {
+        "aurc": 0.14372870663525925,
+        "accepted": 5404,
+        "errors": 981,
+        "risk": 0.1815321983715766,
+        "coverage": 0.9096111765696011
+      },
+      "delta_aurc": -0.00957061794246472,
+      "delta_risk_pp": -0.14803849000740166,
+      "delta_errors": -8,
+      "omitted_group": "c5efc8df1c692b2b31740a437fe25a36530b31cef7064b8868ef6babc6b44a5a",
+      "omitted_images": 59
+    },
+    {
+      "images": 5974,
+      "groups": 42,
+      "detector_errors": 1346,
+      "full": {
+        "aurc": 0.15228284897837296,
+        "accepted": 5434,
+        "errors": 993,
+        "risk": 0.18273831431726167,
+        "coverage": 0.9096083026447941
+      },
+      "resize": {
+        "aurc": 0.14281001003138982,
+        "accepted": 5434,
+        "errors": 985,
+        "risk": 0.18126610231873388,
+        "coverage": 0.9096083026447941
+      },
+      "delta_aurc": -0.009472838946983142,
+      "delta_risk_pp": -0.14722119985277893,
+      "delta_errors": -8,
+      "omitted_group": "d322bfe491e2a7310107776452b5eb1b17909dfca2276b3f3f1225f92f7da8fd",
+      "omitted_images": 26
+    },
+    {
+      "images": 5925,
+      "groups": 42,
+      "detector_errors": 1328,
+      "full": {
+        "aurc": 0.15096998594783642,
+        "accepted": 5390,
+        "errors": 976,
+        "risk": 0.1810760667903525,
+        "coverage": 0.909704641350211
+      },
+      "resize": {
+        "aurc": 0.14141973905080782,
+        "accepted": 5390,
+        "errors": 968,
+        "risk": 0.17959183673469387,
+        "coverage": 0.909704641350211
+      },
+      "delta_aurc": -0.009550246897028603,
+      "delta_risk_pp": -0.14842300556586474,
+      "delta_errors": -8,
+      "omitted_group": "d505a756abcec073ddd745e9dfd132f0d054857f7ce0b378752e57f399f18810",
+      "omitted_images": 75
+    },
+    {
+      "images": 5978,
+      "groups": 42,
+      "detector_errors": 1347,
+      "full": {
+        "aurc": 0.15207277867689595,
+        "accepted": 5438,
+        "errors": 993,
+        "risk": 0.1826038984920927,
+        "coverage": 0.9096687855470057
+      },
+      "resize": {
+        "aurc": 0.1426074288123933,
+        "accepted": 5438,
+        "errors": 985,
+        "risk": 0.1811327694005149,
+        "coverage": 0.9096687855470057
+      },
+      "delta_aurc": -0.009465349864502648,
+      "delta_risk_pp": -0.14711290915777886,
+      "delta_errors": -8,
+      "omitted_group": "d50a01add15992cdc23563a46838e82bbbda629506b7bbaa3d43a68cc6ab8798",
+      "omitted_images": 22
+    },
+    {
+      "images": 5895,
+      "groups": 42,
+      "detector_errors": 1314,
+      "full": {
+        "aurc": 0.15029971550001936,
+        "accepted": 5362,
+        "errors": 967,
+        "risk": 0.180343155538978,
+        "coverage": 0.9095843935538592
+      },
+      "resize": {
+        "aurc": 0.14086229436235334,
+        "accepted": 5362,
+        "errors": 958,
+        "risk": 0.17866467735919433,
+        "coverage": 0.9095843935538592
+      },
+      "delta_aurc": -0.009437421137666019,
+      "delta_risk_pp": -0.16784781797836712,
+      "delta_errors": -9,
+      "omitted_group": "dba3c73708078fa203f5d0d3b2b4f4bf1687b8f8c0d9fd55e235835697b368ed",
+      "omitted_images": 105
+    },
+    {
+      "images": 5966,
+      "groups": 42,
+      "detector_errors": 1348,
+      "full": {
+        "aurc": 0.152682089975687,
+        "accepted": 5427,
+        "errors": 994,
+        "risk": 0.18315828266077022,
+        "coverage": 0.9096547100234663
+      },
+      "resize": {
+        "aurc": 0.1431567164788158,
+        "accepted": 5427,
+        "errors": 986,
+        "risk": 0.18168417173392298,
+        "coverage": 0.9096547100234663
+      },
+      "delta_aurc": -0.009525373496871187,
+      "delta_risk_pp": -0.14741109268472385,
+      "delta_errors": -8,
+      "omitted_group": "e40b47baf27c0ea71edb5e6e4a47c69984602db5970e46fb5e99761fc8a7b340",
+      "omitted_images": 34
+    },
+    {
+      "images": 5908,
+      "groups": 42,
+      "detector_errors": 1337,
+      "full": {
+        "aurc": 0.15325205218782972,
+        "accepted": 5374,
+        "errors": 988,
+        "risk": 0.18384815779679942,
+        "coverage": 0.9096140825998645
+      },
+      "resize": {
+        "aurc": 0.1437798922032524,
+        "accepted": 5374,
+        "errors": 979,
+        "risk": 0.1821734276144399,
+        "coverage": 0.9096140825998645
+      },
+      "delta_aurc": -0.009472159984577316,
+      "delta_risk_pp": -0.16747301823595295,
+      "delta_errors": -9,
+      "omitted_group": "e9f75bbcd2d3e2159c1055f8083b57cffb06cbbbdfe5090fb7612f7f2e29452e",
+      "omitted_images": 92
+    },
+    {
+      "images": 5939,
+      "groups": 42,
+      "detector_errors": 1326,
+      "full": {
+        "aurc": 0.15101662315048142,
+        "accepted": 5403,
+        "errors": 979,
+        "risk": 0.18119563205626504,
+        "coverage": 0.9097491160127967
+      },
+      "resize": {
+        "aurc": 0.14172354160542258,
+        "accepted": 5403,
+        "errors": 968,
+        "risk": 0.17915972607810476,
+        "coverage": 0.9097491160127967
+      },
+      "delta_aurc": -0.00929308154505884,
+      "delta_risk_pp": -0.20359059781602795,
+      "delta_errors": -11,
+      "omitted_group": "f062829e313b9d40118768baeb3958a6b19dcf0c3333d3c1c264243488597876",
+      "omitted_images": 61
+    },
+    {
+      "images": 5972,
+      "groups": 42,
+      "detector_errors": 1347,
+      "full": {
+        "aurc": 0.1523451846713461,
+        "accepted": 5433,
+        "errors": 993,
+        "risk": 0.18277194919933737,
+        "coverage": 0.9097454789015406
+      },
+      "resize": {
+        "aurc": 0.14286839027800008,
+        "accepted": 5433,
+        "errors": 985,
+        "risk": 0.18129946622492177,
+        "coverage": 0.9097454789015406
+      },
+      "delta_aurc": -0.009476794393346033,
+      "delta_risk_pp": -0.1472482974415601,
+      "delta_errors": -8,
+      "omitted_group": "f0dc4136acfc726bed774ab1a9f78e777c4599d3b5b927ff337c8c04606187cd",
+      "omitted_images": 28
+    },
+    {
+      "images": 5916,
+      "groups": 42,
+      "detector_errors": 1325,
+      "full": {
+        "aurc": 0.15110266755656912,
+        "accepted": 5382,
+        "errors": 974,
+        "risk": 0.18097361575622445,
+        "coverage": 0.90973630831643
+      },
+      "resize": {
+        "aurc": 0.1416688897648752,
+        "accepted": 5382,
+        "errors": 967,
+        "risk": 0.1796729840208101,
+        "coverage": 0.90973630831643
+      },
+      "delta_aurc": -0.00943377779169391,
+      "delta_risk_pp": -0.1300631735414337,
+      "delta_errors": -7,
+      "omitted_group": "f1b7e249284b0993cdc5879bc884ae15feb47a9c71404fb6be0454996ecd5ea5",
+      "omitted_images": 84
+    },
+    {
+      "images": 5953,
+      "groups": 42,
+      "detector_errors": 1342,
+      "full": {
+        "aurc": 0.15238045470014924,
+        "accepted": 5415,
+        "errors": 988,
+        "risk": 0.1824561403508772,
+        "coverage": 0.9096253989585084
+      },
+      "resize": {
+        "aurc": 0.14285382941046793,
+        "accepted": 5415,
+        "errors": 979,
+        "risk": 0.18079409048938136,
+        "coverage": 0.9096253989585084
+      },
+      "delta_aurc": -0.009526625289681317,
+      "delta_risk_pp": -0.16620498614958457,
+      "delta_errors": -9,
+      "omitted_group": "f799dc696619fe57ab4082a9362885c6a364377c314d47fa7d2e77a89c6f73c3",
+      "omitted_images": 47
+    },
+    {
+      "images": 5920,
+      "groups": 42,
+      "detector_errors": 1326,
+      "full": {
+        "aurc": 0.150643878238647,
+        "accepted": 5385,
+        "errors": 975,
+        "risk": 0.181058495821727,
+        "coverage": 0.9096283783783784
+      },
+      "resize": {
+        "aurc": 0.14115071064817128,
+        "accepted": 5385,
+        "errors": 966,
+        "risk": 0.17938718662952646,
+        "coverage": 0.9096283783783784
+      },
+      "delta_aurc": -0.00949316759047572,
+      "delta_risk_pp": -0.1671309192200543,
+      "delta_errors": -9,
+      "omitted_group": "fdda16915bae0c47956820b907d965223fa45c7c313eda1823270dd8a184a923",
+      "omitted_images": 80
+    },
+    {
+      "images": 5965,
+      "groups": 42,
+      "detector_errors": 1348,
+      "full": {
+        "aurc": 0.15233645066045634,
+        "accepted": 5426,
+        "errors": 993,
+        "risk": 0.183007740508662,
+        "coverage": 0.909639564124057
+      },
+      "resize": {
+        "aurc": 0.1428802704612449,
+        "accepted": 5426,
+        "errors": 985,
+        "risk": 0.1815333579063767,
+        "coverage": 0.909639564124057
+      },
+      "delta_aurc": -0.009456180199211434,
+      "delta_risk_pp": -0.14743826022853013,
+      "delta_errors": -8,
+      "omitted_group": "fe37f0f92ef970c27c949e133c558793803fe425972d27b0edc23e91741d48fe",
+      "omitted_images": 35
+    },
+    {
+      "images": 5957,
+      "groups": 42,
+      "detector_errors": 1347,
+      "full": {
+        "aurc": 0.1527593652521744,
+        "accepted": 5419,
+        "errors": 994,
+        "risk": 0.1834286768776527,
+        "coverage": 0.9096860835991271
+      },
+      "resize": {
+        "aurc": 0.14323081592395298,
+        "accepted": 5419,
+        "errors": 985,
+        "risk": 0.18176785384757335,
+        "coverage": 0.9096860835991271
+      },
+      "delta_aurc": -0.00952854932822142,
+      "delta_risk_pp": -0.16608230300793614,
+      "delta_errors": -9,
+      "omitted_group": "feebbeb860b277f602baac72f1e9c1b908849c0d274f915675eeaca1128c486c",
+      "omitted_images": 43
+    }
+  ],
+  "largest_group_deleted": {
+    "images": 2588,
+    "groups": 42,
+    "detector_errors": 596,
+    "full": {
+      "aurc": 0.16065645502775755,
+      "accepted": 2354,
+      "errors": 436,
+      "risk": 0.18521665250637212,
+      "coverage": 0.9095826893353941
+    },
+    "resize": {
+      "aurc": 0.15104801345358587,
+      "accepted": 2354,
+      "errors": 438,
+      "risk": 0.1860662701784197,
+      "coverage": 0.9095826893353941
+    },
+    "delta_aurc": -0.009608441574171678,
+    "delta_risk_pp": 0.08496176720475812,
+    "delta_errors": 2,
+    "omitted_group": "8ac18712203fcd4339b66da0789693d06821fd286d0e10e431ce8b0259eb9933",
+    "omitted_images": 3412
+  },
+  "summary": {
+    "deletions": 43,
+    "aurc_negative": 43,
+    "risk_negative": 42,
+    "risk_zero": 0,
+    "risk_positive": 1,
+    "delta_aurc_range": [
+      -0.009608441574171678,
+      -0.00914701122870068
+    ],
+    "delta_risk_pp_range": [
+      -0.228310502283105,
+      0.08496176720475812
+    ]
+  },
+  "uncertainty_intervals_computed": false,
+  "locked_decision_unchanged": "retain_full",
+  "training_inference_or_new_data": false
+}

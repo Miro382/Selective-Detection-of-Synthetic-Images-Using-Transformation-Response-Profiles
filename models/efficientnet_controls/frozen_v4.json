@@ -1,0 +1,11 @@
+{
+  "spec": {
+    "id": "frozen_v4",
+    "kind": "frozen",
+    "features": "full"
+  },
+  "protocol_sha256": "c42d9a3457aff3b7ba70ad11ef9f6d67e92602e292e339e87eccfeaa46a40eab",
+  "selection_aurc": 0.0010448695994117034,
+  "threshold": 0.08632226578702012,
+  "threshold_status": "original_frozen_rule"
+}

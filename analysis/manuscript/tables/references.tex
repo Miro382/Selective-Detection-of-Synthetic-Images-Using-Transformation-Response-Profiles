@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\caption{EfficientNet selection references. Development is the reused 2,000-input selection set; DS/OF are the retrospective 10,000/4,000-image cohorts. AURC is unscaled and lower is better. Final columns give errors at 95\% coverage (9,500 DS and 3,800 OF acceptances). All Bahat-style seeds are shown.}
+\label{tab:references}
+\centering\small
+\begin{tabular}{lrrrrr}
+\toprule
+Method & Dev. AURC & DS AURC & OF AURC & DS errors & OF errors \\
+\midrule
+Confidence & 0.001076 & 0.000660 & 0.195623 & 43 & 809 \\
+Learned confidence & 0.001076 & 0.000660 & 0.195623 & 43 & 809 \\
+TTA mean & 0.001083 & 0.000564 & 0.173138 & 32 & 778 \\
+Energy ($T_E=1$) & 0.001141 & 0.000623 & 0.176434 & 40 & 808 \\
+MC dropout, 6 draws & 0.001077 & 0.000679 & 0.195449 & 43 & 813 \\
+MC dropout, 30 draws & 0.001064 & 0.000672 & 0.195651 & 43 & 809 \\
+Bahat-style MLP, seed 17 & 0.000620 & 0.000517 & 0.154760 & 29 & 795 \\
+Bahat-style MLP, seed 29 & 0.000668 & 0.000515 & 0.160461 & 31 & 792 \\
+Bahat-style MLP, seed 43 & 0.000629 & 0.000512 & 0.148898 & 28 & 790 \\
+Full profile & 0.001045 & 0.000400 & 0.155859 & 18 & 747 \\
+\bottomrule
+\end{tabular}
+\end{table*}

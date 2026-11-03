@@ -1,0 +1,417 @@
+{
+  "version": "selector-comparison-1",
+  "project": "archive",
+  "source": "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4",
+  "selector": "archive\\selective_experiments\\experiment_v4\\selector_training_v4",
+  "external": "archive\\selective_experiments\\external_v4_confirmation_reduced_20261017",
+  "anchors": {
+    "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\protocol.json": "7b2ec05a9e5a1dc3674cf9a2f0acf7a6d4cedacf0908b3c8191a10d698f4041f",
+    "archive\\selective_experiments\\experiment_v4\\selector_training_v4\\selector.json": "4d0469e6495433619066d52430f7d5b30cc89d3a76d557b64dfada187c2cee0d",
+    "archive\\selective_experiments\\external_v4_confirmation_reduced_20261017\\complete.json": "71cc90904f4ee4efe257b817a1b18ec333c2744af091a99a10d751814be2cc53",
+    "archive\\selective_experiments\\external_v4_confirmation_reduced_20261017\\profiles.jsonl": "a346428655a6a02444802a020abf104264b5d8ef0180458c9dba3495b6bbfe72",
+    "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\profiles\\selector_train.jsonl": "3f7399fe19c26d3cf75ded58804cf34dd64406d6f0ee4a13fe6c0647817f2f84",
+    "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\profiles\\selector_selection.jsonl": "a81a7e7f4ee781ba320aae5e1dce1a1ff5a077fdd0bcbdb7f2b7565ccc5abd6b"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.8.0",
+      "torch": "2.8.0+cu126",
+      "torchvision": "0.23.0",
+      "Pillow": "12.3.0"
+    }
+  },
+  "model_sha256": "351a6c3347a7acc27f58b6e213128ca65e421dbc227800fe13bbe7ef4a2dfdbd",
+  "model_fingerprint": "e705b5a09d360cc067470d5d70a17b7aa4fa76cde1d3a7520f898490d710417f",
+  "temperature": 2.5451689020139714,
+  "frozen_threshold": 0.08632226578702012,
+  "counts": {
+    "train": {
+      "profiles": 40000,
+      "originals": 5000,
+      "groups": 5000,
+      "sources": {
+        "deepshield_v4": 40000
+      },
+      "cohorts": {
+        "development": 40000
+      }
+    },
+    "selection": {
+      "profiles": 2000,
+      "originals": 2000,
+      "groups": 2000,
+      "sources": {
+        "deepshield_v4": 2000
+      },
+      "cohorts": {
+        "development": 2000
+      }
+    },
+    "external": {
+      "profiles": 14000,
+      "originals": 14000,
+      "groups": 10213,
+      "sources": {
+        "DeepShield/PreSocial": 10000,
+        "OpenFake/core/test": 4000
+      },
+      "cohorts": {
+        "DeepShield": 10000,
+        "OpenFake": 4000
+      }
+    }
+  },
+  "methods": {
+    "cached": [
+      {
+        "id": "frozen_v4",
+        "kind": "frozen",
+        "features": "full"
+      },
+      {
+        "id": "confidence",
+        "kind": "baseline"
+      },
+      {
+        "id": "tta_mean",
+        "kind": "baseline"
+      },
+      {
+        "id": "lr_confidence",
+        "kind": "lr",
+        "features": "confidence",
+        "C": 0.1
+      },
+      {
+        "id": "lr_full",
+        "kind": "lr",
+        "features": "full",
+        "C": 0.1
+      },
+      {
+        "id": "lr_no_summaries",
+        "kind": "lr",
+        "features": "no_summaries",
+        "C": 0.1
+      },
+      {
+        "id": "lr_no_orientation",
+        "kind": "lr",
+        "features": "no_orientation",
+        "C": 0.1
+      },
+      {
+        "id": "lr_no_confidence",
+        "kind": "lr",
+        "features": "no_confidence",
+        "C": 0.1
+      },
+      {
+        "id": "lr_summaries_only",
+        "kind": "lr",
+        "features": "summaries_only",
+        "C": 0.1
+      },
+      {
+        "id": "lr_jpeg_only",
+        "kind": "lr",
+        "features": "jpeg_only",
+        "C": 0.1
+      },
+      {
+        "id": "lr_resize_only",
+        "kind": "lr",
+        "features": "resize_only",
+        "C": 0.1
+      },
+      {
+        "id": "lr_without_jpeg_q90",
+        "kind": "lr",
+        "features": "without_jpeg_q90",
+        "C": 0.1
+      },
+      {
+        "id": "lr_without_jpeg_q75",
+        "kind": "lr",
+        "features": "without_jpeg_q75",
+        "C": 0.1
+      },
+      {
+        "id": "lr_without_jpeg_q60",
+        "kind": "lr",
+        "features": "without_jpeg_q60",
+        "C": 0.1
+      },
+      {
+        "id": "lr_without_resize_0p75",
+        "kind": "lr",
+        "features": "without_resize_0p75",
+        "C": 0.1
+      },
+      {
+        "id": "lr_without_resize_0p5",
+        "kind": "lr",
+        "features": "without_resize_0p5",
+        "C": 0.1
+      },
+      {
+        "id": "lr_balanced_no_summaries",
+        "kind": "lr",
+        "features": "no_summaries",
+        "C": 0.1,
+        "balance_classes": true
+      },
+      {
+        "id": "mlp_margins_s17",
+        "kind": "mlp",
+        "features": "no_summaries",
+        "seed": 17
+      },
+      {
+        "id": "mlp_margins_s29",
+        "kind": "mlp",
+        "features": "no_summaries",
+        "seed": 29
+      },
+      {
+        "id": "mlp_margins_s43",
+        "kind": "mlp",
+        "features": "no_summaries",
+        "seed": 43
+      }
+    ],
+    "full": [
+      {
+        "id": "frozen_v4",
+        "kind": "frozen",
+        "features": "full"
+      },
+      {
+        "id": "confidence",
+        "kind": "baseline"
+      },
+      {
+        "id": "tta_mean",
+        "kind": "baseline"
+      },
+      {
+        "id": "lr_confidence",
+        "kind": "lr",
+        "features": "confidence",
+        "C": 0.1
+      },
+      {
+        "id": "lr_full",
+        "kind": "lr",
+        "features": "full",
+        "C": 0.1
+      },
+      {
+        "id": "lr_no_summaries",
+        "kind": "lr",
+        "features": "no_summaries",
+        "C": 0.1
+      },
+      {
+        "id": "lr_no_orientation",
+        "kind": "lr",
+        "features": "no_orientation",
+        "C": 0.1
+      },
+      {
+        "id": "lr_no_confidence",
+        "kind": "lr",
+        "features": "no_confidence",
+        "C": 0.1
+      },
+      {
+        "id": "lr_summaries_only",
+        "kind": "lr",
+        "features": "summaries_only",
+        "C": 0.1
+      },
+      {
+        "id": "lr_jpeg_only",
+        "kind": "lr",
+        "features": "jpeg_only",
+        "C": 0.1
+      },
+      {
+        "id": "lr_resize_only",
+        "kind": "lr",
+        "features": "resize_only",
+        "C": 0.1
+      },
+      {
+        "id": "lr_without_jpeg_q90",
+        "kind": "lr",
+        "features": "without_jpeg_q90",
+        "C": 0.1
+      },
+      {
+        "id": "lr_without_jpeg_q75",
+        "kind": "lr",
+        "features": "without_jpeg_q75",
+        "C": 0.1
+      },
+      {
+        "id": "lr_without_jpeg_q60",
+        "kind": "lr",
+        "features": "without_jpeg_q60",
+        "C": 0.1
+      },
+      {
+        "id": "lr_without_resize_0p75",
+        "kind": "lr",
+        "features": "without_resize_0p75",
+        "C": 0.1
+      },
+      {
+        "id": "lr_without_resize_0p5",
+        "kind": "lr",
+        "features": "without_resize_0p5",
+        "C": 0.1
+      },
+      {
+        "id": "lr_balanced_no_summaries",
+        "kind": "lr",
+        "features": "no_summaries",
+        "C": 0.1,
+        "balance_classes": true
+      },
+      {
+        "id": "mlp_margins_s17",
+        "kind": "mlp",
+        "features": "no_summaries",
+        "seed": 17
+      },
+      {
+        "id": "mlp_margins_s29",
+        "kind": "mlp",
+        "features": "no_summaries",
+        "seed": 29
+      },
+      {
+        "id": "mlp_margins_s43",
+        "kind": "mlp",
+        "features": "no_summaries",
+        "seed": 43
+      },
+      {
+        "id": "mlp_ours_logits_s17",
+        "kind": "mlp",
+        "features": "ours_logits",
+        "seed": 17
+      },
+      {
+        "id": "mlp_ours_logits_s29",
+        "kind": "mlp",
+        "features": "ours_logits",
+        "seed": 29
+      },
+      {
+        "id": "mlp_ours_logits_s43",
+        "kind": "mlp",
+        "features": "ours_logits",
+        "seed": 43
+      },
+      {
+        "id": "mlp_bahat_logits_s17",
+        "kind": "mlp",
+        "features": "bahat_logits",
+        "seed": 17
+      },
+      {
+        "id": "mlp_bahat_logits_s29",
+        "kind": "mlp",
+        "features": "bahat_logits",
+        "seed": 29
+      },
+      {
+        "id": "mlp_bahat_logits_s43",
+        "kind": "mlp",
+        "features": "bahat_logits",
+        "seed": 43
+      }
+    ]
+  },
+  "training": {
+    "C": 0.1,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "hidden": [
+      70,
+      70
+    ],
+    "dropout": 0.5,
+    "epochs": 80,
+    "patience": 10,
+    "batch_size": 512,
+    "lr": 0.001,
+    "epoch_selection": "selection_AURC; earliest minimum",
+    "MLP_loss": "weighted BCE, inverse group size and balanced error/correct classes",
+    "scaler": "train-only weighted StandardScaler",
+    "device": "cpu"
+  },
+  "statistics": {
+    "bootstrap": 1000,
+    "seed": 31019,
+    "coverage": [
+      0.8,
+      0.9,
+      0.95
+    ],
+    "primary": "AURC by cohort, paired connected-group bootstrap",
+    "ties": "AURC whole score blocks; fixed coverage SHA256(sample_id) without labels",
+    "multiple_comparisons": "exploratory, pointwise unadjusted intervals; no confirmatory p-values"
+  },
+  "scope": "Retrospektívne porovnanie na už vyhodnotených dátach; nie nová nezávislá certifikácia.",
+  "calibration": "Pôvodná kalibračná množina je vylúčená z nového učenia aj testu.",
+  "code": {
+    "__init__.py": "e9211a3cdfe67d4172dddfe6d38e7c8f04aa28685184f9abe0b01906b42c25be",
+    "cli.py": "5e27e0453658e6c8d9d5ae18cef9c3598054fa06f64ac19599d9eddfb02316a5",
+    "common.py": "c03a9daefe222143cc9f90817e280a672bf7236bb271aa6d9fa004902390ddec",
+    "data.py": "ee8251f1158f6f5c52942de0c7add2921358e9ad942ab3e9c7e2c014f95bd97d",
+    "extract.py": "8efddb66aecfdeb1bbc50d26dfa96ca430ea69774e4b2bba9b54f44b579e4fc7",
+    "features.py": "8691260a0da45a986831fa975f8a6fbae2ba1168de81f3215606a3e6e31baf11",
+    "metrics.py": "727056c2f72581beb5b257573a38a40b82ae765495dfa4eff73190a647665ef8",
+    "models.py": "8bfb84a2564fd38f42fd7a12a677567c60080b17a3b460e39cd0b6495cd74cb3",
+    "report.py": "5110cb712b13c6e92efa4f4a4d4c3ba35bdac742d2e8bae8565c25beacf0dd5f"
+  },
+  "files": {
+    "external_protocol.json": "3581ffeec0a176fad35abfbbb4b11133f6096ef613649a3e52214b6e3f3ad4ee",
+    "frozen_selector.json": "c563c4ccbf6c668d7f6914ee6325518d6f9164725f4bcdd7eaacdc9fb4a50a4a",
+    "source_protocol.json": "7b2ec05a9e5a1dc3674cf9a2f0acf7a6d4cedacf0908b3c8191a10d698f4041f",
+    "code/cli.py": "5e27e0453658e6c8d9d5ae18cef9c3598054fa06f64ac19599d9eddfb02316a5",
+    "code/common.py": "c03a9daefe222143cc9f90817e280a672bf7236bb271aa6d9fa004902390ddec",
+    "code/data.py": "ee8251f1158f6f5c52942de0c7add2921358e9ad942ab3e9c7e2c014f95bd97d",
+    "code/extract.py": "8efddb66aecfdeb1bbc50d26dfa96ca430ea69774e4b2bba9b54f44b579e4fc7",
+    "code/features.py": "8691260a0da45a986831fa975f8a6fbae2ba1168de81f3215606a3e6e31baf11",
+    "code/metrics.py": "727056c2f72581beb5b257573a38a40b82ae765495dfa4eff73190a647665ef8",
+    "code/models.py": "8bfb84a2564fd38f42fd7a12a677567c60080b17a3b460e39cd0b6495cd74cb3",
+    "code/report.py": "5110cb712b13c6e92efa4f4a4d4c3ba35bdac742d2e8bae8565c25beacf0dd5f",
+    "code/__init__.py": "e9211a3cdfe67d4172dddfe6d38e7c8f04aa28685184f9abe0b01906b42c25be",
+    "data/external.json": "a5acc6b56c568854b9c63f74d34ad075e9ad88df9003c8baa272b0ac33295b69",
+    "data/external.npz": "d6a6e2a4bfa4452da8b6484d412677b7badd7cbf5b8c8ffd22abdcba4f30094b",
+    "data/selection.json": "64f87a92ee2f91a9029d315d8449bbe39ad7e464f7845c41226f6c9a57e44234",
+    "data/selection.npz": "b2449a75d1206e1630354246be523e64710a8c4c384e4de0326ef78e02786765",
+    "data/train.json": "78ad39c60d89d7b25dcb462b5e4186b066c08955ff889c69171e91f1b7243b35",
+    "data/train.npz": "71b7d29446eb3f41961718980921a8e72c7d5d294040f4a03a9f9b7e9b0942b7",
+    "detector_runtime/calibrate_detector_v4.py": "dfdc736ab94c81980cbbb30924e0da61cb272811f5e61af35a5589db9afea4f9",
+    "detector_runtime/detector_training_v4.py": "703f6ed48d6fa1e48e343c7724bcf60bc5f4df1c7f0e3a0f7127dd073a70d689",
+    "detector_runtime/extract_selector_profiles_v4.py": "200a2ce477196b53956a59bf6c910cc5b2f77045ebec846af4b9bbdf5bfc6e40",
+    "detector_runtime/prepare_data_v4.py": "63eba7ed7cf3e469efc1894047494615136003152849ca64092a81b4cff7b53c",
+    "detector_runtime/sampler_v4.py": "38b1dcf012052afc84d186c4fb2a50d51d2b1341ba56cd56d2e8ce5e201328bc",
+    "detector_runtime/selector_augmentation_v4.py": "e3df616dbe0ad049fe16c79152d145b2b80ca00e84874f8de0cb12128869023a",
+    "detector_runtime/selector_profile_runtime_v4.py": "3e6b1ec51bc23ca5d9c57bbcff471a5aade778ae95d01f038f6e38c0ec3ed722",
+    "detector_runtime/v4_data_sources.py": "4314acd3c59534eee1310857db7948b9b743148781a2b31fc4f4b55a1c5dee94",
+    "detector_runtime/v4_deepshield_audit.py": "ce3fab68ab0531a9776779732170127efe061686304e7fb82da13e30260bab04",
+    "detector_runtime/v4_deepshield_remote_zip.py": "61cb23cd64f234929fb675ec4b1d77c9cb16fcbb04b781409d870c4d3097d9cb"
+  }
+}

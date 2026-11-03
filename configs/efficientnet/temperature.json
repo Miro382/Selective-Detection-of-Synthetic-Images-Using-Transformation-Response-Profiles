@@ -1,0 +1,28 @@
+{
+  "schema_version": "v4-temperature-1",
+  "model_sha256": "351a6c3347a7acc27f58b6e213128ca65e421dbc227800fe13bbe7ef4a2dfdbd",
+  "training_complete_sha256": "1e01ed6266181d99f47c834a5b941dd3a8b651bf2fe06cd2b7f35573791d691f",
+  "data_protocol_sha256": "5ee36c069d4effd062da5720350bf307daf750728de9eabb5d7c2d00b3b5d120",
+  "manifest_sha256": "64c21a9480fa2e26f4071ba9221a9a87f0090303a386207585d4b763c0a1550b",
+  "method": "scalar_nll_temperature",
+  "bounds": [
+    0.01,
+    100.0
+  ],
+  "device": "cuda",
+  "seed": 20261015,
+  "code_sha256": "dfdc736ab94c81980cbbb30924e0da61cb272811f5e61af35a5589db9afea4f9",
+  "detector_threshold": 0.5,
+  "n_groups": 1000,
+  "condition": "original_only",
+  "scope": "Development score calibration; no risk guarantee and no external test.",
+  "temperature": 2.5451689020139714,
+  "at_boundary": false,
+  "nll_before": 0.05881819603858735,
+  "nll_after": 0.030225596728572335,
+  "brier_before": 0.009883779195265435,
+  "brier_after": 0.008471503508253377,
+  "decision_changes_at_half": 0,
+  "completed_utc": "2026-10-15T22:26:15.223370+00:00",
+  "inference_records": 1000
+}

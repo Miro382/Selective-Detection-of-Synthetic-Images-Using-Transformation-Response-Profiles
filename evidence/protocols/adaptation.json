@@ -1,0 +1,181 @@
+{
+  "version": "article-detector-adaptation-v1",
+  "created_utc": "2026-10-30T10:16:45.991183+00:00",
+  "config": {
+    "schema": "article-detector-adaptation-v1",
+    "run_name": "matched_v4_20261030",
+    "runtime_python": "../AudioDetection/.venv-audio/Scripts/python.exe",
+    "detectors": [
+      "clip",
+      "resnet50"
+    ],
+    "paths": {
+      "data": "archive\\detector_experiments\\detector_v4\\data",
+      "efficientnet_run": "archive\\detector_experiments\\detector_v4\\training_main",
+      "selector_profiles": "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4",
+      "external_run": "archive\\selective_experiments\\external_v4_confirmation_reduced_20261017",
+      "assets": "archive\\article_detector_experiment\\assets"
+    },
+    "expected": {
+      "data_protocol": "5ee36c069d4effd062da5720350bf307daf750728de9eabb5d7c2d00b3b5d120",
+      "efficientnet_config": "ab9cc13a548d1753b0d423e7095abd61cff7f7a714f5d9c137f146946e31a777",
+      "validation_selection": "4ba79a724538112706d3925e581348fc3da76c722b9422fdfd134b4d888ae5dc",
+      "selector_protocol": "7b2ec05a9e5a1dc3674cf9a2f0acf7a6d4cedacf0908b3c8191a10d698f4041f",
+      "external_protocol": "3581ffeec0a176fad35abfbbb4b11133f6096ef613649a3e52214b6e3f3ad4ee"
+    },
+    "training": {
+      "device": "cuda",
+      "epochs": 10,
+      "batch_size": 2,
+      "accumulation_steps": 4,
+      "samples_per_epoch": 24000,
+      "max_group_repeats": 3,
+      "seed": 20261015,
+      "num_workers": 0,
+      "head_lr": 0.0001,
+      "backbone_lr": 1e-05,
+      "weight_decay": 0.0001,
+      "head_warmup_epochs": 1,
+      "patience": 4,
+      "min_delta": 0.0001,
+      "max_grad_norm": 1.0,
+      "train_batchnorm": false,
+      "label_smoothing": 0.0,
+      "precision": "float32",
+      "clip_mode": "linear_head_only",
+      "resnet50_mode": "full_after_head_warmup"
+    },
+    "preprocessing": {
+      "image_size": 224,
+      "resize_shorter": 256
+    },
+    "selector": {
+      "C": 0.1,
+      "selection_risk": 0.01,
+      "min_coverage": 0.1,
+      "assessment_risk": 0.02,
+      "delta": 0.05,
+      "min_accepted": 30
+    },
+    "evaluation": {
+      "bootstrap": 5000,
+      "seed": 20261030,
+      "coverages": [
+        0.8,
+        0.9,
+        0.95
+      ],
+      "original_fractions": {
+        "DeepShield": [
+          9807,
+          10000
+        ],
+        "OpenFake": [
+          3639,
+          4000
+        ]
+      },
+      "primary_cohort": "OpenFake",
+      "primary_contrasts": [
+        "lr_full_minus_confidence",
+        "lr_full_minus_lr_confidence"
+      ],
+      "scope": "retrospective_reuse_of_original_EfficientNet_cohorts"
+    }
+  },
+  "environment": {
+    "python": "3.12.14",
+    "packages": {
+      "torch": "2.8.0+cu126",
+      "torchvision": "0.23.0",
+      "Pillow": "12.3.0",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.8.0"
+    }
+  },
+  "source_anchors": {
+    "archive\\detector_experiments\\detector_v4\\data\\data_protocol.json": "5ee36c069d4effd062da5720350bf307daf750728de9eabb5d7c2d00b3b5d120",
+    "archive\\detector_experiments\\detector_v4\\training_main\\config.json": "ab9cc13a548d1753b0d423e7095abd61cff7f7a714f5d9c137f146946e31a777",
+    "archive\\detector_experiments\\detector_v4\\training_main\\validation_selection.json": "4ba79a724538112706d3925e581348fc3da76c722b9422fdfd134b4d888ae5dc",
+    "archive\\detector_experiments\\detector_v4\\data\\train.csv": "d146afc7739fe7ceb443ac25440061025796e5cb283d01cea857f93920df3f9c",
+    "archive\\detector_experiments\\detector_v4\\data\\val.csv": "db6e6efe250ad010ffd22aac04b4c84e9f67d13a719969620d030385e2476f17",
+    "archive\\detector_experiments\\detector_v4\\data\\detector_calibration.csv": "64c21a9480fa2e26f4071ba9221a9a87f0090303a386207585d4b763c0a1550b",
+    "archive\\detector_experiments\\detector_v4\\data\\selector_train.csv": "6aaf98e0b1e55ae3fbd16ddf5466b0b910c7cf86a9ff8c76d68f824151d8bfd6",
+    "archive\\detector_experiments\\detector_v4\\data\\selector_selection.csv": "92daed18ca1a136e1829d9e6cf9c9ecfff31aef77501c67ffb9c06d85b564e52",
+    "archive\\detector_experiments\\detector_v4\\data\\selector_calibration.csv": "15313b2db83508f639a62a9f70eb6a7424b3196b505e6db2aca477c6486010a5",
+    "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\protocol.json": "7b2ec05a9e5a1dc3674cf9a2f0acf7a6d4cedacf0908b3c8191a10d698f4041f",
+    "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\plans\\selector_train.jsonl": "875a18ed3ac35342b113deb3a73e71de99a925523cacfabea0616b228d537b0d",
+    "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\plans\\selector_selection.jsonl": "230b42167f2291db87363cabe4e2b4070b2a93b5eb2cfbb8496ec0ce1e1b861c",
+    "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\plans\\selector_calibration.jsonl": "d43b64fbcd819e8b7ef5b89e98bf69ff56f66c745c217a072e4761c7be572bba",
+    "archive\\selective_experiments\\external_v4_confirmation_reduced_20261017\\protocol.json": "3581ffeec0a176fad35abfbbb4b11133f6096ef613649a3e52214b6e3f3ad4ee",
+    "archive\\selective_experiments\\external_v4_confirmation_reduced_20261017\\plan.jsonl": "d062e1a17e0c0f4ca3e182f12a5b62c393cf4cfe411a7519c596f53d2bb688d1",
+    "archive\\selective_experiments\\external_v4_confirmation_reduced_20261017\\snapshot\\reduced_manifest.csv": "834376cfd589be5f4c8190ce0a7dc85a558d34858f2144e97e3fe76ddde5a0c9",
+    "archive\\article_detector_experiment\\assets\\clip\\manifest.json": "564d2dfcf5d05cc317ccb34862775ec4ae57a3ae020abb0d621a9d2476ec257b",
+    "archive\\article_detector_experiment\\assets\\clip\\clip_model.py": "c071d011e92226f1ca0a6f7c5098d8d7d08eadc7d6db125a81b52fc234b1ec59",
+    "archive\\article_detector_experiment\\assets\\clip\\clip_models.py": "57ce5898bf0bc7ff52b5922a0aefae8bc34a9237e4d59e4a1615ff5d8c6ff7a6",
+    "archive\\article_detector_experiment\\assets\\clip\\clip_loader.py": "c3f1c09abe0a0d9c429e0d47f2b8d4a4ec09dbd11eec3d7dd9846babd717e43b",
+    "archive\\article_detector_experiment\\assets\\clip\\validate.py": "9ab4021cc6f85002a8b8cd0fc28baa9b4861b59bffcfbd98e10d02b08c42b2d6",
+    "archive\\article_detector_experiment\\assets\\clip\\LICENSE": "923dbc0fe040cc826122491e98b20d6f401e510d50c8b666de908e59ebf2f2b2",
+    "archive\\article_detector_experiment\\assets\\clip\\fc_weights.pth": "477100745713bcc957beb2b40859536859b6483fd6301b3b9293151b194c7847",
+    "archive\\article_detector_experiment\\assets\\clip\\ViT-L-14.pt": "b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836",
+    "archive\\article_detector_experiment\\assets\\resnet50\\manifest.json": "453a655f9e097c0c08aace58667f30f67925c8922493f481233d201d82d6ed3a",
+    "archive\\article_detector_experiment\\assets\\resnet50\\resnet.py": "987a2ea7f70f80bd60fbf46d5e610fb89df91cbaa35fc887e65243e205eb8e58",
+    "archive\\article_detector_experiment\\assets\\resnet50\\datasets.py": "689e113556829c2fc72e249f1ca36d8e65661e13fadf57da462c1c49e2cf8e32",
+    "archive\\article_detector_experiment\\assets\\resnet50\\eval.py": "f71436d78631e074cfaf33b6ae86514144fd8894a3335ee8e60091a87b2c554b",
+    "archive\\article_detector_experiment\\assets\\resnet50\\validate.py": "dca8aa2aed02d6630ba4d58feab69e2f80e4f76e803d5365bf35b2b9ca776be3",
+    "archive\\article_detector_experiment\\assets\\resnet50\\LICENSE.txt": "6079b20c4344bc679958d3709a8e2c09bafc5acb897531257288f4f6dcfb7471",
+    "archive\\article_detector_experiment\\assets\\resnet50\\download_weights.sh": "3d9bdbb89c64e6ee1789b4bbd93bc4919bc099eaf9eef74dbf9de27b13f18f3c",
+    "archive\\article_detector_experiment\\assets\\resnet50\\blur_jpg_prob0.5.pth": "3533f3e58a3b82215f21197f2faf4e99b911ec42a4a6e2d7823e04d5f3fd245a",
+    "archive\\detector_experiments\\detector_v4\\training_main\\snapshot\\sampler_v4.py": "38b1dcf012052afc84d186c4fb2a50d51d2b1341ba56cd56d2e8ce5e201328bc",
+    "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\snapshot\\code\\selector_augmentation_v4.py": "e3df616dbe0ad049fe16c79152d145b2b80ca00e84874f8de0cb12128869023a",
+    "archive\\article_detector_experiment\\runs\\development_20261027\\snapshot\\code\\evaluation.py": "3e939ff77551c7dcb3615203719bbeaffb6ab15220814f967d3627fa84ff89f2",
+    "archive\\selector_v4_math.py": "bdc64e27ff3c5da2a8bc6fc8587e07ebddd77b966a0e897ea954f21e62f40a7f"
+  },
+  "code": {
+    "common.py": "898f81142c1a33f40530614c9032f607fbc7263f407b5bd6536586c10229aed4",
+    "prepare.py": "069a2b4ec0a077fb3e0c0f2103aeb4ac44a1d49309ea89b929e93cc65a6dfa03",
+    "reporting.py": "3bb8c7cbd7d2131cd3a39fcf1656a23f48fbc98879f8502d98e01abcc3e35929",
+    "run_experiment.py": "987857b09a67372861605f6244e30f8fbe48c5b54290f9511e2724d1ab698941",
+    "selector.py": "0e853738fe9808d68d7921507f7b6e5bf511410b857b378a3301e53a57a77d48",
+    "training.py": "7c7ee114d80b6936ad9901229d505b1f8eb8be0cd0246ca89ac272f4a43e2e3c",
+    "__init__.py": "8d0971a84116c33c8567aa0c74b02029a8fd9b2f9b622a13d8ce0369682d9385"
+  },
+  "counts": {
+    "detector_train": 104706,
+    "detector_validation": 4880,
+    "selector_train": 40000,
+    "selector_selection": 2000,
+    "selector_calibration": 2000,
+    "detector_calibration": 1000,
+    "test": 14000
+  },
+  "roles": {
+    "DeepShield": "in-domain held-out",
+    "OpenFake": "cross-dataset external; historically known; retrospective reuse"
+  },
+  "training_scope": "Same V4 manifest, locked validation IDs and sampler policy; CLIP head only, ResNet-50 full after warmup; 224px vs EfficientNet 512px.",
+  "selector_scope": "Refit on new detector errors; never reuse old correctness labels or fitted coefficients.",
+  "decision_scope": "Full-versus-raw and full-versus-learned AURC on OpenFake, per detector; pointwise paired intervals; no guaranteed success or new independent confirmation.",
+  "files": {
+    "plans/detector_calibration.jsonl": "adf6b6cb8f4511c1dc3d764182d1f36f5add08edca08f17da789321834ddc98a",
+    "plans/detector_train.csv": "d146afc7739fe7ceb443ac25440061025796e5cb283d01cea857f93920df3f9c",
+    "plans/detector_validation.csv": "ee4dff9ccffe6cdf695929c925736c96f42280183e628d20f75f3b6dade06d45",
+    "plans/selector_calibration.jsonl": "7e1284814ef6c8e51ee413768c22893d2159b25cdae066845df3d61bfd930abd",
+    "plans/selector_selection.jsonl": "fb25267ac81be415e8191f6ea183bc5259a20b3ee1ea102a080a17d867f15426",
+    "plans/selector_train.jsonl": "d02d6d3283aade5374b29a4025283abb3c4932f25c163cbb439c1a5152d97503",
+    "plans/test.jsonl": "f406cc39537651f887feda942e5381aa3ff2120584376be202cded15380710f0",
+    "snapshot/code/common.py": "898f81142c1a33f40530614c9032f607fbc7263f407b5bd6536586c10229aed4",
+    "snapshot/code/prepare.py": "069a2b4ec0a077fb3e0c0f2103aeb4ac44a1d49309ea89b929e93cc65a6dfa03",
+    "snapshot/code/reporting.py": "3bb8c7cbd7d2131cd3a39fcf1656a23f48fbc98879f8502d98e01abcc3e35929",
+    "snapshot/code/run_experiment.py": "987857b09a67372861605f6244e30f8fbe48c5b54290f9511e2724d1ab698941",
+    "snapshot/code/selector.py": "0e853738fe9808d68d7921507f7b6e5bf511410b857b378a3301e53a57a77d48",
+    "snapshot/code/training.py": "7c7ee114d80b6936ad9901229d505b1f8eb8be0cd0246ca89ac272f4a43e2e3c",
+    "snapshot/code/__init__.py": "8d0971a84116c33c8567aa0c74b02029a8fd9b2f9b622a13d8ce0369682d9385",
+    "snapshot/helpers/evaluation.py": "3e939ff77551c7dcb3615203719bbeaffb6ab15220814f967d3627fa84ff89f2",
+    "snapshot/helpers/sampler_v4.py": "38b1dcf012052afc84d186c4fb2a50d51d2b1341ba56cd56d2e8ce5e201328bc",
+    "snapshot/helpers/selector_augmentation_v4.py": "e3df616dbe0ad049fe16c79152d145b2b80ca00e84874f8de0cb12128869023a",
+    "snapshot/helpers/selector_v4_math.py": "bdc64e27ff3c5da2a8bc6fc8587e07ebddd77b966a0e897ea954f21e62f40a7f",
+    "input_audit.json": "9c0ead35528bf4057a8241bdf61fe1feca29f03439cbb47f924e0a032498f434"
+  }
+}

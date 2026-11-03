@@ -1,0 +1,110 @@
+{
+  "version": 4,
+  "model": "efficientnet_v2_m",
+  "image_size": 512,
+  "dropout": 0.3,
+  "class_to_index": {
+    "real": 0,
+    "fake": 1
+  },
+  "training": {
+    "data_dir": "ImageDetection/detector_experiments/detector_v4/data",
+    "device": "cuda",
+    "epochs": 10,
+    "batch_size": 2,
+    "accumulation_steps": 4,
+    "samples_per_epoch": 24000,
+    "max_group_repeats": 3,
+    "augmentation_policy": "v3",
+    "num_workers": 4,
+    "max_historical_val_per_class": 1000,
+    "head_lr": 0.0001,
+    "backbone_lr": 1e-05,
+    "weight_decay": 0.0001,
+    "head_warmup_epochs": 1,
+    "train_batchnorm": false,
+    "patience": 4,
+    "min_delta": 0.0001,
+    "label_smoothing": 0.0,
+    "max_grad_norm": 1.0,
+    "seed": 20261015
+  },
+  "data_protocol_sha256": "5ee36c069d4effd062da5720350bf307daf750728de9eabb5d7c2d00b3b5d120",
+  "source_sha256": {
+    "detector_training_v4.py": "703f6ed48d6fa1e48e343c7724bcf60bc5f4df1c7f0e3a0f7127dd073a70d689",
+    "train_detector_v4.py": "46acbfacdcb02c5f47fe27343af16d27e735509dd3ed63077a0a4703b621b2d7",
+    "sampler_v4.py": "38b1dcf012052afc84d186c4fb2a50d51d2b1341ba56cd56d2e8ce5e201328bc",
+    "calibrate_detector_v4.py": "dfdc736ab94c81980cbbb30924e0da61cb272811f5e61af35a5589db9afea4f9",
+    "prepare_data_v4.py": "63eba7ed7cf3e469efc1894047494615136003152849ca64092a81b4cff7b53c",
+    "v4_data_sources.py": "4314acd3c59534eee1310857db7948b9b743148781a2b31fc4f4b55a1c5dee94",
+    "v4_deepshield_audit.py": "ce3fab68ab0531a9776779732170127efe061686304e7fb82da13e30260bab04",
+    "v4_deepshield_remote_zip.py": "61cb23cd64f234929fb675ec4b1d77c9cb16fcbb04b781409d870c4d3097d9cb",
+    "v4_deepshield_index_v1.json.gz": "94e69d3fe725bb9da01339650ff5caf928e84dd865d0ee9826404b71ea95d451"
+  },
+  "selection": "Mean over clean, JPEG Q40 and resize 0.5; equal classes, then real domains/fake families, sources and generators; each leaf uses its class accuracy.",
+  "validation_scope": "Adaptive development validation only. The V3 initial detector and V4 use the same locked validation for comparison. Historical validation may have been seen before. DeepShield V3 errors informed V4 design; this is not external confirmation.",
+  "sampler": {
+    "policy": "hierarchical_class_domain_family_source_generator_group_cap",
+    "max_dependency_group_repeats": 3,
+    "shorten_if_insufficient_capacity": true
+  },
+  "augmentation": {
+    "policy": "v3",
+    "social_branch": null,
+    "clean_probability": 0.25,
+    "on_augmented_branch": {
+      "downscale_restore": {
+        "p": 0.35,
+        "scale": [
+          0.5,
+          0.9
+        ],
+        "interpolation": "LANCZOS"
+      },
+      "brightness_contrast": {
+        "p": 0.4,
+        "factor": [
+          0.8,
+          1.2
+        ]
+      },
+      "blur": {
+        "p": 0.1,
+        "sigma": [
+          0.2,
+          0.8
+        ]
+      },
+      "jpeg": {
+        "p": 0.45,
+        "quality": [
+          40,
+          95
+        ],
+        "subsampling": 0,
+        "optimize": false
+      },
+      "crop_scale": [
+        0.85,
+        1.0
+      ],
+      "crop_ratio": [
+        0.95,
+        1.05
+      ],
+      "horizontal_flip": 0.5
+    },
+    "policy_identical_for_all_labels_and_sources": true
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "torch": "2.8.0+cu126",
+    "numpy": "2.5.3",
+    "torchvision": "0.23.0+cpu",
+    "pillow": "12.3.0",
+    "scikit_learn": "1.8.0",
+    "executable": "external-local-input/python.exe",
+    "cuda": "12.6",
+    "device": "NVIDIA GeForce RTX 4070 Ti"
+  }
+}

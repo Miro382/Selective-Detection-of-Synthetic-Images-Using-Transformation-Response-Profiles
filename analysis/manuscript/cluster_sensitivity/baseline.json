@@ -1,0 +1,40 @@
+{
+  "DeepShield": {
+    "images": 1500,
+    "groups": 1500,
+    "detector_errors": 34,
+    "full": {
+      "aurc": 0.000729861061157172,
+      "accepted": 1471,
+      "coverage": 0.9806666666666667,
+      "errors": 13,
+      "risk": 0.008837525492861998
+    },
+    "resize": {
+      "aurc": 0.0006290671906866922,
+      "accepted": 1471,
+      "coverage": 0.9806666666666667,
+      "errors": 12,
+      "risk": 0.008157715839564922
+    }
+  },
+  "OpenFake": {
+    "images": 6000,
+    "groups": 43,
+    "detector_errors": 1349,
+    "full": {
+      "aurc": 0.15176238604741832,
+      "accepted": 5458,
+      "coverage": 0.9096666666666666,
+      "errors": 994,
+      "risk": 0.182117991938439
+    },
+    "resize": {
+      "aurc": 0.1423051846524955,
+      "accepted": 5458,
+      "coverage": 0.9096666666666666,
+      "errors": 986,
+      "risk": 0.18065225357273726
+    }
+  }
+}

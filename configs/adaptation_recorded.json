@@ -1,0 +1,82 @@
+{
+  "schema": "article-detector-adaptation-v1",
+  "run_name": "matched_v4_20261030",
+  "runtime_python": "python",
+  "detectors": [
+    "clip",
+    "resnet50"
+  ],
+  "paths": {
+    "data": "detector_experiments/detector_v4/data",
+    "efficientnet_run": "detector_experiments/detector_v4/training_main",
+    "selector_profiles": "selective_experiments/experiment_v4/selector_profiles_v4",
+    "external_run": "selective_experiments/external_v4_confirmation_reduced_20261017",
+    "assets": "article_detector_experiment/assets"
+  },
+  "expected": {
+    "data_protocol": "5ee36c069d4effd062da5720350bf307daf750728de9eabb5d7c2d00b3b5d120",
+    "efficientnet_config": "ab9cc13a548d1753b0d423e7095abd61cff7f7a714f5d9c137f146946e31a777",
+    "validation_selection": "4ba79a724538112706d3925e581348fc3da76c722b9422fdfd134b4d888ae5dc",
+    "selector_protocol": "7b2ec05a9e5a1dc3674cf9a2f0acf7a6d4cedacf0908b3c8191a10d698f4041f",
+    "external_protocol": "3581ffeec0a176fad35abfbbb4b11133f6096ef613649a3e52214b6e3f3ad4ee"
+  },
+  "training": {
+    "device": "cuda",
+    "epochs": 10,
+    "batch_size": 2,
+    "accumulation_steps": 4,
+    "samples_per_epoch": 24000,
+    "max_group_repeats": 3,
+    "seed": 20261015,
+    "num_workers": 0,
+    "head_lr": 0.0001,
+    "backbone_lr": 1e-05,
+    "weight_decay": 0.0001,
+    "head_warmup_epochs": 1,
+    "patience": 4,
+    "min_delta": 0.0001,
+    "max_grad_norm": 1.0,
+    "train_batchnorm": false,
+    "label_smoothing": 0.0,
+    "precision": "float32",
+    "clip_mode": "linear_head_only",
+    "resnet50_mode": "full_after_head_warmup"
+  },
+  "preprocessing": {
+    "image_size": 224,
+    "resize_shorter": 256
+  },
+  "selector": {
+    "C": 0.1,
+    "selection_risk": 0.01,
+    "min_coverage": 0.1,
+    "assessment_risk": 0.02,
+    "delta": 0.05,
+    "min_accepted": 30
+  },
+  "evaluation": {
+    "bootstrap": 5000,
+    "seed": 20261030,
+    "coverages": [
+      0.8,
+      0.9,
+      0.95
+    ],
+    "original_fractions": {
+      "DeepShield": [
+        9807,
+        10000
+      ],
+      "OpenFake": [
+        3639,
+        4000
+      ]
+    },
+    "primary_cohort": "OpenFake",
+    "primary_contrasts": [
+      "lr_full_minus_confidence",
+      "lr_full_minus_lr_confidence"
+    ],
+    "scope": "retrospective_reuse_of_original_EfficientNet_cohorts"
+  }
+}

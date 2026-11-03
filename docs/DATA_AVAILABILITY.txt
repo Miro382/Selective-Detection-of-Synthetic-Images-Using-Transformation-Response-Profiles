@@ -1,0 +1,18 @@
+Research code, fitted selector parameters, anonymized numerical evaluation
+outputs, and scripts for reproducing the reported analyses are publicly
+available at:
+
+https://github.com/Miro382/Selective-Detection-of-Synthetic-Images-Using-Transformation-Response-Profiles
+
+The repository includes experiment configurations and source fingerprints.
+Dataset images, third-party annotations, and detector checkpoint binaries are
+not redistributed; the corresponding providers and asset requirements are
+documented in the repository. The supplied numerical checks reproduce the
+supported analyses from stored outputs without detector inference. Recreating
+the full training history requires the separately obtained model and data
+assets identified in the repository.
+
+The authors' contributions are distributed under the MIT License. External
+datasets, images, detector checkpoints, and third-party software remain subject
+to their providers' terms. See LICENSE, README.md, and
+docs/THIRD_PARTY_NOTICES.txt for the scope of the release.

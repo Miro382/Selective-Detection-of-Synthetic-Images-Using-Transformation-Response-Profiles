@@ -1,0 +1,93 @@
+RESEARCH SOURCE AND FROZEN SELECTORS
+
+The portable entry point is profile_selector.py. It reads six native detector
+margins and applies the stored temperature, feature standardization, and nine
+logistic coefficients. Lower scores receive earlier acceptance. Detector class
+decisions are unchanged. The score is an error-ranking score; it is not a
+distribution-free probability or risk guarantee.
+
+From the repository root:
+
+  python src/profile_selector.py --check
+
+This checks the EfficientNet, adapted CLIP, and adapted ResNet-50 coefficients
+against all released test scores. It does not load images or detector weights.
+
+Example of writing scores to a new CSV file:
+
+  mkdir outputs
+  python src/profile_selector.py --detector efficientnet --input evidence/scores/efficientnet_OpenFake.npz --output outputs/efficientnet_scores.csv
+  python src/profile_selector.py --detector clip --input evidence/scores/clip_OpenFake.npz --array margins --output outputs/clip_scores.csv
+
+NUMERICAL SOURCE
+
+research/ contains source snapshots used for the archived experiments. These
+sources document model construction, data verification, augmentation, sampling,
+optimization, selector fitting, threshold selection, calibration assessment,
+MC dropout, energy scoring, and the paired group-bootstrap analyses.
+
+  detector_training_v4.py, sampler_v4.py, prepare_data_v4.py
+      Principal EfficientNetV2-M training and group-aware data checks.
+  selector_v4_features.py, selector_v4_math.py, train_selector_v4.py
+      Principal selector features, weighted logistic fitting, and frozen-rule
+      selection and assessment.
+  selector_profile_runtime_v4.py, selector_augmentation_v4.py
+      The six internal views and the separate outer training variants.
+  selective_experiments/selector_comparison_bahat/code/
+      Logistic ablations, matched MLP controls, and Bahat-style adaptation.
+  article_reference_experiment/
+      Native-head MC dropout and native-logit energy comparisons.
+  article_detector_adaptation/
+      Frozen-encoder CLIP linear-head adaptation, ResNet-50 adaptation, and
+      detector-specific selector fitting on the matched development manifest.
+  article_detector_experiment/
+      The earlier fixed-checkpoint stress experiment and its selector routines.
+  article_ablation_confirmation/
+      Locked full-versus-resize replacement decision, content auditing, and
+      independent test evaluation.
+
+The source manifest in configs/source_manifest.json records the original file
+hash and the released file hash for each copied source and small model artifact.
+The release copies use the caller's Python interpreter. Direct research entry
+points require --execute-research; running one without arguments prints a short
+message. No numerical training or scoring routines were changed for packaging.
+Original comments and experiment-specific diagnostic messages are retained.
+
+RUNNING THE ARCHIVED TRAINING PIPELINES
+
+The source tree is provided for method inspection and reconstruction of the
+original pipeline. It is not a self-contained recreation of the private archive.
+The original image manifests, identity annotations, data-index files, large
+detector checkpoints, and third-party model source files are not distributed.
+The archived orchestration scripts deliberately verify these inputs against
+their recorded fingerprints and will fail if the required inputs are missing.
+Changing paths in a recorded protocol does not reproduce its original hash.
+
+A new training run requires independently obtained datasets and initial models,
+documented source terms, a new local manifest and protocol, and a compatible
+environment. Keep new outputs outside this repository's evidence and models
+directories. The package does not assert that a different sample, checkpoint,
+dependency version, or newly generated protocol reproduces the original result.
+
+Use --help to inspect a source entry point before requesting execution. For
+example, after supplying the documented local inputs:
+
+  python src/research/train_detector_v4.py --help
+  python src/research/article_detector_adaptation/run_experiment.py --help
+
+Full research pipelines use NumPy, SciPy, scikit-learn, Pillow, PyTorch and
+torchvision; historical data utilities also use Requests and PyArrow, and
+reports use Matplotlib. Version records are in configs/recorded_environments.json.
+Install the appropriate PyTorch/CUDA build for the
+target machine rather than reusing a machine-specific virtual-environment path.
+The portable score check only requires NumPy.
+
+THIRD-PARTY INITIAL MODELS
+
+The archived CLIP wrapper loads the independently obtained OpenAI CLIP image
+encoder and the author-provided UniversalFakeDetect linear head. The ResNet-50
+wrapper loads the author-provided CNNDetection implementation and initial
+weights. These assets are not included. In particular, do not treat the source
+licensing status of this repository as a license for external model weights, model
+source, images, or image annotations. Consult docs/THIRD_PARTY_NOTICES.txt and
+the original providers before obtaining them.

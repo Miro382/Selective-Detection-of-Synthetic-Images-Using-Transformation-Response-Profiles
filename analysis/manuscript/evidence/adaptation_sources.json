@@ -1,0 +1,167 @@
+{
+  "version": "adapted-detector-article-provenance-v1",
+  "source_run": "archive\\article_detector_adaptation\\runs\\matched_v4_20261030",
+  "source_files": {
+    "protocol.json": {
+      "sha256": "5d988bacea5d18d44ad5a663b919135464c163f356a076ae721407409f151547",
+      "bytes": 13894
+    },
+    "protocol.sha256": {
+      "sha256": "c843421e318610b3875e45674e13de612461ad1f0aa312506c5f18147a43526b",
+      "bytes": 66
+    },
+    "evaluation_freeze.json": {
+      "sha256": "cf4b48ae7c5981811cb2f1a9757cacea184c53c10c778ce22611a5e5538c93b8",
+      "bytes": 279
+    },
+    "input_audit.json": {
+      "sha256": "9c0ead35528bf4057a8241bdf61fe1feca29f03439cbb47f924e0a032498f434",
+      "bytes": 1021
+    },
+    "report/summary.json": {
+      "sha256": "f8e1c58b6a4387848fe3e18b5a310d513d21dab949a7dba8f7d5f310d3f4d9c4",
+      "bytes": 1550
+    },
+    "clip/detector/complete.json": {
+      "sha256": "698002db0936f72ced19f34fee56827c31f6e136a6900a8064663348bed892d9",
+      "bytes": 3487
+    },
+    "clip/detector/best_validation.json": {
+      "sha256": "5821e582fec491c6e92299d65a6b16a39047492ddaa695cb061a31897a2870a0",
+      "bytes": 2033
+    },
+    "clip/detector/initial_validation.json": {
+      "sha256": "1316d9839d09e76d83ebbaae2b7534b7461b9f57d971daab1f63940f68a0eb05",
+      "bytes": 3449
+    },
+    "clip/detector/history.json": {
+      "sha256": "8f9e100cc852ed401bd20d8603e7f37a0f4c75b75457a731748205da0e8dfb13",
+      "bytes": 108626
+    },
+    "clip/selector/complete.json": {
+      "sha256": "98ae7260dd731cc88d014a4008a74e44b7e534a51c6a83b51f6821bd557680af",
+      "bytes": 679
+    },
+    "clip/selector/assessment.json": {
+      "sha256": "c3a449d0234d5f05cd872784d58d8b44b1c09da7ff36ecc80ab314a0a66f61e4",
+      "bytes": 1080
+    },
+    "clip/selector/frozen.json": {
+      "sha256": "efb2ca622651b226c3532a4c6325ee87e7bcd6c301c5d721d4501f9e0537bec4",
+      "bytes": 1378946
+    },
+    "clip/evaluation/results.json": {
+      "sha256": "9b9f94a77d65566788ae3754b9f72c9b2e4c5f65839306edf626b148cf5d9e3a",
+      "bytes": 11002568
+    },
+    "clip/evaluation/DeepShield/results.json": {
+      "sha256": "1e73b20e59d2d7736ffb9796712b536b472fcd4e54e73d040e388be810d2ab49",
+      "bytes": 6660948
+    },
+    "clip/evaluation/DeepShield/scores.npz": {
+      "sha256": "1b99e0e0f681624858e9751db3d2a7af52efdee9ca501e00a2529b023f025c0a",
+      "bytes": 1316362
+    },
+    "clip/evaluation/DeepShield/bootstrap_draws.npz": {
+      "sha256": "80f43213900cf33bf753fbbaa50d374f7d7c925c0153a9bb4bc0a90a9ac6bd4a",
+      "bytes": 772969
+    },
+    "clip/evaluation/OpenFake/results.json": {
+      "sha256": "c1c055303c33e4398e41c0dcca7833ee397abffae6dc86c6f1611afa24fb393c",
+      "bytes": 2656224
+    },
+    "clip/evaluation/OpenFake/scores.npz": {
+      "sha256": "bfa247b93f476af2d31ee16bc50adb08c4baa9cbd4655051abc86b3b8dd4a396",
+      "bytes": 595309
+    },
+    "clip/evaluation/OpenFake/bootstrap_draws.npz": {
+      "sha256": "6a38eeabc9735b974eb2fc26aa134762a5d296aafa5c31fab488d409c5199243",
+      "bytes": 600312
+    },
+    "clip/evaluation/profiles/initial_test.jsonl": {
+      "sha256": "774865295ade4a02b069802da43bf5eed3523713c3f841a20a13a8299d5afc8c",
+      "bytes": 16600626
+    },
+    "clip/evaluation/profiles/initial_test.complete.json": {
+      "sha256": "86167a870dde78c78c4360b78a9a63e4693650f43395fc1d26d5f8ba0e75db0e",
+      "bytes": 410
+    },
+    "clip/evaluation/profiles/initial_test.metadata.json": {
+      "sha256": "0e99d18d0e10d32b592e209859ec036e3249c30ac73b957f73aff8ce67b98e18",
+      "bytes": 2159
+    },
+    "resnet50/detector/complete.json": {
+      "sha256": "0973493dbf0985130636da7d7c66ed715408f737cecdf882e1651070c5bba6a5",
+      "bytes": 3506
+    },
+    "resnet50/detector/best_validation.json": {
+      "sha256": "fc8c37c1120ced7ee7ba6dd179d054e8bce686b79e5940a6bc5dd7b16f2f57ec",
+      "bytes": 2034
+    },
+    "resnet50/detector/initial_validation.json": {
+      "sha256": "8973fb4244e18b2c4396318f4a8fcb849a6dbe9eb22dc307b649150502741780",
+      "bytes": 3466
+    },
+    "resnet50/detector/history.json": {
+      "sha256": "d95fdfe48db4ad48dd3bf965e78c84b535ea16deca88ca3615023e1d311033f3",
+      "bytes": 108682
+    },
+    "resnet50/selector/complete.json": {
+      "sha256": "27e693e9fd20dae2d74d2151e29322d01cbf7d7dac32b3d009048a4134b61670",
+      "bytes": 679
+    },
+    "resnet50/selector/assessment.json": {
+      "sha256": "f8a4224578b469ce3ffaee085e6838dfa2ea49d5eeefbc52be161f47d77eb20c",
+      "bytes": 1077
+    },
+    "resnet50/selector/frozen.json": {
+      "sha256": "88f4f397540a5db0da73352d7bb6191422a192e1249ef3648e55d6b4c562f64d",
+      "bytes": 1414410
+    },
+    "resnet50/evaluation/results.json": {
+      "sha256": "231ada35ece0d8b0bf1dabc78afed709789ed85c727501780ee5ab3b611dad86",
+      "bytes": 10938966
+    },
+    "resnet50/evaluation/DeepShield/results.json": {
+      "sha256": "14f836e47ca66d3bdd60b6ef852d77712e0f3ca3ea20f18b2df6e8a888bee5dd",
+      "bytes": 6598846
+    },
+    "resnet50/evaluation/DeepShield/scores.npz": {
+      "sha256": "0aa443038a587d926421350fbf897402c34fe355e22a853efcc21a6dd3226226",
+      "bytes": 1318906
+    },
+    "resnet50/evaluation/DeepShield/bootstrap_draws.npz": {
+      "sha256": "90b01b55fb92ef8eb437acef137ad4e1eab209c668100abc862b0ef556b60a93",
+      "bytes": 766820
+    },
+    "resnet50/evaluation/OpenFake/results.json": {
+      "sha256": "6d55a9f1743f8bc6cb05070015d2c395b5d193747b4af681b5d637ec989b5637",
+      "bytes": 2654720
+    },
+    "resnet50/evaluation/OpenFake/scores.npz": {
+      "sha256": "872628619db206797c5e16708f77ef1318aa26c8467418e87d6809b2adf5e32f",
+      "bytes": 596216
+    },
+    "resnet50/evaluation/OpenFake/bootstrap_draws.npz": {
+      "sha256": "3f412407f83aeb6308ab05bf52eb94950edad97a6d27abca8315bcd42fec9731",
+      "bytes": 600654
+    },
+    "resnet50/evaluation/profiles/initial_test.jsonl": {
+      "sha256": "eef9555ddfa9146f7be1a997588f2276f373cda06331483ea0e667c0147de339",
+      "bytes": 16603302
+    },
+    "resnet50/evaluation/profiles/initial_test.complete.json": {
+      "sha256": "de9b7594651769a3d8858e7aa355da7144b4ff5e43270fd5975144eea98d7d98",
+      "bytes": 410
+    },
+    "resnet50/evaluation/profiles/initial_test.metadata.json": {
+      "sha256": "dd6d3b33f8abe1c2915e9abf23d11127f5a7705917fa95cba928952e4da2cab6",
+      "bytes": 2175
+    }
+  },
+  "aggregate_sha256": "67818c0c157b84722f1f397d20eafd37fee79aedd00b5a8d14b366b91779668c",
+  "source_scope": "Read-only extraction of completed frozen experimental results; no new measurements.",
+  "portable_build": "python build_adaptation_assets.py; python build_adaptation_assets.py --check",
+  "archived_aggregate_sha256": "d1bc8886302ba9895de1c41645057a4f3df865909d63fce67d6c93effab282fd",
+  "release_note": "The aggregate was serialized compactly and local source paths were redacted; numerical content is unchanged."
+}

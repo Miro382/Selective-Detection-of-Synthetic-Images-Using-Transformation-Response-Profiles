@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "Please cite the associated manuscript when using these methods or results. Publication details will be added after publication."
+type: software
+title: "Selective Detection of Synthetic Images Using Transformation Response Profiles: Research Materials"
+version: "2026.11.03"
+repository-code: "https://github.com/Miro382/Selective-Detection-of-Synthetic-Images-Using-Transformation-Response-Profiles"
+license: MIT
+authors:
+  - family-names: Murin
+    given-names: Miroslav
+    affiliation: "Technical University of Košice"
+    email: "miroslav.murin@tuke.sk"
+  - family-names: Michalko
+    given-names: Miroslav
+    affiliation: "Technical University of Košice"
+    email: "miroslav.michalko@tuke.sk"
+  - family-names: Kainz
+    given-names: Ondrej
+    affiliation: "Technical University of Košice"
+    email: "ondrej.kainz@tuke.sk"
+  - family-names: Semanová
+    given-names: Ivana
+    affiliation: "Technical University of Košice"
+    email: "ivana.semanova@tuke.sk"
+abstract: >-
+  Research code, frozen selector parameters, and numerical evaluation
+  materials accompanying the manuscript on selective synthetic-image
+  detection using transformation response profiles. Dataset images and
+  detector weights are obtained separately from their providers.
+keywords:
+  - selective classification
+  - synthetic image detection
+  - uncertainty estimation
+  - transformation response profiles

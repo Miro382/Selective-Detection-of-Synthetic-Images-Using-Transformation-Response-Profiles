@@ -1,0 +1,185 @@
+{
+  "adoption_rule": "Unchanged strict_20261028; no automatic model/thesis modification.",
+  "code": {
+    "content_audit.py": "76f6424d7efb79442fd977fd79bf7547ccce04021d34ce5e5b612736e25082d6",
+    "download_data.py": "4fcd6b88b566093966de18abfbc5733fb7a4a2c64597f202a96bb699113f3d6e",
+    "freeze_models.py": "8e00b7586711ed15de4fb0cb626cb4ffc89f9d8ff3e57d96facb4a580e169566",
+    "freeze_protocol.py": "544b6cae07b093ca57c52d76691a84d4e8f2003e04b4cf5194272d2b33418745",
+    "inference_runtime.py": "0d18ab2baa82e6184f611f9dfcbea2fe43192eaeae125b8bf249499c63f2a553",
+    "prepare_candidate_plan.py": "cc6c5152ff7fa76e650d65e9fdaf29e9a3769b6a303dccba26348dda5fdc86ac",
+    "report_results.py": "61bfbbb76c56d2033b6520fa604f2c7427473c55552607a8c4bbacc689734755",
+    "run_experiment.py": "9ee3485fec5f35b3895bcc0dd1e5725f757a6a34be966f6ce25999dc5d10da9f",
+    "statistics.py": "b2327038f3e33befc9967eb6fac66bda0df436cd3064710e5b153fefceb0ea2f"
+  },
+  "counts": {
+    "DeepShield": 1500,
+    "OpenFake": 6000
+  },
+  "created_utc": "2026-10-29T00:17:57.626601+00:00",
+  "data": "archive\\article_ablation_confirmation\\data\\independent_20261029",
+  "data_protocol_sha256": "57d853eb4eda3e1a58c696e19d395f740b9f055ee9c34a6f36e6eb3737f669ce",
+  "design": "archive\\article_ablation_confirmation\\protocols\\strict_20261028",
+  "design_sha256": "8b8f293fd8045fb40ada750da667212a547067eda192f822867b31614b66864d",
+  "device": "cuda",
+  "environment": {
+    "packages": {
+      "Pillow": "12.3.0",
+      "numpy": "2.5.3",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.18.1",
+      "torch": "2.8.0+cu126",
+      "torchvision": "0.23.0"
+    },
+    "python": "3.12.14"
+  },
+  "files": {
+    "code/content_audit.py": "76f6424d7efb79442fd977fd79bf7547ccce04021d34ce5e5b612736e25082d6",
+    "code/download_data.py": "4fcd6b88b566093966de18abfbc5733fb7a4a2c64597f202a96bb699113f3d6e",
+    "code/freeze_models.py": "8e00b7586711ed15de4fb0cb626cb4ffc89f9d8ff3e57d96facb4a580e169566",
+    "code/freeze_protocol.py": "544b6cae07b093ca57c52d76691a84d4e8f2003e04b4cf5194272d2b33418745",
+    "code/inference_runtime.py": "0d18ab2baa82e6184f611f9dfcbea2fe43192eaeae125b8bf249499c63f2a553",
+    "code/prepare_candidate_plan.py": "cc6c5152ff7fa76e650d65e9fdaf29e9a3769b6a303dccba26348dda5fdc86ac",
+    "code/report_results.py": "61bfbbb76c56d2033b6520fa604f2c7427473c55552607a8c4bbacc689734755",
+    "code/run_experiment.py": "9ee3485fec5f35b3895bcc0dd1e5725f757a6a34be966f6ce25999dc5d10da9f",
+    "code/statistics.py": "b2327038f3e33befc9967eb6fac66bda0df436cd3064710e5b153fefceb0ea2f",
+    "plan.jsonl": "c75d0d077e07cca003ffce912197cbce2d59179ca3ea7ba17ddda422d129e85d"
+  },
+  "frozen_models": "archive\\article_ablation_confirmation\\frozen_models\\resize_vs_full_20261028",
+  "groups": {
+    "DeepShield": 1500,
+    "OpenFake": 43
+  },
+  "model_manifest_sha256": "70aea4fb604ba22daacf6fb3147efc5a55f1f187ae640a6daa07e7b8c20134e2",
+  "new_training": false,
+  "ready_for_inference": true,
+  "runtime_metadata": {
+    "all_modules_eval": true,
+    "allow_mpo_primary": false,
+    "architecture": "efficientnet_v2_m",
+    "batchnorm_training": false,
+    "checkpoint_path": "archive\\detector_experiments\\detector_v4\\training_main\\best_model.pt",
+    "class_to_index": {
+      "fake": 1,
+      "real": 0
+    },
+    "code_sha256": {
+      "comparison/code/__init__.py": "e9211a3cdfe67d4172dddfe6d38e7c8f04aa28685184f9abe0b01906b42c25be",
+      "comparison/code/cli.py": "5e27e0453658e6c8d9d5ae18cef9c3598054fa06f64ac19599d9eddfb02316a5",
+      "comparison/code/common.py": "c03a9daefe222143cc9f90817e280a672bf7236bb271aa6d9fa004902390ddec",
+      "comparison/code/data.py": "ee8251f1158f6f5c52942de0c7add2921358e9ad942ab3e9c7e2c014f95bd97d",
+      "comparison/code/extract.py": "8efddb66aecfdeb1bbc50d26dfa96ca430ea69774e4b2bba9b54f44b579e4fc7",
+      "comparison/code/features.py": "8691260a0da45a986831fa975f8a6fbae2ba1168de81f3215606a3e6e31baf11",
+      "comparison/code/metrics.py": "727056c2f72581beb5b257573a38a40b82ae765495dfa4eff73190a647665ef8",
+      "comparison/code/models.py": "8bfb84a2564fd38f42fd7a12a677567c60080b17a3b460e39cd0b6495cd74cb3",
+      "comparison/code/report.py": "5110cb712b13c6e92efa4f4a4d4c3ba35bdac742d2e8bae8565c25beacf0dd5f",
+      "comparison/detector_runtime/calibrate_detector_v4.py": "dfdc736ab94c81980cbbb30924e0da61cb272811f5e61af35a5589db9afea4f9",
+      "comparison/detector_runtime/detector_training_v4.py": "703f6ed48d6fa1e48e343c7724bcf60bc5f4df1c7f0e3a0f7127dd073a70d689",
+      "comparison/detector_runtime/extract_selector_profiles_v4.py": "200a2ce477196b53956a59bf6c910cc5b2f77045ebec846af4b9bbdf5bfc6e40",
+      "comparison/detector_runtime/prepare_data_v4.py": "63eba7ed7cf3e469efc1894047494615136003152849ca64092a81b4cff7b53c",
+      "comparison/detector_runtime/sampler_v4.py": "38b1dcf012052afc84d186c4fb2a50d51d2b1341ba56cd56d2e8ce5e201328bc",
+      "comparison/detector_runtime/selector_augmentation_v4.py": "e3df616dbe0ad049fe16c79152d145b2b80ca00e84874f8de0cb12128869023a",
+      "comparison/detector_runtime/selector_profile_runtime_v4.py": "3e6b1ec51bc23ca5d9c57bbcff471a5aade778ae95d01f038f6e38c0ec3ed722",
+      "comparison/detector_runtime/v4_data_sources.py": "4314acd3c59534eee1310857db7948b9b743148781a2b31fc4f4b55a1c5dee94",
+      "comparison/detector_runtime/v4_deepshield_audit.py": "ce3fab68ab0531a9776779732170127efe061686304e7fb82da13e30260bab04",
+      "comparison/detector_runtime/v4_deepshield_remote_zip.py": "61cb23cd64f234929fb675ec4b1d77c9cb16fcbb04b781409d870c4d3097d9cb"
+    },
+    "dropout_enabled": false,
+    "environment": {
+      "packages": {
+        "Pillow": "12.3.0",
+        "numpy": "2.5.3",
+        "scikit-learn": "1.8.0",
+        "scipy": "1.18.1",
+        "torch": "2.8.0+cu126",
+        "torchvision": "0.23.0"
+      },
+      "python": "3.12.14"
+    },
+    "feature_dimensions": {
+      "frozen_v4": 9,
+      "lr_resize_only": 6
+    },
+    "fingerprint_version": "sha256-rgb8-wh-v1-phash-dct32x32-8x8-median-all-v1",
+    "frozen_models_manifest_sha256": "70aea4fb604ba22daacf6fb3147efc5a55f1f187ae640a6daa07e7b8c20134e2",
+    "hardware": {
+      "cudnn_version": 91002,
+      "device": "cuda",
+      "gpu": {
+        "compute_capability": [
+          8,
+          9
+        ],
+        "index": 0,
+        "multi_processor_count": 60,
+        "name": "NVIDIA GeForce RTX 4070 Ti",
+        "total_memory": 12878086144,
+        "uuid": "5556d0f3-d102-71c5-d76c-579f2e36f2a1"
+      },
+      "machine": "AMD64",
+      "processor": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+      "torch_cuda_version": "12.6",
+      "torch_version": "2.8.0+cu126"
+    },
+    "image_size": 512,
+    "model_artifact_sha256": {
+      "models/frozen_selector.json": "c563c4ccbf6c668d7f6914ee6325518d6f9164725f4bcdd7eaacdc9fb4a50a4a",
+      "models/frozen_v4.json": "ceed98e59ce872ef98efdd54749d85bfaf04e0c56dfd5884d40d13a3f5f96098",
+      "models/frozen_v4.receipt.json": "1940e7e951f31f176adc9fb2c7aa28d77ee584570a41e58f0828918b921ff409",
+      "models/lr_resize_only.json": "da57322fd1fcf4c5604a37d9215266f873c4e95985a2ac7626fbaa9d0ba87182",
+      "models/lr_resize_only.receipt.json": "dc5d41ba80a67281519dee1abe87a9bfdca16184119479f70be0a68a644bd73d"
+    },
+    "model_sha256": "351a6c3347a7acc27f58b6e213128ca65e421dbc227800fe13bbe7ef4a2dfdbd",
+    "numerical_policy": {
+      "autocast": false,
+      "batch_size": 1,
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": false,
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "deterministic_algorithms": true,
+      "deterministic_warn_only": true,
+      "dtype": "float32",
+      "num_threads": 4
+    },
+    "original_prediction_rule": "FP32(logit_fake - logit_real) >= 0",
+    "runtime_sha256": "0d18ab2baa82e6184f611f9dfcbea2fe43192eaeae125b8bf249499c63f2a553",
+    "stochastic_depth_training": false,
+    "temperature": 2.5451689020139714,
+    "version": "article-ablation-native-six-view-runtime-v1",
+    "view_columns": {
+      "frozen_v4": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lr_resize_only": [
+        0,
+        4,
+        5
+      ]
+    },
+    "view_order": [
+      "original",
+      "jpeg_q90",
+      "jpeg_q75",
+      "jpeg_q60",
+      "resize_0p75",
+      "resize_0p5"
+    ]
+  },
+  "smoke": "archive\\article_ablation_confirmation\\technical_checks\\runtime_20261029.json",
+  "source_anchors": {
+    "archive\\article_ablation_confirmation\\data\\independent_20261029\\audit.json": "54726fbcc54b1a9268f48fca38cbd5b6578142ad8b4110a57e299aa2ebce9bf4",
+    "archive\\article_ablation_confirmation\\data\\independent_20261029\\complete.json": "4613f43b2cca83b3c015404f8be88d8da44334d89bc4ebcc8a9463a3094142da",
+    "archive\\article_ablation_confirmation\\data\\independent_20261029\\manifest.jsonl": "c75d0d077e07cca003ffce912197cbce2d59179ca3ea7ba17ddda422d129e85d",
+    "archive\\article_ablation_confirmation\\data\\independent_20261029\\protocol.json": "57d853eb4eda3e1a58c696e19d395f740b9f055ee9c34a6f36e6eb3737f669ce",
+    "archive\\article_ablation_confirmation\\data\\independent_20261029\\protocol.sha256": "9d01754a1cc55165dae3975da4de5bb9c37b071d52a55d066599add206ec9b3d",
+    "archive\\article_ablation_confirmation\\frozen_models\\resize_vs_full_20261028\\manifest.json": "70aea4fb604ba22daacf6fb3147efc5a55f1f187ae640a6daa07e7b8c20134e2",
+    "archive\\article_ablation_confirmation\\protocols\\strict_20261028\\protocol.json": "8b8f293fd8045fb40ada750da667212a547067eda192f822867b31614b66864d",
+    "archive\\article_ablation_confirmation\\technical_checks\\runtime_20261029.json": "203c57a6fa7ce61335c9b4f7952197e78e0c51510a3c50c3b5c4934f96ddfd5d"
+  },
+  "version": "article-ablation-execution-v1"
+}

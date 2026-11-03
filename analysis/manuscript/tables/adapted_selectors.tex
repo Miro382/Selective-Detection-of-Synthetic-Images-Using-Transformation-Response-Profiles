@@ -1,0 +1,27 @@
+\begin{table*}[t]
+\caption{Full profile versus confidence after detector adaptation. Top: AURC and its relative reduction. Bottom: accepted errors at the original matched coverage, $q=3,639/4,000$ on OF and $q=9,807/10,000$ on DS. All differences are full minus confidence; risk differences are percentage points. Intervals are pointwise paired 95\% intervals from 5,000 whole-group bootstrap replicates. Each replicate accepts $\lfloor qN^{(b)}\rfloor$ predictions per method. Learned confidence has the same ranking as confidence.}
+\label{tab:adapted_selectors}
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{llrrrl}
+\toprule
+Detector & Cohort & AURC: confidence & AURC: full & Reduction (\%) & 95\% interval for $\Delta$AURC \\
+\midrule
+CLIP & OF & 0.072769 & 0.071005 & 2.43 & $[-0.003372,-0.000143]$ \\
+CLIP & DS & 0.022486 & 0.019565 & 12.99 & $[-0.003557,-0.002313]$ \\
+ResNet-50 & OF & 0.186839 & 0.178671 & 4.37 & $[-0.009759,-0.006615]$ \\
+ResNet-50 & DS & 0.019979 & 0.019445 & 2.67 & $[-0.000914,-0.000116]$ \\
+\bottomrule
+\end{tabular}
+\par\vspace{5pt}
+\begin{tabular}{llrrrrl}
+\toprule
+Detector & Cohort & Accepted & Errors: confidence & Errors: full & $\Delta$ risk & 95\% interval \\
+\midrule
+CLIP & OF & 3,639 & 548 & 536 & $-0.3298$ & $[-0.7479,0.0000]$ \\
+CLIP & DS & 9,807 & 875 & 845 & $-0.3059$ & $[-0.4691,-0.1733]$ \\
+ResNet-50 & OF & 3,639 & 837 & 818 & $-0.5221$ & $[-0.8486,-0.1611]$ \\
+ResNet-50 & DS & 9,807 & 877 & 873 & $-0.0408$ & $[-0.2243,0.1020]$ \\
+\bottomrule
+\end{tabular}
+\end{table*}

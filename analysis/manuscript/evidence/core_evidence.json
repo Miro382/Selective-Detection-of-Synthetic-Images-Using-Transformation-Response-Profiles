@@ -1,0 +1,5187 @@
+{
+  "schema": "article-core-evidence-v1",
+  "created_utc": "2026-10-29T02:47:51.741227+00:00",
+  "audit_scope": {
+    "mode": "read_only_primary_artifact_and_code_review",
+    "old_files_modified": false,
+    "inference_performed": false,
+    "training_performed": false,
+    "new_bootstrap_performed": false,
+    "new_image_audit_performed": false,
+    "purpose": "Podklad pre samostatny clanok; hlavnym prispevkom je selektor. EfficientNetV2-M je pevny podklad, nie nova architektura.",
+    "not_a_literature_priority_audit": true,
+    "newer_cross_detector_mc_and_ablation_runs": "Audituju ine roly; tato evidencia popisuje finalne jadro V4 a jeho povodne overenie."
+  },
+  "sources": {
+    "v4_profile_protocol": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\protocol.json",
+      "sha256": "7b2ec05a9e5a1dc3674cf9a2f0acf7a6d4cedacf0908b3c8191a10d698f4041f",
+      "size_bytes": 6907
+    },
+    "v4_partitions": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\partitions.json",
+      "sha256": "11110807ec6e8b12c3765d0ceadb52cfc981de2b88f14fe46031d3b678e0f67a",
+      "size_bytes": 1820802
+    },
+    "v4_features": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_training_v4\\code\\selector_v4_features.py",
+      "sha256": "6676198ff868e88f96a1d0b165a041cad74a3d3ff06286ee072e7f6a0e75d22d",
+      "size_bytes": 8404,
+      "line_anchors": {
+        "def profile_arrays": [
+          36
+        ],
+        "def matrix": [
+          92
+        ],
+        "def group_weights": [
+          104
+        ],
+        "def candidate_grid": [
+          110
+        ],
+        "def decide_record": [
+          134
+        ]
+      }
+    },
+    "v4_math": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_training_v4\\code\\selector_v4_math.py",
+      "sha256": "bdc64e27ff3c5da2a8bc6fc8587e07ebddd77b966a0e897ea954f21e62f40a7f",
+      "size_bytes": 14110,
+      "line_anchors": {
+        "Regularizacia ma": [
+          5
+        ],
+        "def _fit_scaler": [
+          78
+        ],
+        "def fit_logistic": [
+          122
+        ],
+        "def weighted_aurc": [
+          245
+        ],
+        "def choose_threshold": [
+          256
+        ],
+        "def clopper_pearson_upper": [
+          290
+        ]
+      }
+    },
+    "v4_training_code": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_training_v4\\code\\train_selector_v4.py",
+      "sha256": "5abc5fbf18e1d3fc70eecf7262ef1d32829efa97870bc8023ab41debce9c1131",
+      "size_bytes": 26020,
+      "line_anchors": {
+        "def validate_partitions": [
+          109
+        ],
+        "def fit(": [
+          263
+        ],
+        "chosen = min": [
+          297
+        ],
+        "def certify": [
+          322
+        ],
+        "First access to calibration": [
+          355
+        ],
+        "passed = n": [
+          364
+        ]
+      }
+    },
+    "v4_profile_runtime": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\snapshot\\code\\selector_profile_runtime_v4.py",
+      "sha256": "3e6b1ec51bc23ca5d9c57bbcff471a5aade778ae95d01f038f6e38c0ec3ed722",
+      "size_bytes": 10751,
+      "line_anchors": {
+        "def build_profile": [
+          170
+        ],
+        "source.save": [
+          199
+        ],
+        "small_size =": [
+          204
+        ],
+        "quality_image =": [
+          214
+        ]
+      }
+    },
+    "v4_extract": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\snapshot\\code\\extract_selector_profiles_v4.py",
+      "sha256": "200a2ce477196b53956a59bf6c910cc5b2f77045ebec846af4b9bbdf5bfc6e40",
+      "size_bytes": 20166,
+      "line_anchors": {
+        "def make_record": [
+          248
+        ],
+        "def validate_record": [
+          270
+        ]
+      }
+    },
+    "v4_augmentation": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\snapshot\\code\\selector_augmentation_v4.py",
+      "sha256": "e3df616dbe0ad049fe16c79152d145b2b80ca00e84874f8de0cb12128869023a",
+      "size_bytes": 9562
+    },
+    "v4_selector": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_training_v4\\selector.json",
+      "sha256": "4d0469e6495433619066d52430f7d5b30cc89d3a76d557b64dfada187c2cee0d",
+      "size_bytes": 3410
+    },
+    "v4_training_protocol": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_training_v4\\protocol.json",
+      "sha256": "1b69fbce9b8754aae359eaeab61057d784470f959b92ab9f8fdd819fe3870613",
+      "size_bytes": 2789
+    },
+    "v4_selection_results": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_training_v4\\selection_results.json",
+      "sha256": "559da7ab52749d08910b1f9f08d248e72e7a6c5d4b9c9d51829b80e603cf98d0",
+      "size_bytes": 1573144
+    },
+    "v4_frozen_selection": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_training_v4\\frozen_selection.json",
+      "sha256": "c2f9482dc1220658e378215db0a0ee3b3157b40d67a1d5021c1786e96b563430",
+      "size_bytes": 2778
+    },
+    "v4_calibration": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_training_v4\\calibration_result.json",
+      "sha256": "a1c7d4f13e5fb772de66426408e25f635a1e96ff37e3e24b8c52f402a6167783",
+      "size_bytes": 672
+    },
+    "v4_fit_receipt": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_training_v4\\fit.receipt.json",
+      "sha256": "0334913bc6dc9eeee10e3b7f1373fd66c4f7177d43717573b02ff7b7a5bcdae0",
+      "size_bytes": 307
+    },
+    "v4_complete": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_training_v4\\complete.json",
+      "sha256": "590035650363b38708b40dbfb61c2e7b2a3d6dce737af925031f35226d702d9b",
+      "size_bytes": 740
+    },
+    "detector_config": {
+      "path": "archive\\detector_experiments\\detector_v4\\training_main\\config.json",
+      "sha256": "ab9cc13a548d1753b0d423e7095abd61cff7f7a714f5d9c137f146946e31a777",
+      "size_bytes": 3684
+    },
+    "detector_checkpoint": {
+      "path": "archive\\detector_experiments\\detector_v4\\training_main\\best_model.pt",
+      "sha256": "351a6c3347a7acc27f58b6e213128ca65e421dbc227800fe13bbe7ef4a2dfdbd",
+      "size_bytes": 215650949
+    },
+    "detector_training_code": {
+      "path": "archive\\detector_experiments\\detector_v4\\training_main\\snapshot\\detector_training_v4.py",
+      "sha256": "703f6ed48d6fa1e48e343c7724bcf60bc5f4df1c7f0e3a0f7127dd073a70d689",
+      "size_bytes": 50251,
+      "line_anchors": {
+        "MEAN =": [
+          42
+        ],
+        "def eval_transform": [
+          146
+        ],
+        "def build_model": [
+          323
+        ],
+        "def set_training_stage": [
+          341
+        ],
+        "def load_frozen_detector": [
+          577
+        ],
+        "def predict_logits": [
+          607
+        ],
+        "expected_initial =": [
+          720
+        ],
+        "optimizer = torch.optim.AdamW([": [
+          792
+        ]
+      }
+    },
+    "detector_temperature_code": {
+      "path": "archive\\detector_experiments\\detector_v4\\training_main\\snapshot\\calibrate_detector_v4.py",
+      "sha256": "dfdc736ab94c81980cbbb30924e0da61cb272811f5e61af35a5589db9afea4f9",
+      "size_bytes": 9943
+    },
+    "detector_sampler": {
+      "path": "archive\\detector_experiments\\detector_v4\\training_main\\snapshot\\sampler_v4.py",
+      "sha256": "38b1dcf012052afc84d186c4fb2a50d51d2b1341ba56cd56d2e8ce5e201328bc",
+      "size_bytes": 9360
+    },
+    "detector_comparison": {
+      "path": "archive\\detector_experiments\\detector_v4\\training_main\\comparison.json",
+      "sha256": "f4f8717d67add3802123809db98d9bc13448e4a36379cd8e564635a9b1e2ae4e",
+      "size_bytes": 223230
+    },
+    "detector_complete": {
+      "path": "archive\\detector_experiments\\detector_v4\\training_main\\complete.json",
+      "sha256": "1e01ed6266181d99f47c834a5b941dd3a8b651bf2fe06cd2b7f35573791d691f",
+      "size_bytes": 1955
+    },
+    "detector_history": {
+      "path": "archive\\detector_experiments\\detector_v4\\training_main\\history.json",
+      "sha256": "9e4332a2e702187955af1480cb362cbf31d546dabc8e564e1b5a69dd5b8a1681",
+      "size_bytes": 1276769
+    },
+    "detector_temperature": {
+      "path": "archive\\detector_experiments\\detector_v4\\training_main\\temperature.json",
+      "sha256": "a26e29987d849ac2bc8a1159bd70c8c127b413a4d3211a99cf8e24b7b13f8b32",
+      "size_bytes": 1135
+    },
+    "detector_temperature_protocol": {
+      "path": "archive\\detector_experiments\\detector_v4\\training_main\\temperature_protocol.json",
+      "sha256": "dc9378b6a00622d3c226e9d4bfc24e7a77e821a1d894164d309e8d9ea820532f",
+      "size_bytes": 795
+    },
+    "detector_temperature_complete": {
+      "path": "archive\\detector_experiments\\detector_v4\\training_main\\temperature.complete.json",
+      "sha256": "bfdbcab7f50a22298ec4200d80f7449cf8fcacdb3fc1f168166d7e8107fac297",
+      "size_bytes": 374
+    },
+    "detector_data_protocol": {
+      "path": "archive\\detector_experiments\\detector_v4\\data\\data_protocol.json",
+      "sha256": "5ee36c069d4effd062da5720350bf307daf750728de9eabb5d7c2d00b3b5d120",
+      "size_bytes": 155089
+    },
+    "detector_validation_selection": {
+      "path": "archive\\detector_experiments\\detector_v4\\training_main\\validation_selection.json",
+      "sha256": "4ba79a724538112706d3925e581348fc3da76c722b9422fdfd134b4d888ae5dc",
+      "size_bytes": 252734
+    },
+    "comparison_protocol": {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\protocol.json",
+      "sha256": "c42d9a3457aff3b7ba70ad11ef9f6d67e92602e292e339e87eccfeaa46a40eab",
+      "size_bytes": 13470
+    },
+    "comparison_frozen_selector": {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\frozen_selector.json",
+      "sha256": "c563c4ccbf6c668d7f6914ee6325518d6f9164725f4bcdd7eaacdc9fb4a50a4a",
+      "size_bytes": 3306
+    },
+    "comparison_features": {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\code\\features.py",
+      "sha256": "8691260a0da45a986831fa975f8a6fbae2ba1168de81f3215606a3e6e31baf11",
+      "size_bytes": 3926,
+      "line_anchors": {
+        "def profile_features": [
+          8
+        ],
+        "def representation": [
+          25
+        ],
+        "def sorted_logits": [
+          58
+        ]
+      }
+    },
+    "comparison_extract": {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\code\\extract.py",
+      "sha256": "8efddb66aecfdeb1bbc50d26dfa96ca430ea69774e4b2bba9b54f44b579e4fc7",
+      "size_bytes": 7838,
+      "line_anchors": {
+        "def ours": [
+          13
+        ],
+        "def bahat": [
+          26
+        ]
+      }
+    },
+    "comparison_models": {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\code\\models.py",
+      "sha256": "8bfb84a2564fd38f42fd7a12a677567c60080b17a3b460e39cd0b6495cd74cb3",
+      "size_bytes": 8509,
+      "line_anchors": {
+        "def network": [
+          23
+        ],
+        "def fit_mlp": [
+          30
+        ]
+      }
+    },
+    "comparison_metrics": {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\code\\metrics.py",
+      "sha256": "727056c2f72581beb5b257573a38a40b82ae765495dfa4eff73190a647665ef8",
+      "size_bytes": 4126,
+      "line_anchors": {
+        "def curve": [
+          5
+        ],
+        "def order_with_ties": [
+          29
+        ],
+        "def paired_bootstrap": [
+          54
+        ]
+      }
+    },
+    "comparison_results": {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "sha256": "e1da35dac98c0d9d101624394f922c87049cbc10c15700c2ccd66cbc6b9bc3cb",
+      "size_bytes": 131603
+    },
+    "external_protocol": {
+      "path": "archive\\selective_experiments\\external_v4_confirmation_reduced_20261017\\protocol.json",
+      "sha256": "3581ffeec0a176fad35abfbbb4b11133f6096ef613649a3e52214b6e3f3ad4ee",
+      "size_bytes": 29903597
+    },
+    "external_complete": {
+      "path": "archive\\selective_experiments\\external_v4_confirmation_reduced_20261017\\complete.json",
+      "sha256": "71cc90904f4ee4efe257b817a1b18ec333c2744af091a99a10d751814be2cc53",
+      "size_bytes": 1491
+    },
+    "external_results": {
+      "path": "archive\\selective_experiments\\external_v4_confirmation_reduced_20261017\\reports\\results.json",
+      "sha256": "a2328ab239e75a0860938da5bae3c2919801328bd8d2f0fa40d74b9c447f04f1",
+      "size_bytes": 11229430
+    },
+    "external_timing_code": {
+      "path": "archive\\selective_experiments\\external_v4_confirmation_reduced_20261017\\snapshot\\code\\confirmation_v4_workflow.py",
+      "sha256": "d55e82a07689537bc2518548bd29e49d8bc1d206264dc3f9243cd942c13dce8a",
+      "size_bytes": 24598,
+      "line_anchors": {
+        "def calculate": [
+          130
+        ],
+        "calls =": [
+          135
+        ],
+        "timing =": [
+          120,
+          150
+        ]
+      }
+    },
+    "external_base_workflow": {
+      "path": "archive\\selective_experiments\\external_v4_confirmation_reduced_20261017\\snapshot\\code\\external_v4_workflow.py",
+      "sha256": "a7353724d8c0c620777786216e43421e1a07c60c68a73ae808c11b47eda2e8ae",
+      "size_bytes": 24420
+    },
+    "external_metrics": {
+      "path": "archive\\selective_experiments\\external_v4_confirmation_reduced_20261017\\snapshot\\code\\external_v4_metrics.py",
+      "sha256": "6f958293df89b4f3681efc6346090d0a971dd2f7b4810df0b61bfd9c176b831c",
+      "size_bytes": 20497
+    },
+    "external_confirmation_metrics": {
+      "path": "archive\\selective_experiments\\external_v4_confirmation_reduced_20261017\\snapshot\\code\\confirmation_v4_metrics.py",
+      "sha256": "98612d76da141e5a0a0e2b750f0e0650f3b7ddfebf60fc66c5c9bf59acc81fb2",
+      "size_bytes": 18417
+    },
+    "v3_selector": {
+      "path": "archive\\selective_experiments\\experiment_v3_20261014\\selector_training_v3\\selector.json",
+      "sha256": "541fe1d2c0e896b7134dce47f729786abf056005b17cdbc4a52cb6c8ef7b181e",
+      "size_bytes": 4697
+    },
+    "v3_training_protocol": {
+      "path": "archive\\selective_experiments\\experiment_v3_20261014\\selector_training_v3\\protocol.json",
+      "sha256": "50ac405b7d47c06fca3c594718f2e8e9206385b911b1d62d1572b3feaf32e28b",
+      "size_bytes": 6761
+    },
+    "local_sklearn_logistic": {
+      "path": "[local-path-omitted]",
+      "sha256": "b52ddd68b8e673731564f8a981bb6495eefb714bad496c7c329cb06fad45f95a",
+      "size_bytes": 89134,
+      "line_anchors": {
+        "l2_reg_strength = 1.0 / (C * sw_sum)": [
+          388,
+          414,
+          427
+        ]
+      }
+    },
+    "manifest_train": {
+      "path": "archive\\detector_experiments\\detector_v4\\data\\train.csv",
+      "sha256": "d146afc7739fe7ceb443ac25440061025796e5cb283d01cea857f93920df3f9c",
+      "size_bytes": 53693497
+    },
+    "manifest_val": {
+      "path": "archive\\detector_experiments\\detector_v4\\data\\val.csv",
+      "sha256": "db6e6efe250ad010ffd22aac04b4c84e9f67d13a719969620d030385e2476f17",
+      "size_bytes": 5447242
+    },
+    "manifest_detector_calibration": {
+      "path": "archive\\detector_experiments\\detector_v4\\data\\detector_calibration.csv",
+      "sha256": "64c21a9480fa2e26f4071ba9221a9a87f0090303a386207585d4b763c0a1550b",
+      "size_bytes": 462092
+    },
+    "manifest_selector_train": {
+      "path": "archive\\detector_experiments\\detector_v4\\data\\selector_train.csv",
+      "sha256": "6aaf98e0b1e55ae3fbd16ddf5466b0b910c7cf86a9ff8c76d68f824151d8bfd6",
+      "size_bytes": 2287827
+    },
+    "manifest_selector_selection": {
+      "path": "archive\\detector_experiments\\detector_v4\\data\\selector_selection.csv",
+      "sha256": "92daed18ca1a136e1829d9e6cf9c9ecfff31aef77501c67ffb9c06d85b564e52",
+      "size_bytes": 921043
+    },
+    "manifest_selector_calibration": {
+      "path": "archive\\detector_experiments\\detector_v4\\data\\selector_calibration.csv",
+      "sha256": "15313b2db83508f639a62a9f70eb6a7424b3196b505e6db2aca477c6486010a5",
+      "size_bytes": 929312
+    },
+    "profiles_selector_train": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\profiles\\selector_train.jsonl",
+      "sha256": "3f7399fe19c26d3cf75ded58804cf34dd64406d6f0ee4a13fe6c0647817f2f84",
+      "size_bytes": 82188339
+    },
+    "receipt_selector_train": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\profiles\\selector_train.receipt.json",
+      "sha256": "cf45ce0de41d5c81d980679a99d6a3b302838ad52121c292c9ed933cac45093e",
+      "size_bytes": 374
+    },
+    "profiles_selector_selection": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\profiles\\selector_selection.jsonl",
+      "sha256": "a81a7e7f4ee781ba320aae5e1dce1a1ff5a077fdd0bcbdb7f2b7565ccc5abd6b",
+      "size_bytes": 4092687
+    },
+    "receipt_selector_selection": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\profiles\\selector_selection.receipt.json",
+      "sha256": "e84e42bd79c72ef3689c8f8bec2ffc04500e72850e5831ada0e602b974928cb1",
+      "size_bytes": 373
+    },
+    "profiles_selector_calibration": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\profiles\\selector_calibration.jsonl",
+      "sha256": "d043a08523706a54d5121128c9a605d79dcab274208e947662b236fd1c970ad6",
+      "size_bytes": 4096873
+    },
+    "receipt_selector_calibration": {
+      "path": "archive\\selective_experiments\\experiment_v4\\selector_profiles_v4\\profiles\\selector_calibration.receipt.json",
+      "sha256": "f334a2fdec5fd54a9139fc6f4386f6cfa3a4281d764f877fa7b1e0f6ea4b9f85",
+      "size_bytes": 373
+    },
+    "thesis_selector_final_solution": {
+      "path": "[local-path-omitted]",
+      "sha256": "c21a2d65fe10640bbc396e7acd576e874895333b85371ede12d5903e6df8abc6",
+      "size_bytes": 14009
+    },
+    "thesis_selector_methodology": {
+      "path": "[local-path-omitted]",
+      "sha256": "72c1feed16358887473019297d4c8f6aca9a48ebc718d9830c6f6343c469502b",
+      "size_bytes": 5631
+    },
+    "thesis_selector_implementation": {
+      "path": "[local-path-omitted]",
+      "sha256": "438ac9699b50ae60928a75a595961d27e5730ae73e0137d324fce427dd9065a4",
+      "size_bytes": 5347
+    },
+    "thesis_selector_development_results": {
+      "path": "[local-path-omitted]",
+      "sha256": "f69bea9a4d1f4acebf1bad2c9099772964419a007989697def66acca0abf37e1",
+      "size_bytes": 7269
+    },
+    "thesis_selector_discussion": {
+      "path": "[local-path-omitted]",
+      "sha256": "c250c69166376b6bdd06166078d4c07c37a2c36e1b7385eed5a73228acba0d6b",
+      "size_bytes": 2292
+    },
+    "thesis_selector_comparison_results": {
+      "path": "[local-path-omitted]",
+      "sha256": "cbb65a73ecddbd08968a51b4c3fea39ae0534c2c8294d7962395608248909aaa",
+      "size_bytes": 13048
+    },
+    "thesis_selector_external_results": {
+      "path": "[local-path-omitted]",
+      "sha256": "62544e4cdc9f84d8242d9b8ac889c5fa1c973d3aa18bc809c70a404c4100d34a",
+      "size_bytes": 7306
+    },
+    "thesis_selective_detection_design": {
+      "path": "[local-path-omitted]",
+      "sha256": "2b5f83b5d4ca7bd37774d3cbed4d2553d2faa53ef00b093e2298f59453518dc2",
+      "size_bytes": 30066
+    },
+    "thesis_formal_foundations": {
+      "path": "[local-path-omitted]",
+      "sha256": "2281cdb9ea1d877fa881ae61a54e394cc3ecf816f6c371275bb05c58cb13fafe",
+      "size_bytes": 22256
+    }
+  },
+  "integrity_checks": [
+    {
+      "check": "profile_protocol_locked_files",
+      "files_checked": 26,
+      "status": "passed"
+    },
+    {
+      "check": "selector_training_protocol_locked_files",
+      "files_checked": 4,
+      "status": "passed"
+    },
+    {
+      "check": "fit_receipt",
+      "files_checked": 2,
+      "status": "passed"
+    },
+    {
+      "check": "selector_complete",
+      "files_checked": 7,
+      "status": "passed"
+    },
+    {
+      "check": "training_source_profile_receipts",
+      "files_checked": 3,
+      "status": "passed"
+    },
+    {
+      "check": "detector_training_complete_selected_core_artifacts",
+      "files_checked": 5,
+      "status": "passed"
+    },
+    {
+      "check": "frozen_selector_semantic_identity_temperature_and_checkpoint_links",
+      "status": "passed",
+      "note": "Copied frozen_selector.json uses a different byte serialization; semantic JSON identity verified."
+    },
+    {
+      "check": "pairwise_manifest_group_raw_rgb_dependency_intersections",
+      "status": "passed",
+      "findings": [],
+      "not_checked": "No fresh perceptual-neighbor search, identity audit or image content verification."
+    }
+  ],
+  "selector_definition": {
+    "sources": [
+      "v4_features",
+      "v4_math",
+      "v4_profile_runtime",
+      "v4_extract",
+      "v4_selector",
+      "detector_training_code"
+    ],
+    "labels": {
+      "real": 0,
+      "fake": 1
+    },
+    "native_pair": [
+      "z_real",
+      "z_fake"
+    ],
+    "raw_margin": "r_j = float32(z_fake_j - z_real_j); rozdiel sa vykona v nativnom FP32, nie po prevode oboch logitov na float64.",
+    "calibration": "m_j=r_j/T; p_j=sigmoid(m_j)",
+    "temperature": 2.5451689020139714,
+    "decision": "h(x)=1[m_0>=0]; a=2*h(x)-1. Pri presnej zhode je trieda fake.",
+    "view_order": [
+      "original",
+      "jpeg_q90",
+      "jpeg_q75",
+      "jpeg_q60",
+      "resize_0p75",
+      "resize_0p5"
+    ],
+    "view_generation": {
+      "independent_from_same_incoming_image": true,
+      "jpeg": {
+        "qualities": [
+          90,
+          75,
+          60
+        ],
+        "subsampling": 0,
+        "optimize": false,
+        "decoded_mode": "RGB"
+      },
+      "resize": {
+        "scales": [
+          0.75,
+          0.5
+        ],
+        "rounding": "max(1,round(original_side*scale))",
+        "downsample_and_restore": "Pillow LANCZOS",
+        "restored_dimensions": "original"
+      },
+      "outer_input_spec": "Aplikuje sa pred tvorbou profilu; pri clean ide o original. Natvrdo clean by porusilo historicke selection/calibration varianty.",
+      "native_preprocessing_after_each_view": true
+    },
+    "feature_vector": [
+      {
+        "index": 1,
+        "name": "negative_absolute_calibrated_margin",
+        "formula": "-|m_0|",
+        "meaning": "Presny logit chyby povodnej predikcie; bez rekonstrukcie z orezanej pravdepodobnosti."
+      },
+      {
+        "index": 2,
+        "name": "oriented_margin_delta_jpeg_q90",
+        "formula": "a*(m_1-m_0)",
+        "meaning": "Zaporne znamienko znamena oslabenie povodnej triedy."
+      },
+      {
+        "index": 3,
+        "name": "oriented_margin_delta_jpeg_q75",
+        "formula": "a*(m_2-m_0)",
+        "meaning": "Zaporne znamienko znamena oslabenie povodnej triedy."
+      },
+      {
+        "index": 4,
+        "name": "oriented_margin_delta_jpeg_q60",
+        "formula": "a*(m_3-m_0)",
+        "meaning": "Zaporne znamienko znamena oslabenie povodnej triedy."
+      },
+      {
+        "index": 5,
+        "name": "oriented_margin_delta_resize_0p75",
+        "formula": "a*(m_4-m_0)",
+        "meaning": "Zaporne znamienko znamena oslabenie povodnej triedy."
+      },
+      {
+        "index": 6,
+        "name": "oriented_margin_delta_resize_0p5",
+        "formula": "a*(m_5-m_0)",
+        "meaning": "Zaporne znamienko znamena oslabenie povodnej triedy."
+      },
+      {
+        "index": 7,
+        "name": "prediction_variance",
+        "formula": "(1/6)*sum_{j=0}^5 (p_j-mean(p_0,...,p_5))^2",
+        "meaning": "Populacny rozptyl pravdepodobnosti; ddof=0; zahrna original."
+      },
+      {
+        "index": 8,
+        "name": "max_abs_shift",
+        "formula": "max_{j=1,...,5}|p_j-p_0|"
+      },
+      {
+        "index": 9,
+        "name": "flip_fraction",
+        "formula": "(1/5)*sum_{j=1}^5 1[(m_j>=0)!=(m_0>=0)]"
+      }
+    ],
+    "dimension": 9,
+    "coefficients": 9,
+    "intercept_count": 1,
+    "normalization": {
+      "formula": "phi_tilde_l=(phi_l-mu_l)/sigma_l",
+      "fit": "Weighted StandardScaler len na selector_train, sample_weight=1/profiles_in_group",
+      "constant_columns": "exact mean, scale=1"
+    },
+    "score": "s(x)=sigmoid(w^T phi_tilde(x)+b); nizsie je lepsie; skore chyby samo osebe nie je kalibrovana pravdepodobnost chyby.",
+    "acceptance": "accept original h(x) iff s(x)<=tau; otherwise abstain/review. No change of detector class.",
+    "excluded_inputs": [
+      "true class label",
+      "source",
+      "generator",
+      "image quality proxies",
+      "raw pixels as auxiliary-selector inputs"
+    ],
+    "algebraic_properties": [
+      {
+        "claim": "Invariance to adding any common per-view offset to both native class logits.",
+        "status": "algebraic consequence of margin definition"
+      },
+      {
+        "claim": "Class-label interchange leaves the representation unchanged away from exact zero-margin ties.",
+        "status": "algebraic consequence; explicit tie convention limits exact statement"
+      },
+      {
+        "claim": "First six features are an invertible reparameterization of oriented margins v_j=a*m_j: v_0=-phi_1 and v_j=phi_(j+1)-phi_1.",
+        "status": "algebraic identity, not experimental novelty proof"
+      },
+      {
+        "claim": "V,D,F add nonlinear summaries, not additional independent detector observations.",
+        "status": "algebraic consequence"
+      }
+    ]
+  },
+  "selector_training": {
+    "sources": [
+      "v4_training_protocol",
+      "v4_training_code",
+      "v4_features",
+      "v4_math",
+      "v4_selection_results",
+      "v4_frozen_selection",
+      "v4_fit_receipt",
+      "v4_profile_protocol"
+    ],
+    "detector_frozen": true,
+    "data_source": "deepshield_v4; all included generator families distributed among development splits; not unseen-generator holdout",
+    "profile_counts_and_errors": {
+      "selector_train": {
+        "profiles": 40000,
+        "groups": 5000,
+        "detector_error_profiles": 587,
+        "groups_with_any_detector_error": 188
+      },
+      "selector_selection": {
+        "profiles": 2000,
+        "groups": 2000,
+        "detector_error_profiles": 34,
+        "groups_with_any_detector_error": 34
+      },
+      "selector_calibration": {
+        "profiles": 2000,
+        "groups": 2000,
+        "detector_error_profiles": 37,
+        "groups_with_any_detector_error": 37
+      }
+    },
+    "augmentation_policy": {
+      "version": 1,
+      "seed_derivation": "SHA256(JSON([namespace, version, seed, identity, variant]))",
+      "parameter_generator": "Python random.Random with independent SHA256 seed per variant",
+      "training_identity": "lowercase SHA256 of original file; no path or label",
+      "calibration_identity": "original group identifier; no path or label",
+      "training_variants_per_original": 8,
+      "training_ids": [
+        "clean",
+        "jpeg_mild",
+        "jpeg_strong",
+        "resize_mild",
+        "resize_strong",
+        "brightness",
+        "contrast",
+        "combined"
+      ],
+      "jpeg_mild_quality_inclusive": [
+        70,
+        95
+      ],
+      "jpeg_strong_quality_inclusive": [
+        35,
+        60
+      ],
+      "resize_mild_scale_inclusive": [
+        0.65,
+        0.9
+      ],
+      "resize_strong_scale_inclusive": [
+        0.4,
+        0.6
+      ],
+      "resize_scale_step": 0.01,
+      "brightness_factor_inclusive": [
+        0.85,
+        1.15
+      ],
+      "contrast_factor_inclusive": [
+        0.85,
+        1.15
+      ],
+      "enhancement_factor_step": 0.01,
+      "combined_order": [
+        "brightness",
+        "contrast",
+        "resize",
+        "jpeg"
+      ],
+      "combined_brightness_factor_inclusive": [
+        0.9,
+        1.1
+      ],
+      "combined_contrast_factor_inclusive": [
+        0.9,
+        1.1
+      ],
+      "combined_resize_scale_inclusive": [
+        0.5,
+        0.85
+      ],
+      "combined_jpeg_quality_inclusive": [
+        50,
+        85
+      ],
+      "calibration_variants_per_group": 1,
+      "calibration_mixture": {
+        "clean": 0.25,
+        "calibration_jpeg": 0.25,
+        "calibration_resize": 0.25,
+        "brightness": 0.125,
+        "contrast": 0.125
+      },
+      "calibration_jpeg_quality_inclusive": [
+        35,
+        95
+      ],
+      "calibration_resize_scale_inclusive": [
+        0.4,
+        0.9
+      ],
+      "calibration_mixture_note": "Independent sampling per group, not exact quotas or label stratification",
+      "jpeg_subsampling": 0,
+      "jpeg_optimize": false,
+      "resize_resampling": "LANCZOS for downsampling and restoring original dimensions",
+      "resize_rounding": "max(1, round(original_side * scale))",
+      "output_mode": "RGB",
+      "output_dimensions": "original dimensions"
+    },
+    "error_target": "e_i=1[h(input_variant_i)!=y_i]",
+    "group_weights": "omega_i=1/n_profiles(group_i); eight variants per one original -> omega=1/8, sum=5000; no class_weight.",
+    "objective": "min_{w,b} sum_i omega_i * BCE(e_i,s_i) + ||w||_2^2/(2*C); intercept is unpenalized.",
+    "equivalent_average_loss_regularizer": "If averaging by sum(omega)=5000, lambda=1/(C*5000); C=0.1 -> lambda=0.002 in lambda/2*||w||^2 notation.",
+    "solver": {
+      "library": "scikit-learn",
+      "version": "1.8.0",
+      "solver": "lbfgs",
+      "C": 0.1,
+      "tol": 1e-09,
+      "max_iter": 5000,
+      "converged_iterations": 28
+    },
+    "selection": {
+      "chosen_id": "symmetric_profile_C0p1",
+      "training_rows": 40000,
+      "training_groups": 5000,
+      "training_error_groups": 188,
+      "selection_rows": 2000,
+      "selection_detector_errors": 34,
+      "warnings": [],
+      "group_weight_sum": 5000.0,
+      "selection_is_development": true,
+      "candidates": [
+        {
+          "id": "confidence",
+          "family": "confidence",
+          "C": null,
+          "selection_aurc": 0.0010757509548587044,
+          "threshold": {
+            "target_risk": 0.01,
+            "min_coverage": 0.1,
+            "total_weight": 2000.0,
+            "criterion": "empirical_weighted_risk_not_certified",
+            "accept_rule": "score <= tau",
+            "feasible": true,
+            "tau": 0.07953369430249872,
+            "coverage": 0.981,
+            "risk": 0.009683995922528032,
+            "accepted_weight": 1962.0,
+            "error_weight": 19.0,
+            "accepted_positive_weight_rows": 1962
+          }
+        },
+        {
+          "id": "tta_mean",
+          "family": "tta_mean",
+          "C": null,
+          "selection_aurc": 0.0010831644983292,
+          "threshold": {
+            "target_risk": 0.01,
+            "min_coverage": 0.1,
+            "total_weight": 2000.0,
+            "criterion": "empirical_weighted_risk_not_certified",
+            "accept_rule": "score <= tau",
+            "feasible": true,
+            "tau": 0.13555534120382898,
+            "coverage": 0.978,
+            "risk": 0.009713701431492843,
+            "accepted_weight": 1956.0,
+            "error_weight": 19.0,
+            "accepted_positive_weight_rows": 1956
+          }
+        },
+        {
+          "id": "max_shift",
+          "family": "max_shift",
+          "C": null,
+          "selection_aurc": 0.0013814113304242775,
+          "threshold": {
+            "target_risk": 0.01,
+            "min_coverage": 0.1,
+            "total_weight": 2000.0,
+            "criterion": "empirical_weighted_risk_not_certified",
+            "accept_rule": "score <= tau",
+            "feasible": true,
+            "tau": 0.08767203218292008,
+            "coverage": 0.973,
+            "risk": 0.009763617677286743,
+            "accepted_weight": 1946.0,
+            "error_weight": 19.0,
+            "accepted_positive_weight_rows": 1946
+          }
+        },
+        {
+          "id": "confidence_class_C0p01",
+          "family": "confidence_class",
+          "C": 0.01,
+          "selection_aurc": 0.0013248977262302977,
+          "threshold": {
+            "target_risk": 0.01,
+            "min_coverage": 0.1,
+            "total_weight": 2000.0,
+            "criterion": "empirical_weighted_risk_not_certified",
+            "accept_rule": "score <= tau",
+            "feasible": true,
+            "tau": 0.04102318235094828,
+            "coverage": 0.977,
+            "risk": 0.009723643807574206,
+            "accepted_weight": 1954.0,
+            "error_weight": 19.0,
+            "accepted_positive_weight_rows": 1954
+          }
+        },
+        {
+          "id": "confidence_class_C0p1",
+          "family": "confidence_class",
+          "C": 0.1,
+          "selection_aurc": 0.001171446554874941,
+          "threshold": {
+            "target_risk": 0.01,
+            "min_coverage": 0.1,
+            "total_weight": 2000.0,
+            "criterion": "empirical_weighted_risk_not_certified",
+            "accept_rule": "score <= tau",
+            "feasible": true,
+            "tau": 0.13400429104099,
+            "coverage": 0.9855,
+            "risk": 0.009639776763064434,
+            "accepted_weight": 1971.0,
+            "error_weight": 19.0,
+            "accepted_positive_weight_rows": 1971
+          }
+        },
+        {
+          "id": "symmetric_profile_C0p01",
+          "family": "symmetric_profile",
+          "C": 0.01,
+          "selection_aurc": 0.0010809131468408264,
+          "threshold": {
+            "target_risk": 0.01,
+            "min_coverage": 0.1,
+            "total_weight": 2000.0,
+            "criterion": "empirical_weighted_risk_not_certified",
+            "accept_rule": "score <= tau",
+            "feasible": true,
+            "tau": 0.029792061606706086,
+            "coverage": 0.976,
+            "risk": 0.00973360655737705,
+            "accepted_weight": 1952.0,
+            "error_weight": 19.0,
+            "accepted_positive_weight_rows": 1952
+          }
+        },
+        {
+          "id": "symmetric_profile_C0p1",
+          "family": "symmetric_profile",
+          "C": 0.1,
+          "selection_aurc": 0.0010448695994117034,
+          "threshold": {
+            "target_risk": 0.01,
+            "min_coverage": 0.1,
+            "total_weight": 2000.0,
+            "criterion": "empirical_weighted_risk_not_certified",
+            "accept_rule": "score <= tau",
+            "feasible": true,
+            "tau": 0.08632226578702012,
+            "coverage": 0.9835,
+            "risk": 0.009659379766141332,
+            "accepted_weight": 1967.0,
+            "error_weight": 19.0,
+            "accepted_positive_weight_rows": 1967
+          }
+        },
+        {
+          "id": "class_profile_C0p01",
+          "family": "class_profile",
+          "C": 0.01,
+          "selection_aurc": 0.001357014845062915,
+          "threshold": {
+            "target_risk": 0.01,
+            "min_coverage": 0.1,
+            "total_weight": 2000.0,
+            "criterion": "empirical_weighted_risk_not_certified",
+            "accept_rule": "score <= tau",
+            "feasible": true,
+            "tau": 0.03024501923521576,
+            "coverage": 0.975,
+            "risk": 0.009743589743589744,
+            "accepted_weight": 1950.0,
+            "error_weight": 19.0,
+            "accepted_positive_weight_rows": 1950
+          }
+        },
+        {
+          "id": "class_profile_C0p1",
+          "family": "class_profile",
+          "C": 0.1,
+          "selection_aurc": 0.0013116415132173832,
+          "threshold": {
+            "target_risk": 0.01,
+            "min_coverage": 0.1,
+            "total_weight": 2000.0,
+            "criterion": "empirical_weighted_risk_not_certified",
+            "accept_rule": "score <= tau",
+            "feasible": true,
+            "tau": 0.08985088283691178,
+            "coverage": 0.984,
+            "risk": 0.009654471544715448,
+            "accepted_weight": 1968.0,
+            "error_weight": 19.0,
+            "accepted_positive_weight_rows": 1968
+          }
+        }
+      ]
+    },
+    "frozen_model": {
+      "version": "selective-selector-v4-model-1",
+      "family": "symmetric_profile",
+      "feature_names": [
+        "negative_absolute_calibrated_margin",
+        "oriented_margin_delta_jpeg_q90",
+        "oriented_margin_delta_jpeg_q75",
+        "oriented_margin_delta_jpeg_q60",
+        "oriented_margin_delta_resize_0p75",
+        "oriented_margin_delta_resize_0p5",
+        "prediction_variance",
+        "max_abs_shift",
+        "flip_fraction"
+      ],
+      "C": 0.1,
+      "parameters": {
+        "schema": "selector-v3-numerics-v1",
+        "model_type": "weighted_logistic",
+        "C": 0.1,
+        "score_semantics": "error_score_not_calibration_guarantee",
+        "scaler": {
+          "mean": [
+            -6.985309549229745,
+            -0.16497797738413994,
+            -0.4553005460626262,
+            -0.8790842594311465,
+            8.72909466366104e-05,
+            0.06299478027104961,
+            0.0026792777436389376,
+            0.025318311463222644,
+            0.007809999999999916
+          ],
+          "scale": [
+            2.7922380596190997,
+            0.5173234544427895,
+            0.9016573378070836,
+            1.3104430103719316,
+            0.3738609886055292,
+            0.7996880729646593,
+            0.01762574295204072,
+            0.12237264325932079,
+            0.05722764978573763
+          ]
+        },
+        "coef": [
+          1.9112392201510244,
+          0.10738984059426196,
+          0.17062908646231928,
+          0.3442097299425941,
+          -0.06257895955872383,
+          -0.3245455726649916,
+          0.11007901118261236,
+          0.1831601982870299,
+          -0.03206310094168687
+        ],
+        "intercept": -6.015717031131378,
+        "convergence": {
+          "success": true,
+          "iterations": 28
+        }
+      }
+    },
+    "not_cross_validation": "V4 uses an independent selection split; the fivefold group CV/27 candidates describe V3 history, not final V4."
+  },
+  "calibration_and_threshold": {
+    "sources": [
+      "v4_calibration",
+      "v4_fit_receipt",
+      "v4_frozen_selection",
+      "v4_training_code",
+      "v4_math",
+      "v4_selector"
+    ],
+    "selection_defaults": {
+      "target_risk": 0.02,
+      "selection_risk": 0.01,
+      "delta": 0.05,
+      "min_coverage": 0.1,
+      "min_accepted": 30,
+      "seed": 20261015,
+      "selection_criterion": "minimum_selection_aurc_then_candidate_id"
+    },
+    "threshold_selection": {
+      "target_risk": 0.01,
+      "min_coverage": 0.1,
+      "total_weight": 2000.0,
+      "criterion": "empirical_weighted_risk_not_certified",
+      "accept_rule": "score <= tau",
+      "feasible": true,
+      "tau": 0.08632226578702012,
+      "coverage": 0.9835,
+      "risk": 0.009659379766141332,
+      "accepted_weight": 1967.0,
+      "error_weight": 19.0,
+      "accepted_positive_weight_rows": 1967
+    },
+    "research_threshold": 0.08632226578702012,
+    "deployment_threshold": 0.08632226578702012,
+    "fit_receipt": {
+      "created_utc": "2026-10-16T07:59:40.864787+00:00",
+      "files": {
+        "selection_results.json": "559da7ab52749d08910b1f9f08d248e72e7a6c5d4b9c9d51829b80e603cf98d0",
+        "frozen_selection.json": "c2f9482dc1220658e378215db0a0ee3b3157b40d67a1d5021c1786e96b563430"
+      },
+      "calibration_opened": false
+    },
+    "frozen_before_calibration_utc": "2026-10-16T07:59:40.855993+00:00",
+    "result": {
+      "status": "passed",
+      "total": 2000,
+      "accepted": 1958,
+      "review": 42,
+      "coverage": 0.979,
+      "errors": 13,
+      "risk": 0.006639427987742594,
+      "risk_upper_bound": 0.010535283921290446,
+      "confidence": 0.95,
+      "target_risk": 0.02,
+      "minimum_accepted": 30,
+      "research_threshold": 0.08632226578702012,
+      "accept_threshold": 0.08632226578702012,
+      "calibration_partition_digest": "26e720bc9956122f6417e206ce7d5dc4a7eccdc43935a445f2b0add567814b4e",
+      "evaluated_utc": "2026-10-16T07:59:41.105163+00:00",
+      "scope": "Jedno vopred zmrazené pravidlo, nezávislí reprezentanti pri rovnakej cieľovej distribúcii. Bez záruky pri posune distribúcie."
+    },
+    "bound": "U=Beta^{-1}(1-delta;k+1,n-k) for 0<k<n; U=1-delta^(1/n) for k=0; U=1 for n=0 or k=n.",
+    "pass_rule": "n>=30 and U<=0.02; no threshold readjustment on calibration; failure would set deployment tau=-1 and accept none.",
+    "scope": "One frozen rule; independent representative per group, same target source/degradation mixture. Does not imply risk<=2% on OpenFake or arbitrary distribution shifts.",
+    "caution": "Empirical 1% threshold selection, observed 0.664% risk, 1.054% one-sided upper bound and 2% target are distinct quantities."
+  },
+  "data_manifests": {
+    "sources": [
+      "detector_data_protocol",
+      "manifest_train",
+      "manifest_val",
+      "manifest_detector_calibration",
+      "manifest_selector_train",
+      "manifest_selector_selection",
+      "manifest_selector_calibration"
+    ],
+    "splits": {
+      "train": {
+        "images": 104706,
+        "unique_groups": 100224,
+        "class_counts": {
+          "0": 49265,
+          "1": 55441
+        },
+        "source_counts": {
+          "v3/synthbuster_raise": 4980,
+          "deepshield_v4": 9000,
+          "v3/historical": 90726
+        },
+        "family_counts": {
+          "real": 49265,
+          "diffusion": 5781,
+          "gan": 3894,
+          "historical_unknown": 45766
+        },
+        "source_ref": "manifest_train"
+      },
+      "val": {
+        "images": 10925,
+        "unique_groups": 10133,
+        "class_counts": {
+          "0": 4922,
+          "1": 6003
+        },
+        "source_counts": {
+          "v3/synthbuster_raise": 880,
+          "deepshield_v4": 2000,
+          "v3/historical": 8045
+        },
+        "family_counts": {
+          "real": 4922,
+          "diffusion": 1065,
+          "gan": 838,
+          "historical_unknown": 4100
+        },
+        "source_ref": "manifest_val"
+      },
+      "detector_calibration": {
+        "images": 1000,
+        "unique_groups": 1000,
+        "class_counts": {
+          "1": 554,
+          "0": 446
+        },
+        "source_counts": {
+          "deepshield_v4": 1000
+        },
+        "family_counts": {
+          "diffusion": 127,
+          "gan": 427,
+          "real": 446
+        },
+        "source_ref": "manifest_detector_calibration"
+      },
+      "selector_train": {
+        "images": 5000,
+        "unique_groups": 5000,
+        "class_counts": {
+          "1": 2856,
+          "0": 2144
+        },
+        "source_counts": {
+          "deepshield_v4": 5000
+        },
+        "family_counts": {
+          "diffusion": 706,
+          "gan": 2150,
+          "real": 2144
+        },
+        "source_ref": "manifest_selector_train"
+      },
+      "selector_selection": {
+        "images": 2000,
+        "unique_groups": 2000,
+        "class_counts": {
+          "1": 1113,
+          "0": 887
+        },
+        "source_counts": {
+          "deepshield_v4": 2000
+        },
+        "family_counts": {
+          "diffusion": 294,
+          "gan": 819,
+          "real": 887
+        },
+        "source_ref": "manifest_selector_selection"
+      },
+      "selector_calibration": {
+        "images": 2000,
+        "unique_groups": 2000,
+        "class_counts": {
+          "1": 1173,
+          "0": 827
+        },
+        "source_counts": {
+          "deepshield_v4": 2000
+        },
+        "family_counts": {
+          "diffusion": 301,
+          "gan": 872,
+          "real": 827
+        },
+        "source_ref": "manifest_selector_calibration"
+      }
+    },
+    "intersections": [],
+    "limitations": [
+      "Tento dostupný variant obsahuje 21 000 nových DeepShield obrázkov. CelebA ani druhý nezávislý portrétny zdroj neboli dodané; plánovaných 3 000 CelebA sa nenahrádza inými dátami.",
+      "DeepShield V3 už motivoval tento vývoj; V4 vyžaduje nový uzamknutý externý test. Existujúci test zostáva iba regresným porovnaním.",
+      "Staré train/val zostávajú v rovnakých vývojových úlohách. Historické členstvo bolo rekonštruované, nie nezávisle potvrdené pôvodným uloženým zoznamom.",
+      "SHA/RGB/pHash<=4 pri sťahovaní chráni dostupné evidencie; nepreukazuje nezávislosť od neznámych dát, predtrénovacích zbierok ani identít.",
+      "FFHQ/FORLAB a syntetické zdroje nemajú úplné identifikátory osôb či sérií. Aj pri odlišných dependency_key môžu existovať neznáme závislosti.",
+      "Rozdelenie je globálna permutácia so stanoveným seedom, nie stratifikovaný či nezávislý externý test. Triedy a zdroje preto nemajú v každom splite presne rovnaké zastúpenie.",
+      "Pôvodné rozlíšenia historických obrázkov sa zachovali; plošný filter >=512 px by menil pôvodný tréning. Základné rozlíšenie a formát môžu zostať zdrojovou skratkou.",
+      "Uzamknutý pôvodný download protokol opisuje plán s CelebA a nebol upravený. Tento nový variant výslovne dokumentuje odchýlku od pôvodného plánu."
+    ],
+    "historical_limitations": [
+      "Synthbuster/RAISE je po vyhodnotení V2 vývojovým zdrojom. Nový nezávislý test vyžaduje ďalší nedotknutý zdroj.",
+      "Historické členstvo bolo rekonštruované zo zoradených ciest, seedu a počtov; pôvodný uložený zoznam train/val neexistuje.",
+      "Historický val ovplyvnil výber východiskového checkpointu. V3 val slúži na výber modelu, nie ako nezávislý test.",
+      "Chránime všetkých 10 000 historických vzoriek selektora a obsah historických testov pred novým učením; toto spätne neodstraňuje prípadnú expozíciu pôvodného modelu.",
+      "Presné a pixelové duplikáty sú odstránené z nového train/val; blízke variácie v historických dátach a neznámy pôvod historických generátorov nemožno týmto auditom vylúčiť.",
+      "Rezervy selektora obsahujú závislé varianty jednej predlohy. 195 skupín kalibrácie neznamená 1 950 nezávislých pozorovaní ani automatickú záruku 2 % rizika.",
+      "RAISE a Synthbuster majú rozdielne formáty a rozlíšenia; rovnaké augmentácie oboch tried samy nezaručujú odstránenie zdrojových skratiek.",
+      "Zahrnuté sú všetky generátory; tento split netestuje nevidený generátor."
+    ],
+    "split_policy": "New DeepShield 21000: 9000 detector train, 2000 detector validation, 1000 temperature, 5000 selector train, 2000 selection, 2000 risk check. Fixed-seed global permutation, not exact label stratification."
+  },
+  "fixed_detector": {
+    "sources": [
+      "detector_config",
+      "detector_training_code",
+      "detector_data_protocol",
+      "detector_checkpoint",
+      "detector_complete",
+      "detector_temperature",
+      "detector_comparison"
+    ],
+    "architecture": "torchvision EfficientNetV2-M; existing backbone with binary classifier; no architecture novelty claim.",
+    "classifier": "Dropout(0.3) -> Linear(in_features,512) -> SiLU -> Dropout(0.15) -> Linear(512,2)",
+    "initial_checkpoint": {
+      "path": "archive\\selective_experiments\\experiment_v3_20261014\\baseline\\models\\image\\best_model.pt",
+      "sha256": "c4b54730991c9615d6e69f9505dd87fda4cb737db0f2f883a17811405b86ad0a",
+      "role": "initial_checkpoint"
+    },
+    "final_checkpoint_sha256": "351a6c3347a7acc27f58b6e213128ca65e421dbc227800fe13bbe7ef4a2dfdbd",
+    "native_preprocess": {
+      "mode": "RGB",
+      "shorter_side_resize": 563,
+      "resize_interpolation": "BICUBIC",
+      "center_crop": [
+        512,
+        512
+      ],
+      "to_tensor": true,
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    },
+    "configuration": {
+      "version": 4,
+      "model": "efficientnet_v2_m",
+      "image_size": 512,
+      "dropout": 0.3,
+      "class_to_index": {
+        "real": 0,
+        "fake": 1
+      },
+      "training": {
+        "data_dir": "archive\\detector_experiments\\detector_v4\\data",
+        "device": "cuda",
+        "epochs": 10,
+        "batch_size": 2,
+        "accumulation_steps": 4,
+        "samples_per_epoch": 24000,
+        "max_group_repeats": 3,
+        "augmentation_policy": "v3",
+        "num_workers": 4,
+        "max_historical_val_per_class": 1000,
+        "head_lr": 0.0001,
+        "backbone_lr": 1e-05,
+        "weight_decay": 0.0001,
+        "head_warmup_epochs": 1,
+        "train_batchnorm": false,
+        "patience": 4,
+        "min_delta": 0.0001,
+        "label_smoothing": 0.0,
+        "max_grad_norm": 1.0,
+        "seed": 20261015
+      },
+      "data_protocol_sha256": "5ee36c069d4effd062da5720350bf307daf750728de9eabb5d7c2d00b3b5d120",
+      "source_sha256": {
+        "detector_training_v4.py": "703f6ed48d6fa1e48e343c7724bcf60bc5f4df1c7f0e3a0f7127dd073a70d689",
+        "train_detector_v4.py": "46acbfacdcb02c5f47fe27343af16d27e735509dd3ed63077a0a4703b621b2d7",
+        "sampler_v4.py": "38b1dcf012052afc84d186c4fb2a50d51d2b1341ba56cd56d2e8ce5e201328bc",
+        "calibrate_detector_v4.py": "dfdc736ab94c81980cbbb30924e0da61cb272811f5e61af35a5589db9afea4f9",
+        "prepare_data_v4.py": "63eba7ed7cf3e469efc1894047494615136003152849ca64092a81b4cff7b53c",
+        "v4_data_sources.py": "4314acd3c59534eee1310857db7948b9b743148781a2b31fc4f4b55a1c5dee94",
+        "v4_deepshield_audit.py": "ce3fab68ab0531a9776779732170127efe061686304e7fb82da13e30260bab04",
+        "v4_deepshield_remote_zip.py": "61cb23cd64f234929fb675ec4b1d77c9cb16fcbb04b781409d870c4d3097d9cb",
+        "v4_deepshield_index_v1.json.gz": "94e69d3fe725bb9da01339650ff5caf928e84dd865d0ee9826404b71ea95d451"
+      },
+      "selection": "Mean over clean, JPEG Q40 and resize 0.5; equal classes, then real domains/fake families, sources and generators; each leaf uses its class accuracy.",
+      "validation_scope": "Adaptive development validation only. The V3 initial detector and V4 use the same locked validation for comparison. Historical validation may have been seen before. DeepShield V3 errors informed V4 design; this is not external confirmation.",
+      "sampler": {
+        "policy": "hierarchical_class_domain_family_source_generator_group_cap",
+        "max_dependency_group_repeats": 3,
+        "shorten_if_insufficient_capacity": true
+      },
+      "augmentation": {
+        "policy": "v3",
+        "social_branch": null,
+        "clean_probability": 0.25,
+        "on_augmented_branch": {
+          "downscale_restore": {
+            "p": 0.35,
+            "scale": [
+              0.5,
+              0.9
+            ],
+            "interpolation": "LANCZOS"
+          },
+          "brightness_contrast": {
+            "p": 0.4,
+            "factor": [
+              0.8,
+              1.2
+            ]
+          },
+          "blur": {
+            "p": 0.1,
+            "sigma": [
+              0.2,
+              0.8
+            ]
+          },
+          "jpeg": {
+            "p": 0.45,
+            "quality": [
+              40,
+              95
+            ],
+            "subsampling": 0,
+            "optimize": false
+          },
+          "crop_scale": [
+            0.85,
+            1.0
+          ],
+          "crop_ratio": [
+            0.95,
+            1.05
+          ],
+          "horizontal_flip": 0.5
+        },
+        "policy_identical_for_all_labels_and_sources": true
+      },
+      "environment": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "torch": "2.8.0+cu126",
+        "numpy": "2.5.3",
+        "torchvision": "0.23.0+cpu",
+        "pillow": "12.3.0",
+        "scikit_learn": "1.8.0",
+        "executable": "[local-path-omitted]",
+        "cuda": "12.6",
+        "device": "NVIDIA GeForce RTX 4070 Ti"
+      }
+    },
+    "training_summary": {
+      "optimizer": "AdamW",
+      "scheduler": "CosineAnnealingLR T_max=10, eta_min=0",
+      "best_epoch": 10,
+      "trained_epochs": 10,
+      "training_batchnorm": false,
+      "one_epoch_head_warmup": true,
+      "selection_scope": "Adaptive development validation only. The V3 initial detector and V4 use the same locked validation for comparison. Historical validation may have been seen before. DeepShield V3 errors informed V4 design; this is not external confirmation."
+    },
+    "temperature": {
+      "schema_version": "v4-temperature-1",
+      "model_sha256": "351a6c3347a7acc27f58b6e213128ca65e421dbc227800fe13bbe7ef4a2dfdbd",
+      "training_complete_sha256": "1e01ed6266181d99f47c834a5b941dd3a8b651bf2fe06cd2b7f35573791d691f",
+      "data_protocol_sha256": "5ee36c069d4effd062da5720350bf307daf750728de9eabb5d7c2d00b3b5d120",
+      "manifest_sha256": "64c21a9480fa2e26f4071ba9221a9a87f0090303a386207585d4b763c0a1550b",
+      "method": "scalar_nll_temperature",
+      "bounds": [
+        0.01,
+        100.0
+      ],
+      "device": "cuda",
+      "seed": 20261015,
+      "code_sha256": "dfdc736ab94c81980cbbb30924e0da61cb272811f5e61af35a5589db9afea4f9",
+      "detector_threshold": 0.5,
+      "n_groups": 1000,
+      "condition": "original_only",
+      "scope": "Development score calibration; no risk guarantee and no external test.",
+      "temperature": 2.5451689020139714,
+      "at_boundary": false,
+      "nll_before": 0.05881819603858735,
+      "nll_after": 0.030225596728572335,
+      "brier_before": 0.009883779195265435,
+      "brier_after": 0.008471503508253377,
+      "decision_changes_at_half": 0,
+      "completed_utc": "2026-10-15T22:26:15.223370+00:00",
+      "inference_records": 1000
+    },
+    "development_validation": {
+      "baseline": {
+        "selection_score": 0.8035626425697723,
+        "conditions": {
+          "clean": {
+            "n": 4880,
+            "errors": 827,
+            "accuracy": 0.8305327868852459,
+            "real_accuracy": 0.8543247344461306,
+            "fake_recall": 0.8143300034447124,
+            "fake_precision": 0.8914027149321267,
+            "fake_f1": 0.8511251125112511,
+            "balanced_accuracy": 0.8343273689454215,
+            "log_loss": 1.2612970827649195,
+            "auroc": 0.9260083798683134,
+            "brier": 0.16689429408878723,
+            "hierarchical_balanced_accuracy": 0.813494494470407,
+            "worst_cell_accuracy": 0.37542662116040953,
+            "worst_source_accuracy": 0.6295,
+            "seconds": 103.89099999999962
+          },
+          "jpeg_q40": {
+            "n": 4880,
+            "errors": 1078,
+            "accuracy": 0.7790983606557377,
+            "real_accuracy": 0.9312089023773394,
+            "fake_recall": 0.6755080950740613,
+            "fake_precision": 0.9351454458750597,
+            "fake_f1": 0.7844,
+            "balanced_accuracy": 0.8033584987257003,
+            "log_loss": 1.899002516273944,
+            "auroc": 0.8898402939348495,
+            "brier": 0.21792773088385464,
+            "hierarchical_balanced_accuracy": 0.7786160419982897,
+            "worst_cell_accuracy": 0.08394160583941605,
+            "worst_source_accuracy": 0.5315,
+            "seconds": 120.8279999999977
+          },
+          "resize_0p5": {
+            "n": 4880,
+            "errors": 787,
+            "accuracy": 0.8387295081967213,
+            "real_accuracy": 0.8204350025290845,
+            "fake_recall": 0.8511884257664485,
+            "fake_precision": 0.8743807501769285,
+            "fake_f1": 0.8626287310176296,
+            "balanced_accuracy": 0.8358117141477666,
+            "log_loss": 1.162298391574287,
+            "auroc": 0.9271855410594206,
+            "brier": 0.15794176622974174,
+            "hierarchical_balanced_accuracy": 0.81857739124062,
+            "worst_cell_accuracy": 0.4402730375426621,
+            "worst_source_accuracy": 0.649,
+            "seconds": 184.09400000000096
+          }
+        }
+      },
+      "best": {
+        "selection_score": 0.9741978757990802,
+        "conditions": {
+          "clean": {
+            "n": 4880,
+            "errors": 118,
+            "accuracy": 0.9758196721311475,
+            "real_accuracy": 0.9903894790085989,
+            "fake_recall": 0.9658973475714778,
+            "fake_precision": 0.9932695713779667,
+            "fake_f1": 0.9793922458959133,
+            "balanced_accuracy": 0.9781434132900384,
+            "log_loss": 0.17731859189485494,
+            "auroc": 0.9973062593228954,
+            "brier": 0.02409476293686466,
+            "hierarchical_balanced_accuracy": 0.9811104554087234,
+            "worst_cell_accuracy": 0.7613636363636364,
+            "worst_source_accuracy": 0.9238636363636363,
+            "seconds": 111.67199999999866
+          },
+          "jpeg_q40": {
+            "n": 4880,
+            "errors": 230,
+            "accuracy": 0.9528688524590164,
+            "real_accuracy": 0.9807789580171977,
+            "fake_recall": 0.933861522562866,
+            "fake_precision": 0.9861767915605675,
+            "fake_f1": 0.9593064401981599,
+            "balanced_accuracy": 0.9573202402900318,
+            "log_loss": 0.32313608676050753,
+            "auroc": 0.9927976413564813,
+            "brier": 0.046256803573339694,
+            "hierarchical_balanced_accuracy": 0.9602684435497564,
+            "worst_cell_accuracy": 0.7021276595744681,
+            "worst_source_accuracy": 0.8806818181818182,
+            "seconds": 129.82800000000134
+          },
+          "resize_0p5": {
+            "n": 4880,
+            "errors": 113,
+            "accuracy": 0.9768442622950819,
+            "real_accuracy": 0.9787556904400607,
+            "fake_recall": 0.9755425421977265,
+            "fake_precision": 0.9853862212943633,
+            "fake_f1": 0.980439674571577,
+            "balanced_accuracy": 0.9771491163188937,
+            "log_loss": 0.15946238184566647,
+            "auroc": 0.9967025199020566,
+            "brier": 0.0229245426383423,
+            "hierarchical_balanced_accuracy": 0.9812147284387607,
+            "worst_cell_accuracy": 0.75,
+            "worst_source_accuracy": 0.9431818181818182,
+            "seconds": 188.98500000000058
+          }
+        }
+      }
+    },
+    "interpretation": "Adaptive development only; joint changes to training data, sampling and weights prevent attribution to one intervention. Validation improvements are not external generalization results."
+  },
+  "original_external_confirmation": {
+    "sources": [
+      "external_protocol",
+      "external_results",
+      "external_confirmation_metrics",
+      "external_metrics",
+      "external_timing_code"
+    ],
+    "protocol_summary": {
+      "temperature": 2.5451689020139714,
+      "detector_threshold": 0.5,
+      "thresholds": {
+        "selector_v4": {
+          "research": 0.08632226578702012,
+          "deployment": 0.08632226578702012
+        },
+        "confidence": {
+          "research": 0.07953369430249872
+        }
+      },
+      "expected_conditions": [
+        "clean"
+      ],
+      "target_risk": 0.02,
+      "bootstrap_replicates": 2000,
+      "bootstrap_units": [
+        "group"
+      ],
+      "seed": 20261017,
+      "scope": "Nové, bez skóre vybrané obrázky známych verejných zdrojov. Zdroje boli vybrané po exploratívnej analýze predchádzajúcich výsledkov. OpenFake: DOCCI a päť generátorov vrátane Illustrious ako kontrolného zdroja. DeepShield: nové obrázky už známych domén a rodín, s vopred určenou zmesou. Toto je nezávislosť nových vzoriek od evidovaných dát, nie zdrojovo nezávislá validácia. Pomer tried a kvóty nereprezentujú prevádzkovú početnosť. Skryté identity, promptové a predtréningové prieniky nemožno úplne vylúčiť. Hodnotí detektor a selektor, nie celú multimodálnu aplikáciu. Rozsah bol z výpočtových dôvodov zmenšený pred vyhodnotením nových výsledkov; OpenFake má 4 000 obrázkov a obe kohorty iba clean. Historické výsledky nie sú ďalšími novými pozorovaniami.",
+      "primary_condition": "clean",
+      "primary_statistic": "delta_aurc_selector_v4_minus_confidence",
+      "aurc_integration": "pravý krok po celých blokoch rovnakého skóre",
+      "primary_cohort": "OpenFake",
+      "cohorts": {
+        "OpenFake": {
+          "images": 4000,
+          "class_counts": {
+            "0": 2000,
+            "1": 2000
+          },
+          "sampling_groups": 213,
+          "connected_groups": 213,
+          "sources": {
+            "OpenFake/core/test": 4000
+          },
+          "generators": {
+            "docci": 2000,
+            "flux.2-klein-9b": 400,
+            "gpt-image-1.5": 400,
+            "illustrious": 400,
+            "midjourney-7": 400,
+            "z-image-turbo": 400
+          },
+          "role": "primary_clean"
+        },
+        "DeepShield": {
+          "images": 10000,
+          "class_counts": {
+            "0": 5000,
+            "1": 5000
+          },
+          "sampling_groups": 10000,
+          "connected_groups": 10000,
+          "sources": {
+            "DeepShield/PreSocial": 10000
+          },
+          "generators": {
+            "FFHQ": 1500,
+            "FLUX.1": 460,
+            "FORLAB": 3500,
+            "StableDiffusion1.5": 460,
+            "StableDiffusion2": 460,
+            "StableDiffusion3": 460,
+            "StableDiffusionXL": 460,
+            "StyleGAN": 900,
+            "StyleGAN2": 900,
+            "StyleGAN3": 900
+          },
+          "role": "secondary_known_source"
+        }
+      },
+      "amendment": {
+        "reason": "Výpočtový čas; zmena rozsahu na pokyn autora pred vyhodnotením nových výsledkov.",
+        "old_scope": {
+          "OpenFake": 10000,
+          "DeepShield": 10000,
+          "conditions": [
+            "clean",
+            "jpeg_q40",
+            "resize_0p5"
+          ]
+        },
+        "new_scope": {
+          "OpenFake": 4000,
+          "DeepShield": 10000,
+          "conditions": [
+            "clean"
+          ]
+        },
+        "selection_uses_outcomes": false,
+        "analysis_before_amendment": false,
+        "preserved": "Pôvodný protokol, celý denník aj JPEG a zmenšené profily zostávajú zachované. Staré výsledky sa uvádzajú samostatne.",
+        "unused_conditions": "Nedokončené JPEG a resize zostávajú mimo nového konfirmačného reportu."
+      }
+    },
+    "cohorts": {
+      "OpenFake": {
+        "metadata": {
+          "images": 4000,
+          "class_counts": {
+            "0": 2000,
+            "1": 2000
+          },
+          "sampling_groups": 213,
+          "connected_groups": 213,
+          "sources": {
+            "OpenFake/core/test": 4000
+          },
+          "generators": {
+            "docci": 2000,
+            "flux.2-klein-9b": 400,
+            "gpt-image-1.5": 400,
+            "illustrious": 400,
+            "midjourney-7": 400,
+            "z-image-turbo": 400
+          },
+          "role": "primary_clean"
+        },
+        "detector": {
+          "n": 4000,
+          "accuracy": 0.775,
+          "balanced_accuracy": 0.775,
+          "auroc": 0.81460775,
+          "nll": 1.0947985212690803,
+          "brier": 0.20966806526668838,
+          "recall_fake": 0.6055,
+          "specificity": 0.9445,
+          "precision_fake": 0.916036308623298,
+          "f1_fake": 0.7290788681517159,
+          "confusion": {
+            "tn": 1889,
+            "fp": 111,
+            "fn": 789,
+            "tp": 1211
+          }
+        },
+        "methods": {
+          "selector_v4": {
+            "aurc": 0.1558585735368511,
+            "error_auroc": 0.6692512544802868,
+            "ranking_at_coverage": [
+              {
+                "target_coverage": 0.75,
+                "total": 4000,
+                "accepted": 3000,
+                "review": 1000,
+                "coverage": 0.75,
+                "errors": 491,
+                "risk": 0.16366666666666665,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              },
+              {
+                "target_coverage": 0.9,
+                "total": 4000,
+                "accepted": 3600,
+                "review": 400,
+                "coverage": 0.9,
+                "errors": 661,
+                "risk": 0.1836111111111111,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              },
+              {
+                "target_coverage": 0.95,
+                "total": 4000,
+                "accepted": 3800,
+                "review": 200,
+                "coverage": 0.95,
+                "errors": 747,
+                "risk": 0.19657894736842105,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              }
+            ],
+            "role": "frozen_reference_or_selected"
+          },
+          "confidence": {
+            "aurc": 0.1956234604297579,
+            "error_auroc": 0.5972254480286738,
+            "ranking_at_coverage": [
+              {
+                "target_coverage": 0.75,
+                "total": 4000,
+                "accepted": 3000,
+                "review": 1000,
+                "coverage": 0.75,
+                "errors": 554,
+                "risk": 0.18466666666666667,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              },
+              {
+                "target_coverage": 0.9,
+                "total": 4000,
+                "accepted": 3600,
+                "review": 400,
+                "coverage": 0.9,
+                "errors": 728,
+                "risk": 0.20222222222222222,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              },
+              {
+                "target_coverage": 0.95,
+                "total": 4000,
+                "accepted": 3800,
+                "review": 200,
+                "coverage": 0.95,
+                "errors": 809,
+                "risk": 0.21289473684210528,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              }
+            ],
+            "role": "frozen_reference_or_selected"
+          }
+        },
+        "policies": {
+          "selector_v4": {
+            "research": {
+              "total": 4000,
+              "accepted": 3639,
+              "review": 361,
+              "coverage": 0.90975,
+              "errors": 675,
+              "risk": 0.18549051937345423,
+              "threshold": 0.08632226578702012
+            },
+            "deployment": {
+              "total": 4000,
+              "accepted": 3639,
+              "review": 361,
+              "coverage": 0.90975,
+              "errors": 675,
+              "risk": 0.18549051937345423,
+              "threshold": 0.08632226578702012
+            }
+          },
+          "confidence": {
+            "research": {
+              "total": 4000,
+              "accepted": 3646,
+              "review": 354,
+              "coverage": 0.9115,
+              "errors": 751,
+              "risk": 0.20597915523861765,
+              "threshold": 0.07953369430249872
+            }
+          }
+        },
+        "matched_confidence": {
+          "selector_v4": {
+            "research": {
+              "confidence": {
+                "total": 4000,
+                "accepted": 3639,
+                "review": 361,
+                "coverage": 0.90975,
+                "errors": 746,
+                "risk": 0.20500137400384721,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              },
+              "delta_risk": -0.019510854630392982
+            },
+            "deployment": {
+              "confidence": {
+                "total": 4000,
+                "accepted": 3639,
+                "review": 361,
+                "coverage": 0.90975,
+                "errors": 746,
+                "risk": 0.20500137400384721,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              },
+              "delta_risk": -0.019510854630392982
+            }
+          }
+        },
+        "comparisons": {
+          "selector_v4_minus_confidence": {
+            "delta_aurc": -0.0397648868929068,
+            "exact_score_identity": false
+          }
+        },
+        "bootstrap": {
+          "group": {
+            "replicates": 2000,
+            "requested_replicates": 2000,
+            "seed": 20261017,
+            "units": 213,
+            "unit": "group",
+            "method": "paired_percentile_95",
+            "note": "Párový percentilový 95 % interval. Primárne sa vzorkujú celé group (spojené bloky alebo známe pôvodové skupiny) a všetky varianty zostávajú spolu. Rovnaké násobnosti sa používajú pre všetky metódy a podmienky. Výsledok je podmienený zbierkou a zameniteľnosťou skupín, nie univerzálnou garanciou. Intervaly sekundárnych porovnaní nie sú korigované na viacnásobné testovanie. Nulová pozorovaná chybovosť a interval [0, 0] necertifikujú nulové populačné riziko.",
+            "statistics": {
+              "detector_accuracy": {
+                "estimate": 0.775,
+                "ci_95": [
+                  0.7552481878698225,
+                  0.7955948859094321
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "detector_balanced_accuracy": {
+                "estimate": 0.775,
+                "ci_95": [
+                  0.7617313255732476,
+                  0.7890041477758242
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "detector_auroc": {
+                "estimate": 0.81460775,
+                "ci_95": [
+                  0.7982682079743989,
+                  0.8315325802455033
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "aurc_selector_v4": {
+                "estimate": 0.1558585735368511,
+                "ci_95": [
+                  0.13261167160869086,
+                  0.17772594743757916
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "aurc_confidence": {
+                "estimate": 0.1956234604297579,
+                "ci_95": [
+                  0.16748020077780257,
+                  0.22201178819828318
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "delta_aurc_selector_v4_minus_confidence": {
+                "estimate": -0.0397648868929068,
+                "ci_95": [
+                  -0.04542659635577028,
+                  -0.03399148617001488
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "delta_risk_rank_75_selector_v4_minus_confidence": {
+                "estimate": -0.02100000000000002,
+                "ci_95": [
+                  -0.026892653563758917,
+                  -0.01582387340901273
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "delta_risk_rank_90_selector_v4_minus_confidence": {
+                "estimate": -0.018611111111111106,
+                "ci_95": [
+                  -0.022988505747126436,
+                  -0.01419328787593886
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "delta_risk_rank_95_selector_v4_minus_confidence": {
+                "estimate": -0.016315789473684228,
+                "ci_95": [
+                  -0.019436436397769884,
+                  -0.012943262943465351
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "selector_v4_research_coverage": {
+                "estimate": 0.90975,
+                "ci_95": [
+                  0.9011304949371304,
+                  0.9187712797781611
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "selector_v4_research_risk": {
+                "estimate": 0.18549051937345423,
+                "ci_95": [
+                  0.16492442672447358,
+                  0.20552498973610764
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "selector_v4_deployment_coverage": {
+                "estimate": 0.90975,
+                "ci_95": [
+                  0.9011304949371304,
+                  0.9187712797781611
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "selector_v4_deployment_risk": {
+                "estimate": 0.18549051937345423,
+                "ci_95": [
+                  0.16492442672447358,
+                  0.20552498973610764
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "confidence_research_coverage": {
+                "estimate": 0.9115,
+                "ci_95": [
+                  0.9025884021113879,
+                  0.9206793254219602
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "confidence_research_risk": {
+                "estimate": 0.20597915523861765,
+                "ci_95": [
+                  0.1839334765542716,
+                  0.2270602523359636
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "selector_v4_research_delta_risk_matched_confidence": {
+                "estimate": -0.019510854630392982,
+                "ci_95": [
+                  -0.02356182832895161,
+                  -0.015641365802208367
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "selector_v4_deployment_delta_risk_matched_confidence": {
+                "estimate": -0.019510854630392982,
+                "ci_95": [
+                  -0.02356182832895161,
+                  -0.015641365802208367
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              }
+            }
+          }
+        },
+        "timing": {
+          "count": 4000,
+          "missing": 0,
+          "original_seconds_median": 0.04953169999862439,
+          "profile_seconds_median": 0.48256934999881196,
+          "total_seconds_median": 0.5320444499993755,
+          "note": "Časy dodané meracím skriptom; nejde automaticky o latenciu celej aplikácie. profile_seconds označuje samostatné meranie profilu, total_seconds meraný celkový výpočet."
+        },
+        "timing_total_to_original_median_ratio": 10.741493831508945
+      },
+      "DeepShield": {
+        "metadata": {
+          "images": 10000,
+          "class_counts": {
+            "0": 5000,
+            "1": 5000
+          },
+          "sampling_groups": 10000,
+          "connected_groups": 10000,
+          "sources": {
+            "DeepShield/PreSocial": 10000
+          },
+          "generators": {
+            "FFHQ": 1500,
+            "FLUX.1": 460,
+            "FORLAB": 3500,
+            "StableDiffusion1.5": 460,
+            "StableDiffusion2": 460,
+            "StableDiffusion3": 460,
+            "StableDiffusionXL": 460,
+            "StyleGAN": 900,
+            "StyleGAN2": 900,
+            "StyleGAN3": 900
+          },
+          "role": "secondary_known_source"
+        },
+        "detector": {
+          "n": 10000,
+          "accuracy": 0.9822,
+          "balanced_accuracy": 0.9822,
+          "auroc": 0.99880488,
+          "nll": 0.05401865387377981,
+          "brier": 0.015086055662591644,
+          "recall_fake": 0.9784,
+          "specificity": 0.986,
+          "precision_fake": 0.9858927851672713,
+          "f1_fake": 0.9821321019875527,
+          "confusion": {
+            "tn": 4930,
+            "fp": 70,
+            "fn": 108,
+            "tp": 4892
+          }
+        },
+        "methods": {
+          "selector_v4": {
+            "aurc": 0.00039998843353799277,
+            "error_auroc": 0.9868885258728971,
+            "ranking_at_coverage": [
+              {
+                "target_coverage": 0.75,
+                "total": 10000,
+                "accepted": 7500,
+                "review": 2500,
+                "coverage": 0.75,
+                "errors": 0,
+                "risk": 0.0,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              },
+              {
+                "target_coverage": 0.9,
+                "total": 10000,
+                "accepted": 9000,
+                "review": 1000,
+                "coverage": 0.9,
+                "errors": 5,
+                "risk": 0.0005555555555555556,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              },
+              {
+                "target_coverage": 0.95,
+                "total": 10000,
+                "accepted": 9500,
+                "review": 500,
+                "coverage": 0.95,
+                "errors": 18,
+                "risk": 0.001894736842105263,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              }
+            ],
+            "role": "frozen_reference_or_selected"
+          },
+          "confidence": {
+            "aurc": 0.0006600074683957857,
+            "error_auroc": 0.9729574058694195,
+            "ranking_at_coverage": [
+              {
+                "target_coverage": 0.75,
+                "total": 10000,
+                "accepted": 7500,
+                "review": 2500,
+                "coverage": 0.75,
+                "errors": 0,
+                "risk": 0.0,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              },
+              {
+                "target_coverage": 0.9,
+                "total": 10000,
+                "accepted": 9000,
+                "review": 1000,
+                "coverage": 0.9,
+                "errors": 15,
+                "risk": 0.0016666666666666668,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              },
+              {
+                "target_coverage": 0.95,
+                "total": 10000,
+                "accepted": 9500,
+                "review": 500,
+                "coverage": 0.95,
+                "errors": 43,
+                "risk": 0.004526315789473684,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              }
+            ],
+            "role": "frozen_reference_or_selected"
+          }
+        },
+        "policies": {
+          "selector_v4": {
+            "research": {
+              "total": 10000,
+              "accepted": 9807,
+              "review": 193,
+              "coverage": 0.9807,
+              "errors": 66,
+              "risk": 0.00672988681553992,
+              "threshold": 0.08632226578702012
+            },
+            "deployment": {
+              "total": 10000,
+              "accepted": 9807,
+              "review": 193,
+              "coverage": 0.9807,
+              "errors": 66,
+              "risk": 0.00672988681553992,
+              "threshold": 0.08632226578702012
+            }
+          },
+          "confidence": {
+            "research": {
+              "total": 10000,
+              "accepted": 9776,
+              "review": 224,
+              "coverage": 0.9776,
+              "errors": 84,
+              "risk": 0.008592471358428805,
+              "threshold": 0.07953369430249872
+            }
+          }
+        },
+        "matched_confidence": {
+          "selector_v4": {
+            "research": {
+              "confidence": {
+                "total": 10000,
+                "accepted": 9807,
+                "review": 193,
+                "coverage": 0.9807,
+                "errors": 97,
+                "risk": 0.00989089425920261,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              },
+              "delta_risk": -0.0031610074436626895
+            },
+            "deployment": {
+              "confidence": {
+                "total": 10000,
+                "accepted": 9807,
+                "review": 193,
+                "coverage": 0.9807,
+                "errors": 97,
+                "risk": 0.00989089425920261,
+                "threshold": null,
+                "selection": "descriptive_rank",
+                "selection_note": "Opisné porovnanie poradia na testovacej dávke: počet sa určí vopred z pokrytia alebo z počtu prijatí zmrazeného selektora. Zhody rozlišuje SHA-256 original_id bez štítkov. Nejde o nový nasadzovaný ani kalibrovaný prah."
+              },
+              "delta_risk": -0.0031610074436626895
+            }
+          }
+        },
+        "comparisons": {
+          "selector_v4_minus_confidence": {
+            "delta_aurc": -0.0002600190348577929,
+            "exact_score_identity": false
+          }
+        },
+        "bootstrap": {
+          "group": {
+            "replicates": 2000,
+            "requested_replicates": 2000,
+            "seed": 20261017,
+            "units": 10000,
+            "unit": "group",
+            "method": "paired_percentile_95",
+            "note": "Párový percentilový 95 % interval. Primárne sa vzorkujú celé group (spojené bloky alebo známe pôvodové skupiny) a všetky varianty zostávajú spolu. Rovnaké násobnosti sa používajú pre všetky metódy a podmienky. Výsledok je podmienený zbierkou a zameniteľnosťou skupín, nie univerzálnou garanciou. Intervaly sekundárnych porovnaní nie sú korigované na viacnásobné testovanie. Nulová pozorovaná chybovosť a interval [0, 0] necertifikujú nulové populačné riziko.",
+            "statistics": {
+              "detector_accuracy": {
+                "estimate": 0.9822,
+                "ci_95": [
+                  0.9795,
+                  0.9847
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "detector_balanced_accuracy": {
+                "estimate": 0.9822,
+                "ci_95": [
+                  0.9795040667785203,
+                  0.98470833874664
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "detector_auroc": {
+                "estimate": 0.99880488,
+                "ci_95": [
+                  0.9984962285026591,
+                  0.9990823625567828
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "aurc_selector_v4": {
+                "estimate": 0.00039998843353799277,
+                "ci_95": [
+                  0.0002986689606940815,
+                  0.0005142215944092902
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "aurc_confidence": {
+                "estimate": 0.0006600074683957857,
+                "ci_95": [
+                  0.0005043343286015426,
+                  0.0008344626198812907
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "delta_aurc_selector_v4_minus_confidence": {
+                "estimate": -0.0002600190348577929,
+                "ci_95": [
+                  -0.00035519059734364847,
+                  -0.00018134056254758907
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "delta_risk_rank_75_selector_v4_minus_confidence": {
+                "estimate": 0.0,
+                "ci_95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "delta_risk_rank_90_selector_v4_minus_confidence": {
+                "estimate": -0.0011111111111111113,
+                "ci_95": [
+                  -0.0017805555555555554,
+                  -0.00044444444444444447
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "delta_risk_rank_95_selector_v4_minus_confidence": {
+                "estimate": -0.0026315789473684206,
+                "ci_95": [
+                  -0.0036842105263157894,
+                  -0.0015789473684210526
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "selector_v4_research_coverage": {
+                "estimate": 0.9807,
+                "ci_95": [
+                  0.9778,
+                  0.9834
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "selector_v4_research_risk": {
+                "estimate": 0.00672988681553992,
+                "ci_95": [
+                  0.005106144000164116,
+                  0.008381137383936426
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "selector_v4_deployment_coverage": {
+                "estimate": 0.9807,
+                "ci_95": [
+                  0.9778,
+                  0.9834
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "selector_v4_deployment_risk": {
+                "estimate": 0.00672988681553992,
+                "ci_95": [
+                  0.005106144000164116,
+                  0.008381137383936426
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "confidence_research_coverage": {
+                "estimate": 0.9776,
+                "ci_95": [
+                  0.9747,
+                  0.9804
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "confidence_research_risk": {
+                "estimate": 0.008592471358428805,
+                "ci_95": [
+                  0.0067661431929518555,
+                  0.010463953488666078
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "selector_v4_research_delta_risk_matched_confidence": {
+                "estimate": -0.0031610074436626895,
+                "ci_95": [
+                  -0.004179909470228435,
+                  -0.0019352210226115298
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              },
+              "selector_v4_deployment_delta_risk_matched_confidence": {
+                "estimate": -0.0031610074436626895,
+                "ci_95": [
+                  -0.004179909470228435,
+                  -0.0019352210226115298
+                ],
+                "valid_replicates": 2000,
+                "invalid_replicates": 0,
+                "exact_score_identity": false
+              }
+            }
+          }
+        },
+        "timing": {
+          "count": 10000,
+          "missing": 0,
+          "original_seconds_median": 0.03580390000024636,
+          "profile_seconds_median": 0.26971639999828767,
+          "total_seconds_median": 0.3052508000000671,
+          "note": "Časy dodané meracím skriptom; nejde automaticky o latenciu celej aplikácie. profile_seconds označuje samostatné meranie profilu, total_seconds meraný celkový výpočet."
+        },
+        "timing_total_to_original_median_ratio": 8.525629889424525
+      }
+    },
+    "timing_interpretation": {
+      "inclusions": [
+        "native preprocessing",
+        "one original + five additional FP32 batch-one detector inferences",
+        "internal transforms",
+        "profile construction and feature calculation"
+      ],
+      "exclusions": [
+        "file reading",
+        "outer test degradation",
+        "model loading",
+        "logistic selector evaluation",
+        "UI",
+        "writing"
+      ],
+      "hardware": "NVIDIA GeForce RTX 4070 Ti",
+      "warmup": 1,
+      "clock": "perf_counter + CUDA synchronization before/after measured sections",
+      "unused_quality_proxy_cost_included": true,
+      "warning": "Measured legacy profile calculation, not complete application latency or an optimized six-view batch benchmark. Median paired incremental cost need not equal difference of medians."
+    }
+  },
+  "retrospective_comparison": {
+    "sources": [
+      "comparison_protocol",
+      "comparison_results",
+      "comparison_features",
+      "comparison_extract",
+      "comparison_models",
+      "comparison_metrics"
+    ],
+    "scope": "Retrospektívne porovnanie na už vyhodnotených dátach; nie nová nezávislá certifikácia.",
+    "statistics": {
+      "bootstrap": 1000,
+      "seed": 31019,
+      "coverage": [
+        0.8,
+        0.9,
+        0.95
+      ],
+      "primary": "AURC by cohort, paired connected-group bootstrap",
+      "ties": "AURC whole score blocks; fixed coverage SHA256(sample_id) without labels",
+      "multiple_comparisons": "exploratory, pointwise unadjusted intervals; no confirmatory p-values"
+    },
+    "training": {
+      "C": 0.1,
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "hidden": [
+        70,
+        70
+      ],
+      "dropout": 0.5,
+      "epochs": 80,
+      "patience": 10,
+      "batch_size": 512,
+      "lr": 0.001,
+      "epoch_selection": "selection_AURC; earliest minimum",
+      "MLP_loss": "weighted BCE, inverse group size and balanced error/correct classes",
+      "scaler": "train-only weighted StandardScaler",
+      "device": "cpu"
+    },
+    "cohorts": {
+      "DeepShield": {
+        "n": 10000,
+        "groups": 10000,
+        "detector_errors": 178,
+        "detector_accuracy": 0.9822,
+        "methods": {
+          "frozen_v4": {
+            "aurc": 0.00039998843353799277,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 0,
+                "risk": 0.0,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 5,
+                "risk": 0.0005555555555555556,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 18,
+                "risk": 0.001894736842105263,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 66,
+              "risk": 0.00672988681553992,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.08632226578702012,
+              "accepted": 9807,
+              "errors": 66,
+              "coverage": 0.9807,
+              "risk": 0.00672988681553992
+            }
+          },
+          "confidence": {
+            "aurc": 0.0006600074683957854,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 2,
+                "risk": 0.00025,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 15,
+                "risk": 0.0016666666666666668,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 43,
+                "risk": 0.004526315789473684,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 97,
+              "risk": 0.00989089425920261,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.07953369430249872,
+              "accepted": 9776,
+              "errors": 84,
+              "coverage": 0.9776,
+              "risk": 0.008592471358428805
+            }
+          },
+          "tta_mean": {
+            "aurc": 0.0005641602189006478,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 1,
+                "risk": 0.000125,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 8,
+                "risk": 0.0008888888888888889,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 32,
+                "risk": 0.003368421052631579,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 86,
+              "risk": 0.008769246456612624,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.13555534120382898,
+              "accepted": 9775,
+              "errors": 79,
+              "coverage": 0.9775,
+              "risk": 0.008081841432225064
+            }
+          },
+          "lr_full": {
+            "aurc": 0.00039998843353799277,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 0,
+                "risk": 0.0,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 5,
+                "risk": 0.0005555555555555556,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 18,
+                "risk": 0.001894736842105263,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 66,
+              "risk": 0.00672988681553992,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.08632226579981044,
+              "accepted": 9807,
+              "errors": 66,
+              "coverage": 0.9807,
+              "risk": 0.00672988681553992
+            }
+          },
+          "lr_no_summaries": {
+            "aurc": 0.00039040938800728573,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 0,
+                "risk": 0.0,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 7,
+                "risk": 0.0007777777777777777,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 15,
+                "risk": 0.0015789473684210526,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 68,
+              "risk": 0.006933822779647191,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.0985833341110087,
+              "accepted": 9837,
+              "errors": 77,
+              "coverage": 0.9837,
+              "risk": 0.007827589712310663
+            }
+          },
+          "lr_no_orientation": {
+            "aurc": 0.000628041411091653,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 1,
+                "risk": 0.000125,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 9,
+                "risk": 0.001,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 43,
+                "risk": 0.004526315789473684,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 84,
+              "risk": 0.008565310492505354,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.08526418898498901,
+              "accepted": 9703,
+              "errors": 73,
+              "coverage": 0.9703,
+              "risk": 0.007523446356796867
+            }
+          },
+          "lr_no_confidence": {
+            "aurc": 0.0025306871500839936,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 44,
+                "risk": 0.0055,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 53,
+                "risk": 0.005888888888888889,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 63,
+                "risk": 0.006631578947368421,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 86,
+              "risk": 0.008769246456612624,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.01783285262454039,
+              "accepted": 9254,
+              "errors": 56,
+              "coverage": 0.9254,
+              "risk": 0.006051437216338881
+            }
+          },
+          "lr_summaries_only": {
+            "aurc": 0.0005953903008900456,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 2,
+                "risk": 0.00025,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 11,
+                "risk": 0.0012222222222222222,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 37,
+                "risk": 0.0038947368421052633,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 86,
+              "risk": 0.008769246456612624,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.11727643163498122,
+              "accepted": 9786,
+              "errors": 81,
+              "coverage": 0.9786,
+              "risk": 0.00827713059472716
+            }
+          },
+          "lr_jpeg_only": {
+            "aurc": 0.0007556167089276996,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 1,
+                "risk": 0.000125,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 19,
+                "risk": 0.002111111111111111,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 51,
+                "risk": 0.005368421052631579,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 101,
+              "risk": 0.01029876618741715,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.0985323330518086,
+              "accepted": 9701,
+              "errors": 80,
+              "coverage": 0.9701,
+              "risk": 0.008246572518297083
+            }
+          },
+          "lr_resize_only": {
+            "aurc": 0.0003737679826806536,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 0,
+                "risk": 0.0,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 5,
+                "risk": 0.0005555555555555556,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 18,
+                "risk": 0.001894736842105263,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 65,
+              "risk": 0.006627918833486285,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.11134034409528731,
+              "accepted": 9863,
+              "errors": 80,
+              "coverage": 0.9863,
+              "risk": 0.008111122376558857
+            }
+          },
+          "lr_without_resize_0p5": {
+            "aurc": 0.0005281004888250415,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 0,
+                "risk": 0.0,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 8,
+                "risk": 0.0008888888888888889,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 33,
+                "risk": 0.003473684210526316,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 84,
+              "risk": 0.008565310492505354,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.09056305840203781,
+              "accepted": 9728,
+              "errors": 64,
+              "coverage": 0.9728,
+              "risk": 0.006578947368421052
+            }
+          },
+          "mlp_margins_s17": {
+            "aurc": 0.00038769902404005356,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 0,
+                "risk": 0.0,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 5,
+                "risk": 0.0005555555555555556,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 12,
+                "risk": 0.0012631578947368421,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 73,
+              "risk": 0.007443662689915366,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.9551018476486206,
+              "accepted": 9805,
+              "errors": 72,
+              "coverage": 0.9805,
+              "risk": 0.007343192248852626
+            }
+          },
+          "mlp_margins_s29": {
+            "aurc": 0.0004001334641677258,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 0,
+                "risk": 0.0,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 5,
+                "risk": 0.0005555555555555556,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 12,
+                "risk": 0.0012631578947368421,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 76,
+              "risk": 0.007749566636076272,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.9360415935516357,
+              "accepted": 9832,
+              "errors": 82,
+              "coverage": 0.9832,
+              "risk": 0.008340113913751017
+            }
+          },
+          "mlp_margins_s43": {
+            "aurc": 0.00040146878328354554,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 0,
+                "risk": 0.0,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 5,
+                "risk": 0.0005555555555555556,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 14,
+                "risk": 0.0014736842105263158,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 73,
+              "risk": 0.007443662689915366,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.9184665679931641,
+              "accepted": 9791,
+              "errors": 71,
+              "coverage": 0.9791,
+              "risk": 0.007251557552854663
+            }
+          },
+          "mlp_ours_logits_s17": {
+            "aurc": 0.00039338524336033167,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 0,
+                "risk": 0.0,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 5,
+                "risk": 0.0005555555555555556,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 14,
+                "risk": 0.0014736842105263158,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 69,
+              "risk": 0.007035790761700826,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.9774576425552368,
+              "accepted": 9838,
+              "errors": 79,
+              "coverage": 0.9838,
+              "risk": 0.008030087416141493
+            }
+          },
+          "mlp_ours_logits_s29": {
+            "aurc": 0.00039747963977862483,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 0,
+                "risk": 0.0,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 5,
+                "risk": 0.0005555555555555556,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 15,
+                "risk": 0.0015789473684210526,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 70,
+              "risk": 0.007137758743754461,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.9659234881401062,
+              "accepted": 9820,
+              "errors": 74,
+              "coverage": 0.982,
+              "risk": 0.007535641547861507
+            }
+          },
+          "mlp_ours_logits_s43": {
+            "aurc": 0.00043137309660354003,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 0,
+                "risk": 0.0,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 6,
+                "risk": 0.0006666666666666666,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 17,
+                "risk": 0.0017894736842105263,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 75,
+              "risk": 0.007647598654022637,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.9483464360237122,
+              "accepted": 9821,
+              "errors": 80,
+              "coverage": 0.9821,
+              "risk": 0.008145809998981774
+            }
+          },
+          "mlp_bahat_logits_s17": {
+            "aurc": 0.0005166684366208836,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 1,
+                "risk": 0.000125,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 7,
+                "risk": 0.0007777777777777777,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 29,
+                "risk": 0.0030526315789473684,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 81,
+              "risk": 0.008259406546344448,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.98853999376297,
+              "accepted": 9904,
+              "errors": 113,
+              "coverage": 0.9904,
+              "risk": 0.011409531502423263
+            }
+          },
+          "mlp_bahat_logits_s29": {
+            "aurc": 0.0005149044608014312,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 0,
+                "risk": 0.0,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 6,
+                "risk": 0.0006666666666666666,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 31,
+                "risk": 0.003263157894736842,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 80,
+              "risk": 0.008157438564290813,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.9984512329101562,
+              "accepted": 9897,
+              "errors": 109,
+              "coverage": 0.9897,
+              "risk": 0.011013438415681519
+            }
+          },
+          "mlp_bahat_logits_s43": {
+            "aurc": 0.0005124035610248366,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 8000,
+                "errors": 1,
+                "risk": 0.000125,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 9000,
+                "errors": 5,
+                "risk": 0.0005555555555555556,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 9500,
+                "errors": 28,
+                "risk": 0.0029473684210526317,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 9807,
+              "errors": 81,
+              "risk": 0.008259406546344448,
+              "coverage": 0.9807
+            },
+            "fixed_threshold": {
+              "threshold": 0.9891101717948914,
+              "accepted": 9893,
+              "errors": 106,
+              "coverage": 0.9893,
+              "risk": 0.010714646719902961
+            }
+          }
+        },
+        "contrasts": {
+          "frozen_v4__minus__confidence": {
+            "aurc_difference": -0.0002600190348577926,
+            "risk90_difference": -0.0011111111111111113,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.00034240954545255726,
+                "upper_95": -0.0001784992961906495,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0017805555555555554,
+                "upper_95": -0.00044444444444444447,
+                "repetitions": 1000
+              }
+            }
+          },
+          "frozen_v4__minus__tta_mean": {
+            "aurc_difference": -0.00016417178536265502,
+            "risk90_difference": -0.0003333333333333334,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.0002225913840478721,
+                "upper_95": -0.00011055365934575848,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0007777777777777777,
+                "upper_95": 0.0,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_confidence": {
+            "aurc_difference": -0.0002600190348577926,
+            "risk90_difference": -0.0011111111111111113,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.00034240954545255726,
+                "upper_95": -0.0001784992961906495,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0017805555555555554,
+                "upper_95": -0.00044444444444444447,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_no_summaries": {
+            "aurc_difference": 9.579045530707037e-06,
+            "risk90_difference": -0.00022222222222222218,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -2.7214555107443523e-05,
+                "upper_95": 4.013421636797839e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0005555555555555556,
+                "upper_95": 0.0,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_no_orientation": {
+            "aurc_difference": -0.00022805297755366022,
+            "risk90_difference": -0.00044444444444444447,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.00029745296609591293,
+                "upper_95": -0.00016565193393873703,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0008916666666666667,
+                "upper_95": -0.00011111111111111109,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_no_confidence": {
+            "aurc_difference": -0.002130698716546001,
+            "risk90_difference": -0.005333333333333333,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.002805314636662116,
+                "upper_95": -0.001524474034673235,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.007,
+                "upper_95": -0.003886111111111113,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_summaries_only": {
+            "aurc_difference": -0.00019540186735205286,
+            "risk90_difference": -0.0006666666666666666,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.00026267866898779644,
+                "upper_95": -0.00014039126011081967,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0012222222222222222,
+                "upper_95": -0.0001111111111111112,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_jpeg_only": {
+            "aurc_difference": -0.00035562827538970684,
+            "risk90_difference": -0.0015555555555555553,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.0004588395193291585,
+                "upper_95": -0.0002611717438343459,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0024444444444444444,
+                "upper_95": -0.0008861111111111136,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_resize_only": {
+            "aurc_difference": 2.6220450857339177e-05,
+            "risk90_difference": 0.0,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 4.083107490792324e-06,
+                "upper_95": 5.58319351330736e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": 0.0,
+                "upper_95": 0.00022222222222222218,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_without_jpeg_q90": {
+            "aurc_difference": 7.56449724002991e-06,
+            "risk90_difference": 0.0,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -8.384557098263862e-07,
+                "upper_95": 1.833074795556588e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": 0.0,
+                "upper_95": 0.00022222222222222218,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_without_jpeg_q75": {
+            "aurc_difference": 7.062561838441176e-06,
+            "risk90_difference": 0.0,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -4.179789607603736e-07,
+                "upper_95": 1.4432241723026137e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": 0.0,
+                "upper_95": 0.00011111111111111109,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_without_jpeg_q60": {
+            "aurc_difference": 1.5917608621631612e-05,
+            "risk90_difference": 0.0,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 7.003331029451735e-07,
+                "upper_95": 3.201220965851843e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": 0.0,
+                "upper_95": 0.00022222222222222218,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_without_resize_0p75": {
+            "aurc_difference": -1.4935015958205886e-05,
+            "risk90_difference": -0.00022222222222222218,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -2.4950751817832023e-05,
+                "upper_95": -6.365769585199747e-06,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0005555555555555554,
+                "upper_95": 0.0,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_without_resize_0p5": {
+            "aurc_difference": -0.00012811205528704875,
+            "risk90_difference": -0.0003333333333333334,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.00017739366292412215,
+                "upper_95": -8.407958375702835e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0008888888888888889,
+                "upper_95": 0.00011111111111111109,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_balanced_no_summaries__minus__lr_no_summaries": {
+            "aurc_difference": -1.7641016095166584e-05,
+            "risk90_difference": -0.00022222222222222218,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -4.276370842091784e-05,
+                "upper_95": 3.859930051480713e-06,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0005555555555555556,
+                "upper_95": 0.0,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_margins_s17__minus__lr_balanced_no_summaries": {
+            "aurc_difference": 1.4930652127934411e-05,
+            "risk90_difference": 0.0,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -5.448084129583555e-06,
+                "upper_95": 3.423693123813207e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": 0.0,
+                "upper_95": 0.0,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_margins_s29__minus__lr_balanced_no_summaries": {
+            "aurc_difference": 2.7365092255606644e-05,
+            "risk90_difference": 0.0,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -1.6300947470892965e-06,
+                "upper_95": 5.385103098487588e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.00022222222222222218,
+                "upper_95": 0.0,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_margins_s43__minus__lr_balanced_no_summaries": {
+            "aurc_difference": 2.870041137142639e-05,
+            "risk90_difference": 0.0,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 7.55338880253162e-06,
+                "upper_95": 4.923430471051186e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": 0.0,
+                "upper_95": 0.0,
+                "repetitions": 1000
+              }
+            }
+          },
+          "frozen_v4__minus__mlp_margins_s17": {
+            "aurc_difference": 1.228940949793921e-05,
+            "risk90_difference": 0.0,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -1.2547719177492483e-05,
+                "upper_95": 4.362759626438301e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": 0.0,
+                "upper_95": 0.00022222222222222218,
+                "repetitions": 1000
+              }
+            }
+          },
+          "frozen_v4__minus__mlp_margins_s29": {
+            "aurc_difference": -1.4503062973302266e-07,
+            "risk90_difference": 0.0,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -2.8651162401796886e-05,
+                "upper_95": 3.339377947348328e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": 0.0,
+                "upper_95": 0.0002222222222222223,
+                "repetitions": 1000
+              }
+            }
+          },
+          "frozen_v4__minus__mlp_margins_s43": {
+            "aurc_difference": -1.4803497455527699e-06,
+            "risk90_difference": 0.0,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -2.2573468061497864e-05,
+                "upper_95": 2.088995687052711e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": 0.0,
+                "upper_95": 0.00022222222222222218,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_ours_logits_s17__minus__mlp_bahat_logits_s17": {
+            "aurc_difference": -0.00012328319326055195,
+            "risk90_difference": -0.00022222222222222218,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.00017849528348918732,
+                "upper_95": -6.91398664386226e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0006666666666666668,
+                "upper_95": 0.00022222222222222218,
+                "repetitions": 1000
+              }
+            }
+          },
+          "frozen_v4__minus__mlp_bahat_logits_s17": {
+            "aurc_difference": -0.00011668000308289085,
+            "risk90_difference": -0.00022222222222222218,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.00017936964653046696,
+                "upper_95": -5.727923436859155e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0006666666666666668,
+                "upper_95": 0.00022222222222222218,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_ours_logits_s17__minus__mlp_margins_s17": {
+            "aurc_difference": 5.686219320278111e-06,
+            "risk90_difference": 0.0,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -1.496079125172047e-05,
+                "upper_95": 2.651531806924681e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": 0.0,
+                "upper_95": 0.0,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_ours_logits_s29__minus__mlp_bahat_logits_s29": {
+            "aurc_difference": -0.00011742482102280641,
+            "risk90_difference": -0.00011111111111111109,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.00017865765616244733,
+                "upper_95": -5.643190874977227e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0007777777777777777,
+                "upper_95": 0.0003333333333333333,
+                "repetitions": 1000
+              }
+            }
+          },
+          "frozen_v4__minus__mlp_bahat_logits_s29": {
+            "aurc_difference": -0.00011491602726343848,
+            "risk90_difference": -0.00011111111111111109,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.0001805728459973687,
+                "upper_95": -5.375751634882596e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0006666666666666668,
+                "upper_95": 0.0003333333333333334,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_ours_logits_s29__minus__mlp_margins_s29": {
+            "aurc_difference": -2.6538243891009597e-06,
+            "risk90_difference": 0.0,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -2.4350135463363134e-05,
+                "upper_95": 2.0143900077514928e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": 0.0,
+                "upper_95": 0.00022222222222222218,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_ours_logits_s43__minus__mlp_bahat_logits_s43": {
+            "aurc_difference": -8.103046442129661e-05,
+            "risk90_difference": 0.00011111111111111109,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.00014075577366878721,
+                "upper_95": -2.1579846581097035e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0006666666666666666,
+                "upper_95": 0.00044444444444444447,
+                "repetitions": 1000
+              }
+            }
+          },
+          "frozen_v4__minus__mlp_bahat_logits_s43": {
+            "aurc_difference": -0.00011241512748684388,
+            "risk90_difference": 0.0,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.00017364747098841325,
+                "upper_95": -4.760596789128657e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0006666666666666668,
+                "upper_95": 0.0004444444444444444,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_ours_logits_s43__minus__mlp_margins_s43": {
+            "aurc_difference": 2.9904313319994492e-05,
+            "risk90_difference": 0.00011111111111111109,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 1.5441263996514654e-06,
+                "upper_95": 6.21700621013166e-05,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": 0.0,
+                "upper_95": 0.0003333333333333334,
+                "repetitions": 1000
+              }
+            }
+          }
+        },
+        "seed_variability": {
+          "mlp_margins": {
+            "mean_aurc": 0.00039643375716377495,
+            "std_aurc": 7.59390817315072e-06,
+            "seeds": [
+              17,
+              29,
+              43
+            ]
+          },
+          "mlp_ours_logits": {
+            "mean_aurc": 0.0004074126599141655,
+            "std_aurc": 2.08510890666813e-05,
+            "seeds": [
+              17,
+              29,
+              43
+            ]
+          },
+          "mlp_bahat_logits": {
+            "mean_aurc": 0.0005146588194823838,
+            "std_aurc": 2.1430225630302567e-06,
+            "seeds": [
+              17,
+              29,
+              43
+            ]
+          }
+        },
+        "ours_transform_family_mean_aurc_reduction_percent_vs_bahat": 20.838302096149988,
+        "profile_aurc_reduction_percent_vs_confidence": 39.39637766369448
+      },
+      "OpenFake": {
+        "n": 4000,
+        "groups": 213,
+        "detector_errors": 900,
+        "detector_accuracy": 0.775,
+        "methods": {
+          "frozen_v4": {
+            "aurc": 0.15585857353685112,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 546,
+                "risk": 0.170625,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 661,
+                "risk": 0.1836111111111111,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 747,
+                "risk": 0.19657894736842105,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 675,
+              "risk": 0.18549051937345423,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.08632226578702012,
+              "accepted": 3639,
+              "errors": 675,
+              "coverage": 0.90975,
+              "risk": 0.18549051937345423
+            }
+          },
+          "confidence": {
+            "aurc": 0.19562346042975787,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 612,
+                "risk": 0.19125,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 728,
+                "risk": 0.20222222222222222,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 809,
+                "risk": 0.21289473684210528,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 746,
+              "risk": 0.20500137400384721,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.07953369430249872,
+              "accepted": 3646,
+              "errors": 751,
+              "coverage": 0.9115,
+              "risk": 0.20597915523861765
+            }
+          },
+          "tta_mean": {
+            "aurc": 0.1731376836155796,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 586,
+                "risk": 0.183125,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 686,
+                "risk": 0.19055555555555556,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 778,
+                "risk": 0.20473684210526316,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 696,
+              "risk": 0.1912613355317395,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.13555534120382898,
+              "accepted": 3689,
+              "errors": 707,
+              "coverage": 0.92225,
+              "risk": 0.19165085388994307
+            }
+          },
+          "lr_full": {
+            "aurc": 0.15585857353685112,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 546,
+                "risk": 0.170625,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 661,
+                "risk": 0.1836111111111111,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 747,
+                "risk": 0.19657894736842105,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 675,
+              "risk": 0.18549051937345423,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.08632226579981044,
+              "accepted": 3639,
+              "errors": 675,
+              "coverage": 0.90975,
+              "risk": 0.18549051937345423
+            }
+          },
+          "lr_no_summaries": {
+            "aurc": 0.142905802070313,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 529,
+                "risk": 0.1653125,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 672,
+                "risk": 0.18666666666666668,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 746,
+                "risk": 0.19631578947368422,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 687,
+              "risk": 0.18878812860676009,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.0985833341110087,
+              "accepted": 3695,
+              "errors": 708,
+              "coverage": 0.92375,
+              "risk": 0.19161028416779433
+            }
+          },
+          "lr_no_orientation": {
+            "aurc": 0.17490903156949728,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 592,
+                "risk": 0.185,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 686,
+                "risk": 0.19055555555555556,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 753,
+                "risk": 0.19815789473684212,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 698,
+              "risk": 0.1918109370706238,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.08526418898498901,
+              "accepted": 3614,
+              "errors": 688,
+              "coverage": 0.9035,
+              "risk": 0.19037078029883786
+            }
+          },
+          "lr_no_confidence": {
+            "aurc": 0.12020409225245238,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 484,
+                "risk": 0.15125,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 648,
+                "risk": 0.18,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 740,
+                "risk": 0.19473684210526315,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 667,
+              "risk": 0.183292113217917,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.01783285262454039,
+              "accepted": 2976,
+              "errors": 420,
+              "coverage": 0.744,
+              "risk": 0.14112903225806453
+            }
+          },
+          "lr_summaries_only": {
+            "aurc": 0.19267113717211673,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 588,
+                "risk": 0.18375,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 687,
+                "risk": 0.19083333333333333,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 775,
+                "risk": 0.20394736842105263,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 693,
+              "risk": 0.190436933223413,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.11727643163498122,
+              "accepted": 3695,
+              "errors": 711,
+              "coverage": 0.92375,
+              "risk": 0.19242219215155615
+            }
+          },
+          "lr_jpeg_only": {
+            "aurc": 0.19692991670176374,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 607,
+                "risk": 0.1896875,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 731,
+                "risk": 0.20305555555555554,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 802,
+                "risk": 0.21105263157894738,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 745,
+              "risk": 0.20472657323440505,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.0985323330518086,
+              "accepted": 3530,
+              "errors": 708,
+              "coverage": 0.8825,
+              "risk": 0.20056657223796034
+            }
+          },
+          "lr_resize_only": {
+            "aurc": 0.14598696694402347,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 534,
+                "risk": 0.166875,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 659,
+                "risk": 0.18305555555555555,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 748,
+                "risk": 0.1968421052631579,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 673,
+              "risk": 0.18494091783456992,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.11134034409528731,
+              "accepted": 3751,
+              "errors": 722,
+              "coverage": 0.93775,
+              "risk": 0.19248200479872035
+            }
+          },
+          "lr_without_resize_0p5": {
+            "aurc": 0.19690037652365389,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 602,
+                "risk": 0.188125,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 725,
+                "risk": 0.2013888888888889,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 797,
+                "risk": 0.20973684210526317,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 740,
+              "risk": 0.2033525693871943,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.09056305840203781,
+              "accepted": 3530,
+              "errors": 703,
+              "coverage": 0.8825,
+              "risk": 0.1991501416430595
+            }
+          },
+          "mlp_margins_s17": {
+            "aurc": 0.10763014063734626,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 524,
+                "risk": 0.16375,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 680,
+                "risk": 0.18888888888888888,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 749,
+                "risk": 0.19710526315789473,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 692,
+              "risk": 0.19016213245397087,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.9551018476486206,
+              "accepted": 3582,
+              "errors": 671,
+              "coverage": 0.8955,
+              "risk": 0.18732551647124512
+            }
+          },
+          "mlp_margins_s29": {
+            "aurc": 0.10370380520613348,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 517,
+                "risk": 0.1615625,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 664,
+                "risk": 0.18444444444444444,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 752,
+                "risk": 0.19789473684210526,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 680,
+              "risk": 0.18686452322066502,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.9360415935516357,
+              "accepted": 3614,
+              "errors": 671,
+              "coverage": 0.9035,
+              "risk": 0.18566685113447703
+            }
+          },
+          "mlp_margins_s43": {
+            "aurc": 0.10877362537929128,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 519,
+                "risk": 0.1621875,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 674,
+                "risk": 0.18722222222222223,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 746,
+                "risk": 0.19631578947368422,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 686,
+              "risk": 0.18851332783731795,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.9184665679931641,
+              "accepted": 3558,
+              "errors": 656,
+              "coverage": 0.8895,
+              "risk": 0.18437324339516584
+            }
+          },
+          "mlp_ours_logits_s17": {
+            "aurc": 0.13609872318943655,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 531,
+                "risk": 0.1659375,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 670,
+                "risk": 0.18611111111111112,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 751,
+                "risk": 0.1976315789473684,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 687,
+              "risk": 0.18878812860676009,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.9774576425552368,
+              "accepted": 3700,
+              "errors": 716,
+              "coverage": 0.925,
+              "risk": 0.1935135135135135
+            }
+          },
+          "mlp_ours_logits_s29": {
+            "aurc": 0.14777298734205782,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 539,
+                "risk": 0.1684375,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 678,
+                "risk": 0.18833333333333332,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 753,
+                "risk": 0.19815789473684212,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 695,
+              "risk": 0.19098653476229732,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.9659234881401062,
+              "accepted": 3632,
+              "errors": 692,
+              "coverage": 0.908,
+              "risk": 0.1905286343612335
+            }
+          },
+          "mlp_ours_logits_s43": {
+            "aurc": 0.1179866335006867,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 527,
+                "risk": 0.1646875,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 674,
+                "risk": 0.18722222222222223,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 746,
+                "risk": 0.19631578947368422,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 686,
+              "risk": 0.18851332783731795,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.9483464360237122,
+              "accepted": 3615,
+              "errors": 678,
+              "coverage": 0.90375,
+              "risk": 0.187551867219917
+            }
+          },
+          "mlp_bahat_logits_s17": {
+            "aurc": 0.1547597082476865,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 552,
+                "risk": 0.1725,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 690,
+                "risk": 0.19166666666666668,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 795,
+                "risk": 0.20921052631578949,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 710,
+              "risk": 0.19510854630392965,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.98853999376297,
+              "accepted": 3816,
+              "errors": 799,
+              "coverage": 0.954,
+              "risk": 0.20938155136268344
+            }
+          },
+          "mlp_bahat_logits_s29": {
+            "aurc": 0.1604609029432476,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 568,
+                "risk": 0.1775,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 697,
+                "risk": 0.19361111111111112,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 792,
+                "risk": 0.20842105263157895,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 712,
+              "risk": 0.19565814784281396,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.9984512329101562,
+              "accepted": 3818,
+              "errors": 803,
+              "coverage": 0.9545,
+              "risk": 0.21031953902566788
+            }
+          },
+          "mlp_bahat_logits_s43": {
+            "aurc": 0.14889793357220826,
+            "risk_at_coverage": {
+              "0.8": {
+                "accepted": 3200,
+                "errors": 552,
+                "risk": 0.1725,
+                "coverage": 0.8
+              },
+              "0.9": {
+                "accepted": 3600,
+                "errors": 694,
+                "risk": 0.19277777777777777,
+                "coverage": 0.9
+              },
+              "0.95": {
+                "accepted": 3800,
+                "errors": 790,
+                "risk": 0.20789473684210527,
+                "coverage": 0.95
+              }
+            },
+            "matched_frozen_coverage": {
+              "accepted": 3639,
+              "errors": 712,
+              "risk": 0.19565814784281396,
+              "coverage": 0.90975
+            },
+            "fixed_threshold": {
+              "threshold": 0.9891101717948914,
+              "accepted": 3807,
+              "errors": 795,
+              "coverage": 0.95175,
+              "risk": 0.20882584712371946
+            }
+          }
+        },
+        "contrasts": {
+          "frozen_v4__minus__confidence": {
+            "aurc_difference": -0.03976488689290675,
+            "risk90_difference": -0.018611111111111106,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.045008000617568156,
+                "upper_95": -0.033906296637315356,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.023155913559486953,
+                "upper_95": -0.013686628342612216,
+                "repetitions": 1000
+              }
+            }
+          },
+          "frozen_v4__minus__tta_mean": {
+            "aurc_difference": -0.017279110078728482,
+            "risk90_difference": -0.0069444444444444475,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.02082809510882877,
+                "upper_95": -0.013746310835574451,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.010662212772504035,
+                "upper_95": -0.002812939521800284,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_confidence": {
+            "aurc_difference": -0.03976488689290675,
+            "risk90_difference": -0.018611111111111106,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.045008000617568156,
+                "upper_95": -0.033906296637315356,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.023155913559486953,
+                "upper_95": -0.013686628342612216,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_no_summaries": {
+            "aurc_difference": 0.012952771466538116,
+            "risk90_difference": -0.0030555555555555614,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 0.010619100743509687,
+                "upper_95": 0.015107276641648982,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.006369426751592355,
+                "upper_95": -0.0005147967162989645,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_no_orientation": {
+            "aurc_difference": -0.019050458032646156,
+            "risk90_difference": -0.0069444444444444475,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.022506305413305786,
+                "upper_95": -0.015273268686601829,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.010904412672957236,
+                "upper_95": -0.003776843945765037,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_no_confidence": {
+            "aurc_difference": 0.03565448128439874,
+            "risk90_difference": 0.0036111111111111205,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 0.020136104907509764,
+                "upper_95": 0.05179399695678809,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.00027371196885780935,
+                "upper_95": 0.008537346089863278,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_summaries_only": {
+            "aurc_difference": -0.03681256363526561,
+            "risk90_difference": -0.007222222222222213,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.04192565033882046,
+                "upper_95": -0.03095528321395062,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.01056866141996732,
+                "upper_95": -0.0038449919040748604,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_jpeg_only": {
+            "aurc_difference": -0.04107134316491262,
+            "risk90_difference": -0.01944444444444443,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.04613353484803268,
+                "upper_95": -0.035210794756919496,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.023289010413182577,
+                "upper_95": -0.015306122448979581,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_resize_only": {
+            "aurc_difference": 0.009871606592827653,
+            "risk90_difference": 0.0005555555555555591,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 0.007841012576067669,
+                "upper_95": 0.011889109024255523,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0024581638548153003,
+                "upper_95": 0.00321997808568286,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_without_jpeg_q90": {
+            "aurc_difference": -0.0011042847872668182,
+            "risk90_difference": -0.0011111111111111183,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.001419018552875969,
+                "upper_95": -0.0007838980207795374,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0025468464266813077,
+                "upper_95": 0.0005683959637576542,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_without_jpeg_q75": {
+            "aurc_difference": -0.0038716408464586904,
+            "risk90_difference": -0.0025000000000000022,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.004607472589671204,
+                "upper_95": -0.003184080153754753,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.004721296156258435,
+                "upper_95": -0.0011331364530909028,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_without_jpeg_q60": {
+            "aurc_difference": 0.007613134751718931,
+            "risk90_difference": 0.0011111111111111183,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 0.006224660425832407,
+                "upper_95": 0.008975931898267519,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0013518082847297885,
+                "upper_95": 0.0035213898167598314,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_without_resize_0p75": {
+            "aurc_difference": 0.002652888329949421,
+            "risk90_difference": 0.0,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 0.002149809110372572,
+                "upper_95": 0.003140186851050526,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0013453162212773546,
+                "upper_95": 0.0010813326473640085,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_full__minus__lr_without_resize_0p5": {
+            "aurc_difference": -0.04104180298680277,
+            "risk90_difference": -0.01777777777777778,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.04612746097984941,
+                "upper_95": -0.035238927457089335,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.02116904200395965,
+                "upper_95": -0.013766947925263512,
+                "repetitions": 1000
+              }
+            }
+          },
+          "lr_balanced_no_summaries__minus__lr_no_summaries": {
+            "aurc_difference": -0.00428762093179022,
+            "risk90_difference": -0.0030555555555555614,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.005118105310663942,
+                "upper_95": -0.003461526611948036,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.00651969120981725,
+                "upper_95": -0.0013416891560142754,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_margins_s17__minus__lr_balanced_no_summaries": {
+            "aurc_difference": -0.030988040501176525,
+            "risk90_difference": 0.00527777777777777,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.040253685916776444,
+                "upper_95": -0.02217339505989859,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": 0.002479030170313979,
+                "upper_95": 0.009009644879210087,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_margins_s29__minus__lr_balanced_no_summaries": {
+            "aurc_difference": -0.0349143759323893,
+            "risk90_difference": 0.0008333333333333248,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.04239102250036758,
+                "upper_95": -0.027233989620423452,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.001628084867094321,
+                "upper_95": 0.006247679804651306,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_margins_s43__minus__lr_balanced_no_summaries": {
+            "aurc_difference": -0.029844555759231506,
+            "risk90_difference": 0.0036111111111111205,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.038210246996346876,
+                "upper_95": -0.021319258820892143,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": 0.0005550545686510401,
+                "upper_95": 0.007434176905586941,
+                "repetitions": 1000
+              }
+            }
+          },
+          "frozen_v4__minus__mlp_margins_s17": {
+            "aurc_difference": 0.04822843289950486,
+            "risk90_difference": -0.00527777777777777,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 0.03745573391922454,
+                "upper_95": 0.059437667386163864,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.008670123318385629,
+                "upper_95": -0.001688835506360643,
+                "repetitions": 1000
+              }
+            }
+          },
+          "frozen_v4__minus__mlp_margins_s29": {
+            "aurc_difference": 0.05215476833071764,
+            "risk90_difference": -0.0008333333333333248,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 0.041804543022889044,
+                "upper_95": 0.06178382068281368,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.00539779759225923,
+                "upper_95": 0.0024310415734714813,
+                "repetitions": 1000
+              }
+            }
+          },
+          "frozen_v4__minus__mlp_margins_s43": {
+            "aurc_difference": 0.04708494815755984,
+            "risk90_difference": -0.0036111111111111205,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 0.03618724457022591,
+                "upper_95": 0.057712952930091384,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.00712183873106048,
+                "upper_95": 0.0002799063521662544,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_ours_logits_s17__minus__mlp_bahat_logits_s17": {
+            "aurc_difference": -0.01866098505824995,
+            "risk90_difference": -0.005555555555555564,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.023915400025330047,
+                "upper_95": -0.013059281546306027,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.010281803223876394,
+                "upper_95": -0.0011942690258102647,
+                "repetitions": 1000
+              }
+            }
+          },
+          "frozen_v4__minus__mlp_bahat_logits_s17": {
+            "aurc_difference": 0.0010988652891646133,
+            "risk90_difference": -0.008055555555555566,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.0033525564326146082,
+                "upper_95": 0.005616336598119115,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0126434622228059,
+                "upper_95": -0.003938403359020676,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_ours_logits_s17__minus__mlp_margins_s17": {
+            "aurc_difference": 0.028468582552090296,
+            "risk90_difference": -0.002777777777777768,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 0.019055136119129453,
+                "upper_95": 0.03807555208390745,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.005045097233278516,
+                "upper_95": 0.0005528107226575831,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_ours_logits_s29__minus__mlp_bahat_logits_s29": {
+            "aurc_difference": -0.012687915601189786,
+            "risk90_difference": -0.005277777777777798,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.018073764571076466,
+                "upper_95": -0.00671051173982256,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0095158130422614,
+                "upper_95": 0.0005927837801787348,
+                "repetitions": 1000
+              }
+            }
+          },
+          "frozen_v4__minus__mlp_bahat_logits_s29": {
+            "aurc_difference": -0.004602329406396488,
+            "risk90_difference": -0.010000000000000009,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.008878078723394871,
+                "upper_95": -0.0003159706210685928,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.01433069806210624,
+                "upper_95": -0.005013290570558578,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_ours_logits_s29__minus__mlp_margins_s29": {
+            "aurc_difference": 0.04406918213592434,
+            "risk90_difference": 0.003888888888888886,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 0.034804917504842034,
+                "upper_95": 0.05326226859304453,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": 0.0009026310735548437,
+                "upper_95": 0.006422638186608533,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_ours_logits_s43__minus__mlp_bahat_logits_s43": {
+            "aurc_difference": -0.03091130007152157,
+            "risk90_difference": -0.005555555555555536,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": -0.03713383262553392,
+                "upper_95": -0.024212248261422147,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.01060157205741134,
+                "upper_95": -0.0005887802137766696,
+                "repetitions": 1000
+              }
+            }
+          },
+          "frozen_v4__minus__mlp_bahat_logits_s43": {
+            "aurc_difference": 0.006960639964642856,
+            "risk90_difference": -0.009166666666666656,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 0.002115902295765576,
+                "upper_95": 0.012031493232637615,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.013522467543164246,
+                "upper_95": -0.004864210985178733,
+                "repetitions": 1000
+              }
+            }
+          },
+          "mlp_ours_logits_s43__minus__mlp_margins_s43": {
+            "aurc_difference": 0.009213008121395416,
+            "risk90_difference": 0.0,
+            "pointwise_group_bootstrap": {
+              "aurc": {
+                "lower_95": 0.003549195537130262,
+                "upper_95": 0.015376434437565855,
+                "repetitions": 1000
+              },
+              "risk90": {
+                "lower_95": -0.0022780779019785234,
+                "upper_95": 0.0030130385915876023,
+                "repetitions": 1000
+              }
+            }
+          }
+        },
+        "seed_variability": {
+          "mlp_margins": {
+            "mean_aurc": 0.10670252374092366,
+            "std_aurc": 0.002659158509178409,
+            "seeds": [
+              17,
+              29,
+              43
+            ]
+          },
+          "mlp_ours_logits": {
+            "mean_aurc": 0.13395278134406038,
+            "std_aurc": 0.015008681440874264,
+            "seeds": [
+              17,
+              29,
+              43
+            ]
+          },
+          "mlp_bahat_logits": {
+            "mean_aurc": 0.15470618158771413,
+            "std_aurc": 0.005781670519529312,
+            "seeds": [
+              17,
+              29,
+              43
+            ]
+          }
+        },
+        "ours_transform_family_mean_aurc_reduction_percent_vs_bahat": 13.414719457662486,
+        "profile_aurc_reduction_percent_vs_confidence": 20.32725870687941
+      }
+    },
+    "bahat_adaptation": {
+      "inputs": "12 native logits from six views, same class ordering fixed by original prediction; not independently sorted within each view.",
+      "transforms": [
+        "original",
+        "horizontal mirror",
+        "horizontal 1x3 average blur, edge padding, rounded uint8",
+        "grayscale with 0.299/0.587/0.114, rounded uint8",
+        "contrast factor 1.3",
+        "gamma 0.85"
+      ],
+      "network": "Linear(d,70),ReLU,BatchNorm,Dropout(.5),Linear(70,70),ReLU,BatchNorm,Dropout(.5),Linear(70,1)",
+      "label": "Implementation adaptation; own boundary/quantization, optimizer, scaling and synthetic-image training data. Not bit-for-bit reproduction of the original paper."
+    },
+    "comparison_limits": [
+      "Same 14000 images as original confirmation; not 14000 additional independent observations.",
+      "All intervals pointwise and unadjusted; multiple ablations are exploratory.",
+      "Auxiliary MLP seeds are optimization variability, not independent datasets.",
+      "Some MLPs improve OpenFake whole-curve AURC over the full logistic selector; no universal best-model claim.",
+      "Resize-only historical 65/673 versus 66/675 errors uses matched full-selector acceptance counts, not the candidate own threshold."
+    ]
+  },
+  "v3_history_not_final_v4": {
+    "sources": [
+      "v3_selector",
+      "v3_training_protocol",
+      "thesis_selector_development_results",
+      "thesis_selective_detection_design",
+      "thesis_selector_implementation"
+    ],
+    "v3_artifact": {
+      "version": "selective-selector-v3-artifact-1",
+      "model_fingerprint": "8b153c6679390120853a1c85d7e448e6a920f4444bd21d6c971a0fb1e3608ba2",
+      "model_sha256": "c4b54730991c9615d6e69f9505dd87fda4cb737db0f2f883a17811405b86ad0a",
+      "profile_config": {
+        "version": "degradation-profile-v1",
+        "jpeg_qualities": [
+          90,
+          75,
+          60
+        ],
+        "resize_scales": [
+          0.75,
+          0.5
+        ]
+      },
+      "detector_threshold": 0.5,
+      "accept_threshold": -1.0,
+      "research_threshold": 0.07326170878070298,
+      "calibration_metadata": {
+        "method": "single-frozen-policy-clopper-pearson",
+        "status": "failed_certification",
+        "sample_count": 195,
+        "accepted_count": 167,
+        "error_count": 3,
+        "coverage": 0.8564102564102564,
+        "empirical_risk": 0.017964071856287425,
+        "risk_upper_bound": 0.04577197429738265,
+        "target_risk": 0.02,
+        "delta": 0.05,
+        "research_threshold": 0.07326170878070298,
+        "deployment_threshold": -1.0,
+        "deployment_coverage_on_calibration": 0.0,
+        "deployment_risk_on_calibration": null,
+        "frozen_selection_sha256": "ee857cd39aa62f897ec3f72934cf6f4d0639c7c12bf3f80caa51c91c29d8b40a",
+        "reasons": [
+          "Horná hranica rizika prekračuje vopred určený cieľ; prah sa neupravuje."
+        ],
+        "scope": "Pevné pravidlo; nezávislé reprezentanty a rovnaká cieľová distribúcia. Bez záruky pri posune domény.",
+        "evaluated_utc": "2026-10-14T13:01:32.165125+00:00"
+      },
+      "training_metadata": {
+        "id": "symmetric_profile_C0p01",
+        "family": "symmetric_profile",
+        "C": 0.01,
+        "feature_count": 9,
+        "mean_fold_aurc": 0.004034733632968771,
+        "fold_aurc": [
+          0.0010706452603620221,
+          0.0046288543875267225,
+          0.002780710315410587,
+          0.004220282087838481,
+          0.007473176113706037
+        ],
+        "pooled_oof_aurc": 0.003873103252872461,
+        "weighted_error_auroc": 0.9424198518437223,
+        "training_profiles": 15600,
+        "training_groups": 195,
+        "detector_errors": 885,
+        "fold_score_std": 0.002124555895006853,
+        "all_variants_oof_aurc": 0.00413546066400468,
+        "threshold": {
+          "target_risk": 0.01,
+          "min_coverage": 0.1,
+          "total_weight": 15600.0,
+          "criterion": "empirical_weighted_risk_not_certified",
+          "accept_rule": "score <= tau",
+          "feasible": true,
+          "tau": 0.07326170878070298,
+          "coverage": 0.8673076923075148,
+          "risk": 0.009977827050999833,
+          "accepted_weight": 13529.999999997231,
+          "error_weight": 135.0000000000001,
+          "accepted_positive_weight_rows": 11408
+        }
+      },
+      "provenance": {
+        "training_protocol_sha256": "50ac405b7d47c06fca3c594718f2e8e9206385b911b1d62d1572b3feaf32e28b",
+        "profiles_sha256": "9721d1bd384381e5428fe5737dcf4bce6a10fbe9e42b38873f7dba023053b266",
+        "frozen_selection_sha256": "ee857cd39aa62f897ec3f72934cf6f4d0639c7c12bf3f80caa51c91c29d8b40a"
+      }
+    },
+    "v3_model": {
+      "version": "selective-selector-v3-model-1",
+      "family": "symmetric_profile",
+      "feature_names": [
+        "confidence_error_logit",
+        "oriented_logit_delta_jpeg_q90",
+        "oriented_logit_delta_jpeg_q75",
+        "oriented_logit_delta_jpeg_q60",
+        "oriented_logit_delta_resize_0p75",
+        "oriented_logit_delta_resize_0p5",
+        "prediction_variance",
+        "max_abs_shift",
+        "flip_fraction"
+      ],
+      "epsilon": 1e-08,
+      "C": 0.01
+    },
+    "avoid_conflations": [
+      "13 features with image quality: V1/V2 and proposal, not final V4.",
+      "C=1 and Bonferroni 101 threshold grid at risk5%: proposal, not final V4.",
+      "V3 5fold group CV, C=.01, 195 groups, failed certification: history, not final V4.",
+      "V4 numerical helper schema remains selector-v3-numerics-v1 and contains a stale real=5,fake=5/9 docstring; actual V4 caller passes inverse-group profile weights.",
+      "V3 external DeepShield failures informed V4 development and must not be reused as independent evidence for V4."
+    ]
+  },
+  "publication_claim_boundaries": [
+    "Contribution: task-specific compression/resizing profile, class-oriented exact-margin representation, low-dimensional learned error ranking, explicit freeze-and-evaluate protocol and empirical analysis.",
+    "The general idea of error prediction from classifier responses to transformations precedes this implementation; do not claim to originate it.",
+    "A logistic auxiliary model or an existing EfficientNetV2-M backbone is not itself architectural novelty.",
+    "Ranking improvement does not imply calibrated per-image error probabilities or transfer of a 2% risk certificate.",
+    "Do not count historical/retrospective panels or repeated runs over the same images as additional independent samples.",
+    "OpenFake dependency groups, unknown identity/pretraining overlap and source-selected development constrain the scope of generalization.",
+    "The full nine-feature selector is not uniformly best; mandatory feature necessity and universal superiority are unsupported."
+  ]
+}

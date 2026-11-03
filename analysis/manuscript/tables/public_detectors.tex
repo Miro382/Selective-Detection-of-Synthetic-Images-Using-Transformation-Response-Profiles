@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\caption{Fixed-checkpoint stress tests: unconditional accuracy (Acc.) and unscaled AURC for every evaluated selection method. DS is held out from the selector-fitting domain; OF and CF are cross-dataset samples. These stress-test cohorts differ from the principal evaluation cohorts in main-article Table~\ref{main-tab:cohorts}. JPEG-only and resize-only are ablations.}
+\label{tab:public}
+\centering\small
+\begin{tabular}{llrrrrrrr}
+\toprule
+Detector & Data & Acc. (\%) & Conf. & TTA & Learned conf. & Full & JPEG & Resize \\
+\midrule
+CLIP & DS & 46.70 & 0.63065 & 0.67028 & 0.47518 & 0.36375 & 0.36731 & 0.40637 \\
+CLIP & OF & 40.75 & 0.66395 & 0.66230 & 0.53981 & 0.59637 & 0.59335 & 0.60334 \\
+CLIP & CF & 56.38 & 0.39555 & 0.42623 & 0.47561 & 0.31084 & 0.29306 & 0.41215 \\
+ResNet-50 & DS & 52.65 & 0.51463 & 0.51985 & 0.51463 & 0.31346 & 0.36961 & 0.40952 \\
+ResNet-50 & OF & 50.68 & 0.61659 & 0.61758 & 0.61659 & 0.48756 & 0.53855 & 0.53428 \\
+ResNet-50 & CF & 50.62 & 0.42995 & 0.43512 & 0.42995 & 0.36520 & 0.40705 & 0.40940 \\
+\bottomrule
+\end{tabular}
+\end{table*}

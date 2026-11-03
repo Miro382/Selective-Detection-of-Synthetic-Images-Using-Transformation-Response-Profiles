@@ -1,0 +1,179 @@
+{
+  "version": "confirmation-v4-reduced-20261017-1",
+  "created_utc": "2026-10-17T17:42:33.633033+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "packages": {
+      "torch": "2.8.0+cu126",
+      "torchvision": "0.23.0",
+      "Pillow": "12.3.0",
+      "numpy": "2.5.3"
+    }
+  },
+  "device": "cuda",
+  "temperature": 2.5451689020139714,
+  "model_fingerprint": "e705b5a09d360cc067470d5d70a17b7aa4fa76cde1d3a7520f898490d710417f",
+  "model_sha256": "351a6c3347a7acc27f58b6e213128ca65e421dbc227800fe13bbe7ef4a2dfdbd",
+  "selector_sha256": "4d0469e6495433619066d52430f7d5b30cc89d3a76d557b64dfada187c2cee0d",
+  "detector_threshold": 0.5,
+  "profile_config": {
+    "version": "degradation-profile-v1",
+    "jpeg_qualities": [
+      90,
+      75,
+      60
+    ],
+    "resize_scales": [
+      0.75,
+      0.5
+    ]
+  },
+  "thresholds": {
+    "selector_v4": {
+      "research": 0.08632226578702012,
+      "deployment": 0.08632226578702012
+    },
+    "confidence": {
+      "research": 0.07953369430249872
+    }
+  },
+  "confidence_threshold_origin": "Pôvodný confidence kandidát pri vývoji V4; bez samostatnej certifikácie.",
+  "target_risk": 0.02,
+  "expected_conditions": [
+    "clean"
+  ],
+  "cohorts": {
+    "OpenFake": {
+      "images": 4000,
+      "class_counts": {
+        "0": 2000,
+        "1": 2000
+      },
+      "sampling_groups": 213,
+      "connected_groups": 213,
+      "sources": {
+        "OpenFake/core/test": 4000
+      },
+      "generators": {
+        "docci": 2000,
+        "flux.2-klein-9b": 400,
+        "gpt-image-1.5": 400,
+        "illustrious": 400,
+        "midjourney-7": 400,
+        "z-image-turbo": 400
+      },
+      "role": "primary_clean"
+    },
+    "DeepShield": {
+      "images": 10000,
+      "class_counts": {
+        "0": 5000,
+        "1": 5000
+      },
+      "sampling_groups": 10000,
+      "connected_groups": 10000,
+      "sources": {
+        "DeepShield/PreSocial": 10000
+      },
+      "generators": {
+        "FFHQ": 1500,
+        "FLUX.1": 460,
+        "FORLAB": 3500,
+        "StableDiffusion1.5": 460,
+        "StableDiffusion2": 460,
+        "StableDiffusion3": 460,
+        "StableDiffusionXL": 460,
+        "StyleGAN": 900,
+        "StyleGAN2": 900,
+        "StyleGAN3": 900
+      },
+      "role": "secondary_known_source"
+    }
+  },
+  "primary_cohort": "OpenFake",
+  "primary_condition": "clean",
+  "analysis_plan": {
+    "primary": {
+      "cohort": "OpenFake",
+      "condition": "clean",
+      "contrast": "selector_v4_minus_confidence",
+      "metric": "AURC",
+      "resampling_unit": "origin_and_sampling_group_union"
+    },
+    "conditions": [
+      "clean"
+    ],
+    "fixed_coverages": [
+      0.75,
+      0.9,
+      0.95
+    ],
+    "cohort_targets": {
+      "OpenFake": 4000,
+      "DeepShield": 10000
+    },
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20261017,
+    "success": "paired_group_95_ci_upper_below_zero",
+    "other_comparisons": "secondary",
+    "outcome_based_selection": false,
+    "threshold_policy": "unchanged_frozen_V4_and_original_development_confidence",
+    "certification": "none_on_new_test",
+    "openfake_selection_seed": 202610172,
+    "openfake_quotas": {
+      "OpenFake/real/docci": 2000,
+      "OpenFake/fake/flux.2-klein-9b": 400,
+      "OpenFake/fake/gpt-image-1.5": 400,
+      "OpenFake/fake/illustrious": 400,
+      "OpenFake/fake/midjourney-7": 400,
+      "OpenFake/fake/z-image-turbo": 400
+    },
+    "selection_rule": "sha256(canonical([seed,\"reduced-openfake\",sample_id])) ascending within each fixed bucket",
+    "amendment_reason": "Výpočtový čas; zmena rozsahu na pokyn autora pred vyhodnotením nových výsledkov.",
+    "historical_results": "Samostatné pôvodné kompletné testy; bez spájania do nového nezávislého n."
+  },
+  "images": 14000,
+  "planned_profiles": 14000,
+  "bootstrap_replicates": 2000,
+  "seed": 20261017,
+  "bootstrap_units": [
+    "group"
+  ],
+  "bootstrap_unit": "Prepojené komponenty pôvodových skupín a výberových blokov; párový bootstrap v každej kohorte osobitne.",
+  "primary_question": "Je AURC zmrazeného V4 nižšie než AURC istoty na 4 000 deterministicky vybraných nových obrázkoch OpenFake v podmienke clean?",
+  "success_criterion": "Primárny párový skupinový 95 % interval ΔAURC V4 mínus istota leží celý pod nulou. Ide o opakovateľnosť v zvolenom rozsahu, nie garanciu cieľového rizika.",
+  "scope": "Nové, bez skóre vybrané obrázky známych verejných zdrojov. Zdroje boli vybrané po exploratívnej analýze predchádzajúcich výsledkov. OpenFake: DOCCI a päť generátorov vrátane Illustrious ako kontrolného zdroja. DeepShield: nové obrázky už známych domén a rodín, s vopred určenou zmesou. Toto je nezávislosť nových vzoriek od evidovaných dát, nie zdrojovo nezávislá validácia. Pomer tried a kvóty nereprezentujú prevádzkovú početnosť. Skryté identity, promptové a predtréningové prieniky nemožno úplne vylúčiť. Hodnotí detektor a selektor, nie celú multimodálnu aplikáciu. Rozsah bol z výpočtových dôvodov zmenšený pred vyhodnotením nových výsledkov; OpenFake má 4 000 obrázkov a obe kohorty iba clean. Historické výsledky nie sú ďalšími novými pozorovaniami.",
+  "timing_note": "Po zahrievacom priechode. Zahŕňa predspracovanie, inferenciu a vnútorných päť degradácií; nezahŕňa čítanie súboru, vonkajšiu testovaciu degradáciu, načítanie modelu, rozhodnutie selektora ani zápis. Nie je to celková latencia aplikácie.",
+  "policy": "Žiadny tréning, zmena prahu, teploty, modelu, kvót ani výber priaznivých podskupín podľa nových výsledkov. Žiadna nová certifikácia. Zmena rozsahu je explicitná; hotové správne profily sa prenášajú bez novej inferencie.",
+  "outer_conditions": {
+    "clean": "Bez vonkajšej zmeny."
+  },
+  "original_protocol_sha256": "dce42592bd2c894b19d607af9a57d0763bd01406e7a08f3754c025d9720e7d94",
+  "original_profiles_sha256": "451a8a0eb7e1d3208930de390ab087ca2df8b6a3a3def73de80c69e41e5d8fb0",
+  "original_planned_profiles": 60000,
+  "original_images": 20000,
+  "selection_seed": 202610172,
+  "amendment": {
+    "reason": "Výpočtový čas; zmena rozsahu na pokyn autora pred vyhodnotením nových výsledkov.",
+    "old_scope": {
+      "OpenFake": 10000,
+      "DeepShield": 10000,
+      "conditions": [
+        "clean",
+        "jpeg_q40",
+        "resize_0p5"
+      ]
+    },
+    "new_scope": {
+      "OpenFake": 4000,
+      "DeepShield": 10000,
+      "conditions": [
+        "clean"
+      ]
+    },
+    "selection_uses_outcomes": false,
+    "analysis_before_amendment": false,
+    "preserved": "Pôvodný protokol, celý denník aj JPEG a zmenšené profily zostávajú zachované. Staré výsledky sa uvádzajú samostatne.",
+    "unused_conditions": "Nedokončené JPEG a resize zostávajú mimo nového konfirmačného reportu."
+  }
+}

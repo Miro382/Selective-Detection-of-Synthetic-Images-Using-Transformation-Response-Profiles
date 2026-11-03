@@ -1,0 +1,3253 @@
+{
+  "schema": "article-contribution-audit-v1",
+  "created_utc": "2026-10-29T14:59:44.088530+00:00",
+  "scope": "Read-only evidence extraction and proposed wording; no manuscript/thesis/result edits.",
+  "new_inference": false,
+  "new_training": false,
+  "new_bootstrap": false,
+  "arithmetic_only": "Percent reductions and percentage-point conversions derived from stored results.",
+  "second_work_identification": {
+    "identified": "Bahat and Shakhnarovich 2018/2020 adaptation",
+    "evidence": "thesis/chapters/selector_comparison_results.tex explicitly names both works; no second unrelated image-selector paper found in these targeted comparison sources."
+  },
+  "sources": [
+    {
+      "path": "archive\\article_manuscript_20261029\\evidence\\core_evidence.json",
+      "sha256": "2bb795b111f5dd746aa5249906519f8b25e640507c6c09519094595348883e11"
+    },
+    {
+      "path": "archive\\article_manuscript_20261029\\evidence\\new_experiments.json",
+      "sha256": "9728bdb7bc109290d995031671bd3c28b7abcc21a84817d281a831532cc4c7c0"
+    },
+    {
+      "path": "archive\\article_manuscript_20261029\\evidence\\extended_ablation_table.json",
+      "sha256": "0b369a3858882fca54b7d1a66633341f12117d915b955799fb5aae7812659ffe"
+    },
+    {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "sha256": "e1da35dac98c0d9d101624394f922c87049cbc10c15700c2ccd66cbc6b9bc3cb"
+    },
+    {
+      "path": "[local-path-omitted]",
+      "sha256": "cbb65a73ecddbd08968a51b4c3fea39ae0534c2c8294d7962395608248909aaa"
+    },
+    {
+      "path": "[local-path-omitted]",
+      "sha256": "5ad03092cf1b2e09376463e379ff19367c0a828c50662d8335e2845890e37ba5"
+    },
+    {
+      "path": "[local-path-omitted]",
+      "sha256": "8397df2a985d506fd9adf3e8932c33fc08089bcfd75535ea2bc7c4afea82f080"
+    },
+    {
+      "path": "[local-path-omitted]",
+      "sha256": "6e6d1ffe07b41dba29d3ed7ac7b6845fb304b33a1be50bb1c58b2eaa679af097"
+    },
+    {
+      "path": "archive\\article_manuscript_20261029\\sections\\abstract.tex",
+      "sha256": "6f3b8c05634139c6733eb0e88495a00ad1a0fe3c2e2eba93417a04c82a58314b"
+    },
+    {
+      "path": "archive\\article_manuscript_20261029\\sections\\introduction.tex",
+      "sha256": "587b47f435d7e5a27ca9bc2b631a3f7cdde86f7e8fa60a55bf02658c843e23e4"
+    },
+    {
+      "path": "archive\\article_manuscript_20261029\\sections\\results.tex",
+      "sha256": "e45daae55550e217192bb3cc9923727d48aeceaad6cec6d08fe968a0708df805"
+    },
+    {
+      "path": "archive\\article_manuscript_20261029\\sections\\discussion.tex",
+      "sha256": "77758fcbcea3445462ac961c1f8d67a56a06544455e243dc9aecc68ddd580974"
+    },
+    {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\code\\models.py",
+      "sha256": "8bfb84a2564fd38f42fd7a12a677567c60080b17a3b460e39cd0b6495cd74cb3"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "claim_en": "A compact class-oriented response representation supports selective acceptance without changing the detector prediction or retraining its image representation.",
+      "evidence_level": "implementation and algebraic property",
+      "support": "Nine features, nine coefficients and one intercept; train-only scaler; original deterministic class retained.",
+      "limit": "The scaler has additional stored statistics; six detector views dominate cost. This is not a new transformation-confidence principle."
+    },
+    {
+      "id": "C2",
+      "claim_en": "The frozen full selector improves error ranking and matched-coverage error counts over ordinary confidence on the original external cohorts.",
+      "evidence_level": "original external evaluation; OF primary, DS secondary",
+      "support": "AURC reductions of 39.40% and 20.33%; matched errors 66 vs. 97 and 675 vs. 746, with stored paired group intervals for the risk differences.",
+      "limit": "Known-source cohorts and fixed checkpoints; does not restore the2% target under OpenFake shift."
+    },
+    {
+      "id": "C3",
+      "claim_en": "The full selector retains fewer errors than all three Bahat-style runs at both original matched coverages.",
+      "evidence_level": "retrospective descriptive point estimates",
+      "support": "DeepShield: 66 vs. 81/80/81 errors at 9,807 accepted. OpenFake: 675 vs. 710/712/712 errors at 3,639 accepted.",
+      "limit": "No CI at these exact coverages. Do not call all six matched-count differences statistically significant."
+    },
+    {
+      "id": "C4",
+      "claim_en": "At 95% coverage the full selector improves on every Bahat-style run on both cohorts, with all six paired pointwise intervals strictly favoring full.",
+      "evidence_level": "retrospective paired group percentile inference",
+      "support": "DeepShield: 18 vs. 29/31/28 errors. OpenFake: 747 vs. 795/792/790 errors. All six 5,000-replicate risk intervals are negative.",
+      "limit": "Pointwise unadjusted intervals, fixed models; no familywise or every-coverage superiority claim."
+    },
+    {
+      "id": "C5",
+      "claim_en": "With architecture and training procedure held constant, the proposed degradation family improves the error-ranking inputs to the learned reference.",
+      "evidence_level": "retrospective matched-model controlled comparison",
+      "support": "Mean AURC reductions of 20.84% on DeepShield and 13.41% on OpenFake across three seeds; all six seed-specific paired AURC intervals are negative.",
+      "limit": "No pooled CI for the across-seed mean; evidence specific to the fixed detector, samples and implementation."
+    },
+    {
+      "id": "C6",
+      "claim_en": "Class orientation and the half-size response make measurable positive contributions in the exploratory feature controls.",
+      "evidence_level": "retrospective paired ablation",
+      "support": "Removing orientation gives 84/698 errors instead of 66/675. Removing the half-size response gives 84/740. Paired AURC intervals favor full in both cohorts.",
+      "limit": "Does not establish that every transformation or summary is necessary; resize-only point estimates can improve full."
+    },
+    {
+      "id": "C7",
+      "claim_en": "The compact profile provides complementary error-ranking evidence beyond native-head MC dropout and native-logit energy.",
+      "evidence_level": "retrospective paired pointwise inference",
+      "support": "Both AURC contrasts favor full on DeepShield and OpenFake with negative 95% intervals; 95%-coverage errors are 18 vs. 43/40 and 747 vs. 809/808.",
+      "limit": "Specific trained dropout head and fixed entropy/energy definitions; timings are not directly comparable."
+    },
+    {
+      "id": "C8",
+      "claim_en": "The advantage over ordinary confidence extends to two additional frozen detector pipelines.",
+      "evidence_level": "new external sample; predeclared OpenFake conjunction",
+      "support": "Both CLIP and ResNet-50 primary upper 95% bounds are below zero; all six detector-by-dataset confidence AURC contrasts are favorable.",
+      "limit": "Selectors are refitted separately; architecture, source training and preprocessing differ; absolute accuracy is poor and CLIP learned-confidence exception remains."
+    },
+    {
+      "id": "C9",
+      "claim_en": "A separately assessed frozen acceptance rule reaches high coverage while meeting its prespecified same-distribution risk bound.",
+      "evidence_level": "separate frozen-rule binomial assessment",
+      "support": "1,958/2,000 accepted (97.9%); 13 errors (0.66394%); one-sided 95% upper bound 1.05353%, below the 2% target.",
+      "limit": "Requires independent representative observations and unchanged target mixture; not guaranteed under distribution shift."
+    },
+    {
+      "id": "C10",
+      "claim_en": "The study turns a promising post-hoc simplification into a transparent predeclared replacement decision on new data.",
+      "evidence_level": "independent audited ablation confirmation with conditional limitations",
+      "support": "7,500 new images; four primary conditions; only OpenFake AURC passes; the full selector is retained without reinterpreting secondary findings.",
+      "limit": "A validation-protocol contribution, not proof that full is best or that resize has no benefit."
+    }
+  ],
+  "bahat_at_original_matched_coverage": [
+    {
+      "cohort": "DeepShield",
+      "seed": 17,
+      "n": 10000,
+      "groups": 10000,
+      "accepted": 9807,
+      "coverage": 0.9807,
+      "full_errors": 66,
+      "bahat_errors": 81,
+      "error_count_difference_full_minus_bahat": -15,
+      "relative_error_reduction_percent": 18.51851851851852,
+      "delta_risk_percentage_points": -0.15295197308045272,
+      "matched_risk_ci95": null,
+      "ci_status": "No stored CI for this exact matched coverage; do not reuse AURC or risk90 intervals.",
+      "full_aurc": 0.00039998843353799277,
+      "bahat_aurc": 0.0005166684366208836,
+      "aurc_contrast_original_1000": {
+        "lower_95": -0.00017936964653046696,
+        "upper_95": -5.727923436859155e-05,
+        "repetitions": 1000
+      },
+      "aurc_difference": -0.00011668000308289085,
+      "risk90_contrast_original_1000": {
+        "lower_95": -0.0006666666666666668,
+        "upper_95": 0.00022222222222222218,
+        "repetitions": 1000
+      },
+      "risk90_difference": -0.00022222222222222218,
+      "source_json_pointer": "/cohorts/DeepShield/methods/mlp_bahat_logits_s17/matched_frozen_coverage"
+    },
+    {
+      "cohort": "DeepShield",
+      "seed": 29,
+      "n": 10000,
+      "groups": 10000,
+      "accepted": 9807,
+      "coverage": 0.9807,
+      "full_errors": 66,
+      "bahat_errors": 80,
+      "error_count_difference_full_minus_bahat": -14,
+      "relative_error_reduction_percent": 17.5,
+      "delta_risk_percentage_points": -0.1427551748750893,
+      "matched_risk_ci95": null,
+      "ci_status": "No stored CI for this exact matched coverage; do not reuse AURC or risk90 intervals.",
+      "full_aurc": 0.00039998843353799277,
+      "bahat_aurc": 0.0005149044608014312,
+      "aurc_contrast_original_1000": {
+        "lower_95": -0.0001805728459973687,
+        "upper_95": -5.375751634882596e-05,
+        "repetitions": 1000
+      },
+      "aurc_difference": -0.00011491602726343848,
+      "risk90_contrast_original_1000": {
+        "lower_95": -0.0006666666666666668,
+        "upper_95": 0.0003333333333333334,
+        "repetitions": 1000
+      },
+      "risk90_difference": -0.00011111111111111109,
+      "source_json_pointer": "/cohorts/DeepShield/methods/mlp_bahat_logits_s29/matched_frozen_coverage"
+    },
+    {
+      "cohort": "DeepShield",
+      "seed": 43,
+      "n": 10000,
+      "groups": 10000,
+      "accepted": 9807,
+      "coverage": 0.9807,
+      "full_errors": 66,
+      "bahat_errors": 81,
+      "error_count_difference_full_minus_bahat": -15,
+      "relative_error_reduction_percent": 18.51851851851852,
+      "delta_risk_percentage_points": -0.15295197308045272,
+      "matched_risk_ci95": null,
+      "ci_status": "No stored CI for this exact matched coverage; do not reuse AURC or risk90 intervals.",
+      "full_aurc": 0.00039998843353799277,
+      "bahat_aurc": 0.0005124035610248366,
+      "aurc_contrast_original_1000": {
+        "lower_95": -0.00017364747098841325,
+        "upper_95": -4.760596789128657e-05,
+        "repetitions": 1000
+      },
+      "aurc_difference": -0.00011241512748684388,
+      "risk90_contrast_original_1000": {
+        "lower_95": -0.0006666666666666668,
+        "upper_95": 0.0004444444444444444,
+        "repetitions": 1000
+      },
+      "risk90_difference": 0.0,
+      "source_json_pointer": "/cohorts/DeepShield/methods/mlp_bahat_logits_s43/matched_frozen_coverage"
+    },
+    {
+      "cohort": "OpenFake",
+      "seed": 17,
+      "n": 4000,
+      "groups": 213,
+      "accepted": 3639,
+      "coverage": 0.90975,
+      "full_errors": 675,
+      "bahat_errors": 710,
+      "error_count_difference_full_minus_bahat": -35,
+      "relative_error_reduction_percent": 4.929577464788732,
+      "delta_risk_percentage_points": -0.9618026930475421,
+      "matched_risk_ci95": null,
+      "ci_status": "No stored CI for this exact matched coverage; do not reuse AURC or risk90 intervals.",
+      "full_aurc": 0.15585857353685112,
+      "bahat_aurc": 0.1547597082476865,
+      "aurc_contrast_original_1000": {
+        "lower_95": -0.0033525564326146082,
+        "upper_95": 0.005616336598119115,
+        "repetitions": 1000
+      },
+      "aurc_difference": 0.0010988652891646133,
+      "risk90_contrast_original_1000": {
+        "lower_95": -0.0126434622228059,
+        "upper_95": -0.003938403359020676,
+        "repetitions": 1000
+      },
+      "risk90_difference": -0.008055555555555566,
+      "source_json_pointer": "/cohorts/OpenFake/methods/mlp_bahat_logits_s17/matched_frozen_coverage"
+    },
+    {
+      "cohort": "OpenFake",
+      "seed": 29,
+      "n": 4000,
+      "groups": 213,
+      "accepted": 3639,
+      "coverage": 0.90975,
+      "full_errors": 675,
+      "bahat_errors": 712,
+      "error_count_difference_full_minus_bahat": -37,
+      "relative_error_reduction_percent": 5.196629213483146,
+      "delta_risk_percentage_points": -1.0167628469359729,
+      "matched_risk_ci95": null,
+      "ci_status": "No stored CI for this exact matched coverage; do not reuse AURC or risk90 intervals.",
+      "full_aurc": 0.15585857353685112,
+      "bahat_aurc": 0.1604609029432476,
+      "aurc_contrast_original_1000": {
+        "lower_95": -0.008878078723394871,
+        "upper_95": -0.0003159706210685928,
+        "repetitions": 1000
+      },
+      "aurc_difference": -0.004602329406396488,
+      "risk90_contrast_original_1000": {
+        "lower_95": -0.01433069806210624,
+        "upper_95": -0.005013290570558578,
+        "repetitions": 1000
+      },
+      "risk90_difference": -0.010000000000000009,
+      "source_json_pointer": "/cohorts/OpenFake/methods/mlp_bahat_logits_s29/matched_frozen_coverage"
+    },
+    {
+      "cohort": "OpenFake",
+      "seed": 43,
+      "n": 4000,
+      "groups": 213,
+      "accepted": 3639,
+      "coverage": 0.90975,
+      "full_errors": 675,
+      "bahat_errors": 712,
+      "error_count_difference_full_minus_bahat": -37,
+      "relative_error_reduction_percent": 5.196629213483146,
+      "delta_risk_percentage_points": -1.0167628469359729,
+      "matched_risk_ci95": null,
+      "ci_status": "No stored CI for this exact matched coverage; do not reuse AURC or risk90 intervals.",
+      "full_aurc": 0.15585857353685112,
+      "bahat_aurc": 0.14889793357220826,
+      "aurc_contrast_original_1000": {
+        "lower_95": 0.002115902295765576,
+        "upper_95": 0.012031493232637615,
+        "repetitions": 1000
+      },
+      "aurc_difference": 0.006960639964642856,
+      "risk90_contrast_original_1000": {
+        "lower_95": -0.013522467543164246,
+        "upper_95": -0.004864210985178733,
+        "repetitions": 1000
+      },
+      "risk90_difference": -0.009166666666666656,
+      "source_json_pointer": "/cohorts/OpenFake/methods/mlp_bahat_logits_s43/matched_frozen_coverage"
+    }
+  ],
+  "bahat_at95_coverage": [
+    {
+      "cohort": "DeepShield",
+      "seed": 17,
+      "accepted": 9500,
+      "coverage": 0.95,
+      "full_errors": 18,
+      "bahat_errors": 29,
+      "relative_error_reduction_percent": 37.93103448275862,
+      "delta_risk_percentage_points": -0.11578947368421054,
+      "ci95_percentage_points": [
+        -0.2,
+        -0.010526315789473675
+      ],
+      "bootstrap_repetitions": 5000,
+      "seed_bootstrap": 20261028,
+      "evidence_level": "retrospective paired pointwise CI; no multiplicity correction",
+      "source_json_pointer": "/experiments/efficientnet_mc_energy/runs/retrospective/results/cohorts/DeepShield/paired_differences/mlp_bahat_logits_s17"
+    },
+    {
+      "cohort": "DeepShield",
+      "seed": 29,
+      "accepted": 9500,
+      "coverage": 0.95,
+      "full_errors": 18,
+      "bahat_errors": 31,
+      "relative_error_reduction_percent": 41.935483870967744,
+      "delta_risk_percentage_points": -0.13684210526315788,
+      "ci95_percentage_points": [
+        -0.2421052631578947,
+        -0.03157894736842105
+      ],
+      "bootstrap_repetitions": 5000,
+      "seed_bootstrap": 20261028,
+      "evidence_level": "retrospective paired pointwise CI; no multiplicity correction",
+      "source_json_pointer": "/experiments/efficientnet_mc_energy/runs/retrospective/results/cohorts/DeepShield/paired_differences/mlp_bahat_logits_s29"
+    },
+    {
+      "cohort": "DeepShield",
+      "seed": 43,
+      "accepted": 9500,
+      "coverage": 0.95,
+      "full_errors": 18,
+      "bahat_errors": 28,
+      "relative_error_reduction_percent": 35.714285714285715,
+      "delta_risk_percentage_points": -0.10526315789473686,
+      "ci95_percentage_points": [
+        -0.22105263157894736,
+        -0.02105263157894735
+      ],
+      "bootstrap_repetitions": 5000,
+      "seed_bootstrap": 20261028,
+      "evidence_level": "retrospective paired pointwise CI; no multiplicity correction",
+      "source_json_pointer": "/experiments/efficientnet_mc_energy/runs/retrospective/results/cohorts/DeepShield/paired_differences/mlp_bahat_logits_s43"
+    },
+    {
+      "cohort": "OpenFake",
+      "seed": 17,
+      "accepted": 3800,
+      "coverage": 0.95,
+      "full_errors": 747,
+      "bahat_errors": 795,
+      "relative_error_reduction_percent": 6.037735849056604,
+      "delta_risk_percentage_points": -1.2631578947368438,
+      "ci95_percentage_points": [
+        -1.569861845749475,
+        -0.7949343726580972
+      ],
+      "bootstrap_repetitions": 5000,
+      "seed_bootstrap": 20261028,
+      "evidence_level": "retrospective paired pointwise CI; no multiplicity correction",
+      "source_json_pointer": "/experiments/efficientnet_mc_energy/runs/retrospective/results/cohorts/OpenFake/paired_differences/mlp_bahat_logits_s17"
+    },
+    {
+      "cohort": "OpenFake",
+      "seed": 29,
+      "accepted": 3800,
+      "coverage": 0.95,
+      "full_errors": 747,
+      "bahat_errors": 792,
+      "relative_error_reduction_percent": 5.681818181818182,
+      "delta_risk_percentage_points": -1.1842105263157903,
+      "ci95_percentage_points": [
+        -1.5612798976849969,
+        -0.8021176127793782
+      ],
+      "bootstrap_repetitions": 5000,
+      "seed_bootstrap": 20261028,
+      "evidence_level": "retrospective paired pointwise CI; no multiplicity correction",
+      "source_json_pointer": "/experiments/efficientnet_mc_energy/runs/retrospective/results/cohorts/OpenFake/paired_differences/mlp_bahat_logits_s29"
+    },
+    {
+      "cohort": "OpenFake",
+      "seed": 43,
+      "accepted": 3800,
+      "coverage": 0.95,
+      "full_errors": 747,
+      "bahat_errors": 790,
+      "relative_error_reduction_percent": 5.443037974683544,
+      "delta_risk_percentage_points": -1.1315789473684223,
+      "ci95_percentage_points": [
+        -1.5027331408591311,
+        -0.7383212826277625
+      ],
+      "bootstrap_repetitions": 5000,
+      "seed_bootstrap": 20261028,
+      "evidence_level": "retrospective paired pointwise CI; no multiplicity correction",
+      "source_json_pointer": "/experiments/efficientnet_mc_energy/runs/retrospective/results/cohorts/OpenFake/paired_differences/mlp_bahat_logits_s43"
+    }
+  ],
+  "transformation_family": {
+    "DeepShield": {
+      "ours_mean_aurc": 0.0004074126599141655,
+      "bahat_mean_aurc": 0.0005146588194823838,
+      "relative_aurc_reduction_percent": 20.838302096149988,
+      "paired_seed_contrasts": [
+        {
+          "cohort": "DeepShield",
+          "id": "mlp_ours_logits_s17__minus__mlp_bahat_logits_s17",
+          "left_method": "mlp_ours_logits_s17",
+          "right_method": "mlp_bahat_logits_s17",
+          "estimate_left_minus_right": -0.00012328319326055195,
+          "ci95": {
+            "lower_95": -0.00017849528348918732,
+            "upper_95": -6.91398664386226e-05,
+            "repetitions": 1000
+          },
+          "interpretation": "negative favors left; positive favors right",
+          "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+          "source_json_pointer": "/cohorts/DeepShield/contrasts/mlp_ours_logits_s17__minus__mlp_bahat_logits_s17"
+        },
+        {
+          "cohort": "DeepShield",
+          "id": "mlp_ours_logits_s29__minus__mlp_bahat_logits_s29",
+          "left_method": "mlp_ours_logits_s29",
+          "right_method": "mlp_bahat_logits_s29",
+          "estimate_left_minus_right": -0.00011742482102280641,
+          "ci95": {
+            "lower_95": -0.00017865765616244733,
+            "upper_95": -5.643190874977227e-05,
+            "repetitions": 1000
+          },
+          "interpretation": "negative favors left; positive favors right",
+          "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+          "source_json_pointer": "/cohorts/DeepShield/contrasts/mlp_ours_logits_s29__minus__mlp_bahat_logits_s29"
+        },
+        {
+          "cohort": "DeepShield",
+          "id": "mlp_ours_logits_s43__minus__mlp_bahat_logits_s43",
+          "left_method": "mlp_ours_logits_s43",
+          "right_method": "mlp_bahat_logits_s43",
+          "estimate_left_minus_right": -8.103046442129661e-05,
+          "ci95": {
+            "lower_95": -0.00014075577366878721,
+            "upper_95": -2.1579846581097035e-05,
+            "repetitions": 1000
+          },
+          "interpretation": "negative favors left; positive favors right",
+          "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+          "source_json_pointer": "/cohorts/DeepShield/contrasts/mlp_ours_logits_s43__minus__mlp_bahat_logits_s43"
+        }
+      ],
+      "inference_note": "Each seed has its own paired pointwise interval; no pooled confidence interval for the mean-over-seeds was computed."
+    },
+    "OpenFake": {
+      "ours_mean_aurc": 0.13395278134406038,
+      "bahat_mean_aurc": 0.15470618158771413,
+      "relative_aurc_reduction_percent": 13.414719457662486,
+      "paired_seed_contrasts": [
+        {
+          "cohort": "OpenFake",
+          "id": "mlp_ours_logits_s17__minus__mlp_bahat_logits_s17",
+          "left_method": "mlp_ours_logits_s17",
+          "right_method": "mlp_bahat_logits_s17",
+          "estimate_left_minus_right": -0.01866098505824995,
+          "ci95": {
+            "lower_95": -0.023915400025330047,
+            "upper_95": -0.013059281546306027,
+            "repetitions": 1000
+          },
+          "interpretation": "negative favors left; positive favors right",
+          "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+          "source_json_pointer": "/cohorts/OpenFake/contrasts/mlp_ours_logits_s17__minus__mlp_bahat_logits_s17"
+        },
+        {
+          "cohort": "OpenFake",
+          "id": "mlp_ours_logits_s29__minus__mlp_bahat_logits_s29",
+          "left_method": "mlp_ours_logits_s29",
+          "right_method": "mlp_bahat_logits_s29",
+          "estimate_left_minus_right": -0.012687915601189786,
+          "ci95": {
+            "lower_95": -0.018073764571076466,
+            "upper_95": -0.00671051173982256,
+            "repetitions": 1000
+          },
+          "interpretation": "negative favors left; positive favors right",
+          "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+          "source_json_pointer": "/cohorts/OpenFake/contrasts/mlp_ours_logits_s29__minus__mlp_bahat_logits_s29"
+        },
+        {
+          "cohort": "OpenFake",
+          "id": "mlp_ours_logits_s43__minus__mlp_bahat_logits_s43",
+          "left_method": "mlp_ours_logits_s43",
+          "right_method": "mlp_bahat_logits_s43",
+          "estimate_left_minus_right": -0.03091130007152157,
+          "ci95": {
+            "lower_95": -0.03713383262553392,
+            "upper_95": -0.024212248261422147,
+            "repetitions": 1000
+          },
+          "interpretation": "negative favors left; positive favors right",
+          "source_path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+          "source_json_pointer": "/cohorts/OpenFake/contrasts/mlp_ours_logits_s43__minus__mlp_bahat_logits_s43"
+        }
+      ],
+      "inference_note": "Each seed has its own paired pointwise interval; no pooled confidence interval for the mean-over-seeds was computed."
+    }
+  },
+  "original_confidence_comparison": [
+    {
+      "cohort": "DeepShield",
+      "full_aurc": 0.00039998843353799277,
+      "confidence_aurc": 0.0006600074683957857,
+      "relative_aurc_reduction_percent": 39.39637766369451,
+      "delta_aurc_ci95": {
+        "estimate": -0.0002600190348577929,
+        "ci_95": [
+          -0.00035519059734364847,
+          -0.00018134056254758907
+        ],
+        "valid_replicates": 2000,
+        "invalid_replicates": 0,
+        "exact_score_identity": false
+      },
+      "accepted": 9807,
+      "full_errors": 66,
+      "confidence_errors": 97,
+      "relative_error_reduction_percent": 31.95876288659794,
+      "matched_risk_difference_ci95": {
+        "estimate": -0.0031610074436626895,
+        "ci_95": [
+          -0.004179909470228435,
+          -0.0019352210226115298
+        ],
+        "valid_replicates": 2000,
+        "invalid_replicates": 0,
+        "exact_score_identity": false
+      },
+      "scope": "Original frozen-rule comparison; OpenFake primary, DeepShield secondary known-source cohort; 2000 paired group replicates."
+    },
+    {
+      "cohort": "OpenFake",
+      "full_aurc": 0.1558585735368511,
+      "confidence_aurc": 0.1956234604297579,
+      "relative_aurc_reduction_percent": 20.327258706879434,
+      "delta_aurc_ci95": {
+        "estimate": -0.0397648868929068,
+        "ci_95": [
+          -0.04542659635577028,
+          -0.03399148617001488
+        ],
+        "valid_replicates": 2000,
+        "invalid_replicates": 0,
+        "exact_score_identity": false
+      },
+      "accepted": 3639,
+      "full_errors": 675,
+      "confidence_errors": 746,
+      "relative_error_reduction_percent": 9.517426273458446,
+      "matched_risk_difference_ci95": {
+        "estimate": -0.019510854630392982,
+        "ci_95": [
+          -0.02356182832895161,
+          -0.015641365802208367
+        ],
+        "valid_replicates": 2000,
+        "invalid_replicates": 0,
+        "exact_score_identity": false
+      },
+      "scope": "Original frozen-rule comparison; OpenFake primary, DeepShield secondary known-source cohort; 2000 paired group replicates."
+    }
+  ],
+  "feature_controls": [
+    {
+      "cohort": "DeepShield",
+      "reference": "lr_no_orientation",
+      "full_errors_at_original_k": 66,
+      "reference_errors_at_original_k": 84,
+      "full_aurc": 0.00039998843353799277,
+      "reference_aurc": 0.000628041411091653,
+      "stored_full_minus_reference": {
+        "aurc_difference": -0.00022805297755366022,
+        "risk90_difference": -0.00044444444444444447,
+        "pointwise_group_bootstrap": {
+          "aurc": {
+            "lower_95": -0.00029745296609591293,
+            "upper_95": -0.00016565193393873703,
+            "repetitions": 1000
+          },
+          "risk90": {
+            "lower_95": -0.0008916666666666667,
+            "upper_95": -0.00011111111111111109,
+            "repetitions": 1000
+          }
+        }
+      },
+      "scope": "Retrospective refitted feature ablation; matched counts have no CI at the exact original k."
+    },
+    {
+      "cohort": "DeepShield",
+      "reference": "lr_without_resize_0p5",
+      "full_errors_at_original_k": 66,
+      "reference_errors_at_original_k": 84,
+      "full_aurc": 0.00039998843353799277,
+      "reference_aurc": 0.0005281004888250415,
+      "stored_full_minus_reference": {
+        "aurc_difference": -0.00012811205528704875,
+        "risk90_difference": -0.0003333333333333334,
+        "pointwise_group_bootstrap": {
+          "aurc": {
+            "lower_95": -0.00017739366292412215,
+            "upper_95": -8.407958375702835e-05,
+            "repetitions": 1000
+          },
+          "risk90": {
+            "lower_95": -0.0008888888888888889,
+            "upper_95": 0.00011111111111111109,
+            "repetitions": 1000
+          }
+        }
+      },
+      "scope": "Retrospective refitted feature ablation; matched counts have no CI at the exact original k."
+    },
+    {
+      "cohort": "DeepShield",
+      "reference": "lr_jpeg_only",
+      "full_errors_at_original_k": 66,
+      "reference_errors_at_original_k": 101,
+      "full_aurc": 0.00039998843353799277,
+      "reference_aurc": 0.0007556167089276996,
+      "stored_full_minus_reference": {
+        "aurc_difference": -0.00035562827538970684,
+        "risk90_difference": -0.0015555555555555553,
+        "pointwise_group_bootstrap": {
+          "aurc": {
+            "lower_95": -0.0004588395193291585,
+            "upper_95": -0.0002611717438343459,
+            "repetitions": 1000
+          },
+          "risk90": {
+            "lower_95": -0.0024444444444444444,
+            "upper_95": -0.0008861111111111136,
+            "repetitions": 1000
+          }
+        }
+      },
+      "scope": "Retrospective refitted feature ablation; matched counts have no CI at the exact original k."
+    },
+    {
+      "cohort": "DeepShield",
+      "reference": "lr_summaries_only",
+      "full_errors_at_original_k": 66,
+      "reference_errors_at_original_k": 86,
+      "full_aurc": 0.00039998843353799277,
+      "reference_aurc": 0.0005953903008900456,
+      "stored_full_minus_reference": {
+        "aurc_difference": -0.00019540186735205286,
+        "risk90_difference": -0.0006666666666666666,
+        "pointwise_group_bootstrap": {
+          "aurc": {
+            "lower_95": -0.00026267866898779644,
+            "upper_95": -0.00014039126011081967,
+            "repetitions": 1000
+          },
+          "risk90": {
+            "lower_95": -0.0012222222222222222,
+            "upper_95": -0.0001111111111111112,
+            "repetitions": 1000
+          }
+        }
+      },
+      "scope": "Retrospective refitted feature ablation; matched counts have no CI at the exact original k."
+    },
+    {
+      "cohort": "DeepShield",
+      "reference": "lr_no_summaries",
+      "full_errors_at_original_k": 66,
+      "reference_errors_at_original_k": 68,
+      "full_aurc": 0.00039998843353799277,
+      "reference_aurc": 0.00039040938800728573,
+      "stored_full_minus_reference": {
+        "aurc_difference": 9.579045530707037e-06,
+        "risk90_difference": -0.00022222222222222218,
+        "pointwise_group_bootstrap": {
+          "aurc": {
+            "lower_95": -2.7214555107443523e-05,
+            "upper_95": 4.013421636797839e-05,
+            "repetitions": 1000
+          },
+          "risk90": {
+            "lower_95": -0.0005555555555555556,
+            "upper_95": 0.0,
+            "repetitions": 1000
+          }
+        }
+      },
+      "scope": "Retrospective refitted feature ablation; matched counts have no CI at the exact original k."
+    },
+    {
+      "cohort": "DeepShield",
+      "reference": "lr_no_confidence",
+      "full_errors_at_original_k": 66,
+      "reference_errors_at_original_k": 86,
+      "full_aurc": 0.00039998843353799277,
+      "reference_aurc": 0.0025306871500839936,
+      "stored_full_minus_reference": {
+        "aurc_difference": -0.002130698716546001,
+        "risk90_difference": -0.005333333333333333,
+        "pointwise_group_bootstrap": {
+          "aurc": {
+            "lower_95": -0.002805314636662116,
+            "upper_95": -0.001524474034673235,
+            "repetitions": 1000
+          },
+          "risk90": {
+            "lower_95": -0.007,
+            "upper_95": -0.003886111111111113,
+            "repetitions": 1000
+          }
+        }
+      },
+      "scope": "Retrospective refitted feature ablation; matched counts have no CI at the exact original k."
+    },
+    {
+      "cohort": "DeepShield",
+      "reference": "lr_resize_only",
+      "full_errors_at_original_k": 66,
+      "reference_errors_at_original_k": 65,
+      "full_aurc": 0.00039998843353799277,
+      "reference_aurc": 0.0003737679826806536,
+      "stored_full_minus_reference": {
+        "aurc_difference": 2.6220450857339177e-05,
+        "risk90_difference": 0.0,
+        "pointwise_group_bootstrap": {
+          "aurc": {
+            "lower_95": 4.083107490792324e-06,
+            "upper_95": 5.58319351330736e-05,
+            "repetitions": 1000
+          },
+          "risk90": {
+            "lower_95": 0.0,
+            "upper_95": 0.00022222222222222218,
+            "repetitions": 1000
+          }
+        }
+      },
+      "scope": "Retrospective refitted feature ablation; matched counts have no CI at the exact original k."
+    },
+    {
+      "cohort": "OpenFake",
+      "reference": "lr_no_orientation",
+      "full_errors_at_original_k": 675,
+      "reference_errors_at_original_k": 698,
+      "full_aurc": 0.15585857353685112,
+      "reference_aurc": 0.17490903156949728,
+      "stored_full_minus_reference": {
+        "aurc_difference": -0.019050458032646156,
+        "risk90_difference": -0.0069444444444444475,
+        "pointwise_group_bootstrap": {
+          "aurc": {
+            "lower_95": -0.022506305413305786,
+            "upper_95": -0.015273268686601829,
+            "repetitions": 1000
+          },
+          "risk90": {
+            "lower_95": -0.010904412672957236,
+            "upper_95": -0.003776843945765037,
+            "repetitions": 1000
+          }
+        }
+      },
+      "scope": "Retrospective refitted feature ablation; matched counts have no CI at the exact original k."
+    },
+    {
+      "cohort": "OpenFake",
+      "reference": "lr_without_resize_0p5",
+      "full_errors_at_original_k": 675,
+      "reference_errors_at_original_k": 740,
+      "full_aurc": 0.15585857353685112,
+      "reference_aurc": 0.19690037652365389,
+      "stored_full_minus_reference": {
+        "aurc_difference": -0.04104180298680277,
+        "risk90_difference": -0.01777777777777778,
+        "pointwise_group_bootstrap": {
+          "aurc": {
+            "lower_95": -0.04612746097984941,
+            "upper_95": -0.035238927457089335,
+            "repetitions": 1000
+          },
+          "risk90": {
+            "lower_95": -0.02116904200395965,
+            "upper_95": -0.013766947925263512,
+            "repetitions": 1000
+          }
+        }
+      },
+      "scope": "Retrospective refitted feature ablation; matched counts have no CI at the exact original k."
+    },
+    {
+      "cohort": "OpenFake",
+      "reference": "lr_jpeg_only",
+      "full_errors_at_original_k": 675,
+      "reference_errors_at_original_k": 745,
+      "full_aurc": 0.15585857353685112,
+      "reference_aurc": 0.19692991670176374,
+      "stored_full_minus_reference": {
+        "aurc_difference": -0.04107134316491262,
+        "risk90_difference": -0.01944444444444443,
+        "pointwise_group_bootstrap": {
+          "aurc": {
+            "lower_95": -0.04613353484803268,
+            "upper_95": -0.035210794756919496,
+            "repetitions": 1000
+          },
+          "risk90": {
+            "lower_95": -0.023289010413182577,
+            "upper_95": -0.015306122448979581,
+            "repetitions": 1000
+          }
+        }
+      },
+      "scope": "Retrospective refitted feature ablation; matched counts have no CI at the exact original k."
+    },
+    {
+      "cohort": "OpenFake",
+      "reference": "lr_summaries_only",
+      "full_errors_at_original_k": 675,
+      "reference_errors_at_original_k": 693,
+      "full_aurc": 0.15585857353685112,
+      "reference_aurc": 0.19267113717211673,
+      "stored_full_minus_reference": {
+        "aurc_difference": -0.03681256363526561,
+        "risk90_difference": -0.007222222222222213,
+        "pointwise_group_bootstrap": {
+          "aurc": {
+            "lower_95": -0.04192565033882046,
+            "upper_95": -0.03095528321395062,
+            "repetitions": 1000
+          },
+          "risk90": {
+            "lower_95": -0.01056866141996732,
+            "upper_95": -0.0038449919040748604,
+            "repetitions": 1000
+          }
+        }
+      },
+      "scope": "Retrospective refitted feature ablation; matched counts have no CI at the exact original k."
+    },
+    {
+      "cohort": "OpenFake",
+      "reference": "lr_no_summaries",
+      "full_errors_at_original_k": 675,
+      "reference_errors_at_original_k": 687,
+      "full_aurc": 0.15585857353685112,
+      "reference_aurc": 0.142905802070313,
+      "stored_full_minus_reference": {
+        "aurc_difference": 0.012952771466538116,
+        "risk90_difference": -0.0030555555555555614,
+        "pointwise_group_bootstrap": {
+          "aurc": {
+            "lower_95": 0.010619100743509687,
+            "upper_95": 0.015107276641648982,
+            "repetitions": 1000
+          },
+          "risk90": {
+            "lower_95": -0.006369426751592355,
+            "upper_95": -0.0005147967162989645,
+            "repetitions": 1000
+          }
+        }
+      },
+      "scope": "Retrospective refitted feature ablation; matched counts have no CI at the exact original k."
+    },
+    {
+      "cohort": "OpenFake",
+      "reference": "lr_no_confidence",
+      "full_errors_at_original_k": 675,
+      "reference_errors_at_original_k": 667,
+      "full_aurc": 0.15585857353685112,
+      "reference_aurc": 0.12020409225245238,
+      "stored_full_minus_reference": {
+        "aurc_difference": 0.03565448128439874,
+        "risk90_difference": 0.0036111111111111205,
+        "pointwise_group_bootstrap": {
+          "aurc": {
+            "lower_95": 0.020136104907509764,
+            "upper_95": 0.05179399695678809,
+            "repetitions": 1000
+          },
+          "risk90": {
+            "lower_95": -0.00027371196885780935,
+            "upper_95": 0.008537346089863278,
+            "repetitions": 1000
+          }
+        }
+      },
+      "scope": "Retrospective refitted feature ablation; matched counts have no CI at the exact original k."
+    },
+    {
+      "cohort": "OpenFake",
+      "reference": "lr_resize_only",
+      "full_errors_at_original_k": 675,
+      "reference_errors_at_original_k": 673,
+      "full_aurc": 0.15585857353685112,
+      "reference_aurc": 0.14598696694402347,
+      "stored_full_minus_reference": {
+        "aurc_difference": 0.009871606592827653,
+        "risk90_difference": 0.0005555555555555591,
+        "pointwise_group_bootstrap": {
+          "aurc": {
+            "lower_95": 0.007841012576067669,
+            "upper_95": 0.011889109024255523,
+            "repetitions": 1000
+          },
+          "risk90": {
+            "lower_95": -0.0024581638548153003,
+            "upper_95": 0.00321997808568286,
+            "repetitions": 1000
+          }
+        }
+      },
+      "scope": "Retrospective refitted feature ablation; matched counts have no CI at the exact original k."
+    }
+  ],
+  "mc_energy_tta_comparisons": [
+    {
+      "cohort": "DeepShield",
+      "reference": "mc_entropy_30",
+      "full_aurc": 0.00039998843353799277,
+      "reference_aurc": 0.0006716436384766253,
+      "delta_aurc": -0.0002716552049386325,
+      "aurc_ci95": {
+        "lower_95": -0.0003631310739159264,
+        "upper_95": -0.0001894027770009774,
+        "valid_repetitions": 5000
+      },
+      "full_at95": {
+        "accepted": 9500,
+        "coverage": 0.95,
+        "errors": 18,
+        "risk": 0.001894736842105263
+      },
+      "reference_at95": {
+        "accepted": 9500,
+        "coverage": 0.95,
+        "errors": 43,
+        "risk": 0.004526315789473684
+      },
+      "risk95_ci95": {
+        "lower_95": -0.00368421052631579,
+        "upper_95": -0.0015789473684210526,
+        "valid_repetitions": 5000
+      },
+      "bootstrap_repetitions": 5000,
+      "scope": "Retrospective, pointwise, fixed models; no universal uncertainty-estimation superiority."
+    },
+    {
+      "cohort": "DeepShield",
+      "reference": "energy_t1",
+      "full_aurc": 0.00039998843353799277,
+      "reference_aurc": 0.000623359392140657,
+      "delta_aurc": -0.00022337095860266418,
+      "aurc_ci95": {
+        "lower_95": -0.0002944392413558068,
+        "upper_95": -0.0001604864920290167,
+        "valid_repetitions": 5000
+      },
+      "full_at95": {
+        "accepted": 9500,
+        "coverage": 0.95,
+        "errors": 18,
+        "risk": 0.001894736842105263
+      },
+      "reference_at95": {
+        "accepted": 9500,
+        "coverage": 0.95,
+        "errors": 40,
+        "risk": 0.004210526315789474
+      },
+      "risk95_ci95": {
+        "lower_95": -0.003263157894736842,
+        "upper_95": -0.0011578947368421052,
+        "valid_repetitions": 5000
+      },
+      "bootstrap_repetitions": 5000,
+      "scope": "Retrospective, pointwise, fixed models; no universal uncertainty-estimation superiority."
+    },
+    {
+      "cohort": "DeepShield",
+      "reference": "tta_mean",
+      "full_aurc": 0.00039998843353799277,
+      "reference_aurc": 0.0005641602189006478,
+      "delta_aurc": -0.00016417178536265502,
+      "aurc_ci95": {
+        "lower_95": -0.00022751844569612395,
+        "upper_95": -0.0001099260317642995,
+        "valid_repetitions": 5000
+      },
+      "full_at95": {
+        "accepted": 9500,
+        "coverage": 0.95,
+        "errors": 18,
+        "risk": 0.001894736842105263
+      },
+      "reference_at95": {
+        "accepted": 9500,
+        "coverage": 0.95,
+        "errors": 32,
+        "risk": 0.003368421052631579
+      },
+      "risk95_ci95": {
+        "lower_95": -0.0023157894736842103,
+        "upper_95": -0.0005263157894736844,
+        "valid_repetitions": 5000
+      },
+      "bootstrap_repetitions": 5000,
+      "scope": "Retrospective, pointwise, fixed models; no universal uncertainty-estimation superiority."
+    },
+    {
+      "cohort": "OpenFake",
+      "reference": "mc_entropy_30",
+      "full_aurc": 0.1558585735368511,
+      "reference_aurc": 0.19565112008388197,
+      "delta_aurc": -0.03979254654703088,
+      "aurc_ci95": {
+        "lower_95": -0.045559361432995965,
+        "upper_95": -0.0338577892349699,
+        "valid_repetitions": 5000
+      },
+      "full_at95": {
+        "accepted": 3800,
+        "coverage": 0.95,
+        "errors": 747,
+        "risk": 0.19657894736842105
+      },
+      "reference_at95": {
+        "accepted": 3800,
+        "coverage": 0.95,
+        "errors": 809,
+        "risk": 0.21289473684210528
+      },
+      "risk95_ci95": {
+        "lower_95": -0.019704464216596405,
+        "upper_95": -0.012937913105417986,
+        "valid_repetitions": 5000
+      },
+      "bootstrap_repetitions": 5000,
+      "scope": "Retrospective, pointwise, fixed models; no universal uncertainty-estimation superiority."
+    },
+    {
+      "cohort": "OpenFake",
+      "reference": "energy_t1",
+      "full_aurc": 0.1558585735368511,
+      "reference_aurc": 0.17643351133254073,
+      "delta_aurc": -0.02057493779568964,
+      "aurc_ci95": {
+        "lower_95": -0.023957716244655307,
+        "upper_95": -0.017357672624161262,
+        "valid_repetitions": 5000
+      },
+      "full_at95": {
+        "accepted": 3800,
+        "coverage": 0.95,
+        "errors": 747,
+        "risk": 0.19657894736842105
+      },
+      "reference_at95": {
+        "accepted": 3800,
+        "coverage": 0.95,
+        "errors": 808,
+        "risk": 0.21263157894736842
+      },
+      "risk95_ci95": {
+        "lower_95": -0.019179592918448795,
+        "upper_95": -0.012268257210025455,
+        "valid_repetitions": 5000
+      },
+      "bootstrap_repetitions": 5000,
+      "scope": "Retrospective, pointwise, fixed models; no universal uncertainty-estimation superiority."
+    },
+    {
+      "cohort": "OpenFake",
+      "reference": "tta_mean",
+      "full_aurc": 0.1558585735368511,
+      "reference_aurc": 0.17313768361557957,
+      "delta_aurc": -0.017279110078728482,
+      "aurc_ci95": {
+        "lower_95": -0.021068131771704034,
+        "upper_95": -0.013501543264230224,
+        "valid_repetitions": 5000
+      },
+      "full_at95": {
+        "accepted": 3800,
+        "coverage": 0.95,
+        "errors": 747,
+        "risk": 0.19657894736842105
+      },
+      "reference_at95": {
+        "accepted": 3800,
+        "coverage": 0.95,
+        "errors": 778,
+        "risk": 0.20473684210526316
+      },
+      "risk95_ci95": {
+        "lower_95": -0.01222328558346589,
+        "upper_95": -0.0037755693961042947,
+        "valid_repetitions": 5000
+      },
+      "bootstrap_repetitions": 5000,
+      "scope": "Retrospective, pointwise, fixed models; no universal uncertainty-estimation superiority."
+    }
+  ],
+  "public_detector_primary": {
+    "contrast": "lr_full-confidence",
+    "dataset": "OpenFake",
+    "detectors": {
+      "clip": {
+        "delta_aurc": -0.06758256272931362,
+        "interval_95": {
+          "lower_95": -0.0920921102451459,
+          "upper_95": -0.03896040081005436,
+          "valid_repetitions": 5000
+        },
+        "supports_improvement": true
+      },
+      "resnet50": {
+        "delta_aurc": -0.12903060003513955,
+        "interval_95": {
+          "lower_95": -0.1460363712502177,
+          "upper_95": -0.11121510300487586,
+          "valid_repetitions": 5000
+        },
+        "supports_improvement": true
+      }
+    },
+    "intersection_union_supports_both": true,
+    "policy": {
+      "contrasts": [
+        "clip:lr_full-confidence",
+        "resnet50:lr_full-confidence"
+      ],
+      "dataset": "OpenFake",
+      "joint_claim": "Prínos pre oba detektory sa posudzuje prienikovo-zjednocovacím pravidlom (intersection-union).",
+      "metric": "Párový rozdiel blokovej AURC; záporná hodnota zvýhodňuje profil.",
+      "multiplicity": "Spoločné tvrdenie vyžaduje splnenie oboch vopred určených podmienok; jednotlivé intervaly sú bodové 95 %.",
+      "pointwise_interval": 0.95,
+      "success_rule": "Tvrdiť prínos pre oba detektory iba vtedy, ak sú obe horné hranice 95 % intervalov rozdielu pod nulou; vykázať oba výsledky."
+    }
+  },
+  "public_detector_cohorts": [
+    {
+      "detector": "clip",
+      "cohort": "CommunityForensics",
+      "n": 800,
+      "groups": 58,
+      "detector_accuracy": 0.56375,
+      "methods": {
+        "confidence": {
+          "aurc": 0.39554968200892393,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 640,
+              "coverage": 0.8,
+              "errors": 268,
+              "risk": 0.41875
+            },
+            "0.9": {
+              "accepted": 720,
+              "coverage": 0.9,
+              "errors": 305,
+              "risk": 0.4236111111111111
+            },
+            "0.95": {
+              "accepted": 760,
+              "coverage": 0.95,
+              "errors": 329,
+              "risk": 0.4328947368421053
+            }
+          }
+        },
+        "lr_confidence": {
+          "aurc": 0.47560882150400646,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 640,
+              "coverage": 0.8,
+              "errors": 294,
+              "risk": 0.459375
+            },
+            "0.9": {
+              "accepted": 720,
+              "coverage": 0.9,
+              "errors": 321,
+              "risk": 0.44583333333333336
+            },
+            "0.95": {
+              "accepted": 760,
+              "coverage": 0.95,
+              "errors": 336,
+              "risk": 0.4421052631578947
+            }
+          }
+        },
+        "lr_full": {
+          "aurc": 0.3108357849280413,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 640,
+              "coverage": 0.8,
+              "errors": 234,
+              "risk": 0.365625
+            },
+            "0.9": {
+              "accepted": 720,
+              "coverage": 0.9,
+              "errors": 284,
+              "risk": 0.39444444444444443
+            },
+            "0.95": {
+              "accepted": 760,
+              "coverage": 0.95,
+              "errors": 316,
+              "risk": 0.41578947368421054
+            }
+          }
+        },
+        "lr_jpeg_only": {
+          "aurc": 0.2930605903534531,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 640,
+              "coverage": 0.8,
+              "errors": 228,
+              "risk": 0.35625
+            },
+            "0.9": {
+              "accepted": 720,
+              "coverage": 0.9,
+              "errors": 279,
+              "risk": 0.3875
+            },
+            "0.95": {
+              "accepted": 760,
+              "coverage": 0.95,
+              "errors": 315,
+              "risk": 0.4144736842105263
+            }
+          }
+        },
+        "lr_resize_only": {
+          "aurc": 0.41215267662477495,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 640,
+              "coverage": 0.8,
+              "errors": 271,
+              "risk": 0.4234375
+            },
+            "0.9": {
+              "accepted": 720,
+              "coverage": 0.9,
+              "errors": 308,
+              "risk": 0.42777777777777776
+            },
+            "0.95": {
+              "accepted": 760,
+              "coverage": 0.95,
+              "errors": 330,
+              "risk": 0.4342105263157895
+            }
+          }
+        },
+        "tta_mean": {
+          "aurc": 0.42622945294929915,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 640,
+              "coverage": 0.8,
+              "errors": 288,
+              "risk": 0.45
+            },
+            "0.9": {
+              "accepted": 720,
+              "coverage": 0.9,
+              "errors": 320,
+              "risk": 0.4444444444444444
+            },
+            "0.95": {
+              "accepted": 760,
+              "coverage": 0.95,
+              "errors": 341,
+              "risk": 0.4486842105263158
+            }
+          }
+        }
+      },
+      "profile_vs_confidence": {
+        "aurc": -0.08471389708088262,
+        "risk_at_coverage": {
+          "0.8": -0.05312500000000003,
+          "0.9": -0.029166666666666674,
+          "0.95": -0.017105263157894735
+        }
+      },
+      "bootstrap": {
+        "intervals": {
+          "lr_confidence": {
+            "0.8": {
+              "lower_95": -0.005052010737700718,
+              "upper_95": 0.07980637405745103,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.00110690924790043,
+              "upper_95": 0.03987741388841061,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.002728606147354573,
+              "upper_95": 0.019536536909418246,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.020466830795845103,
+              "upper_95": 0.17031934577225316,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_full": {
+            "0.8": {
+              "lower_95": -0.08441668129168131,
+              "upper_95": -0.01321249743878705,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.04705930099312452,
+              "upper_95": -0.004973295288264565,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.026253767432842023,
+              "upper_95": -0.007152820355610056,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.15523636067582983,
+              "upper_95": -0.013373050751299501,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_jpeg_only": {
+            "0.8": {
+              "lower_95": -0.0962732919254658,
+              "upper_95": -0.02325412874957871,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.05220899420466675,
+              "upper_95": -0.020143432423872194,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.026449804254802634,
+              "upper_95": -0.007141339538648317,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.16999901499343567,
+              "upper_95": -0.031781711718665666,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_resize_only": {
+            "0.8": {
+              "lower_95": -0.02931072403680858,
+              "upper_95": 0.03821808429585837,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.016925332100835203,
+              "upper_95": 0.02029806960419488,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.011688501556922559,
+              "upper_95": 0.01315789473684209,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.05785698831050438,
+              "upper_95": 0.08387485328256845,
+              "valid_repetitions": 5000
+            }
+          },
+          "tta_mean": {
+            "0.8": {
+              "lower_95": 0.018211920529801306,
+              "upper_95": 0.04318936877076407,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": 0.009210412755132943,
+              "upper_95": 0.03468253678816941,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": 0.005405223036801984,
+              "upper_95": 0.02751286791358561,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": 0.017111941671670544,
+              "upper_95": 0.04370373731880936,
+              "valid_repetitions": 5000
+            }
+          }
+        },
+        "multiple_comparison_correction": "none",
+        "requested_repetitions": 5000,
+        "seed": 20261027,
+        "status": "ok"
+      }
+    },
+    {
+      "detector": "clip",
+      "cohort": "DeepShield",
+      "n": 2000,
+      "groups": 2000,
+      "detector_accuracy": 0.46699999999999997,
+      "methods": {
+        "confidence": {
+          "aurc": 0.6306514963814935,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 1600,
+              "coverage": 0.8,
+              "errors": 870,
+              "risk": 0.54375
+            },
+            "0.9": {
+              "accepted": 1800,
+              "coverage": 0.9,
+              "errors": 967,
+              "risk": 0.5372222222222223
+            },
+            "0.95": {
+              "accepted": 1900,
+              "coverage": 0.95,
+              "errors": 1021,
+              "risk": 0.5373684210526316
+            }
+          }
+        },
+        "lr_confidence": {
+          "aurc": 0.47517632943760785,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 1600,
+              "coverage": 0.8,
+              "errors": 778,
+              "risk": 0.48625
+            },
+            "0.9": {
+              "accepted": 1800,
+              "coverage": 0.9,
+              "errors": 913,
+              "risk": 0.5072222222222222
+            },
+            "0.95": {
+              "accepted": 1900,
+              "coverage": 0.95,
+              "errors": 988,
+              "risk": 0.52
+            }
+          }
+        },
+        "lr_full": {
+          "aurc": 0.36375476919339456,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 1600,
+              "coverage": 0.8,
+              "errors": 760,
+              "risk": 0.475
+            },
+            "0.9": {
+              "accepted": 1800,
+              "coverage": 0.9,
+              "errors": 895,
+              "risk": 0.49722222222222223
+            },
+            "0.95": {
+              "accepted": 1900,
+              "coverage": 0.95,
+              "errors": 978,
+              "risk": 0.5147368421052632
+            }
+          }
+        },
+        "lr_jpeg_only": {
+          "aurc": 0.3673060735248287,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 1600,
+              "coverage": 0.8,
+              "errors": 760,
+              "risk": 0.475
+            },
+            "0.9": {
+              "accepted": 1800,
+              "coverage": 0.9,
+              "errors": 891,
+              "risk": 0.495
+            },
+            "0.95": {
+              "accepted": 1900,
+              "coverage": 0.95,
+              "errors": 975,
+              "risk": 0.5131578947368421
+            }
+          }
+        },
+        "lr_resize_only": {
+          "aurc": 0.4063690005314065,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 1600,
+              "coverage": 0.8,
+              "errors": 802,
+              "risk": 0.50125
+            },
+            "0.9": {
+              "accepted": 1800,
+              "coverage": 0.9,
+              "errors": 936,
+              "risk": 0.52
+            },
+            "0.95": {
+              "accepted": 1900,
+              "coverage": 0.95,
+              "errors": 1001,
+              "risk": 0.5268421052631579
+            }
+          }
+        },
+        "tta_mean": {
+          "aurc": 0.6702781926029195,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 1600,
+              "coverage": 0.8,
+              "errors": 955,
+              "risk": 0.596875
+            },
+            "0.9": {
+              "accepted": 1800,
+              "coverage": 0.9,
+              "errors": 1032,
+              "risk": 0.5733333333333334
+            },
+            "0.95": {
+              "accepted": 1900,
+              "coverage": 0.95,
+              "errors": 1059,
+              "risk": 0.5573684210526316
+            }
+          }
+        }
+      },
+      "profile_vs_confidence": {
+        "aurc": -0.266896727188099,
+        "risk_at_coverage": {
+          "0.8": -0.06874999999999998,
+          "0.9": -0.040000000000000036,
+          "0.95": -0.022631578947368447
+        }
+      },
+      "bootstrap": {
+        "intervals": {
+          "lr_confidence": {
+            "0.8": {
+              "lower_95": -0.07374999999999998,
+              "upper_95": -0.040000000000000036,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.039444444444444504,
+              "upper_95": -0.018888888888888844,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.023684210526315863,
+              "upper_95": -0.010526315789473606,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.1912771957247422,
+              "upper_95": -0.11836405107567302,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_full": {
+            "0.8": {
+              "lower_95": -0.08249999999999996,
+              "upper_95": -0.05312500000000003,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.04944444444444446,
+              "upper_95": -0.030555555555555558,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.028421052631579014,
+              "upper_95": -0.015789473684210575,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.2936257337435226,
+              "upper_95": -0.23934509450983815,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_jpeg_only": {
+            "0.8": {
+              "lower_95": -0.08250000000000002,
+              "upper_95": -0.053749999999999964,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.05166666666666664,
+              "upper_95": -0.033333333333333326,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.029999999999999916,
+              "upper_95": -0.017894736842105297,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.28909964775371993,
+              "upper_95": -0.23640234823367903,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_resize_only": {
+            "0.8": {
+              "lower_95": -0.05874999999999997,
+              "upper_95": -0.02749999999999997,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.02833333333333332,
+              "upper_95": -0.007222222222222241,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.01736842105263159,
+              "upper_95": -0.0031578947368420263,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.25506982217717544,
+              "upper_95": -0.19242695831586704,
+              "valid_repetitions": 5000
+            }
+          },
+          "tta_mean": {
+            "0.8": {
+              "lower_95": 0.04249999999999998,
+              "upper_95": 0.06374999999999997,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": 0.02777777777777779,
+              "upper_95": 0.0444444444444444,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": 0.01473684210526316,
+              "upper_95": 0.025789473684210473,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": 0.03125732102131661,
+              "upper_95": 0.04811152572951254,
+              "valid_repetitions": 5000
+            }
+          }
+        },
+        "multiple_comparison_correction": "none",
+        "requested_repetitions": 5000,
+        "seed": 20261027,
+        "status": "ok"
+      }
+    },
+    {
+      "detector": "clip",
+      "cohort": "OpenFake",
+      "n": 4000,
+      "groups": 84,
+      "detector_accuracy": 0.4075,
+      "methods": {
+        "confidence": {
+          "aurc": 0.6639531142215405,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "coverage": 0.8,
+              "errors": 1955,
+              "risk": 0.6109375
+            },
+            "0.9": {
+              "accepted": 3600,
+              "coverage": 0.9,
+              "errors": 2162,
+              "risk": 0.6005555555555555
+            },
+            "0.95": {
+              "accepted": 3800,
+              "coverage": 0.95,
+              "errors": 2263,
+              "risk": 0.5955263157894737
+            }
+          }
+        },
+        "lr_confidence": {
+          "aurc": 0.5398096441105853,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "coverage": 0.8,
+              "errors": 1797,
+              "risk": 0.5615625
+            },
+            "0.9": {
+              "accepted": 3600,
+              "coverage": 0.9,
+              "errors": 2067,
+              "risk": 0.5741666666666667
+            },
+            "0.95": {
+              "accepted": 3800,
+              "coverage": 0.95,
+              "errors": 2222,
+              "risk": 0.5847368421052631
+            }
+          }
+        },
+        "lr_full": {
+          "aurc": 0.5963705514922268,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "coverage": 0.8,
+              "errors": 1897,
+              "risk": 0.5928125
+            },
+            "0.9": {
+              "accepted": 3600,
+              "coverage": 0.9,
+              "errors": 2141,
+              "risk": 0.5947222222222223
+            },
+            "0.95": {
+              "accepted": 3800,
+              "coverage": 0.95,
+              "errors": 2256,
+              "risk": 0.5936842105263158
+            }
+          }
+        },
+        "lr_jpeg_only": {
+          "aurc": 0.5933525838714848,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "coverage": 0.8,
+              "errors": 1879,
+              "risk": 0.5871875
+            },
+            "0.9": {
+              "accepted": 3600,
+              "coverage": 0.9,
+              "errors": 2113,
+              "risk": 0.5869444444444445
+            },
+            "0.95": {
+              "accepted": 3800,
+              "coverage": 0.95,
+              "errors": 2231,
+              "risk": 0.5871052631578947
+            }
+          }
+        },
+        "lr_resize_only": {
+          "aurc": 0.6033385516419909,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "coverage": 0.8,
+              "errors": 1948,
+              "risk": 0.60875
+            },
+            "0.9": {
+              "accepted": 3600,
+              "coverage": 0.9,
+              "errors": 2168,
+              "risk": 0.6022222222222222
+            },
+            "0.95": {
+              "accepted": 3800,
+              "coverage": 0.95,
+              "errors": 2269,
+              "risk": 0.5971052631578947
+            }
+          }
+        },
+        "tta_mean": {
+          "aurc": 0.6623002285017536,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "coverage": 0.8,
+              "errors": 1942,
+              "risk": 0.606875
+            },
+            "0.9": {
+              "accepted": 3600,
+              "coverage": 0.9,
+              "errors": 2144,
+              "risk": 0.5955555555555555
+            },
+            "0.95": {
+              "accepted": 3800,
+              "coverage": 0.95,
+              "errors": 2250,
+              "risk": 0.5921052631578947
+            }
+          }
+        }
+      },
+      "profile_vs_confidence": {
+        "aurc": -0.06758256272931362,
+        "risk_at_coverage": {
+          "0.8": -0.018125000000000058,
+          "0.9": -0.005833333333333246,
+          "0.95": -0.0018421052631578672
+        }
+      },
+      "bootstrap": {
+        "intervals": {
+          "lr_confidence": {
+            "0.8": {
+              "lower_95": -0.06378994953742644,
+              "upper_95": -0.03631888034054513,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.03301553621288987,
+              "upper_95": -0.018994367268383494,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.015453386832853602,
+              "upper_95": -0.00498049321736636,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.15420918855679455,
+              "upper_95": -0.08817851901061069,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_full": {
+            "0.8": {
+              "lower_95": -0.03183344982913956,
+              "upper_95": -0.006045986943164446,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.013987981862055538,
+              "upper_95": 0.0030514023497094965,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.007319141014724745,
+              "upper_95": 0.003870669895816402,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.0920921102451459,
+              "upper_95": -0.03896040081005436,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_jpeg_only": {
+            "0.8": {
+              "lower_95": -0.03657056068338411,
+              "upper_95": -0.009776525301748187,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.02094690350037905,
+              "upper_95": -0.0043667169650274075,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.013017863850744934,
+              "upper_95": -0.0026307829489523277,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.09401153812441203,
+              "upper_95": -0.04247459401564995,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_resize_only": {
+            "0.8": {
+              "lower_95": -0.01349024147579359,
+              "upper_95": 0.009655771835142357,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.005062826006942881,
+              "upper_95": 0.009078265319066168,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.00290946305156827,
+              "upper_95": 0.006952313379474846,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.08607471972083777,
+              "upper_95": -0.03176654502538214,
+              "valid_repetitions": 5000
+            }
+          },
+          "tta_mean": {
+            "0.8": {
+              "lower_95": -0.01244338836804509,
+              "upper_95": 0.002414784566520416,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.010515341752951917,
+              "upper_95": 0.00026622698033026607,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.006737897542500354,
+              "upper_95": 0.0011100717311707698,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.0057836682773277056,
+              "upper_95": 0.002276381483429282,
+              "valid_repetitions": 5000
+            }
+          }
+        },
+        "multiple_comparison_correction": "none",
+        "requested_repetitions": 5000,
+        "seed": 20261027,
+        "status": "ok"
+      }
+    },
+    {
+      "detector": "resnet50",
+      "cohort": "CommunityForensics",
+      "n": 800,
+      "groups": 58,
+      "detector_accuracy": 0.50625,
+      "methods": {
+        "confidence": {
+          "aurc": 0.429946757049723,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 640,
+              "coverage": 0.8,
+              "errors": 306,
+              "risk": 0.478125
+            },
+            "0.9": {
+              "accepted": 720,
+              "coverage": 0.9,
+              "errors": 350,
+              "risk": 0.4861111111111111
+            },
+            "0.95": {
+              "accepted": 760,
+              "coverage": 0.95,
+              "errors": 371,
+              "risk": 0.4881578947368421
+            }
+          }
+        },
+        "lr_confidence": {
+          "aurc": 0.429946757049723,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 640,
+              "coverage": 0.8,
+              "errors": 306,
+              "risk": 0.478125
+            },
+            "0.9": {
+              "accepted": 720,
+              "coverage": 0.9,
+              "errors": 350,
+              "risk": 0.4861111111111111
+            },
+            "0.95": {
+              "accepted": 760,
+              "coverage": 0.95,
+              "errors": 371,
+              "risk": 0.4881578947368421
+            }
+          }
+        },
+        "lr_full": {
+          "aurc": 0.3651986053273941,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 640,
+              "coverage": 0.8,
+              "errors": 271,
+              "risk": 0.4234375
+            },
+            "0.9": {
+              "accepted": 720,
+              "coverage": 0.9,
+              "errors": 330,
+              "risk": 0.4583333333333333
+            },
+            "0.95": {
+              "accepted": 760,
+              "coverage": 0.95,
+              "errors": 359,
+              "risk": 0.4723684210526316
+            }
+          }
+        },
+        "lr_jpeg_only": {
+          "aurc": 0.40704742171623487,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 640,
+              "coverage": 0.8,
+              "errors": 267,
+              "risk": 0.4171875
+            },
+            "0.9": {
+              "accepted": 720,
+              "coverage": 0.9,
+              "errors": 322,
+              "risk": 0.44722222222222224
+            },
+            "0.95": {
+              "accepted": 760,
+              "coverage": 0.95,
+              "errors": 357,
+              "risk": 0.4697368421052632
+            }
+          }
+        },
+        "lr_resize_only": {
+          "aurc": 0.4093960703763176,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 640,
+              "coverage": 0.8,
+              "errors": 291,
+              "risk": 0.4546875
+            },
+            "0.9": {
+              "accepted": 720,
+              "coverage": 0.9,
+              "errors": 337,
+              "risk": 0.46805555555555556
+            },
+            "0.95": {
+              "accepted": 760,
+              "coverage": 0.95,
+              "errors": 368,
+              "risk": 0.4842105263157895
+            }
+          }
+        },
+        "tta_mean": {
+          "aurc": 0.43511583272395105,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 640,
+              "coverage": 0.8,
+              "errors": 308,
+              "risk": 0.48125
+            },
+            "0.9": {
+              "accepted": 720,
+              "coverage": 0.9,
+              "errors": 352,
+              "risk": 0.4888888888888889
+            },
+            "0.95": {
+              "accepted": 760,
+              "coverage": 0.95,
+              "errors": 375,
+              "risk": 0.4934210526315789
+            }
+          }
+        }
+      },
+      "profile_vs_confidence": {
+        "aurc": -0.0647481517223289,
+        "risk_at_coverage": {
+          "0.8": -0.0546875,
+          "0.9": -0.02777777777777779,
+          "0.95": -0.01578947368421052
+        }
+      },
+      "bootstrap": {
+        "intervals": {
+          "lr_confidence": {
+            "0.8": {
+              "lower_95": 0.0,
+              "upper_95": 0.0,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": 0.0,
+              "upper_95": 0.0,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": 0.0,
+              "upper_95": 0.0,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": 0.0,
+              "upper_95": 0.0,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_full": {
+            "0.8": {
+              "lower_95": -0.08136180679785328,
+              "upper_95": -0.025294808201058207,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.046828059885238825,
+              "upper_95": -0.009867842734473272,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.026950536694616705,
+              "upper_95": -0.006982270328988227,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.11426635359463308,
+              "upper_95": -0.011683274530988993,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_jpeg_only": {
+            "0.8": {
+              "lower_95": -0.08883132676526749,
+              "upper_95": -0.033222446158492666,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.052941936464508316,
+              "upper_95": -0.025156793506904186,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.027869216065158207,
+              "upper_95": -0.009999287749287768,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.06959299076998904,
+              "upper_95": 0.023585307707882256,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_resize_only": {
+            "0.8": {
+              "lower_95": -0.047619047619047616,
+              "upper_95": 0.0,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.03675344563552829,
+              "upper_95": 0.0,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.017199017199017175,
+              "upper_95": 0.006677369195814785,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.05413334109152878,
+              "upper_95": 0.011344269774874908,
+              "valid_repetitions": 5000
+            }
+          },
+          "tta_mean": {
+            "0.8": {
+              "lower_95": -0.005673758865248181,
+              "upper_95": 0.009132768125626457,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.0027287932871105963,
+              "upper_95": 0.007722455980969892,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": 0.0,
+              "upper_95": 0.009485215403755456,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": 0.0004833131219599635,
+              "upper_95": 0.009484206050105375,
+              "valid_repetitions": 5000
+            }
+          }
+        },
+        "multiple_comparison_correction": "none",
+        "requested_repetitions": 5000,
+        "seed": 20261027,
+        "status": "ok"
+      }
+    },
+    {
+      "detector": "resnet50",
+      "cohort": "DeepShield",
+      "n": 2000,
+      "groups": 2000,
+      "detector_accuracy": 0.5265,
+      "methods": {
+        "confidence": {
+          "aurc": 0.5146265704237449,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 1600,
+              "coverage": 0.8,
+              "errors": 758,
+              "risk": 0.47375
+            },
+            "0.9": {
+              "accepted": 1800,
+              "coverage": 0.9,
+              "errors": 854,
+              "risk": 0.47444444444444445
+            },
+            "0.95": {
+              "accepted": 1900,
+              "coverage": 0.95,
+              "errors": 898,
+              "risk": 0.4726315789473684
+            }
+          }
+        },
+        "lr_confidence": {
+          "aurc": 0.5146265704237449,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 1600,
+              "coverage": 0.8,
+              "errors": 758,
+              "risk": 0.47375
+            },
+            "0.9": {
+              "accepted": 1800,
+              "coverage": 0.9,
+              "errors": 854,
+              "risk": 0.47444444444444445
+            },
+            "0.95": {
+              "accepted": 1900,
+              "coverage": 0.95,
+              "errors": 898,
+              "risk": 0.4726315789473684
+            }
+          }
+        },
+        "lr_full": {
+          "aurc": 0.31346189719005085,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 1600,
+              "coverage": 0.8,
+              "errors": 618,
+              "risk": 0.38625
+            },
+            "0.9": {
+              "accepted": 1800,
+              "coverage": 0.9,
+              "errors": 771,
+              "risk": 0.42833333333333334
+            },
+            "0.95": {
+              "accepted": 1900,
+              "coverage": 0.95,
+              "errors": 859,
+              "risk": 0.45210526315789473
+            }
+          }
+        },
+        "lr_jpeg_only": {
+          "aurc": 0.36961268284298565,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 1600,
+              "coverage": 0.8,
+              "errors": 648,
+              "risk": 0.405
+            },
+            "0.9": {
+              "accepted": 1800,
+              "coverage": 0.9,
+              "errors": 782,
+              "risk": 0.43444444444444447
+            },
+            "0.95": {
+              "accepted": 1900,
+              "coverage": 0.95,
+              "errors": 859,
+              "risk": 0.45210526315789473
+            }
+          }
+        },
+        "lr_resize_only": {
+          "aurc": 0.409516697057274,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 1600,
+              "coverage": 0.8,
+              "errors": 665,
+              "risk": 0.415625
+            },
+            "0.9": {
+              "accepted": 1800,
+              "coverage": 0.9,
+              "errors": 788,
+              "risk": 0.43777777777777777
+            },
+            "0.95": {
+              "accepted": 1900,
+              "coverage": 0.95,
+              "errors": 860,
+              "risk": 0.45263157894736844
+            }
+          }
+        },
+        "tta_mean": {
+          "aurc": 0.5198546552474107,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 1600,
+              "coverage": 0.8,
+              "errors": 765,
+              "risk": 0.478125
+            },
+            "0.9": {
+              "accepted": 1800,
+              "coverage": 0.9,
+              "errors": 868,
+              "risk": 0.4822222222222222
+            },
+            "0.95": {
+              "accepted": 1900,
+              "coverage": 0.95,
+              "errors": 919,
+              "risk": 0.48368421052631577
+            }
+          }
+        }
+      },
+      "profile_vs_confidence": {
+        "aurc": -0.20116467323369408,
+        "risk_at_coverage": {
+          "0.8": -0.08750000000000002,
+          "0.9": -0.0461111111111111,
+          "0.95": -0.02052631578947367
+        }
+      },
+      "bootstrap": {
+        "intervals": {
+          "lr_confidence": {
+            "0.8": {
+              "lower_95": 0.0,
+              "upper_95": 0.0,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": 0.0,
+              "upper_95": 0.0,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": 0.0,
+              "upper_95": 0.0,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": 0.0,
+              "upper_95": 0.0,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_full": {
+            "0.8": {
+              "lower_95": -0.09812500000000002,
+              "upper_95": -0.073125,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.05333333333333329,
+              "upper_95": -0.03611111111111115,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.02684210526315789,
+              "upper_95": -0.015263157894736812,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.22269364050261795,
+              "upper_95": -0.17837817145504398,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_jpeg_only": {
+            "0.8": {
+              "lower_95": -0.07999999999999996,
+              "upper_95": -0.055625000000000036,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.04777777777777775,
+              "upper_95": -0.031111111111111145,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.02684210526315789,
+              "upper_95": -0.015263157894736812,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.16538455977898664,
+              "upper_95": -0.1228811054669206,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_resize_only": {
+            "0.8": {
+              "lower_95": -0.070625,
+              "upper_95": -0.043125000000000024,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.045555555555555516,
+              "upper_95": -0.027777777777777735,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.02578947368421053,
+              "upper_95": -0.013684210526315799,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.12763585906263503,
+              "upper_95": -0.08193236918304486,
+              "valid_repetitions": 5000
+            }
+          },
+          "tta_mean": {
+            "0.8": {
+              "lower_95": 0.0006250000000000422,
+              "upper_95": 0.010625000000000051,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": 0.004986111111111067,
+              "upper_95": 0.014444444444444482,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": 0.006315789473684219,
+              "upper_95": 0.01473684210526316,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": 0.0019828323075738036,
+              "upper_95": 0.008322681618569142,
+              "valid_repetitions": 5000
+            }
+          }
+        },
+        "multiple_comparison_correction": "none",
+        "requested_repetitions": 5000,
+        "seed": 20261027,
+        "status": "ok"
+      }
+    },
+    {
+      "detector": "resnet50",
+      "cohort": "OpenFake",
+      "n": 4000,
+      "groups": 84,
+      "detector_accuracy": 0.50675,
+      "methods": {
+        "confidence": {
+          "aurc": 0.6165925704081372,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "coverage": 0.8,
+              "errors": 1700,
+              "risk": 0.53125
+            },
+            "0.9": {
+              "accepted": 3600,
+              "coverage": 0.9,
+              "errors": 1840,
+              "risk": 0.5111111111111111
+            },
+            "0.95": {
+              "accepted": 3800,
+              "coverage": 0.95,
+              "errors": 1912,
+              "risk": 0.5031578947368421
+            }
+          }
+        },
+        "lr_confidence": {
+          "aurc": 0.6165925704081372,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "coverage": 0.8,
+              "errors": 1700,
+              "risk": 0.53125
+            },
+            "0.9": {
+              "accepted": 3600,
+              "coverage": 0.9,
+              "errors": 1840,
+              "risk": 0.5111111111111111
+            },
+            "0.95": {
+              "accepted": 3800,
+              "coverage": 0.95,
+              "errors": 1912,
+              "risk": 0.5031578947368421
+            }
+          }
+        },
+        "lr_full": {
+          "aurc": 0.48756197037299764,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "coverage": 0.8,
+              "errors": 1454,
+              "risk": 0.454375
+            },
+            "0.9": {
+              "accepted": 3600,
+              "coverage": 0.9,
+              "errors": 1642,
+              "risk": 0.45611111111111113
+            },
+            "0.95": {
+              "accepted": 3800,
+              "coverage": 0.95,
+              "errors": 1791,
+              "risk": 0.4713157894736842
+            }
+          }
+        },
+        "lr_jpeg_only": {
+          "aurc": 0.5385528633845562,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "coverage": 0.8,
+              "errors": 1436,
+              "risk": 0.44875
+            },
+            "0.9": {
+              "accepted": 3600,
+              "coverage": 0.9,
+              "errors": 1631,
+              "risk": 0.45305555555555554
+            },
+            "0.95": {
+              "accepted": 3800,
+              "coverage": 0.95,
+              "errors": 1773,
+              "risk": 0.46657894736842104
+            }
+          }
+        },
+        "lr_resize_only": {
+          "aurc": 0.5342839250251128,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "coverage": 0.8,
+              "errors": 1573,
+              "risk": 0.4915625
+            },
+            "0.9": {
+              "accepted": 3600,
+              "coverage": 0.9,
+              "errors": 1746,
+              "risk": 0.485
+            },
+            "0.95": {
+              "accepted": 3800,
+              "coverage": 0.95,
+              "errors": 1856,
+              "risk": 0.4884210526315789
+            }
+          }
+        },
+        "tta_mean": {
+          "aurc": 0.6175795062176083,
+          "risk_at_coverage": {
+            "0.8": {
+              "accepted": 3200,
+              "coverage": 0.8,
+              "errors": 1719,
+              "risk": 0.5371875
+            },
+            "0.9": {
+              "accepted": 3600,
+              "coverage": 0.9,
+              "errors": 1856,
+              "risk": 0.5155555555555555
+            },
+            "0.95": {
+              "accepted": 3800,
+              "coverage": 0.95,
+              "errors": 1928,
+              "risk": 0.5073684210526316
+            }
+          }
+        }
+      },
+      "profile_vs_confidence": {
+        "aurc": -0.12903060003513955,
+        "risk_at_coverage": {
+          "0.8": -0.07687500000000003,
+          "0.9": -0.05499999999999994,
+          "0.95": -0.03184210526315795
+        }
+      },
+      "bootstrap": {
+        "intervals": {
+          "lr_confidence": {
+            "0.8": {
+              "lower_95": 0.0,
+              "upper_95": 0.0,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": 0.0,
+              "upper_95": 0.0,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": 0.0,
+              "upper_95": 0.0,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": 0.0,
+              "upper_95": 0.0,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_full": {
+            "0.8": {
+              "lower_95": -0.08712673115238673,
+              "upper_95": -0.06542325824604504,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.06132108802542742,
+              "upper_95": -0.048535112990104046,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.03526758972726092,
+              "upper_95": -0.02812167125073531,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.1460363712502177,
+              "upper_95": -0.11121510300487586,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_jpeg_only": {
+            "0.8": {
+              "lower_95": -0.09074325705371002,
+              "upper_95": -0.07274966202325232,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.06464701132894303,
+              "upper_95": -0.052748279762272,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.039415751128036504,
+              "upper_95": -0.03300575398789686,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.09358178918676814,
+              "upper_95": -0.06217221558470877,
+              "valid_repetitions": 5000
+            }
+          },
+          "lr_resize_only": {
+            "0.8": {
+              "lower_95": -0.0490057563467482,
+              "upper_95": -0.02894484140961775,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": -0.0330651282080646,
+              "upper_95": -0.019647334528630916,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": -0.018902284388224763,
+              "upper_95": -0.010050111046302934,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.09573941572342641,
+              "upper_95": -0.06714060036605526,
+              "valid_repetitions": 5000
+            }
+          },
+          "tta_mean": {
+            "0.8": {
+              "lower_95": 0.0019283476235515658,
+              "upper_95": 0.009691188736057909,
+              "valid_repetitions": 5000
+            },
+            "0.9": {
+              "lower_95": 0.00184102731011965,
+              "upper_95": 0.007208577382321318,
+              "valid_repetitions": 5000
+            },
+            "0.95": {
+              "lower_95": 0.0017325892860119956,
+              "upper_95": 0.006584243093009391,
+              "valid_repetitions": 5000
+            },
+            "aurc": {
+              "lower_95": -0.0008288886447846116,
+              "upper_95": 0.003134149290775722,
+              "valid_repetitions": 5000
+            }
+          }
+        },
+        "multiple_comparison_correction": "none",
+        "requested_repetitions": 5000,
+        "seed": 20261027,
+        "status": "ok"
+      }
+    }
+  ],
+  "frozen_rule_assessment": {
+    "status": "passed",
+    "total": 2000,
+    "accepted": 1958,
+    "review": 42,
+    "coverage": 0.979,
+    "errors": 13,
+    "risk": 0.006639427987742594,
+    "risk_upper_bound": 0.010535283921290446,
+    "confidence": 0.95,
+    "target_risk": 0.02,
+    "minimum_accepted": 30,
+    "research_threshold": 0.08632226578702012,
+    "accept_threshold": 0.08632226578702012,
+    "calibration_partition_digest": "26e720bc9956122f6417e206ce7d5dc4a7eccdc43935a445f2b0add567814b4e",
+    "evaluated_utc": "2026-10-16T07:59:41.105163+00:00",
+    "scope": "Jedno vopred zmrazené pravidlo, nezávislí reprezentanti pri rovnakej cieľovej distribúcii. Bez záruky pri posune distribúcie."
+  },
+  "compactness": {
+    "features": 9,
+    "logistic_coefficients": 9,
+    "intercept": 1,
+    "stored_scaler_means": 9,
+    "stored_scaler_scales": 9,
+    "views": 6,
+    "bahat_reference_hidden_layers": [
+      70,
+      70
+    ],
+    "bahat_reference_input_logits": 12,
+    "speed_claim_supported": false,
+    "bahat_trainable_parameters": 6231,
+    "bahat_trainable_parameter_breakdown": {
+      "linear_12_to_70": 910,
+      "batchnorm_70_first_affine": 140,
+      "linear_70_to_70": 4970,
+      "batchnorm_70_second_affine": 140,
+      "linear_70_to_1": 71
+    },
+    "comparison_scope": "Trainable selector parameters only: 6231 for the implemented 12-logit MLP vs 10 for the logistic scorer. Excludes the shared frozen image detector and stored scaler statistics. MLP affine batch-normalization parameters are included; running-statistic buffers are not trainable. No latency ratio is implied.",
+    "verified_network_source": "archive\\selective_experiments\\selector_comparison_bahat\\code\\models.py"
+  },
+  "ablation_confirmation": {
+    "all_four_conditions_passed": false,
+    "bootstrap": {
+      "interval": "Dvojstranný bodový percentilový 95 % interval [2,5 %, 97,5 %].",
+      "quantiles": [
+        0.025,
+        0.975
+      ],
+      "requested_repetitions": 5000,
+      "scope": "Pevné modely; neistota opakovaného učenia nie je zahrnutá.",
+      "seed": 20261028,
+      "simultaneous_intervals": false,
+      "unit": "Celé spojené pôvodové a výberové skupiny; párové pre oba modely."
+    },
+    "cohorts": {
+      "DeepShield": {
+        "adequacy": {
+          "guard_scope": "Konzervatívne predurčené stabilitné guardy; nezaručujú nominálne pokrytie bootstrapových intervalov.",
+          "minimum_groups": 2,
+          "minimum_matched_error_discordant_groups": 10,
+          "passed": false,
+          "reasons": [
+            "fewer_than_ten_matched_error_discordant_groups"
+          ]
+        },
+        "delta_resize_minus_full": {
+          "0.8": -0.0008333333333333334,
+          "0.9": -0.0007407407407407407,
+          "0.95": 0.0,
+          "aurc": -0.00010079387047047983,
+          "matched": -0.0006798096532970761
+        },
+        "detector_errors": 34,
+        "groups": 1500,
+        "intervals": {
+          "0.8": {
+            "lower_95": -0.0025,
+            "upper_95": 0.0,
+            "valid_repetitions": 5000
+          },
+          "0.9": {
+            "lower_95": -0.0022222222222222222,
+            "upper_95": 0.0,
+            "valid_repetitions": 5000
+          },
+          "0.95": {
+            "lower_95": -0.0028070175438596493,
+            "upper_95": 0.0007017543859649126,
+            "valid_repetitions": 5000
+          },
+          "aurc": {
+            "lower_95": -0.0002755438218805998,
+            "upper_95": 1.2195380356995304e-05,
+            "valid_repetitions": 5000
+          },
+          "matched": {
+            "lower_95": -0.002719238613188307,
+            "upper_95": 0.0,
+            "valid_repetitions": 5000
+          }
+        },
+        "matched_error_count_delta": -1,
+        "matched_fraction": 0.9807,
+        "matched_fraction_exact": [
+          9807,
+          10000
+        ],
+        "models": {
+          "full": {
+            "aurc": 0.000729861061157172,
+            "risks": {
+              "0.8": {
+                "accepted": 1200,
+                "coverage": 0.8,
+                "errors": 1,
+                "risk": 0.0008333333333333334
+              },
+              "0.9": {
+                "accepted": 1350,
+                "coverage": 0.9,
+                "errors": 2,
+                "risk": 0.0014814814814814814
+              },
+              "0.95": {
+                "accepted": 1425,
+                "coverage": 0.95,
+                "errors": 4,
+                "risk": 0.002807017543859649
+              },
+              "matched": {
+                "accepted": 1471,
+                "coverage": 0.9806666666666667,
+                "errors": 13,
+                "risk": 0.008837525492861998
+              }
+            }
+          },
+          "resize": {
+            "aurc": 0.0006290671906866922,
+            "risks": {
+              "0.8": {
+                "accepted": 1200,
+                "coverage": 0.8,
+                "errors": 0,
+                "risk": 0.0
+              },
+              "0.9": {
+                "accepted": 1350,
+                "coverage": 0.9,
+                "errors": 1,
+                "risk": 0.0007407407407407407
+              },
+              "0.95": {
+                "accepted": 1425,
+                "coverage": 0.95,
+                "errors": 4,
+                "risk": 0.002807017543859649
+              },
+              "matched": {
+                "accepted": 1471,
+                "coverage": 0.9806666666666667,
+                "errors": 12,
+                "risk": 0.008157715839564922
+              }
+            }
+          }
+        },
+        "paired_error_discordance": {
+          "added_errors": 0,
+          "definition": "Rozdiel indikátorov prijatá-a-chybná predikcia pri rovnakom k.",
+          "discordant_groups": 1,
+          "discordant_observations": 1,
+          "removed_errors": 1
+        },
+        "profiles": 1500,
+        "status": "inadequate"
+      },
+      "OpenFake": {
+        "adequacy": {
+          "guard_scope": "Konzervatívne predurčené stabilitné guardy; nezaručujú nominálne pokrytie bootstrapových intervalov.",
+          "minimum_groups": 2,
+          "minimum_matched_error_discordant_groups": 10,
+          "passed": true,
+          "reasons": []
+        },
+        "delta_resize_minus_full": {
+          "0.8": -0.0039583333333333415,
+          "0.9": -0.0009259259259259411,
+          "0.95": -0.0010526315789473606,
+          "aurc": -0.009457201394922815,
+          "matched": -0.0014657383657017409
+        },
+        "detector_errors": 1349,
+        "groups": 43,
+        "intervals": {
+          "0.8": {
+            "lower_95": -0.0070465555338549085,
+            "upper_95": -0.0010034745859003767,
+            "valid_repetitions": 5000
+          },
+          "0.9": {
+            "lower_95": -0.00253542252347033,
+            "upper_95": 0.0028850030299538013,
+            "valid_repetitions": 5000
+          },
+          "0.95": {
+            "lower_95": -0.0030971206187490295,
+            "upper_95": 0.00040472319818992645,
+            "valid_repetitions": 5000
+          },
+          "aurc": {
+            "lower_95": -0.011421944745716454,
+            "upper_95": -0.0076430298142296585,
+            "valid_repetitions": 5000
+          },
+          "matched": {
+            "lower_95": -0.0033993727148681836,
+            "upper_95": 0.002553218662536342,
+            "valid_repetitions": 5000
+          }
+        },
+        "matched_error_count_delta": -8,
+        "matched_fraction": 0.90975,
+        "matched_fraction_exact": [
+          3639,
+          4000
+        ],
+        "models": {
+          "full": {
+            "aurc": 0.15176238604741832,
+            "risks": {
+              "0.8": {
+                "accepted": 4800,
+                "coverage": 0.8,
+                "errors": 779,
+                "risk": 0.16229166666666667
+              },
+              "0.9": {
+                "accepted": 5400,
+                "coverage": 0.9,
+                "errors": 967,
+                "risk": 0.17907407407407408
+              },
+              "0.95": {
+                "accepted": 5700,
+                "coverage": 0.95,
+                "errors": 1112,
+                "risk": 0.19508771929824562
+              },
+              "matched": {
+                "accepted": 5458,
+                "coverage": 0.9096666666666666,
+                "errors": 994,
+                "risk": 0.182117991938439
+              }
+            }
+          },
+          "resize": {
+            "aurc": 0.1423051846524955,
+            "risks": {
+              "0.8": {
+                "accepted": 4800,
+                "coverage": 0.8,
+                "errors": 760,
+                "risk": 0.15833333333333333
+              },
+              "0.9": {
+                "accepted": 5400,
+                "coverage": 0.9,
+                "errors": 962,
+                "risk": 0.17814814814814814
+              },
+              "0.95": {
+                "accepted": 5700,
+                "coverage": 0.95,
+                "errors": 1106,
+                "risk": 0.19403508771929825
+              },
+              "matched": {
+                "accepted": 5458,
+                "coverage": 0.9096666666666666,
+                "errors": 986,
+                "risk": 0.18065225357273726
+              }
+            }
+          }
+        },
+        "paired_error_discordance": {
+          "added_errors": 24,
+          "definition": "Rozdiel indikátorov prijatá-a-chybná predikcia pri rovnakom k.",
+          "discordant_groups": 20,
+          "discordant_observations": 56,
+          "removed_errors": 32
+        },
+        "profiles": 6000,
+        "status": "ok"
+      }
+    },
+    "conditions": {
+      "DeepShield:aurc": {
+        "estimate": -0.00010079387047047983,
+        "passed": false,
+        "upper_95": 1.2195380356995304e-05
+      },
+      "DeepShield:matched": {
+        "estimate": -0.0006798096532970761,
+        "passed": false,
+        "upper_95": 0.0
+      },
+      "OpenFake:aurc": {
+        "estimate": -0.009457201394922815,
+        "passed": true,
+        "upper_95": -0.0076430298142296585
+      },
+      "OpenFake:matched": {
+        "estimate": -0.0014657383657017409,
+        "passed": false,
+        "upper_95": 0.002553218662536342
+      }
+    },
+    "decision": "retain_full",
+    "inputs": {
+      "plan_sha256": "c75d0d077e07cca003ffce912197cbce2d59179ca3ea7ba17ddda422d129e85d",
+      "profiles_complete_sha256": "60fe8ebea8fd47f0c13c8e8c70fd79f3aaeb5fe9bb480c1d30c60d9d62c47700",
+      "profiles_sha256": "ff93b8082632ac42b180c02224e0e6eb49b3e9bf44dfd1d146a6ba58379edb42",
+      "run_protocol_sha256": "667aff81b366ef574e76f889be9892570c63d72e4578c82d4e9ad20c8e16b1eb",
+      "statistics_sha256": "b2327038f3e33befc9967eb6fac66bda0df436cd3064710e5b153fefceb0ea2f"
+    },
+    "model_change_performed": false,
+    "policy": {
+      "adoption_rule": "Všetky štyri horné hranice musia byť striktne pod nulou a všetky guardy musia prejsť.",
+      "allowed_deterioration": 0.0,
+      "decision_scope": "Spôsobilosť na samostatné rozhodnutie o náhrade; žiadna automatická zmena modelu.",
+      "direction": "resize-minus-full",
+      "matched_count": "floor(q*N) s pevným q; v každej replike floor(q*N_replika). Nie počet z prahu full.",
+      "noninferiority_margin": null,
+      "primary": [
+        "DeepShield:aurc",
+        "DeepShield:matched",
+        "OpenFake:aurc",
+        "OpenFake:matched"
+      ],
+      "secondary_coverages": [
+        "0.8",
+        "0.9",
+        "0.95"
+      ],
+      "test": "Spoločná intersection-union podmienka superiority; nie noninferiority.",
+      "ties": "AURC celé bloky zhodných skóre; pevné pokrytie SHA256(article-ablation-confirmation-tie-v1/sample_id)."
+    },
+    "version": "article-ablation-confirmation-statistics-v1"
+  },
+  "evidence_summary_table": [
+    {
+      "contribution": "Compact class-oriented scorer",
+      "headline_result": "9 coefficients + 1 intercept; original class preserved",
+      "evidence": "Structural and algebraic",
+      "essential_qualification": "Six image views; no latency-superiority claim"
+    },
+    {
+      "contribution": "Ordinary-confidence comparison",
+      "headline_result": "39.40%/20.33% lower AURC; 31.96%/9.52% fewer matched errors",
+      "evidence": "Original external paired intervals; OpenFake primary",
+      "essential_qualification": "Known-source DS/OF cohorts; accepted OF error rate 18.55%"
+    },
+    {
+      "contribution": "Bahat adaptation at original coverage",
+      "headline_result": "17.50–18.52%/4.93–5.20% fewer errors across all three seeds",
+      "evidence": "Retrospective point estimates",
+      "essential_qualification": "No interval at these exact coverages"
+    },
+    {
+      "contribution": "Bahat adaptation at 95% coverage",
+      "headline_result": "35.71–41.94%/5.44–6.04% fewer errors; six negative intervals",
+      "evidence": "Retrospective 5,000 paired group replicates; pointwise",
+      "essential_qualification": "OpenFake seed-43 AURC favors Bahat"
+    },
+    {
+      "contribution": "Chosen transformation family",
+      "headline_result": "20.84%/13.41% lower mean AURC; six negative per-seed intervals",
+      "evidence": "Retrospective matched MLP and training procedure",
+      "essential_qualification": "No pooled-mean interval; not every feature is necessary"
+    },
+    {
+      "contribution": "MC30 and energy references",
+      "headline_result": "Four negative AURC intervals across two cohorts and two references",
+      "evidence": "Retrospective 5,000 paired group replicates",
+      "essential_qualification": "Native-head MC and native two-logit energy only"
+    },
+    {
+      "contribution": "Additional detector portability",
+      "headline_result": "CLIP and ResNet OpenFake primary conjunction passes",
+      "evidence": "New external sample; frozen protocol",
+      "essential_qualification": "Binary tasks, refitted selectors, poor absolute accuracy"
+    },
+    {
+      "contribution": "Frozen-rule risk assessment",
+      "headline_result": "97.9% coverage; upper 95% risk bound 1.054% < 2%",
+      "evidence": "Separate fixed-rule binomial assessment",
+      "essential_qualification": "Same-distribution assumptions only"
+    },
+    {
+      "contribution": "Independent ablation decision",
+      "headline_result": "7,500 new images; one of four conditions passes; retain full",
+      "evidence": "Predeclared replacement test on new data",
+      "essential_qualification": "Not proof of full superiority; dominant OpenFake group"
+    }
+  ],
+  "necessary_counterevidence": [
+    "Transformation-response confidence is established by Bahat and Shakhnarovich; do not claim its invention.",
+    "Exact original coverage matched-error improvements versus Bahat have no stored CIs; the six strictly negative risk CIs refer to 95% coverage only.",
+    "All Bahat, transformation-family, feature-ablation and MC/energy comparisons reuse the same 14000 external images; they are retrospective.",
+    "The Bahat seed-43 adaptation has better OpenFake AURC; a matched-view nonlinear MLP over oriented margins also improves OpenFake AURC over full. Neither reverses the observed high-coverage advantage of full.",
+    "A learned confidence-only model has lower CLIP/OpenFake AURC than full; no stored direct full-versus-learned-confidence CI exists.",
+    "Nine features are not proved necessary; resize-only and removing summaries/confidence can improve some ranking outcomes.",
+    "The 7500-image resize confirmation passes only OpenFake AURC, not the replacement rule; retain_full is not evidence of full superiority.",
+    "OpenFake group imbalance, missing historical pHash, known-source sampling and unknown pretraining overlap limit independence and uncertainty interpretation.",
+    "The calibrated 2% target is a same-distribution fixed-rule result, not a certificate for shifted cohorts. External OpenFake selected risk remains about 18.55%.",
+    "All evaluated tasks remain binary real/synthetic classification. This is multi-detector evidence, not multiclass evidence or controlled architectural causality.",
+    "Ten logistic parameters establish scorer compactness, not measured end-to-end speed superiority; full requires six detector views and MC uses a cached backbone."
+  ],
+  "proposed_english": {
+    "contributions": [
+      "We develop a compact selector that expresses JPEG and resizing responses as class-oriented margin changes and nonlinear summaries. Nine logistic coefficients and one intercept determine acceptance while the original detector prediction and image representation remain fixed.",
+      "We isolate the contribution of the transformation family through matched-model controls. Replacing the reference transformations with the proposed degradations reduces mean AURC by 20.84% on DeepShield and 13.41% on OpenFake; all six seed-specific paired intervals favor the proposed views. At 95% coverage, the full selector also retains fewer errors than each of three Bahat-style runs on both cohorts.",
+      "We demonstrate complementary error-ranking value against ordinary confidence, native-head MC dropout and native-logit energy, and reproduce the primary advantage over ordinary confidence in separately fitted CLIP and ResNet-50 selection pipelines.",
+      "We connect ranking evaluation to a frozen acceptance rule assessed on a separate sample, then independently test a cheaper ablation using a locked replacement criterion. This separates reproducible operational gains from improvements that remain exploratory or insufficient for replacement."
+    ],
+    "discussion": "The central empirical contribution is a practical high-coverage advantage from a compact error-ranking model. At the original matched acceptance counts, the full selector retains 66 rather than 80–81 errors on DeepShield and 675 rather than 710–712 on OpenFake across the three Bahat-style runs. At 95% coverage, the advantage is also supported by all six paired pointwise intervals, with 18 rather than 28–31 errors on DeepShield and 747 rather than 790–795 on OpenFake. A second contribution concerns the views themselves: keeping the learned reference architecture and training procedure fixed, our degradations reduce mean AURC by 20.84% and 13.41%. Thus, the evidence supports both a useful operating point for the compact selector and the choice of transformation family. These are retrospective comparisons and do not imply universal ranking superiority: the Bahat seed-43 model and the MLP over oriented margins achieve better OpenFake AURC. This distinction strengthens the practical interpretation by identifying where the compact selector is advantageous and where a different ranking model remains preferable.",
+    "abstract": "Synthetic-image detectors can make confident errors under distribution shift. We develop a compact selective classifier that uses transformation responses to accept a frozen detector's original prediction or abstain. Nine features combine the original margin magnitude, five class-oriented changes under JPEG compression and resizing, and three response summaries. On DeepShield and OpenFake, the full logistic selector reduces area under the risk–coverage curve relative to confidence by 39.40% and 20.33%. At 95% coverage it retains 18 rather than 28–31 errors on DeepShield and 747 rather than 790–795 on OpenFake across three Bahat-style runs; all six retrospective paired pointwise intervals favor the full selector. Matched-model controls additionally support the degradation family, reducing mean AURC by 20.84% and 13.41% while holding the reference network architecture and training procedure fixed. Retrospective comparisons also favor the profile over native-head Monte Carlo dropout and native-logit energy. The primary improvement over ordinary confidence extends to CLIP and ResNet-50 pipelines, although absolute accuracy and learned-reference exceptions limit the claim. A separate frozen-rule assessment reaches 97.9% coverage with a one-sided 95% risk bound of 1.054% under its same-distribution assumptions. Finally, a 7,500-image independent test of a cheaper resizing ablation satisfies only one of four replacement conditions. The results establish useful high-coverage and transformation-family gains without claiming uniform superiority or distribution-independent risk control."
+  }
+}

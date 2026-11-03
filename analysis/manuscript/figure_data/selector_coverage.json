@@ -1,0 +1,950 @@
+{
+  "schema": "selector-coverage-figure-data-v1",
+  "new_training": false,
+  "new_inference": false,
+  "new_bootstrap": false,
+  "inputs": [
+    {
+      "path": "evidence\\history_selector.json",
+      "sha256": "6b23dcfe39d7d53e1e8989184b06749909a889beb3c03d7eabb8e59d1ddfc896"
+    },
+    {
+      "path": "evidence\\extended_ablation_table.json",
+      "sha256": "0b369a3858882fca54b7d1a66633341f12117d915b955799fb5aae7812659ffe"
+    }
+  ],
+  "primary_report_checks": [
+    {
+      "path": "archive\\selective_experiments\\experiment_v2_20261010\\reports\\mixture\\report.json",
+      "sha256": "06cc4b087682de4fdf4961413ba61d814a662f4ef7bb65529f2772dded7f3371",
+      "values_match": true
+    },
+    {
+      "path": "archive\\selective_experiments\\experiment_v2_20261010\\reports\\clean\\report.json",
+      "sha256": "8f5201535f7ab7b985d6385dc5edd6282929875bb41f8e708837149caa31ad91",
+      "values_match": true
+    },
+    {
+      "path": "archive\\selective_experiments\\experiment_v2_20261010\\reports\\jpeg_q40\\report.json",
+      "sha256": "cb10202c781069fe9e6e84678ae18aa3d132b4bd91a30c90a55b1f4dbeea1924",
+      "values_match": true
+    },
+    {
+      "path": "archive\\selective_experiments\\experiment_v2_20261010\\reports\\resize_0p5\\report.json",
+      "sha256": "c847e87f44f796aaebf2fbb2afc4f5e20ce8927fd3d431fccb0c3ae1555d5677",
+      "values_match": true
+    },
+    {
+      "path": "archive\\selective_experiments\\experiment_v2_20261010\\reports\\brightness_0p85\\report.json",
+      "sha256": "a2db3d19c202c7aaa617b09ced20f3b8014cd64a919a424def4b99de4b6fcfb1",
+      "values_match": true
+    },
+    {
+      "path": "archive\\selective_experiments\\experiment_v2_20261010\\reports\\contrast_1p15\\report.json",
+      "sha256": "3ccaca29a2201365e1916d8500ab503bed40c9947bf26ad23cc382bff2e8ed21",
+      "values_match": true
+    },
+    {
+      "path": "archive\\selective_experiments\\selector_comparison_bahat\\reports\\full\\results.json",
+      "sha256": "e1da35dac98c0d9d101624394f922c87049cbc10c15700c2ccd66cbc6b9bc3cb",
+      "values_match": true
+    }
+  ],
+  "historical_v1_v2": [
+    {
+      "condition": "mixture",
+      "n": 2000,
+      "groups": 2000,
+      "accepted": 1616,
+      "coverage": 0.808,
+      "errors": {
+        "confidence": 21,
+        "V1": 32,
+        "V2": 16
+      },
+      "aurc": {
+        "confidence": 0.015737678450710165,
+        "V1": 0.03641502602294419,
+        "V2": 0.012947452773260247
+      }
+    },
+    {
+      "condition": "clean",
+      "n": 2000,
+      "groups": 2000,
+      "accepted": 1626,
+      "coverage": 0.813,
+      "errors": {
+        "confidence": 22,
+        "V1": 13,
+        "V2": 14
+      },
+      "aurc": {
+        "confidence": 0.013881432224273104,
+        "V1": 0.010597601816088535,
+        "V2": 0.011284769549534078
+      }
+    },
+    {
+      "condition": "jpeg_q40",
+      "n": 2000,
+      "groups": 2000,
+      "accepted": 1610,
+      "coverage": 0.805,
+      "errors": {
+        "confidence": 74,
+        "V1": 32,
+        "V2": 29
+      },
+      "aurc": {
+        "confidence": 0.03370828479461115,
+        "V1": 0.016845022074217057,
+        "V2": 0.017467017732225
+      }
+    },
+    {
+      "condition": "resize_0p5",
+      "n": 2000,
+      "groups": 2000,
+      "accepted": 1562,
+      "coverage": 0.781,
+      "errors": {
+        "confidence": 18,
+        "V1": 103,
+        "V2": 25
+      },
+      "aurc": {
+        "confidence": 0.016594482498529697,
+        "V1": 0.13568910019500574,
+        "V2": 0.018832591871795628
+      }
+    },
+    {
+      "condition": "brightness_0p85",
+      "n": 2000,
+      "groups": 2000,
+      "accepted": 1595,
+      "coverage": 0.7975,
+      "errors": {
+        "confidence": 23,
+        "V1": 13,
+        "V2": 13
+      },
+      "aurc": {
+        "confidence": 0.014429373828257314,
+        "V1": 0.011286955701996417,
+        "V2": 0.008857273809312645
+      }
+    },
+    {
+      "condition": "contrast_1p15",
+      "n": 2000,
+      "groups": 2000,
+      "accepted": 1606,
+      "coverage": 0.803,
+      "errors": {
+        "confidence": 22,
+        "V1": 14,
+        "V2": 16
+      },
+      "aurc": {
+        "confidence": 0.014186255591829488,
+        "V1": 0.011016322312982786,
+        "V2": 0.011800109172085767
+      }
+    }
+  ],
+  "exploratory_methods": [
+    {
+      "method": "frozen_v4",
+      "label": "Full profile (frozen)",
+      "family": "main",
+      "dimension": 9,
+      "spec": {
+        "id": "frozen_v4",
+        "kind": "frozen",
+        "features": "full"
+      },
+      "aurc": {
+        "DeepShield": 0.00039998843353799277,
+        "OpenFake": 0.15585857353685112
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 66,
+          "risk": 0.00672988681553992,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 675,
+          "risk": 0.18549051937345423,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "confidence",
+      "label": "Confidence",
+      "family": "baseline",
+      "dimension": null,
+      "spec": {
+        "id": "confidence",
+        "kind": "baseline"
+      },
+      "aurc": {
+        "DeepShield": 0.0006600074683957854,
+        "OpenFake": 0.19562346042975787
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 97,
+          "risk": 0.00989089425920261,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 746,
+          "risk": 0.20500137400384721,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "tta_mean",
+      "label": "TTA mean",
+      "family": "baseline",
+      "dimension": null,
+      "spec": {
+        "id": "tta_mean",
+        "kind": "baseline"
+      },
+      "aurc": {
+        "DeepShield": 0.0005641602189006478,
+        "OpenFake": 0.1731376836155796
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 86,
+          "risk": 0.008769246456612624,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 696,
+          "risk": 0.1912613355317395,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "lr_confidence",
+      "label": "LR: confidence",
+      "family": "lr",
+      "dimension": 1,
+      "spec": {
+        "id": "lr_confidence",
+        "kind": "lr",
+        "features": "confidence",
+        "C": 0.1
+      },
+      "aurc": {
+        "DeepShield": 0.0006600074683957854,
+        "OpenFake": 0.19562346042975787
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 97,
+          "risk": 0.00989089425920261,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 746,
+          "risk": 0.20500137400384721,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "lr_full",
+      "label": "LR: full profile refit",
+      "family": "lr",
+      "dimension": 9,
+      "spec": {
+        "id": "lr_full",
+        "kind": "lr",
+        "features": "full",
+        "C": 0.1
+      },
+      "aurc": {
+        "DeepShield": 0.00039998843353799277,
+        "OpenFake": 0.15585857353685112
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 66,
+          "risk": 0.00672988681553992,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 675,
+          "risk": 0.18549051937345423,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "lr_no_summaries",
+      "label": "LR: no summaries",
+      "family": "lr",
+      "dimension": 6,
+      "spec": {
+        "id": "lr_no_summaries",
+        "kind": "lr",
+        "features": "no_summaries",
+        "C": 0.1
+      },
+      "aurc": {
+        "DeepShield": 0.00039040938800728573,
+        "OpenFake": 0.142905802070313
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 68,
+          "risk": 0.006933822779647191,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 687,
+          "risk": 0.18878812860676009,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "lr_no_orientation",
+      "label": "LR: no class orientation",
+      "family": "lr",
+      "dimension": 9,
+      "spec": {
+        "id": "lr_no_orientation",
+        "kind": "lr",
+        "features": "no_orientation",
+        "C": 0.1
+      },
+      "aurc": {
+        "DeepShield": 0.000628041411091653,
+        "OpenFake": 0.17490903156949728
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 84,
+          "risk": 0.008565310492505354,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 698,
+          "risk": 0.1918109370706238,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "lr_no_confidence",
+      "label": "LR: no original confidence",
+      "family": "lr",
+      "dimension": 8,
+      "spec": {
+        "id": "lr_no_confidence",
+        "kind": "lr",
+        "features": "no_confidence",
+        "C": 0.1
+      },
+      "aurc": {
+        "DeepShield": 0.0025306871500839936,
+        "OpenFake": 0.12020409225245238
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 86,
+          "risk": 0.008769246456612624,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 667,
+          "risk": 0.183292113217917,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "lr_summaries_only",
+      "label": "LR: confidence + summaries",
+      "family": "lr",
+      "dimension": 4,
+      "spec": {
+        "id": "lr_summaries_only",
+        "kind": "lr",
+        "features": "summaries_only",
+        "C": 0.1
+      },
+      "aurc": {
+        "DeepShield": 0.0005953903008900456,
+        "OpenFake": 0.19267113717211673
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 86,
+          "risk": 0.008769246456612624,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 693,
+          "risk": 0.190436933223413,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "lr_jpeg_only",
+      "label": "LR: JPEG views only",
+      "family": "lr",
+      "dimension": 7,
+      "spec": {
+        "id": "lr_jpeg_only",
+        "kind": "lr",
+        "features": "jpeg_only",
+        "C": 0.1
+      },
+      "aurc": {
+        "DeepShield": 0.0007556167089276996,
+        "OpenFake": 0.19692991670176374
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 101,
+          "risk": 0.01029876618741715,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 745,
+          "risk": 0.20472657323440505,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "lr_resize_only",
+      "label": "LR: resize views only",
+      "family": "lr",
+      "dimension": 6,
+      "spec": {
+        "id": "lr_resize_only",
+        "kind": "lr",
+        "features": "resize_only",
+        "C": 0.1
+      },
+      "aurc": {
+        "DeepShield": 0.0003737679826806536,
+        "OpenFake": 0.14598696694402347
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 65,
+          "risk": 0.006627918833486285,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 673,
+          "risk": 0.18494091783456992,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "lr_without_jpeg_q90",
+      "label": "LR: omit JPEG 90",
+      "family": "lr",
+      "dimension": 8,
+      "spec": {
+        "id": "lr_without_jpeg_q90",
+        "kind": "lr",
+        "features": "without_jpeg_q90",
+        "C": 0.1
+      },
+      "aurc": {
+        "DeepShield": 0.00039242393629796286,
+        "OpenFake": 0.15696285832411794
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 66,
+          "risk": 0.00672988681553992,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 676,
+          "risk": 0.1857653201428964,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "lr_without_jpeg_q75",
+      "label": "LR: omit JPEG 75",
+      "family": "lr",
+      "dimension": 8,
+      "spec": {
+        "id": "lr_without_jpeg_q75",
+        "kind": "lr",
+        "features": "without_jpeg_q75",
+        "C": 0.1
+      },
+      "aurc": {
+        "DeepShield": 0.0003929258716995516,
+        "OpenFake": 0.1597302143833098
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 66,
+          "risk": 0.00672988681553992,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 684,
+          "risk": 0.18796372629843364,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "lr_without_jpeg_q60",
+      "label": "LR: omit JPEG 60",
+      "family": "lr",
+      "dimension": 8,
+      "spec": {
+        "id": "lr_without_jpeg_q60",
+        "kind": "lr",
+        "features": "without_jpeg_q60",
+        "C": 0.1
+      },
+      "aurc": {
+        "DeepShield": 0.00038407082491636116,
+        "OpenFake": 0.1482454387851322
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 66,
+          "risk": 0.00672988681553992,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 672,
+          "risk": 0.18466611706512778,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "lr_without_resize_0p75",
+      "label": "LR: omit resize 0.75",
+      "family": "lr",
+      "dimension": 8,
+      "spec": {
+        "id": "lr_without_resize_0p75",
+        "kind": "lr",
+        "features": "without_resize_0p75",
+        "C": 0.1
+      },
+      "aurc": {
+        "DeepShield": 0.00041492344949619866,
+        "OpenFake": 0.1532056852069017
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 68,
+          "risk": 0.006933822779647191,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 675,
+          "risk": 0.18549051937345423,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "lr_without_resize_0p5",
+      "label": "LR: omit resize 0.50",
+      "family": "lr",
+      "dimension": 8,
+      "spec": {
+        "id": "lr_without_resize_0p5",
+        "kind": "lr",
+        "features": "without_resize_0p5",
+        "C": 0.1
+      },
+      "aurc": {
+        "DeepShield": 0.0005281004888250415,
+        "OpenFake": 0.19690037652365389
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 84,
+          "risk": 0.008565310492505354,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 740,
+          "risk": 0.2033525693871943,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "lr_balanced_no_summaries",
+      "label": "LR: balanced, no summaries",
+      "family": "lr",
+      "dimension": 6,
+      "spec": {
+        "id": "lr_balanced_no_summaries",
+        "kind": "lr",
+        "features": "no_summaries",
+        "C": 0.1,
+        "balance_classes": true
+      },
+      "aurc": {
+        "DeepShield": 0.00037276837191211915,
+        "OpenFake": 0.13861818113852278
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 62,
+          "risk": 0.00632201488732538,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 675,
+          "risk": 0.18549051937345423,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "mlp_margins_s17",
+      "label": "MLP: oriented margins, seed 17",
+      "family": "margins",
+      "dimension": 6,
+      "spec": {
+        "id": "mlp_margins_s17",
+        "kind": "mlp",
+        "features": "no_summaries",
+        "seed": 17
+      },
+      "aurc": {
+        "DeepShield": 0.00038769902404005356,
+        "OpenFake": 0.10763014063734626
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 73,
+          "risk": 0.007443662689915366,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 692,
+          "risk": 0.19016213245397087,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "mlp_margins_s29",
+      "label": "MLP: oriented margins, seed 29",
+      "family": "margins",
+      "dimension": 6,
+      "spec": {
+        "id": "mlp_margins_s29",
+        "kind": "mlp",
+        "features": "no_summaries",
+        "seed": 29
+      },
+      "aurc": {
+        "DeepShield": 0.0004001334641677258,
+        "OpenFake": 0.10370380520613348
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 76,
+          "risk": 0.007749566636076272,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 680,
+          "risk": 0.18686452322066502,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "mlp_margins_s43",
+      "label": "MLP: oriented margins, seed 43",
+      "family": "margins",
+      "dimension": 6,
+      "spec": {
+        "id": "mlp_margins_s43",
+        "kind": "mlp",
+        "features": "no_summaries",
+        "seed": 43
+      },
+      "aurc": {
+        "DeepShield": 0.00040146878328354554,
+        "OpenFake": 0.10877362537929128
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 73,
+          "risk": 0.007443662689915366,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 686,
+          "risk": 0.18851332783731795,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "mlp_ours_logits_s17",
+      "label": "MLP: our-view logits, seed 17",
+      "family": "ours_logits",
+      "dimension": 12,
+      "spec": {
+        "id": "mlp_ours_logits_s17",
+        "kind": "mlp",
+        "features": "ours_logits",
+        "seed": 17
+      },
+      "aurc": {
+        "DeepShield": 0.00039338524336033167,
+        "OpenFake": 0.13609872318943655
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 69,
+          "risk": 0.007035790761700826,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 687,
+          "risk": 0.18878812860676009,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "mlp_ours_logits_s29",
+      "label": "MLP: our-view logits, seed 29",
+      "family": "ours_logits",
+      "dimension": 12,
+      "spec": {
+        "id": "mlp_ours_logits_s29",
+        "kind": "mlp",
+        "features": "ours_logits",
+        "seed": 29
+      },
+      "aurc": {
+        "DeepShield": 0.00039747963977862483,
+        "OpenFake": 0.14777298734205782
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 70,
+          "risk": 0.007137758743754461,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 695,
+          "risk": 0.19098653476229732,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "mlp_ours_logits_s43",
+      "label": "MLP: our-view logits, seed 43",
+      "family": "ours_logits",
+      "dimension": 12,
+      "spec": {
+        "id": "mlp_ours_logits_s43",
+        "kind": "mlp",
+        "features": "ours_logits",
+        "seed": 43
+      },
+      "aurc": {
+        "DeepShield": 0.00043137309660354003,
+        "OpenFake": 0.1179866335006867
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 75,
+          "risk": 0.007647598654022637,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 686,
+          "risk": 0.18851332783731795,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "mlp_bahat_logits_s17",
+      "label": "MLP: Bahat-view logits, seed 17",
+      "family": "bahat_logits",
+      "dimension": 12,
+      "spec": {
+        "id": "mlp_bahat_logits_s17",
+        "kind": "mlp",
+        "features": "bahat_logits",
+        "seed": 17
+      },
+      "aurc": {
+        "DeepShield": 0.0005166684366208836,
+        "OpenFake": 0.1547597082476865
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 81,
+          "risk": 0.008259406546344448,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 710,
+          "risk": 0.19510854630392965,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "mlp_bahat_logits_s29",
+      "label": "MLP: Bahat-view logits, seed 29",
+      "family": "bahat_logits",
+      "dimension": 12,
+      "spec": {
+        "id": "mlp_bahat_logits_s29",
+        "kind": "mlp",
+        "features": "bahat_logits",
+        "seed": 29
+      },
+      "aurc": {
+        "DeepShield": 0.0005149044608014312,
+        "OpenFake": 0.1604609029432476
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 80,
+          "risk": 0.008157438564290813,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 712,
+          "risk": 0.19565814784281396,
+          "coverage": 0.90975
+        }
+      }
+    },
+    {
+      "method": "mlp_bahat_logits_s43",
+      "label": "MLP: Bahat-view logits, seed 43",
+      "family": "bahat_logits",
+      "dimension": 12,
+      "spec": {
+        "id": "mlp_bahat_logits_s43",
+        "kind": "mlp",
+        "features": "bahat_logits",
+        "seed": 43
+      },
+      "aurc": {
+        "DeepShield": 0.0005124035610248366,
+        "OpenFake": 0.14889793357220826
+      },
+      "matched_frozen_coverage": {
+        "DeepShield": {
+          "accepted": 9807,
+          "errors": 81,
+          "risk": 0.008259406546344448,
+          "coverage": 0.9807
+        },
+        "OpenFake": {
+          "accepted": 3639,
+          "errors": 712,
+          "risk": 0.19565814784281396,
+          "coverage": 0.90975
+        }
+      }
+    }
+  ],
+  "cohorts": {
+    "DeepShield": {
+      "n": 10000,
+      "groups": 10000,
+      "detector_errors": 178,
+      "detector_accuracy": 0.9822
+    },
+    "OpenFake": {
+      "n": 4000,
+      "groups": 213,
+      "detector_errors": 900,
+      "detector_accuracy": 0.775
+    }
+  },
+  "scope": "Historical V1/V2 matched conditions and a separate retrospective 26-entry comparison. No cross-study pooling or new intervals."
+}

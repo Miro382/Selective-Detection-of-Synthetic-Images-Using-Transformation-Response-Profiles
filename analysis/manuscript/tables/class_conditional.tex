@@ -1,0 +1,28 @@
+\begin{table*}[t]
+\caption{Class-conditional outcomes at the original matched global acceptance counts: $k=9{,}807$ of $10{,}000$ on DS and $k=3{,}639$ of $4{,}000$ on OF. $C_0,C_1$ are percentages of all real/synthetic inputs accepted, respectively (5,000 per class on DS; 2,000 on OF). FP counts accepted real images classified as synthetic; FN counts accepted synthetic images classified as real. Rows use the same detector decisions and global $k$; class membership is used only for retrospective reporting.}
+\label{tab:class_conditional}
+\centering\small
+\begin{tabular}{lllrrrr}
+\toprule
+Detector & Cohort & Score & $C_0$ (\%) & $C_1$ (\%) & FP & FN \\
+\midrule
+EfficientNet & DS & Confidence & 98.24 & 97.90 & 29 & 68 \\
+EfficientNet & DS & Full profile & 98.32 & 97.82 & 36 & 30 \\
+\addlinespace[2pt]
+EfficientNet & OF & Confidence & 92.70 & 89.25 & 49 & 697 \\
+EfficientNet & OF & Full profile & 93.20 & 88.75 & 58 & 617 \\
+\addlinespace[2pt]
+CLIP & DS & Confidence & 98.94 & 97.20 & 204 & 671 \\
+CLIP & DS & Full profile & 99.32 & 96.82 & 218 & 627 \\
+\addlinespace[2pt]
+CLIP & OF & Confidence & 96.85 & 85.10 & 39 & 509 \\
+CLIP & OF & Full profile & 95.45 & 86.50 & 41 & 495 \\
+\addlinespace[2pt]
+ResNet-50 & DS & Confidence & 98.04 & 98.10 & 454 & 423 \\
+ResNet-50 & DS & Full profile & 98.30 & 97.84 & 493 & 380 \\
+\addlinespace[2pt]
+ResNet-50 & OF & Confidence & 92.30 & 89.65 & 115 & 722 \\
+ResNet-50 & OF & Full profile & 92.15 & 89.80 & 131 & 687 \\
+\bottomrule
+\end{tabular}
+\end{table*}

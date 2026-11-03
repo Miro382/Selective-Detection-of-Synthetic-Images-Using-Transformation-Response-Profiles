@@ -1,0 +1,59 @@
+THIRD-PARTY SOFTWARE AND MODEL SOURCES
+
+The release contains project experiment code and numerical research outputs.
+External libraries are installed separately. Third-party source repositories,
+dataset images, pretrained weights, and IEEE template assets are not bundled.
+References to an upstream method do not transfer ownership of its code or
+weights to this project. The authors' contributions are licensed as stated
+in the root LICENSE and README.md. This notice does not change the terms of
+third-party materials.
+
+CLIP / OpenAI
+Source: https://github.com/openai/CLIP
+License: https://github.com/openai/CLIP/blob/main/LICENSE
+The upstream software is MIT-licensed, copyright OpenAI. Obtain its software
+and pretrained assets from the official source and retain the applicable
+notices. The release records model provenance without including CLIP weights.
+
+UniversalFakeDetect / Ojha, Li, and Lee
+Source: https://github.com/WisconsinAIVision/UniversalFakeDetect
+Experiment commit: 030495aea3300a8b54c0ec37ec7fe1dd7e63c619
+License: https://github.com/WisconsinAIVision/UniversalFakeDetect/blob/main/LICENSE
+The current upstream repository carries an MIT license. The experiments use
+its published detector initialization. No vendored upstream model source or
+published detector checkpoint is distributed here.
+
+CNNDetection / Wang, Wang, Zhang, Owens, and Efros
+Source: https://github.com/PeterWang512/CNNDetection
+Experiment commit: ea0b5622365e3a9cd31d1b54b6b5971131a839ab
+License: https://github.com/PeterWang512/CNNDetection/blob/master/LICENSE.txt
+The upstream license is CC BY-NC-SA 4.0, not MIT. It must not be replaced by a
+blanket permissive license applied to this project. The experiments use the
+published Blur+JPEG(0.5) ResNet-50 initialization, obtained separately. This
+release contains neither the upstream repository nor that checkpoint.
+
+PyTorch and torchvision
+Sources: https://github.com/pytorch/pytorch
+         https://github.com/pytorch/vision
+The project uses their public APIs for model construction, tensor operations,
+optimization, and image preprocessing. Their distributions and bundled
+third-party notices remain governed by their upstream licenses. No installed
+library tree is copied into this release.
+
+NumPy, SciPy, scikit-learn, Pillow, and plotting dependencies
+These remain separate dependencies, not vendored source. Install the versions
+identified by the relevant environment record or requirements file. Their
+licenses are not replaced by this repository's license.
+
+Bahat-style reference
+Method: https://arxiv.org/abs/1804.00657
+The transformation and learned-confidence reference is an implementation of
+the cited experimental design. The article describes its implementation-
+specific preprocessing, weighted loss, and optimization as an adaptation.
+
+No inference of redistribution permission is made from a download URL alone.
+Before separately releasing detector checkpoints, review the upstream weight
+terms and the training-data conditions. This compact release supplies hashes,
+configuration, and small project-trained selector parameters instead.
+
+Source notices checked on 3 November 2026.

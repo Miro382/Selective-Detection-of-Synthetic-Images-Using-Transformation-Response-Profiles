@@ -1,0 +1,47 @@
+{
+  "efficientnet_training": {
+    "environment": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "torch": "2.8.0+cu126",
+      "numpy": "2.5.3",
+      "torchvision": "0.23.0+cpu",
+      "pillow": "12.3.0",
+      "scikit_learn": "1.8.0",
+      "executable": "external-local-input/python.exe",
+      "cuda": "12.6",
+      "device": "NVIDIA GeForce RTX 4070 Ti"
+    },
+    "source": "detector_experiments/detector_v4/training_main/config.json",
+    "source_sha256": "ab9cc13a548d1753b0d423e7095abd61cff7f7a714f5d9c137f146946e31a777"
+  },
+  "detector_adaptation": {
+    "environment": {
+      "python": "3.12.14",
+      "packages": {
+        "torch": "2.8.0+cu126",
+        "torchvision": "0.23.0",
+        "Pillow": "12.3.0",
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "scikit-learn": "1.8.0"
+      }
+    },
+    "source": "article_detector_adaptation/runs/matched_v4_20261030/protocol.json",
+    "source_sha256": "5d988bacea5d18d44ad5a663b919135464c163f356a076ae721407409f151547"
+  },
+  "mc_energy": {
+    "environment": {
+      "packages": {
+        "Pillow": "12.3.0",
+        "numpy": "2.5.3",
+        "scikit-learn": "1.8.0",
+        "scipy": "1.18.1",
+        "torch": "2.8.0+cu126",
+        "torchvision": "0.23.0"
+      },
+      "python": "3.12.14"
+    },
+    "source": "article_reference_experiment/runs/retrospective_20261028/protocol.json",
+    "source_sha256": "2c2cc3e4ef015386a3cc0131cd9b5651ae6fc7ac4b29b08aedd289b9d3b5a78b"
+  }
+}

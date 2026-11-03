@@ -1,0 +1,25 @@
+{
+  "version": "article-adapted-selectors-v1",
+  "completed_utc": "2026-10-31T18:04:17.563699+00:00",
+  "frozen_sha256": "88f4f397540a5db0da73352d7bb6191422a192e1249ef3648e55d6b4c562f64d",
+  "profile_anchors": {
+    "selector_calibration": {
+      "sha256": "739b9d7d80ba4b4ebe44bb7f1d67151d92ae29c3de6290a7430d643f9013eb18",
+      "receipt_sha256": "0f0e5cc0807dced6b48c80a068945655586c72b7760f18d9461d758031dafd2b",
+      "metadata_sha256": "cf6f55ed819be53fa06422bf31ebf23faa006bb6b2e8ce35535a9a33815f363f"
+    }
+  },
+  "accepted": 854,
+  "total": 2000,
+  "errors": 3,
+  "risk": 0.00351288056206089,
+  "risk_upper_bound": 0.00905398183985225,
+  "confidence": 0.95,
+  "target_risk": 0.02,
+  "min_accepted": 30,
+  "passed": true,
+  "research_threshold": 0.03467626730024773,
+  "deployment_threshold": 0.03467626730024773,
+  "scope": "One fixed rule on a separate previously collected development sample; conditional IID binomial assessment, not a guarantee under distribution shift.",
+  "integrity_sha256": "cbf334b5ac4bbe1602260af77a2a76cac253b8fb46a9ac6b77b1349a9b07620a"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "resnet50",
+  "protocol_sha256": "5d988bacea5d18d44ad5a663b919135464c163f356a076ae721407409f151547",
+  "implementation_sha256": "7c7ee114d80b6936ad9901229d505b1f8eb8be0cd0246ca89ac272f4a43e2e3c",
+  "training_plan_sha256": "d146afc7739fe7ceb443ac25440061025796e5cb283d01cea857f93920df3f9c",
+  "validation_plan_sha256": "ee4dff9ccffe6cdf695929c925736c96f42280183e628d20f75f3b6dade06d45"
+}

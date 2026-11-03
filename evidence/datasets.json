@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "score_direction": "Lower scores are accepted first.",
+  "aurc": "Whole equal-score blocks; fixed accepted counts use the archived tie digest.",
+  "group_index": "Integer encoding of sorted archived group names, except independent ablation as noted.",
+  "datasets": [
+    {
+      "name": "efficientnet_DeepShield",
+      "kind": "comparison",
+      "scores": "evidence/scores/efficientnet_DeepShield.npz",
+      "sha256": "ba9eef7a4c597aa9e9e6c0d6155fbe8c28b42fa08650dfc0dbeccb4cbb1c5540",
+      "expected": "evidence/expected/efficientnet_DeepShield.json",
+      "expected_sha256": "bd97c31f383e34a898ef3e24edf7f12a9bf77b261c2a661770dc736837339de7",
+      "note": ""
+    },
+    {
+      "name": "efficientnet_OpenFake",
+      "kind": "comparison",
+      "scores": "evidence/scores/efficientnet_OpenFake.npz",
+      "sha256": "e8b2bbfc7f147f4fa6be019a39f1eb7c17012788fb6d5f49664624a7b158d16e",
+      "expected": "evidence/expected/efficientnet_OpenFake.json",
+      "expected_sha256": "64e7c696ab9935c163011c718ae04376a1fcff33afc9493612e58b09f2d60c0a",
+      "note": ""
+    },
+    {
+      "name": "references_DeepShield",
+      "kind": "references",
+      "scores": "evidence/scores/references_DeepShield.npz",
+      "sha256": "d696819da87bb045beac8ce914f894a96a65a43f5c64da4ddf1d62c5e32ab9f8",
+      "expected": "evidence/expected/references_DeepShield.json",
+      "expected_sha256": "c5c185b2d468ed0289219ac81b56b84fd24977c3b98955c409a7c5adf81baa36",
+      "note": "MC scores are conditional on the archived 30-mask realization; no stochastic inference is rerun."
+    },
+    {
+      "name": "references_OpenFake",
+      "kind": "references",
+      "scores": "evidence/scores/references_OpenFake.npz",
+      "sha256": "305f839e06f228d07166e81e7aa0852412f99dd3d19a1733102ca64b68e6ae52",
+      "expected": "evidence/expected/references_OpenFake.json",
+      "expected_sha256": "8f5a7f4ade8067db1c69d67d0edb161c50d3f2363a44d84f29ea95b936ca5e96",
+      "note": "MC scores are conditional on the archived 30-mask realization; no stochastic inference is rerun."
+    },
+    {
+      "name": "clip_DeepShield",
+      "kind": "adapted",
+      "scores": "evidence/scores/clip_DeepShield.npz",
+      "sha256": "be35fe2df87ac8cb8184202c486e00027577d65d8dff6cff5f739c2d49c18ce7",
+      "expected": "evidence/expected/clip_DeepShield.json",
+      "expected_sha256": "c63f6693010cd97fdd46a06916043833ae2d419d8793c7127e197aaee1cdda2d",
+      "note": "",
+      "bootstrap": "evidence/bootstrap/clip_DeepShield.npz",
+      "bootstrap_sha256": "1756ba2d6a2f05d15bd9569519bee7104f1b5348abf16d7ed80bdf3430524199"
+    },
+    {
+      "name": "clip_OpenFake",
+      "kind": "adapted",
+      "scores": "evidence/scores/clip_OpenFake.npz",
+      "sha256": "0c1eab96098b4c4ba97639fd5ba8cf24839ad001cf59a92f9a45391d93f7ec5d",
+      "expected": "evidence/expected/clip_OpenFake.json",
+      "expected_sha256": "10a6cd30f586c52ff38278cbeb4c7fecca43985791964aa8fe9de92716858e8c",
+      "note": "",
+      "bootstrap": "evidence/bootstrap/clip_OpenFake.npz",
+      "bootstrap_sha256": "e21ef9b6b0c60496a7c0c2600f05135b214c018ff2fc2ea8992b57b5c00d3886"
+    },
+    {
+      "name": "resnet50_DeepShield",
+      "kind": "adapted",
+      "scores": "evidence/scores/resnet50_DeepShield.npz",
+      "sha256": "a13e56cbf80e70990c60a41a932b74dfa9118ba382d9b897392a281997f1e621",
+      "expected": "evidence/expected/resnet50_DeepShield.json",
+      "expected_sha256": "844bdad2f2e730295ca12f1f48a8f0302422f43095b5613ef8fc65a34f9b3360",
+      "note": "",
+      "bootstrap": "evidence/bootstrap/resnet50_DeepShield.npz",
+      "bootstrap_sha256": "e1d5da12a1104a5fe144abb852e36ec6e46e4b774723af87b2b942fd73a1121e"
+    },
+    {
+      "name": "resnet50_OpenFake",
+      "kind": "adapted",
+      "scores": "evidence/scores/resnet50_OpenFake.npz",
+      "sha256": "a62248993223cdae58e1839d8896a2107aafdc6303f703664edfb7589af1ad87",
+      "expected": "evidence/expected/resnet50_OpenFake.json",
+      "expected_sha256": "acd9f0082ad8da5ef49bda5135498a98190c7d8b66df2bbc273108673698958a",
+      "note": "",
+      "bootstrap": "evidence/bootstrap/resnet50_OpenFake.npz",
+      "bootstrap_sha256": "0673e9e6f3c0ae0a03db6de42104860746eae099b3ea657b4ef3fe6c7ccd772f"
+    },
+    {
+      "name": "independent_DeepShield",
+      "kind": "ablation",
+      "scores": "evidence/scores/independent_DeepShield.npz",
+      "sha256": "00975f40a743fa3014165f686a51ebd7a06a49a0440d9231dfbbb22e3590b01f",
+      "expected": "evidence/expected/independent_DeepShield.json",
+      "expected_sha256": "e8ada227e901d0a71fde695187414429a34a4049e53f4f113ba1733cc9b0adbc",
+      "note": "Group indices derive from the prior opaque group labels; historical bootstrap index order is not implied."
+    },
+    {
+      "name": "independent_OpenFake",
+      "kind": "ablation",
+      "scores": "evidence/scores/independent_OpenFake.npz",
+      "sha256": "24d1d654fb1c001e522e31cb28a393c300cf89f46ad52264e6fd902ea29a58e3",
+      "expected": "evidence/expected/independent_OpenFake.json",
+      "expected_sha256": "e78e8cf18c87cf5ab14dd04819acc016ef4c9138df3885594653d9d1a5eacdba",
+      "note": "Group indices derive from the prior opaque group labels; historical bootstrap index order is not implied."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+\begin{table*}[t]
+\caption{The four locked replacement conditions. Differences are resize-only minus full. Risk differences are percentage points (pp); AURC differences are unscaled. CI denotes confidence interval. Only one condition passes, so the full selector is retained.}
+\label{tab:ablationdecision}
+\centering\small
+\begin{tabular}{llrll}
+\toprule
+Cohort & Outcome & Difference & 95\% interval & Condition \\
+\midrule
+DeepShield & AURC & $-0.000101$ & $[-0.000276, 0.000012]$ & No: CI crosses 0; guard fails \\
+DeepShield & Matched risk (pp) & $-0.0680$ & $[-0.2719, 0.0000]$ & No: CI touches 0; guard fails \\
+OpenFake & AURC & $-0.009457$ & $[-0.011422, -0.007643]$ & Pass \\
+OpenFake & Matched risk (pp) & $-0.1466$ & $[-0.3399, 0.2553]$ & No: CI crosses 0 \\
+\bottomrule
+\end{tabular}
+\end{table*}

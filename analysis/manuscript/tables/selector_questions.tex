@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\caption{Experimental questions and selector controls for the EfficientNet comparison. Shared controls use the same detector, original class decisions, source partitions, and reused DS/OF evaluation images.}
+\label{tab:selector_questions}
+\centering\small
+\begin{tabular}{p{3.4cm}p{5.5cm}p{6.4cm}}
+\toprule
+Question & Compared controls & Held fixed or explicitly varied \\
+\midrule
+Does learning confidence suffice? & Raw confidence, learned confidence-only LR, full-profile LR & Same error target and fitting split; transformed responses enter only the full profile. \\
+Which profile components matter? & Full LR; no summaries, orientation, or confidence; confidence with summaries & Logistic family and regularization retained; each representation has its own train-only fit. \\
+Which views supply information? & JPEG-only, resize-only, and five individual view omissions & Same cached detector responses; summaries recomputed from retained views. \\
+Does loss weighting matter? & Six-feature LR with and without error-class balancing & Representation, scaler, regularization, and group weights retained; error-class loss weighting changes. \\
+Do view choice and capacity matter? & Three MLP representations, each at seeds 17, 29, 43; six-feature LR controls & MLP architecture and training procedure matched across view families; LR/MLP contrasts also differ in capacity and fitting. \\
+\bottomrule
+\end{tabular}
+\end{table*}

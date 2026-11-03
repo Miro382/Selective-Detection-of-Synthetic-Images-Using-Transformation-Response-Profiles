@@ -1,0 +1,312 @@
+{
+  "all_four_conditions_passed": false,
+  "bootstrap": {
+    "interval": "Dvojstranný bodový percentilový 95 % interval [2,5 %, 97,5 %].",
+    "quantiles": [
+      0.025,
+      0.975
+    ],
+    "requested_repetitions": 5000,
+    "scope": "Pevné modely; neistota opakovaného učenia nie je zahrnutá.",
+    "seed": 20261028,
+    "simultaneous_intervals": false,
+    "unit": "Celé spojené pôvodové a výberové skupiny; párové pre oba modely."
+  },
+  "cohorts": {
+    "DeepShield": {
+      "adequacy": {
+        "guard_scope": "Konzervatívne predurčené stabilitné guardy; nezaručujú nominálne pokrytie bootstrapových intervalov.",
+        "minimum_groups": 2,
+        "minimum_matched_error_discordant_groups": 10,
+        "passed": false,
+        "reasons": [
+          "fewer_than_ten_matched_error_discordant_groups"
+        ]
+      },
+      "delta_resize_minus_full": {
+        "0.8": -0.0008333333333333334,
+        "0.9": -0.0007407407407407407,
+        "0.95": 0.0,
+        "aurc": -0.00010079387047047983,
+        "matched": -0.0006798096532970761
+      },
+      "detector_errors": 34,
+      "groups": 1500,
+      "intervals": {
+        "0.8": {
+          "lower_95": -0.0025,
+          "upper_95": 0.0,
+          "valid_repetitions": 5000
+        },
+        "0.9": {
+          "lower_95": -0.0022222222222222222,
+          "upper_95": 0.0,
+          "valid_repetitions": 5000
+        },
+        "0.95": {
+          "lower_95": -0.0028070175438596493,
+          "upper_95": 0.0007017543859649126,
+          "valid_repetitions": 5000
+        },
+        "aurc": {
+          "lower_95": -0.0002755438218805998,
+          "upper_95": 1.2195380356995304e-05,
+          "valid_repetitions": 5000
+        },
+        "matched": {
+          "lower_95": -0.002719238613188307,
+          "upper_95": 0.0,
+          "valid_repetitions": 5000
+        }
+      },
+      "matched_error_count_delta": -1,
+      "matched_fraction": 0.9807,
+      "matched_fraction_exact": [
+        9807,
+        10000
+      ],
+      "models": {
+        "full": {
+          "aurc": 0.000729861061157172,
+          "risks": {
+            "0.8": {
+              "accepted": 1200,
+              "coverage": 0.8,
+              "errors": 1,
+              "risk": 0.0008333333333333334
+            },
+            "0.9": {
+              "accepted": 1350,
+              "coverage": 0.9,
+              "errors": 2,
+              "risk": 0.0014814814814814814
+            },
+            "0.95": {
+              "accepted": 1425,
+              "coverage": 0.95,
+              "errors": 4,
+              "risk": 0.002807017543859649
+            },
+            "matched": {
+              "accepted": 1471,
+              "coverage": 0.9806666666666667,
+              "errors": 13,
+              "risk": 0.008837525492861998
+            }
+          }
+        },
+        "resize": {
+          "aurc": 0.0006290671906866922,
+          "risks": {
+            "0.8": {
+              "accepted": 1200,
+              "coverage": 0.8,
+              "errors": 0,
+              "risk": 0.0
+            },
+            "0.9": {
+              "accepted": 1350,
+              "coverage": 0.9,
+              "errors": 1,
+              "risk": 0.0007407407407407407
+            },
+            "0.95": {
+              "accepted": 1425,
+              "coverage": 0.95,
+              "errors": 4,
+              "risk": 0.002807017543859649
+            },
+            "matched": {
+              "accepted": 1471,
+              "coverage": 0.9806666666666667,
+              "errors": 12,
+              "risk": 0.008157715839564922
+            }
+          }
+        }
+      },
+      "paired_error_discordance": {
+        "added_errors": 0,
+        "definition": "Rozdiel indikátorov prijatá-a-chybná predikcia pri rovnakom k.",
+        "discordant_groups": 1,
+        "discordant_observations": 1,
+        "removed_errors": 1
+      },
+      "profiles": 1500,
+      "status": "inadequate"
+    },
+    "OpenFake": {
+      "adequacy": {
+        "guard_scope": "Konzervatívne predurčené stabilitné guardy; nezaručujú nominálne pokrytie bootstrapových intervalov.",
+        "minimum_groups": 2,
+        "minimum_matched_error_discordant_groups": 10,
+        "passed": true,
+        "reasons": []
+      },
+      "delta_resize_minus_full": {
+        "0.8": -0.0039583333333333415,
+        "0.9": -0.0009259259259259411,
+        "0.95": -0.0010526315789473606,
+        "aurc": -0.009457201394922815,
+        "matched": -0.0014657383657017409
+      },
+      "detector_errors": 1349,
+      "groups": 43,
+      "intervals": {
+        "0.8": {
+          "lower_95": -0.0070465555338549085,
+          "upper_95": -0.0010034745859003767,
+          "valid_repetitions": 5000
+        },
+        "0.9": {
+          "lower_95": -0.00253542252347033,
+          "upper_95": 0.0028850030299538013,
+          "valid_repetitions": 5000
+        },
+        "0.95": {
+          "lower_95": -0.0030971206187490295,
+          "upper_95": 0.00040472319818992645,
+          "valid_repetitions": 5000
+        },
+        "aurc": {
+          "lower_95": -0.011421944745716454,
+          "upper_95": -0.0076430298142296585,
+          "valid_repetitions": 5000
+        },
+        "matched": {
+          "lower_95": -0.0033993727148681836,
+          "upper_95": 0.002553218662536342,
+          "valid_repetitions": 5000
+        }
+      },
+      "matched_error_count_delta": -8,
+      "matched_fraction": 0.90975,
+      "matched_fraction_exact": [
+        3639,
+        4000
+      ],
+      "models": {
+        "full": {
+          "aurc": 0.15176238604741832,
+          "risks": {
+            "0.8": {
+              "accepted": 4800,
+              "coverage": 0.8,
+              "errors": 779,
+              "risk": 0.16229166666666667
+            },
+            "0.9": {
+              "accepted": 5400,
+              "coverage": 0.9,
+              "errors": 967,
+              "risk": 0.17907407407407408
+            },
+            "0.95": {
+              "accepted": 5700,
+              "coverage": 0.95,
+              "errors": 1112,
+              "risk": 0.19508771929824562
+            },
+            "matched": {
+              "accepted": 5458,
+              "coverage": 0.9096666666666666,
+              "errors": 994,
+              "risk": 0.182117991938439
+            }
+          }
+        },
+        "resize": {
+          "aurc": 0.1423051846524955,
+          "risks": {
+            "0.8": {
+              "accepted": 4800,
+              "coverage": 0.8,
+              "errors": 760,
+              "risk": 0.15833333333333333
+            },
+            "0.9": {
+              "accepted": 5400,
+              "coverage": 0.9,
+              "errors": 962,
+              "risk": 0.17814814814814814
+            },
+            "0.95": {
+              "accepted": 5700,
+              "coverage": 0.95,
+              "errors": 1106,
+              "risk": 0.19403508771929825
+            },
+            "matched": {
+              "accepted": 5458,
+              "coverage": 0.9096666666666666,
+              "errors": 986,
+              "risk": 0.18065225357273726
+            }
+          }
+        }
+      },
+      "paired_error_discordance": {
+        "added_errors": 24,
+        "definition": "Rozdiel indikátorov prijatá-a-chybná predikcia pri rovnakom k.",
+        "discordant_groups": 20,
+        "discordant_observations": 56,
+        "removed_errors": 32
+      },
+      "profiles": 6000,
+      "status": "ok"
+    }
+  },
+  "conditions": {
+    "DeepShield:aurc": {
+      "estimate": -0.00010079387047047983,
+      "passed": false,
+      "upper_95": 1.2195380356995304e-05
+    },
+    "DeepShield:matched": {
+      "estimate": -0.0006798096532970761,
+      "passed": false,
+      "upper_95": 0.0
+    },
+    "OpenFake:aurc": {
+      "estimate": -0.009457201394922815,
+      "passed": true,
+      "upper_95": -0.0076430298142296585
+    },
+    "OpenFake:matched": {
+      "estimate": -0.0014657383657017409,
+      "passed": false,
+      "upper_95": 0.002553218662536342
+    }
+  },
+  "decision": "retain_full",
+  "inputs": {
+    "plan_sha256": "c75d0d077e07cca003ffce912197cbce2d59179ca3ea7ba17ddda422d129e85d",
+    "profiles_complete_sha256": "60fe8ebea8fd47f0c13c8e8c70fd79f3aaeb5fe9bb480c1d30c60d9d62c47700",
+    "profiles_sha256": "ff93b8082632ac42b180c02224e0e6eb49b3e9bf44dfd1d146a6ba58379edb42",
+    "run_protocol_sha256": "667aff81b366ef574e76f889be9892570c63d72e4578c82d4e9ad20c8e16b1eb",
+    "statistics_sha256": "b2327038f3e33befc9967eb6fac66bda0df436cd3064710e5b153fefceb0ea2f"
+  },
+  "model_change_performed": false,
+  "policy": {
+    "adoption_rule": "Všetky štyri horné hranice musia byť striktne pod nulou a všetky guardy musia prejsť.",
+    "allowed_deterioration": 0.0,
+    "decision_scope": "Spôsobilosť na samostatné rozhodnutie o náhrade; žiadna automatická zmena modelu.",
+    "direction": "resize-minus-full",
+    "matched_count": "floor(q*N) s pevným q; v každej replike floor(q*N_replika). Nie počet z prahu full.",
+    "noninferiority_margin": null,
+    "primary": [
+      "DeepShield:aurc",
+      "DeepShield:matched",
+      "OpenFake:aurc",
+      "OpenFake:matched"
+    ],
+    "secondary_coverages": [
+      "0.8",
+      "0.9",
+      "0.95"
+    ],
+    "test": "Spoločná intersection-union podmienka superiority; nie noninferiority.",
+    "ties": "AURC celé bloky zhodných skóre; pevné pokrytie SHA256(article-ablation-confirmation-tie-v1/sample_id)."
+  },
+  "version": "article-ablation-confirmation-statistics-v1"
+}
